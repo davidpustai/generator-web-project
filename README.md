@@ -1,4 +1,4 @@
-# generator-web-project [![Build Status](https://secure.travis-ci.org/davidpustai/generator-web-project.png?branch=master)](https://travis-ci.org/davidpustai/generator-web-project)
+# generator-web-project
 
 A generator for [Yeoman](http://yeoman.io).
 
