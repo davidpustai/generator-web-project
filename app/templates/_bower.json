@@ -6,9 +6,9 @@
   	"foundation": "latest",
   	"jquery": "~2.0.0",
   	"modernizr": "latest",
-  	"normalize-scss": "~2.1.3" <% if (includeMagnificPopup) { %>
+  	"normalize-scss": "~2.1.3" <% /*if (includeMagnificPopup) { %>
     "magnific-popup": "latest",<% } if (includeFontello) { %>
-    "fontello": "latest"<% } %>
+    "fontello": "latest"<% }*/ %>
   }
 }
 
