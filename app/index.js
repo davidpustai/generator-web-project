@@ -1,7 +1,7 @@
 /*
  * TODO:
  *  - humans.txt
- *  - Gruntfile.js - serve:open and livereload
+ *  - Gruntfile.js - usemin in more html files?, watch - usemin, serve:open and livereload
  *  - features
  *  - sublime path
  *  - rev, htmlmin
@@ -10,8 +10,8 @@
  *  - uncss, function and class names minification
  *  - subgenerators for adding features later
  *  - localization
- *  - test main.scss imports and if normalize and h5bp needed
  *  - readme
+ *  - better sass settings including (see magnific-popup)
  *
  */
 

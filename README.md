@@ -1,6 +1,6 @@
 # generator-web-project
 
-My simple generator for [Yeoman](http://yeoman.io) including Foundation 5 and more stuff.
+My simple generator for [Yeoman](http://yeoman.io) including [Foundation 5](http://foundation.zurb.com/) and [more stuff](#im-using).
 
 
 ## Getting Started
@@ -40,6 +40,18 @@ $ yo web-project
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+
+## I'm using
+
+ * Zurb Foundation 5
+ * HTML5 Boilerplate
+ * normalize.scss (normalize.css)
+ * Modernizr
+ * jQuery
+
+With possibility to add
+
+ * Magnific Popup
 
 
 ## License
