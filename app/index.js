@@ -4,7 +4,6 @@
  *  - Gruntfile.js - serve:open and livereload
  *  - features
  *  - sublime path
- *  - editorconfig
  *  - rev, htmlmin
  *  - ask for title
  *  - GA
@@ -89,9 +88,10 @@ WebProjectGenerator.prototype.bower = function bower() {
   this.template('_bower.json', 'bower.json');
 };
 
-/*WebProjectGenerator.prototype.sublime = function sublime() {
-  this.template('project.sublime-project', this.name+'.sublime-project');
-};*/
+WebProjectGenerator.prototype.editor = function editor() {
+  this.copy('editorconfig', '.editorconfig');
+  //this.template('project.sublime-project', this.name+'.sublime-project');
+};
 
 WebProjectGenerator.prototype.fs = function fs() {
   this.mkdir('css');
