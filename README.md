@@ -1,6 +1,6 @@
 # generator-web-project
 
-My simple generator for [Yeoman](http://yeoman.io).
+My simple generator for [Yeoman](http://yeoman.io) including Foundation 5 and more stuff.
 
 
 ## Getting Started
