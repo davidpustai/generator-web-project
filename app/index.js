@@ -2,17 +2,16 @@
  * TODO:
  *  - humans.txt
  *  - Gruntfile.js - serve:open and livereload
- *  - main.scss
  *  - features
  *  - sublime path
- *  - override normalize settings
- *  - import normalize
- *  - foundation sass modules
- *  - gitignore
  *  - editorconfig
  *  - rev, htmlmin
- *  - ask for appname
+ *  - ask for title
  *  - GA
+ *  - uncss, function and class names minification
+ *  - subgenerators for adding features later
+ *  - localization
+ *  - test main.scss imports and if normalize and h5bp needed
  *
  */
 
@@ -37,7 +36,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
   console.log(this.yeoman);
   console.log('Foundation5 with Compass and HTML5Boilerplate are prepared!');
 
-  var prompts = [{
+  var prompts = [/*{
     type: 'checkbox',
     name: 'features',
     message: 'What more would you like?',
@@ -49,7 +48,12 @@ WebProjectGenerator.prototype.askFor = function askFor() {
       name: 'Fontello Fonts',
       value: 'includeFontello',
       checked: false
-    }]
+    }, {
+      type: 'confirm',
+      name: 'includeOpenSans',
+      message: 'Would you like to include Open Sans as default font?',
+      default: true
+    }*/]
   }];
 
   this.prompt(prompts, function (answers) {
@@ -57,10 +61,11 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
     function hasFeature(feat) { return features.indexOf(feat) !== -1; }
 
-    // manually deal with the response, get back and store the results.
-    // we change a bit this way of doing to automatically do this in the self.prompt() method.
-    this.includeMagnificPopup = hasFeature('includeMagnificPopup');
-    this.includeFontello = hasFeature('includeFontello');
+    // // manually deal with the response, get back and store the results.
+    // // we change a bit this way of doing to automatically do this in the self.prompt() method.
+    // this.includeMagnificPopup = hasFeature('includeMagnificPopup');
+    // this.includeFontello = hasFeature('includeFontello');
+    // this.includeOpenSans = hasFeature('includeOpenSans');
 
     cb();
   }.bind(this));
@@ -80,6 +85,7 @@ WebProjectGenerator.prototype.git = function git() {
 };
 
 WebProjectGenerator.prototype.bower = function bower() {
+  this.copy('bowerrc.json', 'bowerrc.json');
   this.template('_bower.json', 'bower.json');
 };
 
@@ -105,10 +111,13 @@ WebProjectGenerator.prototype.files = function files() {
   this.copy('robots.txt', 'robots.txt');
   this.copy('crossdomain.xml', 'crossdomain.xml')
 
+  this.copy('settings.scss','sass/_settings.scss');
   this.copy('h5bp.scss','sass/_h5bp.scss');
+  this.copy('foundation.scss','sass/_foundation.scss');
   this.copy('main.scss','sass/main.scss');
 
   this.copy('main.js', 'js/main.js');
+  this.copy('plugins.js', 'js/plugins.js');
 };
 
 WebProjectGenerator.prototype.index = function index() {

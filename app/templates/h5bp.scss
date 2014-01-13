@@ -11,6 +11,23 @@
    ========================================================================== */
 
 /*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: $selection-color;
+    text-shadow: none;
+}
+
+::selection {
+    background: $selection-color;
+    text-shadow: none;
+}
+
+
+/*
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
  */
