@@ -1,7 +1,7 @@
-@import "settings";
-@import "h5bp";
-@import "foundation";
-@import "compass/reset";
-@import "normalize";
+@import "settings",
+        "h5bp",
+        "foundation",
+        "compass/reset",
+        "normalize";
 
 @include establish-baseline;
