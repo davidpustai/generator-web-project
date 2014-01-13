@@ -229,7 +229,7 @@ module.exports = function (grunt) {
         'clean:server',
         'compass',
         'autoprefixer',
-        'connect:test',
+        'connect:dev',
         'watch'
     ]);
 
