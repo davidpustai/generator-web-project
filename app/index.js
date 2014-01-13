@@ -11,6 +11,7 @@
  *  - subgenerators for adding features later
  *  - localization
  *  - test main.scss imports and if normalize and h5bp needed
+ *  - readme
  *
  */
 
@@ -76,6 +77,10 @@ WebProjectGenerator.prototype.gruntfile = function gruntfile() {
 
 WebProjectGenerator.prototype.packageJSON = function packageJSON() {
   this.template('_package.json', 'package.json');
+};
+
+WebProjectGenerator.prototype.SassConfig = function SassConfig() {
+  this.copy('config.rb', 'config.rb');
 };
 
 WebProjectGenerator.prototype.git = function git() {
