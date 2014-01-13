@@ -52,8 +52,8 @@ WebProjectGenerator.prototype.askFor = function askFor() {
       name: 'includeOpenSans',
       message: 'Would you like to include Open Sans as default font?',
       default: true
-    }*/]
-  }];
+    }]
+  }*/];
 
   this.prompt(prompts, function (answers) {
     var features = answers.features;
