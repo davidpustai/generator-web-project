@@ -1,6 +1,6 @@
 {
   "name": "generator-web-project",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A generator for Yeoman",
   "keywords": [
     "yeoman-generator"
@@ -17,14 +17,8 @@
     "type": "git",
     "url": "git://github.com/davidpustai/generator-web-project.git"
   },
-  "scripts": {
-    "test": "mocha"
-  },
   "dependencies": {
     "yeoman-generator": "~0.14.0"
-  },
-  "devDependencies": {
-    "mocha": "~1.14.0"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
