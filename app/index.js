@@ -84,7 +84,7 @@ WebProjectGenerator.prototype.git = function git() {
 };
 
 WebProjectGenerator.prototype.bower = function bower() {
-  this.copy('bowerrc.json', 'bowerrc.json');
+  this.copy('bowerrc', '.bowerrc');
   this.template('_bower.json', 'bower.json');
 };
 
