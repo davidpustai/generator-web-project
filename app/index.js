@@ -1,17 +1,17 @@
 /*
  * TODO:
- *  - humans.txt
  *  - Gruntfile.js - usemin in more html files?, watch - usemin, serve:open and livereload
+ *  - better sass settings including (see magnific-popup)
+ *  - readme
+ *  - ask for title
+ *  - localization
  *  - features
  *  - sublime path
- *  - rev, htmlmin
- *  - ask for title
- *  - GA
  *  - uncss, function and class names minification
+ *  - rev, htmlmin
+ *  - humans.txt
  *  - subgenerators for adding features later
- *  - localization
- *  - readme
- *  - better sass settings including (see magnific-popup)
+ *  - GA
  *
  */
 

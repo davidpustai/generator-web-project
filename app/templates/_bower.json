@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": "true",
   "dependencies": {
-  	"foundation": "latest",
+  	"foundation": "~5.0.2",
   	"jquery": "~2.0.0",
   	"modernizr": "latest",
-  	"normalize-scss": "~2.1.3" <% /*if (includeMagnificPopup) { %>
+  	"normalize-scss": "latest" <% /*if (includeMagnificPopup) { %>
     "magnific-popup": "latest",<% } if (includeFontello) { %>
     "fontello": "latest"<% }*/ %>
   }
