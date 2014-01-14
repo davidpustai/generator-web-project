@@ -1,17 +1,19 @@
 /*
  * TODO:
- *  - Gruntfile.js - usemin in more html files?, watch - usemin, serve:open and livereload
+ *  - Gruntfile.js - open and livereload
  *  - better sass settings including (see magnific-popup)
  *  - readme
  *  - ask for title
+ *  - ask for browser support
  *  - localization
  *  - features
  *  - sublime path
- *  - uncss, function and class names minification
+ *  - uncss, class names minification
  *  - rev, htmlmin
  *  - humans.txt
  *  - subgenerators for adding features later
  *  - GA
+ *  - print.scss, ie.scss
  *
  */
 

@@ -98,6 +98,14 @@ module.exports = function (grunt) {
             }
         },
 
+        uglify: {
+            options: {
+                mangle: {toplevel: true},
+                squeeze: {dead_code: false},
+                codegen: {quote_keys: true}
+            }
+        },
+
         // Automatically inject Bower components into the HTML file
         // 'bower-install': {
         //     app: {
