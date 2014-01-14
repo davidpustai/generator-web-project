@@ -1,8 +1,5 @@
 /*
  * TODO:
- *  - Gruntfile.js - open
- *  - better sass settings including (see magnific-popup)
- *  - readme
  *  - ask for title
  *  - ask for browser support
  *  - localization
@@ -14,6 +11,7 @@
  *  - subgenerators for adding features later
  *  - GA
  *  - print.scss, ie.scss
+ *  - Gruntfile.js - open
  *
  */
 

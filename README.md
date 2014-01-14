@@ -1,6 +1,21 @@
-# generator-web-project
+# Web project generator [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-My simple generator for [Yeoman](http://yeoman.io) including [Foundation 5](http://foundation.zurb.com/) and [more stuff](#im-using).
+My simple [Yeoman](http://yeoman.io) generator including [Foundation 5](http://foundation.zurb.com/) and more stuff.
+
+
+## I'm using
+
+ * [Zurb Foundation 5](http://foundation.zurb.com/)
+ * [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate)
+ * [normalize.css](https://github.com/JohnAlbin/normalize.css-with-sass-or-compass) (sass wersion)
+ * [Modernizr](https://github.com/Modernizr/Modernizr)
+ * [jQuery](https://github.com/jquery/jquery)
+
+<!---
+With possibility to add
+
+ * Magnific Popup
+ -->
 
 
 ## Getting Started
@@ -23,11 +38,19 @@ $ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
+This package can't be installed by npm yet. To install generator-web-project clone this repository simply using `git clone git@github.com:davidpustai/generator-web-project.git` and than run:
+
+```
+$ npm link
+```
+
+<!---
 To install generator-web-project from npm, run:
 
 ```
 $ npm install -g generator-web-project
 ```
+-->
 
 Finally, initiate the generator:
 
@@ -40,18 +63,6 @@ $ yo web-project
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
-## I'm using
-
- * Zurb Foundation 5
- * HTML5 Boilerplate
- * normalize.scss (normalize.css)
- * Modernizr
- * jQuery
-
-With possibility to add
-
- * Magnific Popup
 
 
 ## License
