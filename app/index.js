@@ -1,12 +1,12 @@
 /*
  * TODO:
- *  - Gruntfile.js - open and livereload
+ *  - Gruntfile.js - open
  *  - better sass settings including (see magnific-popup)
  *  - readme
  *  - ask for title
  *  - ask for browser support
  *  - localization
- *  - features
+ *  - features - mp, fontello, opensans (other fonts -> text input)
  *  - sublime path
  *  - uncss, class names minification
  *  - rev, htmlmin
