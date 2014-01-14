@@ -1,16 +1,17 @@
 /*
  * TODO:
- *  - humans.txt
- *  - Gruntfile.js - serve:open and livereload
- *  - features
- *  - sublime path
- *  - rev, htmlmin
  *  - ask for title
- *  - GA
- *  - uncss, function and class names minification
- *  - subgenerators for adding features later
+ *  - ask for browser support
  *  - localization
- *  - test main.scss imports and if normalize and h5bp needed
+ *  - features - mp, fontello, opensans (other fonts -> text input)
+ *  - sublime path
+ *  - uncss, class names minification
+ *  - rev, htmlmin
+ *  - humans.txt
+ *  - subgenerators for adding features later
+ *  - GA
+ *  - print.scss, ie.scss
+ *  - Gruntfile.js - open
  *
  */
 
@@ -76,6 +77,10 @@ WebProjectGenerator.prototype.gruntfile = function gruntfile() {
 
 WebProjectGenerator.prototype.packageJSON = function packageJSON() {
   this.template('_package.json', 'package.json');
+};
+
+WebProjectGenerator.prototype.SassConfig = function SassConfig() {
+  this.copy('config.rb', 'config.rb');
 };
 
 WebProjectGenerator.prototype.git = function git() {

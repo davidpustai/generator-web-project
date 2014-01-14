@@ -28,7 +28,8 @@ module.exports = function (grunt) {
                 },
                 files: [
                     '*.html',
-                    'css/*.css',
+                    'sass/*.scss',
+                    //'css/*.css',
                     'img/*.{gif,jpeg,jpg,png,svg}',
                     'js/*.js'
                 ]
@@ -95,6 +96,14 @@ module.exports = function (grunt) {
                     src: '*.css',
                     dest: 'css'
                 }]
+            }
+        },
+
+        uglify: {
+            options: {
+                mangle: {toplevel: true},
+                squeeze: {dead_code: false},
+                codegen: {quote_keys: true}
             }
         },
 
@@ -229,7 +238,7 @@ module.exports = function (grunt) {
         'clean:server',
         'compass',
         'autoprefixer',
-        'connect:test',
+        'connect:dev',
         'watch'
     ]);
 
