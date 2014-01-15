@@ -6,7 +6,7 @@
   	"foundation": "~5.0.2",
   	"jquery": "~2.0.0",
   	"modernizr": "latest",
-  	"normalize-scss": "latest" <% /*if (includeMagnificPopup) { %>
+  	"normalize.scss": "latest" <% /*if (includeMagnificPopup) { %>
     "magnific-popup": "latest",<% } if (includeFontello) { %>
     "fontello": "latest"<% }*/ %>
   }
