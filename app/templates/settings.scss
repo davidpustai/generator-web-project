@@ -1,18 +1,24 @@
-//
-// NORMALIZE.CSS SETTINGS
-//
+// =============================================================================
+// NORMALIZE.CSS SETTINGS OVERRIDE FOR NO CONFLICT WITH FOUNDATION
+// =============================================================================
 
-$legacy_browser_support: true !important;
+// We use these to control header font sizes
+$h1-font-size: rem-calc(44);
+$h2-font-size: rem-calc(37);
+$h3-font-size: rem-calc(27);
+$h4-font-size: rem-calc(23);
+$h5-font-size: rem-calc(18);
+$h6-font-size: 1rem;
 
-//
+// =============================================================================
 // H5BP SETTINGS
-//
+// =============================================================================
 
 // $selection-color: #b3d4fc;
 
-//
+// =============================================================================
 // FOUNDATION SETTINGS
-//
+// =============================================================================
 
 // Uncomment to use rem-calc() in your settings
 // @import "foundation/functions";
