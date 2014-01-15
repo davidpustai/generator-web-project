@@ -1,8 +1,9 @@
 /*
  * TODO:
- *  - ask for title
+ *  - separate print styles and add media element for IE8-
  *  - ask for browser support
- *  - localization
+ *  - localization - cz
+ *  - ask for title - package, bower, index
  *  - features - mp, fontello, opensans (other fonts -> text input)
  *  - sublime path
  *  - uncss, class names minification
@@ -12,6 +13,8 @@
  *  - GA
  *  - print.scss, ie.scss
  *  - Gruntfile.js - open
+ *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
+ *  - create bump-version.sh
  *
  */
 
@@ -116,6 +119,7 @@ WebProjectGenerator.prototype.files = function files() {
   this.copy('robots.txt', 'robots.txt');
   this.copy('crossdomain.xml', 'crossdomain.xml')
 
+  this.copy('normalize-settings.scss','sass/_normalize-settings.scss');
   this.copy('settings.scss','sass/_settings.scss');
   this.copy('h5bp.scss','sass/_h5bp.scss');
   this.copy('foundation.scss','sass/_foundation.scss');
