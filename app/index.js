@@ -1,7 +1,6 @@
 /*
  * TODO:
  *  - separate print styles and add media element for IE8-
- *  - ask for browser support
  *  - localization - cz
  *  - ask for title - package, bower, index
  *  - features - mp, fontello, opensans (other fonts -> text input)
@@ -39,23 +38,27 @@ WebProjectGenerator.prototype.askFor = function askFor() {
   console.log(this.yeoman);
   console.log('Foundation5 with Compass and HTML5Boilerplate are prepared!');
 
-  var prompts = [/*{
+  var prompts = [{
+  		name: 'IEsupport',
+  		message: 'Last version of IE you want to support?'
+	}/*,
+  {
     type: 'checkbox',
     name: 'features',
     message: 'What more would you like?',
     choices: [{
       name: 'Magnific Popup',
       value: 'includeMagnificPopup',
-      checked: false
+      checked: true
     }, {
       name: 'Fontello Fonts',
       value: 'includeFontello',
-      checked: false
+      checked: true
     }, {
       type: 'confirm',
       name: 'includeOpenSans',
       message: 'Would you like to include Open Sans as default font?',
-      default: true
+      checked: true
     }]
   }*/];
 
@@ -66,6 +69,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
     // // manually deal with the response, get back and store the results.
     // // we change a bit this way of doing to automatically do this in the self.prompt() method.
+    this.IEsupport = answers.IEsupport;
     // this.includeMagnificPopup = hasFeature('includeMagnificPopup');
     // this.includeFontello = hasFeature('includeFontello');
     // this.includeOpenSans = hasFeature('includeOpenSans');
@@ -119,7 +123,7 @@ WebProjectGenerator.prototype.files = function files() {
   this.copy('robots.txt', 'robots.txt');
   this.copy('crossdomain.xml', 'crossdomain.xml')
 
-  this.copy('normalize-settings.scss','sass/_normalize-settings.scss');
+  this.template('normalize-settings.scss','sass/_normalize-settings.scss');
   this.copy('settings.scss','sass/_settings.scss');
   this.copy('h5bp.scss','sass/_h5bp.scss');
   this.copy('foundation.scss','sass/_foundation.scss');
