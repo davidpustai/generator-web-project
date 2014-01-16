@@ -3,7 +3,6 @@
  *  - separate print styles and add media element for IE8-
  *  - ask for title - package, bower, index
  *  - features - mp, fontello, opensans (other fonts -> text input, check foundation if it already doesn't the work)
- *  - sublime path
  *  - uncss, class names minification
  *  - rev, htmlmin
  *  - humans.txt
@@ -46,6 +45,11 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 		name: 'localizeCZ',
 		message: 'Would you like to use Czech?',
 		default: false
+	}, {
+		type: 'confirm',
+		name: 'createSublimeTextProjectFile',
+		message: 'Create Sublime Text project file?',
+		default: true
 	}/*, {
 		type: 'checkbox',
 		name: 'features',
@@ -75,6 +79,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
     // // we change a bit this way of doing to automatically do this in the self.prompt() method.
     this.IEsupport = answers.IEsupport;
     this.language = answers.localizeCZ ? 'cs' : 'en';
+    this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
     // this.includeMagnificPopup = hasFeature('includeMagnificPopup');
     // this.includeFontello = hasFeature('includeFontello');
     // this.includeOpenSans = hasFeature('includeOpenSans');
@@ -107,7 +112,8 @@ WebProjectGenerator.prototype.bower = function bower() {
 
 WebProjectGenerator.prototype.editor = function editor() {
   this.copy('editorconfig', '.editorconfig');
-  //this.template('project.sublime-project', this.name+'.sublime-project');
+  if (this.createSublimeTextProjectFile)
+  	this.template('project.sublime-project', this._.slugify(this.appname)+'.sublime-project');
 };
 
 WebProjectGenerator.prototype.fs = function fs() {
