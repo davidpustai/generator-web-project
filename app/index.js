@@ -1,17 +1,16 @@
 /*
  * TODO:
  *  - separate print styles and add media element for IE8-
- *  - ask for title - package, bower, index
+ *  - print.scss, ie.scss (if supported)
  *  - features - mp, fontello, opensans (other fonts -> text input, check foundation if it already doesn't the work)
  *  - uncss, class names minification
- *  - rev, htmlmin
  *  - humans.txt
- *  - subgenerators for adding features later
+ *  - https://github.com/gruntjs/grunt-contrib-bump
+ *  - rev, htmlmin
  *  - GA
- *  - print.scss, ie.scss
+ *  - git initialization
  *  - Gruntfile.js - open
  *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
- *  - create bump-version.sh
  *
  */
 
@@ -50,6 +49,10 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 		name: 'createSublimeTextProjectFile',
 		message: 'Create Sublime Text project file?',
 		default: true
+	}, {
+  		name: 'htmlTitle',
+  		message: 'Your HTML <title>?',
+  		default: this.appname
 	}/*, {
 		type: 'checkbox',
 		name: 'features',
@@ -80,6 +83,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
     this.IEsupport = answers.IEsupport;
     this.language = answers.localizeCZ ? 'cs' : 'en';
     this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
+    this.htmlTitle = answers.htmlTitle;
     // this.includeMagnificPopup = hasFeature('includeMagnificPopup');
     // this.includeFontello = hasFeature('includeFontello');
     // this.includeOpenSans = hasFeature('includeOpenSans');
