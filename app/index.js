@@ -1,9 +1,8 @@
 /*
  * TODO:
  *  - separate print styles and add media element for IE8-
- *  - localization - cz
  *  - ask for title - package, bower, index
- *  - features - mp, fontello, opensans (other fonts -> text input)
+ *  - features - mp, fontello, opensans (other fonts -> text input, check foundation if it already doesn't the work)
  *  - sublime path
  *  - uncss, class names minification
  *  - rev, htmlmin
@@ -40,27 +39,32 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
   var prompts = [{
   		name: 'IEsupport',
-  		message: 'Last version of IE you want to support?'
-	}/*,
-  {
-    type: 'checkbox',
-    name: 'features',
-    message: 'What more would you like?',
-    choices: [{
-      name: 'Magnific Popup',
-      value: 'includeMagnificPopup',
-      checked: true
-    }, {
-      name: 'Fontello Fonts',
-      value: 'includeFontello',
-      checked: true
-    }, {
-      type: 'confirm',
-      name: 'includeOpenSans',
-      message: 'Would you like to include Open Sans as default font?',
-      checked: true
-    }]
-  }*/];
+  		message: 'Last version of IE you want to support?',
+  		default: 6
+	}, {
+		type: 'confirm',
+		name: 'localizeCZ',
+		message: 'Would you like to use Czech?',
+		default: false
+	}/*, {
+		type: 'checkbox',
+		name: 'features',
+		message: 'What more would you like?',
+		choices: [{
+			name: 'Magnific Popup',
+			value: 'includeMagnificPopup',
+			checked: true
+		}, {
+			name: 'Fontello Fonts',
+			value: 'includeFontello',
+			checked: true
+		}]
+	}, {
+		type: 'confirm',
+		name: 'includeOpenSans',
+		message: 'Would you like to include Open Sans as default font?',
+		default: true
+	}*/];
 
   this.prompt(prompts, function (answers) {
     var features = answers.features;
@@ -70,6 +74,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
     // // manually deal with the response, get back and store the results.
     // // we change a bit this way of doing to automatically do this in the self.prompt() method.
     this.IEsupport = answers.IEsupport;
+    this.language = answers.localizeCZ ? 'cs' : 'en';
     // this.includeMagnificPopup = hasFeature('includeMagnificPopup');
     // this.includeFontello = hasFeature('includeFontello');
     // this.includeOpenSans = hasFeature('includeOpenSans');
@@ -114,7 +119,7 @@ WebProjectGenerator.prototype.fs = function fs() {
 };
 
 WebProjectGenerator.prototype.files = function files() {
-  this.copy('404.html', '404.html');
+  this.copy('404_'+this.language+'.html', '404.html');
 
   this.copy('favicon.ico', 'favicon.ico');
   this.copy('apple-touch-icon-precomposed.png', 'apple-touch-icon-precomposed.png');
