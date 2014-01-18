@@ -2,7 +2,9 @@
  * TODO:
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
- *  - features - mp, fontello, opensans (other fonts -> text input, check foundation if it already doesn't the work)
+ *  - open sans subset support
+ *  - features - mp, fontello
+ *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
  *  - uncss, class names minification
  *  - humans.txt
  *  - https://github.com/gruntjs/grunt-contrib-bump
@@ -33,12 +35,12 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
   // welcome message
   console.log(this.yeoman);
-  console.log('Foundation5 with Compass and HTML5Boilerplate are prepared!');
+  console.log('Foundation5 with Compass and HTML5 Boilerplate are prepared!');
 
   var prompts = [{
   		name: 'IEsupport',
   		message: 'Last version of IE you want to support?',
-  		default: 6
+  		default: 8
 	}, {
 		type: 'confirm',
 		name: 'localizeCZ',
