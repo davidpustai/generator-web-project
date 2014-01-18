@@ -122,7 +122,6 @@ WebProjectGenerator.prototype.editor = function editor() {
 };
 
 WebProjectGenerator.prototype.fs = function fs() {
-  this.mkdir('css');
   this.mkdir('font');
   this.mkdir('img');
   this.mkdir('js');
