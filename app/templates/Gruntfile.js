@@ -169,26 +169,27 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        // htmlmin: {
-        //     dist: {
-        //         options: {
-        //             collapseBooleanAttributes: true,
-        //             collapseWhitespace: true,
-        //             removeAttributeQuotes: true,
-        //             removeCommentsFromCDATA: true,
-        //             removeEmptyAttributes: true,
-        //             removeOptionalTags: true,
-        //             removeRedundantAttributes: true,
-        //             useShortDoctype: true
-        //         },
-        //         files: [{
-        //             expand: true,
-        //             cwd: 'dist',
-        //             src: '{,*/}*.html',
-        //             dest: 'dist'
-        //         }]
-        //     }
-        // },
+        htmlmin: {
+            dist: {
+                options: {
+                	removeComments: true,
+                	removeCommentsFromCDATA: true,
+                	collapseWhitespace: true,
+                    collapseBooleanAttributes: true,
+                    removeAttributeQuotes: true,
+                    removeRedundantAttributes: true,
+                    useShortDoctype: true,
+                    removeEmptyAttributes: true,
+                    removeOptionalTags: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'dist',
+                    src: '*.html',
+                    dest: 'dist'
+                }]
+            }
+        },
 
         // Copies remaining files to places other tasks can use
         copy: {

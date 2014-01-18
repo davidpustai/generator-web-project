@@ -8,7 +8,7 @@
  *  - uncss, class names minification
  *  - humans.txt
  *  - https://github.com/gruntjs/grunt-contrib-bump
- *  - rev, htmlmin
+ *  - rev
  *  - GA
  *  - git initialization
  *  - Gruntfile.js - open
