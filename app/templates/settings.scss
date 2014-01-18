@@ -39,6 +39,10 @@ $h6-font-size: 1rem;
 // This is the default html and body font-size for the base rem value.
 // $rem-base: 16px;
 
+// Use Open Sans font<% if (language == 'cs') { %>
+$include-open-sans: false; // if CZ supported, Open Sans still included, keep false not to override latin subset<% } else { %>
+// $include-open-sans: true;<% } %>
+
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
 // $include-print-styles: true;

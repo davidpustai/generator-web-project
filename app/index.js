@@ -2,7 +2,6 @@
  * TODO:
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
- *  - open sans subset support
  *  - features - mp, fontello
  *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
  *  - uncss, class names minification
@@ -141,7 +140,7 @@ WebProjectGenerator.prototype.files = function files() {
   this.copy('crossdomain.xml', 'crossdomain.xml')
 
   this.template('normalize-settings.scss','sass/_normalize-settings.scss');
-  this.copy('settings.scss','sass/_settings.scss');
+  this.template('settings.scss','sass/_settings.scss');
   this.copy('h5bp.scss','sass/_h5bp.scss');
   this.copy('foundation.scss','sass/_foundation.scss');
   this.copy('main.scss','sass/main.scss');
