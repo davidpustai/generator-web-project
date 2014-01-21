@@ -5,7 +5,8 @@
  *  - features - mp, fontello
  *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
  *  - uncss, class names minification
- *  - humans.txt
+ *  - README - grunt commands, file system
+ *  - humans.txt - rel attr, humans.txt, button possibility, http://humanstxt.org/Im-human.html
  *  - https://github.com/gruntjs/grunt-contrib-bump
  *  - rev
  *  - GA
