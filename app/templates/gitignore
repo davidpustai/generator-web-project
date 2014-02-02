@@ -11,6 +11,7 @@ npm-debug.log
 *.out
 *.pid
 *.gz
+*.rev
 
 pids
 logs
