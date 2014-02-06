@@ -2,6 +2,9 @@
 		"normalize.scss/normalize",
 		"settings",
         "h5bp",
-        "foundation";
+        "foundation",
+        "compass/typography/vertical_rhythm";
 <% if (language == 'cs') { %>
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700&subset=latin,latin-ext");<% } %>
+
+@include establish-baseline;
