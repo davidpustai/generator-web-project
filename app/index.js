@@ -1,5 +1,13 @@
 /*
  * TODO:
+ *  - přidat věci z developmentu portfolia
+ *
+ *  - lepší implementace foundation _type.scss
+ *  - better bower includes (eg. fastclick)
+ *  - jquery CDN fallback
+ *  - globbing
+ *  - compass, vertical-rhythm
+ *  - separate settings into settings folder inside sass folder (add sass globbing)
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
  *  - features - mp, fontello
@@ -13,6 +21,7 @@
  *  - git initialization
  *  - Gruntfile.js - open
  *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
+ *  - dploy settings at generating (dploy?)
  *
  */
 
