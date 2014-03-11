@@ -1,6 +1,5 @@
 /*
  * TODO:
- *  - debug baseline grid
  *  - mixins
  *  - možnost setings složek
  *  - open sublime when ready
