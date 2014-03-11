@@ -1,11 +1,19 @@
 /*
  * TODO:
- *  - přidat věci z developmentu portfolia
+ *  - add stuff from development of portfolio, tljc, ravensengineering
  *
- *  - lepší implementace foundation _type.scss
+ *  - open sans remove
+ *  - debug baseline grid
+ *  - mixins
+ *  - možnost setings složek
+ *  - open sublime when ready
+ *  - scss do složek
+ *  - normalize-scss + config
  *  - better bower includes (eg. fastclick)
  *  - jquery CDN fallback
+ *  - modernizr custom build/CDN
  *  - globbing
+ *  - do I need to include normalize, h5bp, foundation & compass resets?
  *  - separate settings into settings folder inside sass folder (add sass globbing)
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
@@ -46,9 +54,9 @@ WebProjectGenerator.prototype.askFor = function askFor() {
   console.log('Foundation5 with Compass and HTML5 Boilerplate are prepared!');
 
   var prompts = [{
-  		name: 'IEsupport',
-  		message: 'Last version of IE you want to support?',
-  		default: 8
+		name: 'IEsupport',
+		message: 'Last version of IE you want to support?',
+		default: 8
 	}, {
 		type: 'confirm',
 		name: 'localizeCZ',
@@ -60,9 +68,9 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 		message: 'Create Sublime Text project file?',
 		default: true
 	}, {
-  		name: 'htmlTitle',
-  		message: 'Your HTML <title>?',
-  		default: this.appname
+		name: 'htmlTitle',
+		message: 'Your HTML <title>?',
+		default: this.appname
 	}/*, {
 		type: 'checkbox',
 		name: 'features',
@@ -84,21 +92,21 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 	}*/];
 
   this.prompt(prompts, function (answers) {
-    var features = answers.features;
+	var features = answers.features;
 
-    function hasFeature(feat) { return features.indexOf(feat) !== -1; }
+	function hasFeature(feat) { return features.indexOf(feat) !== -1; }
 
-    // // manually deal with the response, get back and store the results.
-    // // we change a bit this way of doing to automatically do this in the self.prompt() method.
-    this.IEsupport = answers.IEsupport;
-    this.language = answers.localizeCZ ? 'cs' : 'en';
-    this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
-    this.htmlTitle = answers.htmlTitle;
-    // this.includeMagnificPopup = hasFeature('includeMagnificPopup');
-    // this.includeFontello = hasFeature('includeFontello');
-    // this.includeOpenSans = hasFeature('includeOpenSans');
+	// // manually deal with the response, get back and store the results.
+	// // we change a bit this way of doing to automatically do this in the self.prompt() method.
+	this.IEsupport = answers.IEsupport;
+	this.language = answers.localizeCZ ? 'cs' : 'en';
+	this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
+	this.htmlTitle = answers.htmlTitle;
+	// this.includeMagnificPopup = hasFeature('includeMagnificPopup');
+	// this.includeFontello = hasFeature('includeFontello');
+	// this.includeOpenSans = hasFeature('includeOpenSans');
 
-    cb();
+	cb();
   }.bind(this));
 };
 
@@ -127,14 +135,15 @@ WebProjectGenerator.prototype.bower = function bower() {
 WebProjectGenerator.prototype.editor = function editor() {
   this.copy('editorconfig', '.editorconfig');
   if (this.createSublimeTextProjectFile)
-  	this.template('project.sublime-project', this._.slugify(this.appname)+'.sublime-project');
+	this.template('project.sublime-project', this._.slugify(this.appname)+'.sublime-project');
 };
 
-WebProjectGenerator.prototype.fs = function fs() {
-  this.mkdir('font');
-  this.mkdir('img');
-  this.mkdir('js');
-  this.mkdir('sass');
+WebProjectGenerator.prototype.assets = function assets() {
+  this.mkdir('assets');
+  this.mkdir('assets/font');
+  this.mkdir('assets/img');
+  this.mkdir('assets/js');
+  this.mkdir('assets/sass');
 };
 
 WebProjectGenerator.prototype.files = function files() {
@@ -165,6 +174,6 @@ WebProjectGenerator.prototype.index = function index() {
 WebProjectGenerator.prototype.install = function () {
   var done = this.async();
   this.installDependencies({
-    callback: done
+	callback: done
   });
 };
