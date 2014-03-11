@@ -147,14 +147,14 @@ WebProjectGenerator.prototype.files = function files() {
   this.copy('robots.txt', 'robots.txt');
   this.copy('crossdomain.xml', 'crossdomain.xml')
 
-  this.template('normalize-settings.scss','sass/_normalize-settings.scss');
-  this.template('settings.scss','sass/_settings.scss');
-  this.copy('h5bp.scss','sass/_h5bp.scss');
-  this.copy('foundation.scss','sass/_foundation.scss');
-  this.copy('main.scss','sass/main.scss');
+  this.template('normalize-settings.scss','assets/sass/_normalize-settings.scss');
+  this.template('settings.scss','assets/sass/_settings.scss');
+  this.copy('h5bp.scss','assets/sass/_h5bp.scss');
+  this.copy('foundation.scss','assets/sass/_foundation.scss');
+  this.copy('main.scss','assets/sass/main.scss');
 
-  this.copy('main.js', 'js/main.js');
-  this.copy('plugins.js', 'js/plugins.js');
+  this.copy('main.js', 'assets/js/main.js');
+  this.copy('plugins.js', 'assets/js/plugins.js');
 };
 
 WebProjectGenerator.prototype.index = function index() {
