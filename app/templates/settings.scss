@@ -39,10 +39,6 @@ $base-font-size: 16px;
 // The $base-line-height is 100% while $base-font-size is 150%
 $base-line-height: 24px;
 
-// Use Open Sans font<% if (language == 'cs') { %>
-$include-open-sans: false; // if CZ supported, Open Sans still included, keep false not to override latin subset<% } else { %>
-// $include-open-sans: true;<% } %>
-
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
 // $include-print-styles: true;
