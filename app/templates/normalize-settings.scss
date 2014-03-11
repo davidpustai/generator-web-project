@@ -26,7 +26,7 @@
 // $indent-amount: 40px;
 
 // Set this to true to add support for IE 6.
-$legacy-support-for-ie6: <% if (IEsupport < 7) { %>true<% } else { %>false<% } %>; // Override default set in Compass' Support partial.
+$legacy-support-for-ie6: false; // Override default set in Compass' Support partial.
 
 // Set this to true to add support for IE 7.
-$legacy-support-for-ie7: <% if (IEsupport < 8) { %>true<% } else { %>false<% } %>; // Override default set in Compass' Support partial.
+$legacy-support-for-ie7: false; // Override default set in Compass' Support partial.

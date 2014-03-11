@@ -54,10 +54,6 @@ WebProjectGenerator.prototype.askFor = function askFor() {
   console.log('Foundation5 with Compass and HTML5 Boilerplate are prepared!');
 
   var prompts = [{
-		name: 'IEsupport',
-		message: 'Last version of IE you want to support?',
-		default: 8
-	}, {
 		type: 'confirm',
 		name: 'localizeCZ',
 		message: 'Would you like to use Czech?',
@@ -98,7 +94,6 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
 	// // manually deal with the response, get back and store the results.
 	// // we change a bit this way of doing to automatically do this in the self.prompt() method.
-	this.IEsupport = answers.IEsupport;
 	this.language = answers.localizeCZ ? 'cs' : 'en';
 	this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
 	this.htmlTitle = answers.htmlTitle;
