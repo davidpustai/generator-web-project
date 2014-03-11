@@ -1,7 +1,5 @@
 /*
  * TODO:
- *  - add stuff from development of portfolio, tljc, ravensengineering
- *
  *  - debug baseline grid
  *  - mixins
  *  - možnost setings složek
