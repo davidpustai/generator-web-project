@@ -2,7 +2,6 @@
  * TODO:
  *  - add stuff from development of portfolio, tljc, ravensengineering
  *
- *  - open sans remove
  *  - debug baseline grid
  *  - mixins
  *  - možnost setings složek
