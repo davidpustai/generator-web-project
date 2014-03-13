@@ -1,5 +1,6 @@
 /*
  * TODO:
+ *  - h5bp via bower + add variable to settings
  *  - mixins
  *  - možnost setings složek
  *  - open sublime when ready
@@ -151,9 +152,12 @@ WebProjectGenerator.prototype.files = function files() {
   this.copy('h5bp.scss','assets/sass/_h5bp.scss');
   this.copy('foundation.scss','assets/sass/_foundation.scss');
   this.copy('main.scss','assets/sass/main.scss');
+  this.copy('ie8.scss','assets/sass/ie8.scss');
 
   this.copy('main.js', 'assets/js/main.js');
   this.copy('plugins.js', 'assets/js/plugins.js');
+  this.copy('jquery-1.8.0.js', 'assets/js/jquery-1.8.0.js');
+  this.copy('selectivizr-1.0.3b.js', 'assets/js/selectivizr-1.0.3b.js');
 };
 
 WebProjectGenerator.prototype.index = function index() {
