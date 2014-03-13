@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
 			compass: {
-				files: ['assets/sass/*.scss'],
+				files: ['assets/sass/**/*.scss'],
 				tasks: ['compass', 'autoprefixer'],
 				options: {
 					spawn: false,
@@ -28,10 +28,10 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'*.html',
-					'assets/sass/*.scss',
+					'assets/sass/**/*.scss',
 					//'assets/css/*.css',
-					'assets/img/*.{gif,jpeg,jpg,png,svg}',
-					'assets/js/*.js'
+					'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
+					'assets/js/**/*.js'
 				]
 			}
 		},
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: '.tmp',
-					src: '*.css',
+					src: '**/*.css',
 					dest: 'assets/css'
 				}]
 			}
@@ -137,8 +137,7 @@ module.exports = function (grunt) {
 			 /*options: {
 				 assetsDirs: ['assets']
 			 },*/
-			 html: ['dist/*.html']/*,
-			 css: ['dist/assets/css/*.css']*/
+			 html: ['dist/*.html']
 		 },
 
 		// The following *-min tasks produce minified files in the dist folder
@@ -147,7 +146,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'assets/img',
-					src: '*.{gif,jpeg,jpg,png}',
+					src: '**/*.{gif,jpeg,jpg,png}',
 					dest: 'dist/assets/img'
 				}]
 			}
@@ -196,7 +195,7 @@ module.exports = function (grunt) {
 						'*.{ico,png,txt,xml}',
 						'.htaccess',
 						'*.html',
-						'assets/font/*.{svg,ttf,eot,woff}'
+						'assets/font/**/*.{svg,ttf,eot,woff}'
 					]
 				}]
 			}

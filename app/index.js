@@ -8,7 +8,6 @@
  *  - better bower includes (eg. fastclick)
  *  - jquery CDN fallback
  *  - modernizr custom build/CDN
- *  - globbing
  *  - do I need to include normalize, h5bp, foundation & compass resets?
  *  - separate settings into settings folder inside sass folder (add sass globbing)
  *  - separate print styles and add media element for IE8-
