@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": "true",
   "dependencies": {
-	"foundation": "~5.2.0",
+	"foundation": "~5.2.1",
 	"modernizr": "latest",
 	"normalize-scss": "latest",
 
