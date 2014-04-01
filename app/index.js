@@ -10,7 +10,7 @@
  *  - jquery CDN fallback
  *  - modernizr custom build/CDN
  *  - do I need to include normalize, h5bp, foundation & compass resets?
- *  - separate settings into settings folder inside sass folder (add sass globbing)
+ *  - separate settings into settings folder inside sass folder
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
  *  - features - mp, fontello
