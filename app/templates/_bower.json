@@ -8,9 +8,7 @@
 	"normalize.css": "latest",
 
 	"respond": "latest",
-	"REM-unit-polyfill": "latest" <% /*if (includeMagnificPopup) { %>
-	"magnific-popup": "latest",<% } if (includeFontello) { %>
-	"fontello": "latest"<% }*/ %>
+	"REM-unit-polyfill": "latest"
   }
 }
 
