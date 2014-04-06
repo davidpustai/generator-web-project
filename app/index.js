@@ -12,7 +12,6 @@
  *  - separate settings into settings folder inside sass folder
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
- *  - features - mp, fontello
  *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
  *  - uncss, class names minification
  *  - README - grunt commands, file system
@@ -62,25 +61,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 		name: 'htmlTitle',
 		message: 'Your HTML <title>?',
 		default: this.appname
-	}/*, {
-		type: 'checkbox',
-		name: 'features',
-		message: 'What more would you like?',
-		choices: [{
-			name: 'Magnific Popup',
-			value: 'includeMagnificPopup',
-			checked: true
-		}, {
-			name: 'Fontello Fonts',
-			value: 'includeFontello',
-			checked: true
-		}]
-	}, {
-		type: 'confirm',
-		name: 'includeOpenSans',
-		message: 'Would you like to include Open Sans as default font?',
-		default: true
-	}*/];
+	}];
 
   this.prompt(prompts, function (answers) {
 	var features = answers.features;
