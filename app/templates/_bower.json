@@ -5,7 +5,7 @@
   "dependencies": {
 	"foundation": "~5.2.1",
 	"modernizr": "latest",
-	"normalize-scss": "latest",
+	"normalize.css": "latest",
 
 	"respond": "latest",
 	"REM-unit-polyfill": "latest" <% /*if (includeMagnificPopup) { %>

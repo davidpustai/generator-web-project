@@ -5,7 +5,6 @@
  *  - možnost setings složek
  *  - open sublime when ready
  *  - scss do složek
- *  - normalize-scss + config
  *  - better bower includes (eg. fastclick)
  *  - jquery CDN fallback
  *  - modernizr custom build/CDN
@@ -145,9 +144,8 @@ WebProjectGenerator.prototype.files = function files() {
 
   this.copy('htaccess', '.htaccess');
   this.copy('robots.txt', 'robots.txt');
-  this.copy('crossdomain.xml', 'crossdomain.xml')
+  this.copy('crossdomain.xml', 'crossdomain.xml');
 
-  this.template('normalize-settings.scss','assets/sass/_normalize-settings.scss');
   this.template('settings.scss','assets/sass/_settings.scss');
   this.copy('h5bp.scss','assets/sass/_h5bp.scss');
   this.copy('foundation.scss','assets/sass/_foundation.scss');

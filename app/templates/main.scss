@@ -1,7 +1,6 @@
 $debug-vertical-rhythm: false;
 
-@import "normalize-settings",
-		"normalize-scss/normalize",
+@import "normalize.css/normalize.css",
 		"settings",
 		"h5bp",
 		"foundation",
