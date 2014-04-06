@@ -7,7 +7,7 @@ My simple [Yeoman](http://yeoman.io) generator including [Foundation 5](http://f
 
  * [Zurb Foundation 5](http://foundation.zurb.com/)
  * [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate)
- * [normalize.css](https://github.com/JohnAlbin/normalize.css-with-sass-or-compass) (sass wersion)
+ * [normalize.css](https://github.com/necolas/normalize.css)
  * [Modernizr](https://github.com/Modernizr/Modernizr)
  * [jQuery](https://github.com/jquery/jquery)
 
