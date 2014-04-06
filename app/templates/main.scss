@@ -1,5 +1,18 @@
-@import "normalize-settings",
-		"normalize.scss/normalize",
+$debug-vertical-rhythm: false;
+
+@import "normalize.css/normalize.css",
 		"settings",
-        "h5bp",
-        "foundation";
+		"h5bp",
+		"foundation",
+		"compass/typography/vertical_rhythm",
+		"mixins/**/*";
+
+@include establish-baseline;
+
+html,
+body {
+	height: 100%;
+}
+
+/* vertical rhythm debuging */
+body { @if $debug-vertical-rhythm {background: #fff; @include debug-vertical-alignment; background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%); opacity: .5;} }

@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": "true",
   "dependencies": {
-  	"foundation": "~5.0.2",
-  	"jquery": "~2.0.0",
-  	"modernizr": "latest",
-  	"normalize.scss": "latest" <% /*if (includeMagnificPopup) { %>
-    "magnific-popup": "latest",<% } if (includeFontello) { %>
-    "fontello": "latest"<% }*/ %>
+	"foundation": "~5.2.1",
+	"modernizr": "latest",
+	"normalize.css": "latest",
+
+	"respond": "latest",
+	"REM-unit-polyfill": "latest" <% /*if (includeMagnificPopup) { %>
+	"magnific-popup": "latest",<% } if (includeFontello) { %>
+	"fontello": "latest"<% }*/ %>
   }
 }
 
