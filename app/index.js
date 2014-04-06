@@ -73,9 +73,6 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 	this.language = answers.localizeCZ ? 'cs' : 'en';
 	this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
 	this.htmlTitle = answers.htmlTitle;
-	// this.includeMagnificPopup = hasFeature('includeMagnificPopup');
-	// this.includeFontello = hasFeature('includeFontello');
-	// this.includeOpenSans = hasFeature('includeOpenSans');
 
 	cb();
   }.bind(this));
