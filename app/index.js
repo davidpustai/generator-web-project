@@ -1,6 +1,5 @@
 /*
  * TODO:
- *  - include normalize in html
  *  - h5bp via bower + add variable to settings
  *  - mixins
  *  - open sublime when ready
