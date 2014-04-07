@@ -4,7 +4,6 @@
  *  - mixins
  *  - open sublime when ready
  *  - scss to directories
- *  - better bower includes (eg. fastclick)
  *  - jquery CDN fallback
  *  - modernizr custom build/CDN
  *  - do I need to include normalize, h5bp, foundation & compass resets?
