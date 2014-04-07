@@ -1,8 +1,8 @@
 $debug-vertical-rhythm: false;
 
-@import "settings",
-		"h5bp",
-		"foundation",
+@import "settings/foundation",
+		"vendor/h5bp",
+		"vendor/foundation",
 		"compass/typography/vertical_rhythm",
 		"compass/utilities/sprites";
 

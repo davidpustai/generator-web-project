@@ -3,11 +3,9 @@
  *  - h5bp via bower + add variable to settings
  *  - mixins
  *  - open sublime when ready
- *  - scss to directories
  *  - jquery CDN fallback
  *  - modernizr custom build/CDN
  *  - do I need to include normalize, h5bp, foundation & compass resets?
- *  - separate settings into settings folder inside sass folder
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
  *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
@@ -109,6 +107,8 @@ WebProjectGenerator.prototype.assets = function assets() {
 	this.mkdir('assets/img');
 	this.mkdir('assets/js');
 	this.mkdir('assets/scss');
+	this.mkdir('assets/scss/settings');
+	this.mkdir('assets/scss/vendor');
 };
 
 WebProjectGenerator.prototype.files = function files() {
@@ -121,9 +121,9 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('robots.txt', 'robots.txt');
 	this.copy('crossdomain.xml', 'crossdomain.xml');
 
-	this.template('settings.scss','assets/scss/_settings.scss');
-	this.copy('h5bp.scss','assets/scss/_h5bp.scss');
-	this.copy('foundation.scss','assets/scss/_foundation.scss');
+	this.template('settings.scss','assets/scss/settings/_foundation.scss');
+	this.copy('h5bp.scss','assets/scss/vendor/_h5bp.scss');
+	this.copy('foundation.scss','assets/scss/vendor/_foundation.scss');
 	this.copy('main.scss','assets/scss/main.scss');
 	this.copy('ie8.scss','assets/scss/ie8.scss');
 
