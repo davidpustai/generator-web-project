@@ -1,11 +1,10 @@
 $debug-vertical-rhythm: false;
 
-@import "normalize.css/normalize.css",
-		"settings",
-		"h5bp",
-		"foundation",
+@import "settings/foundation",
+		"vendor/h5bp",
+		"vendor/foundation",
 		"compass/typography/vertical_rhythm",
-		"mixins/**/*";
+		"compass/utilities/sprites";
 
 @include establish-baseline;
 
