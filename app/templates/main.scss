@@ -4,7 +4,7 @@ $debug-vertical-rhythm: false;
 		"h5bp",
 		"foundation",
 		"compass/typography/vertical_rhythm",
-		"mixins/**/*";
+		"compass/utilities/sprites";
 
 @include establish-baseline;
 
