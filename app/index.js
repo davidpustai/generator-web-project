@@ -2,9 +2,8 @@
  * TODO:
  *  - h5bp via bower + add variable to settings
  *  - mixins
- *  - možnost setings složek
  *  - open sublime when ready
- *  - scss do složek
+ *  - scss to directories
  *  - better bower includes (eg. fastclick)
  *  - jquery CDN fallback
  *  - modernizr custom build/CDN
@@ -22,7 +21,6 @@
  *  - git initialization
  *  - Gruntfile.js - open
  *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
- *  - dploy settings at generating (dploy?)
  *
  */
 
