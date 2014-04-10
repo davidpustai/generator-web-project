@@ -1,6 +1,8 @@
 /*
  * TODO:
  *  - h5bp via bower + add variable to settings
+ *  - GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
+ *    - new task ("dploy"/"production"), because of build is sometimes being used for testing final product (don't wanna analyze this :))
  *  - mixins
  *  - open sublime when ready
  *  - modernizr custom build/CDN
@@ -13,7 +15,6 @@
  *  - humans.txt - rel attr, humans.txt, button possibility, http://humanstxt.org/Im-human.html
  *  - https://github.com/gruntjs/grunt-contrib-bump
  *  - rev
- *  - GA
  *  - git initialization
  *  - Gruntfile.js - open
  *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
