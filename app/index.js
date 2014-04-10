@@ -1,9 +1,9 @@
 /*
  * TODO:
+ *  - jquery CDN fallback
  *  - h5bp via bower + add variable to settings
  *  - mixins
  *  - open sublime when ready
- *  - jquery CDN fallback
  *  - modernizr custom build/CDN
  *  - do I need to include normalize, h5bp, foundation & compass resets?
  *  - separate print styles and add media element for IE8-
