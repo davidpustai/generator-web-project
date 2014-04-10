@@ -1,6 +1,5 @@
 /*
  * TODO:
- *  - jquery CDN fallback
  *  - h5bp via bower + add variable to settings
  *  - mixins
  *  - open sublime when ready
@@ -125,6 +124,7 @@ WebProjectGenerator.prototype.files = function files() {
 
 	this.copy('main.js', 'assets/js/main.js');
 	this.copy('plugins.js', 'assets/js/plugins.js');
+	this.copy('jquery-2.1.0.js', 'assets/js/jquery.js'); // for dev CDN fallback, for production compiled by grunt from bower_components
 	this.copy('jquery-1.8.0.js', 'assets/js/jquery-1.8.0.js');
 	this.copy('selectivizr-1.0.3b.js', 'assets/js/selectivizr-1.0.3b.js');
 };
