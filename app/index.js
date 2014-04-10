@@ -3,7 +3,6 @@
  *  - h5bp via bower + add variable to settings
  *  - mixins
  *  - open sublime when ready
- *  - jquery CDN fallback
  *  - modernizr custom build/CDN
  *  - do I need to include normalize, h5bp, foundation & compass resets?
  *  - separate print styles and add media element for IE8-
@@ -59,17 +58,13 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 	}];
 
 	this.prompt(prompts, function (answers) {
-	var features = answers.features;
+		// // manually deal with the response, get back and store the results.
+		// // we change a bit this way of doing to automatically do this in the self.prompt() method.
+		this.language = answers.localizeCZ ? 'cs' : 'en';
+		this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
+		this.htmlTitle = answers.htmlTitle;
 
-	function hasFeature(feat) { return features.indexOf(feat) !== -1; }
-
-	// // manually deal with the response, get back and store the results.
-	// // we change a bit this way of doing to automatically do this in the self.prompt() method.
-	this.language = answers.localizeCZ ? 'cs' : 'en';
-	this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
-	this.htmlTitle = answers.htmlTitle;
-
-	cb();
+		cb();
 	}.bind(this));
 };
 
@@ -98,7 +93,7 @@ WebProjectGenerator.prototype.bower = function bower() {
 WebProjectGenerator.prototype.editor = function editor() {
 	this.copy('editorconfig', '.editorconfig');
 	if (this.createSublimeTextProjectFile)
-	this.template('project.sublime-project', this._.slugify(this.appname)+'.sublime-project');
+		this.template('project.sublime-project', this._.slugify(this.appname) + '.sublime-project');
 };
 
 WebProjectGenerator.prototype.assets = function assets() {
@@ -112,7 +107,7 @@ WebProjectGenerator.prototype.assets = function assets() {
 };
 
 WebProjectGenerator.prototype.files = function files() {
-	this.copy('404_'+this.language+'.html', '404.html');
+	this.copy('404_' + this.language + '.html', '404.html');
 
 	this.copy('favicon.ico', 'favicon.ico');
 	this.copy('apple-touch-icon-precomposed.png', 'apple-touch-icon-precomposed.png');
@@ -121,14 +116,15 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('robots.txt', 'robots.txt');
 	this.copy('crossdomain.xml', 'crossdomain.xml');
 
-	this.template('settings.scss','assets/scss/settings/_foundation.scss');
-	this.copy('h5bp.scss','assets/scss/vendor/_h5bp.scss');
-	this.copy('foundation.scss','assets/scss/vendor/_foundation.scss');
-	this.copy('main.scss','assets/scss/main.scss');
-	this.copy('ie8.scss','assets/scss/ie8.scss');
+	this.template('settings.scss', 'assets/scss/settings/_foundation.scss');
+	this.copy('h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
+	this.copy('foundation.scss', 'assets/scss/vendor/_foundation.scss');
+	this.copy('main.scss', 'assets/scss/main.scss');
+	this.copy('ie8.scss', 'assets/scss/ie8.scss');
 
 	this.copy('main.js', 'assets/js/main.js');
 	this.copy('plugins.js', 'assets/js/plugins.js');
+	this.copy('jquery-2.1.0.js', 'assets/js/jquery.js'); // for dev CDN fallback, for production compiled by grunt from bower_components
 	this.copy('jquery-1.8.0.js', 'assets/js/jquery-1.8.0.js');
 	this.copy('selectivizr-1.0.3b.js', 'assets/js/selectivizr-1.0.3b.js');
 };
@@ -141,6 +137,6 @@ WebProjectGenerator.prototype.index = function index() {
 WebProjectGenerator.prototype.install = function () {
 	var done = this.async();
 	this.installDependencies({
-	callback: done
+		callback: done
 	});
 };
