@@ -28,8 +28,8 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'*.html',
-					'assets/scss/**/*.scss',
-					//'assets/css/*.css',
+					//'assets/scss/**/*.scss',
+					'assets/css/*.css',
 					'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
 					'assets/js/**/*.js'
 				]
@@ -41,19 +41,19 @@ module.exports = function (grunt) {
 			options: {
 				port: 8000,
 				livereload: 35729,
-				hostname: '0.0.0.0'
+				hostname: '0.0.0.0',
+				open: true
 			},
 			dev: {
 				options: {
-					base: '.',
-					//open: true
+					base: '.'
 				}
 			},
 			dist: {
 				options: {
-					//open: true,
 					base: 'dist',
-					livereload: false
+					livereload: false,
+					keepalive: true
 				}
 			}
 		},
@@ -112,7 +112,7 @@ module.exports = function (grunt) {
 
 		uglify: {
 			options: {
-				//mangle: {toplevel: true},
+				mangle: {toplevel: true},
 				squeeze: {dead_code: false},
 				codegen: {quote_keys: true}
 			},
@@ -142,6 +142,9 @@ module.exports = function (grunt) {
 
 		// The following *-min tasks produce minified files in the dist folder
 		imagemin: {
+			options: {
+				pngquant: true
+			},
 			dist: {
 				files: [{
 					expand: true,
@@ -166,13 +169,16 @@ module.exports = function (grunt) {
 				options: {
 					removeComments: true,
 					removeCommentsFromCDATA: true,
+					removeCDATASectionsFromCDATA: true,
 					collapseWhitespace: true,
 					collapseBooleanAttributes: true,
 					removeAttributeQuotes: true,
 					removeRedundantAttributes: true,
 					useShortDoctype: true,
 					removeEmptyAttributes: true,
-					removeOptionalTags: true
+					removeOptionalTags: true,
+					minifyJS: true,
+					minifyCSS: true
 				},
 				files: [{
 					expand: true,
@@ -204,9 +210,11 @@ module.exports = function (grunt) {
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
 			dist: [
+				'useminPrepare',
 				'compass',
 				'imagemin',
-				'svgmin'
+				'svgmin',
+				'copy:dist'
 			]
 		}
 	});
@@ -224,19 +232,17 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('serve', [
 		'build',
-		'connect:dist:keepalive'
+		'connect:dist'
 	]);
 
 	grunt.registerTask('build', [
 		'clean:dist',
-		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
 		//uncss,
 		'concat',
 		'cssmin',
 		'uglify',
-		'copy:dist',
 		'usemin',
 		'htmlmin'
 	]);
