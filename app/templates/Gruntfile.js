@@ -112,7 +112,7 @@ module.exports = function (grunt) {
 
 		uglify: {
 			options: {
-				//mangle: {toplevel: true},
+				mangle: {toplevel: true},
 				squeeze: {dead_code: false},
 				codegen: {quote_keys: true}
 			},
