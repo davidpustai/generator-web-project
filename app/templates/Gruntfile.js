@@ -207,9 +207,11 @@ module.exports = function (grunt) {
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
 			dist: [
+				'useminPrepare',
 				'compass',
 				'imagemin',
-				'svgmin'
+				'svgmin',
+				'copy:dist'
 			]
 		}
 	});
@@ -232,14 +234,12 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', [
 		'clean:dist',
-		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
 		//uncss,
 		'concat',
 		'cssmin',
 		'uglify',
-		'copy:dist',
 		'usemin',
 		'htmlmin'
 	]);
