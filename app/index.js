@@ -1,23 +1,22 @@
 /*
  * TODO:
+ *  - scss structure (components, layout, vendor, helpers) + add mixins to helpers
  *  - h5bp via bower + add variable to settings
+ *  - visuallyhidden -> vh
+ *  - humans.txt - rel attr, humans.txt, button possibility, http://humanstxt.org/Im-human.html
+ *  - uncss, class names minification
+ *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
  *  - GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
  *    - new task ("dploy"/"production"), because of build is sometimes being used for testing final product (don't wanna analyze this :))
- *  - mixins
- *  - open sublime when ready
  *  - modernizr custom build/CDN
  *  - do I need to include normalize, h5bp, foundation & compass resets?
+ *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
- *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
- *  - uncss, class names minification
- *  - README - grunt commands, file system
- *  - humans.txt - rel attr, humans.txt, button possibility, http://humanstxt.org/Im-human.html
- *  - https://github.com/gruntjs/grunt-contrib-bump
- *  - rev
  *  - git initialization
- *  - Gruntfile.js - open
- *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
+ *  - README - grunt commands, file system
+ *  - open sublime when ready
+ *  - check svgmin options
  *
  */
 
