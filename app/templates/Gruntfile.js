@@ -41,19 +41,19 @@ module.exports = function (grunt) {
 			options: {
 				port: 8000,
 				livereload: 35729,
-				hostname: '0.0.0.0'
+				hostname: '0.0.0.0',
+				open: true
 			},
 			dev: {
 				options: {
-					base: '.',
-					//open: true
+					base: '.'
 				}
 			},
 			dist: {
 				options: {
-					//open: true,
 					base: 'dist',
-					livereload: false
+					livereload: false,
+					keepalive: true
 				}
 			}
 		},
@@ -224,7 +224,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('serve', [
 		'build',
-		'connect:dist:keepalive'
+		'connect:dist'
 	]);
 
 	grunt.registerTask('build', [
