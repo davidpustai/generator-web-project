@@ -28,8 +28,8 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'*.html',
-					'assets/scss/**/*.scss',
-					//'assets/css/*.css',
+					//'assets/scss/**/*.scss',
+					'assets/css/*.css',
 					'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
 					'assets/js/**/*.js'
 				]
