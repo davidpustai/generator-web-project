@@ -1,6 +1,6 @@
 /*
  * TODO:
- *  - scss structure (components, layout, vendor, helpers) + add mixins to helpers
+ *  - delete develop branch?
  *  - h5bp via bower + add variable to settings
  *  - visuallyhidden -> vh
  *  - humans.txt - rel attr, humans.txt, button possibility, http://humanstxt.org/Im-human.html
@@ -102,6 +102,10 @@ WebProjectGenerator.prototype.assets = function assets() {
 	this.mkdir('assets/img');
 	this.mkdir('assets/js');
 	this.mkdir('assets/scss');
+
+	this.mkdir('assets/scss/components');
+	this.mkdir('assets/scss/helpers');
+	this.mkdir('assets/scss/layout');
 	this.mkdir('assets/scss/settings');
 	this.mkdir('assets/scss/vendor');
 };
@@ -116,11 +120,12 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('robots.txt', 'robots.txt');
 	this.copy('crossdomain.xml', 'crossdomain.xml');
 
-	this.template('settings.scss', 'assets/scss/settings/_foundation.scss');
-	this.copy('h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
-	this.copy('foundation.scss', 'assets/scss/vendor/_foundation.scss');
 	this.copy('main.scss', 'assets/scss/main.scss');
 	this.copy('ie8.scss', 'assets/scss/ie8.scss');
+	this.copy('settings.scss', 'assets/scss/settings/_foundation.scss');
+	this.copy('h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
+	this.copy('foundation.scss', 'assets/scss/vendor/_foundation.scss');
+	this.copy('mixins.scss', 'assets/scss/helpers/_mixins.scss');
 
 	this.copy('main.js', 'assets/js/main.js');
 	this.copy('plugins.js', 'assets/js/plugins.js');

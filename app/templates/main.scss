@@ -1,17 +1,27 @@
-$debug-vertical-rhythm: false;
+// =============================================================================
+// work with full display (usefull mainly for off-canvas)
+// =============================================================================
 
-@import "settings/foundation",
-		"vendor/h5bp",
-		"vendor/foundation",
-		"compass/typography/vertical_rhythm",
-		"compass/utilities/sprites";
+html, body { height: 100%; }
 
+// =============================================================================
+// VERTICAL RHYTHM
+// =============================================================================
+
+@import "compass/typography/vertical_rhythm";
 @include establish-baseline;
 
-html,
-body {
-	height: 100%;
-}
+// uncomment for vertical rhythm debuging
+// body { background: #fff; @include debug-vertical-alignment; background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%); opacity: .5; }
 
-/* vertical rhythm debuging */
-body { @if $debug-vertical-rhythm {background: #fff; @include debug-vertical-alignment; background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%); opacity: .5;} }
+// =============================================================================
+// FILE IMPORTS
+// =============================================================================
+
+@import
+	"settings/foundation",
+
+	"compass/utilities/sprites",
+
+	"vendor/h5bp",
+	"vendor/foundation";
