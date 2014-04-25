@@ -8,8 +8,8 @@ html, body { height: 100%; }
 // VERTICAL RHYTHM
 // =============================================================================
 
+@import "compass/typography/vertical_rhythm";
 @include establish-baseline;
-@include "compass/typography/vertical_rhythm";
 
 // uncomment for vertical rhythm debuging
 // body { background: #fff; @include debug-vertical-alignment; background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%); opacity: .5; }
@@ -21,7 +21,7 @@ html, body { height: 100%; }
 @import
 	"settings/foundation",
 
-	"compass/utilities/sprites"
+	"compass/utilities/sprites",
 
 	"vendor/h5bp",
 	"vendor/foundation";
