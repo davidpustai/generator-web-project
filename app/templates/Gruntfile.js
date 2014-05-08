@@ -1,12 +1,6 @@
 // Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
 'use strict';
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
 
 	// Project configuration
@@ -210,7 +204,6 @@ module.exports = function (grunt) {
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
 			dist: [
-				'useminPrepare',
 				'compass',
 				'imagemin',
 				'svgmin',
@@ -237,6 +230,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', [
 		'clean:dist',
+		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
 		//uncss,
