@@ -126,12 +126,12 @@ module.exports = function (grunt) {
 		},
 
 		// Performs rewrites based on rev and the useminPrepare configuration
-		 usemin: {
-			 /*options: {
-				 assetsDirs: ['assets']
-			 },*/
-			 html: ['dist/*.html']
-		 },
+		usemin: {
+			/*options: {
+				assetsDirs: ['assets']
+			},*/
+			html: ['dist/*.html']
+		},
 
 		// The following *-min tasks produce minified files in the dist folder
 		imagemin: {
