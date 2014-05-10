@@ -3,7 +3,6 @@
  *  - visuallyhidden -> vh (+ remove unneccessary/unused classes)
  *  - humans.txt + rel attr
  *  - uncss, class names minification
- *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
  *  - GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
  *    - new task ("dploy"/"production"), because of build is sometimes being used for testing final product (don't wanna analyze this :))
  *  - modernizr custom build/CDN

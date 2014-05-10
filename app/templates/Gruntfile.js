@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 		watch: {
 			compass: {
 				files: ['assets/scss/**/*.scss'],
-				tasks: ['compass', 'autoprefixer'],
+				tasks: ['compass', 'autoprefixer:dev'],
 				options: {
 					spawn: false,
 					interrupt: true
@@ -83,13 +83,30 @@ module.exports = function (grunt) {
 			options: {
 				browsers: ['last 2 version', 'ie >= 8']
 			},
-			dist: {
+			dev: {
 				files: [{
 					expand: true,
 					cwd: '.tmp',
 					src: '**/*.css',
 					dest: 'assets/css'
 				}]
+			},
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '.tmp',
+					src: '**/*.css',
+					dest: '.tmp/prefixed'
+				}]
+			}
+		},
+
+		// combine media queris
+		cmq: {
+			dist: {
+				files: {
+					'assets/css': ['.tmp/prefixed/**/*.css']
+				}
 			}
 		},
 
@@ -217,7 +234,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', [
 		'clean:server',
 		'compass',
-		'autoprefixer',
+		'autoprefixer:dev',
 		'connect:dev',
 		'watch'
 	]);
@@ -231,7 +248,8 @@ module.exports = function (grunt) {
 		'clean:dist',
 		'useminPrepare',
 		'concurrent:dist',
-		'autoprefixer',
+		'autoprefixer:dist',
+		'cmq',
 		//uncss,
 		'concat',
 		'cssmin',
