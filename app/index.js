@@ -1,5 +1,7 @@
 /*
  * TODO:
+ *  - figure margin 0
+ *  - fix livereload of css/scss
  *  - delete develop branch?
  *  - h5bp via bower + add variable to settings
  *  - visuallyhidden -> vh
