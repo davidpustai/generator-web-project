@@ -1,5 +1,6 @@
 @mixin triangle($oposite-direction, $size, $weight, $color) {
 	content: "";
+	display: block;
 	width: 0;
 	height: 0;
 	display: inline-block;
