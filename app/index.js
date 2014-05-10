@@ -1,11 +1,7 @@
 /*
  * TODO:
- *  - figure margin 0
- *  - fix livereload of css/scss
- *  - delete develop branch?
- *  - h5bp via bower + add variable to settings
- *  - visuallyhidden -> vh
- *  - humans.txt - rel attr, humans.txt, button possibility, http://humanstxt.org/Im-human.html
+ *  - visuallyhidden -> vh (+ remove unneccessary/unused classes)
+ *  - humans.txt + rel attr
  *  - uncss, class names minification
  *  - use https://github.com/buildingblocks/grunt-combine-media-queries to minify media queries to one
  *  - GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
