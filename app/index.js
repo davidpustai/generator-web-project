@@ -1,5 +1,8 @@
 /*
  * TODO:
+ *  - new Foundation
+ *  - make imagemin work
+ *  - generate readme
  *  - visuallyhidden -> vh (+ remove unneccessary/unused classes)
  *  - humans.txt + rel attr
  *  - uncss, class names minification
