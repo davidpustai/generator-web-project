@@ -1,6 +1,5 @@
 /*
  * TODO:
- *  - new Foundation
  *  - make imagemin work
  *  - generate readme
  *  - visuallyhidden -> vh (+ remove unneccessary/unused classes)
