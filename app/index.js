@@ -1,8 +1,7 @@
 /*
  * TODO:
  *  - make imagemin work
- *  - generate readme
- *  - visuallyhidden -> vh (+ remove unneccessary/unused classes)
+ *  - visuallyhidden -> vh? (+ remove unneccessary/unused classes)
  *  - humans.txt + rel attr
  *  - uncss, class names minification
  *  - GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
@@ -110,6 +109,8 @@ WebProjectGenerator.prototype.assets = function assets() {
 };
 
 WebProjectGenerator.prototype.files = function files() {
+	this.template('README.md', '_README.md');
+
 	this.copy('404_' + this.language + '.html', '404.html');
 
 	this.copy('favicon.ico', 'favicon.ico');
