@@ -11,12 +11,6 @@ My simple [Yeoman](http://yeoman.io) generator including [Foundation 5](http://f
  * [Modernizr](https://github.com/Modernizr/Modernizr)
  * [jQuery](https://github.com/jquery/jquery)
 
-<!---
-With possibility to add
-
- * Magnific Popup
- -->
-
 
 ## Getting Started
 
@@ -63,6 +57,23 @@ $ yo web-project
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+
+
+## Grunt commands
+
+ * `grunt [default]` - *use for development*
+	* compiles and prefixes scss
+	* runs local server (with live reload) at `localhost:8000`
+	* watches for changes
+
+ * `grunt build` - *use when publishnig, compiles everything to `dist` folder*
+ 	* compiles, prefixes, concats and minifies scss
+ 	* minifies media queries
+ 	* concats and minifies javascript
+ 	* minifies html
+ 	* copies favicons, browserconfigs etc.
+ 	* runs local server at `localhost:8000`
+ 	* makes everything avaliable for production in `dist` folder
 
 
 ## License

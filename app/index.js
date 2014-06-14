@@ -12,7 +12,7 @@
  *  - separate print styles and add media element for IE8-
  *  - print.scss, ie.scss (if supported)
  *  - git initialization
- *  - README - grunt commands, file system
+ *  - README - file system (to both READMEs)
  *  - open sublime when ready
  *  - check svgmin options
  *
