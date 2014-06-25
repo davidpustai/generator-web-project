@@ -109,7 +109,7 @@ WebProjectGenerator.prototype.assets = function assets() {
 };
 
 WebProjectGenerator.prototype.files = function files() {
-	this.template('README.md', '_README.md');
+	this.template('_README.md', 'README.md');
 
 	this.copy('404_' + this.language + '.html', '404.html');
 
