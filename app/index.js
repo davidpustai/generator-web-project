@@ -1,5 +1,6 @@
 /*
  * TODO:
+ *  - GULP
  *  - make imagemin work
  *  - visuallyhidden -> vh? (+ remove unneccessary/unused classes)
  *  - humans.txt + rel attr
