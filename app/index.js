@@ -1,5 +1,6 @@
 /*
  * TODO:
+ *  - better generator file system
  *  - Modernizr CDN
  *  - GULP
  *  - make imagemin work
@@ -135,6 +136,9 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
 	this.copy('foundation.scss', 'assets/scss/vendor/_foundation.scss');
 	this.copy('mixins.scss', 'assets/scss/helpers/_mixins.scss');
+
+	this.copy('z-index-settings.scss', 'assets/scss/settings/_z-index.scss');
+	this.copy('z-index-helper.scss', 'assets/scss/helpers/_z-index.scss');
 
 	this.copy('main.js', 'assets/js/main.js');
 	this.copy('plugins.js', 'assets/js/plugins.js');
