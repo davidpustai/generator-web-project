@@ -1,5 +1,6 @@
 /*
  * TODO:
+ *  - Modernizr CDN
  *  - GULP
  *  - make imagemin work
  *  - visuallyhidden -> vh? (+ remove unneccessary/unused classes)
@@ -23,6 +24,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var file = yeoman.file;
 
 
 var WebProjectGenerator = module.exports = function WebProjectGenerator(args, options, config) {
@@ -41,10 +43,9 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 	console.log('Foundation5 with Compass and HTML5 Boilerplate are prepared!');
 
 	var prompts = [{
-		type: 'confirm',
-		name: 'localizeCZ',
-		message: 'Would you like to use Czech?',
-		default: false
+		name: 'language',
+		message: 'Which language would you like to use? (ISO abbreviation)',
+		default: 'en'
 	}, {
 		type: 'confirm',
 		name: 'createSublimeTextProjectFile',
@@ -59,7 +60,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 	this.prompt(prompts, function (answers) {
 		// // manually deal with the response, get back and store the results.
 		// // we change a bit this way of doing to automatically do this in the self.prompt() method.
-		this.language = answers.localizeCZ ? 'cs' : 'en';
+		this.language = answers.language;
 		this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
 		this.htmlTitle = answers.htmlTitle;
 
@@ -91,8 +92,9 @@ WebProjectGenerator.prototype.bower = function bower() {
 
 WebProjectGenerator.prototype.editor = function editor() {
 	this.copy('editorconfig', '.editorconfig');
-	if (this.createSublimeTextProjectFile)
+	if (this.createSublimeTextProjectFile) {
 		this.template('project.sublime-project', this._.slugify(this.appname) + '.sublime-project');
+	}
 };
 
 WebProjectGenerator.prototype.assets = function assets() {
@@ -112,7 +114,13 @@ WebProjectGenerator.prototype.assets = function assets() {
 WebProjectGenerator.prototype.files = function files() {
 	this.template('_README.md', 'README.md');
 
-	this.copy('404_' + this.language + '.html', '404.html');
+	if (file.exists(this.src._base + '/404_' + this.language + '.html')) {
+		this.copy('404_' + this.language + '.html', '404.html');
+	}
+	else {
+		console.log('There is not 404.html error page in your choosen language, I\'m including english version.');
+		this.copy('404_en.html', '404.html');
+	}
 
 	this.copy('favicon.ico', 'favicon.ico');
 	this.copy('apple-touch-icon-precomposed.png', 'apple-touch-icon-precomposed.png');
