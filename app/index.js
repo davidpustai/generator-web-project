@@ -1,9 +1,11 @@
 /*
  * TODO:
+ *  - remove foundation components comment
+ *  - jquery 1.8.0 when building!!!
  *  - better generator file system
- *  - Modernizr CDN
  *  - GULP
  *  - make imagemin work
+ *  - Modernizr CDN
  *  - visuallyhidden -> vh? (+ remove unneccessary/unused classes)
  *  - humans.txt + rel attr
  *  - uncss, class names minification
