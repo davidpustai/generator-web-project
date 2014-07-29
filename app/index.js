@@ -1,7 +1,5 @@
 /*
  * TODO:
- *  - remove foundation components comment
- *  - jquery 1.8.0 when building!!!
  *  - better generator file system
  *  - GULP
  *  - picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)

@@ -211,7 +211,8 @@ module.exports = function (grunt) {
 						'*.{ico,png,txt,xml}',
 						'.htaccess',
 						'*.html',
-						'assets/font/**/*.{svg,ttf,eot,woff}'
+						'assets/font/**/*.{svg,ttf,eot,woff}',
+						'assets/js/jquery-1.8.0.js'
 					]
 				}]
 			}
