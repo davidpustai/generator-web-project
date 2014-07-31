@@ -1,7 +1,9 @@
 /*
  * TODO:
+ *  - breakpint mixin (http://codepen.io/chriscoyier/blog/codepens-css)
  *  - better generator file system
  *  - GULP
+ *  - https://github.com/yeoman/grunt-usemin#blockreplacements for
  *  - picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
  *  - make imagemin work
  *  - Modernizr CDN
