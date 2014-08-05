@@ -3,7 +3,6 @@
  *  - TODO.md
  *  - update to new h5bp structure
  *  - 404 in one with ifs
- *  - breakpint mixin (http://codepen.io/chriscoyier/blog/codepens-css)
  *  - better generator file system
  *  - drop compass ?
  *  - drop Foundation ?

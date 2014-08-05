@@ -95,3 +95,10 @@
 	::-moz-placeholder { @content; }
 	:-ms-input-placeholder { @content; }
 }
+
+/*
+ *	Breakpoint mixin for handeling @media (inspired by http://codepen.io/chriscoyier/blog/codepens-css)
+ */
+@mixin bp($breakpoint) {
+	@media #{$breakpoint} { @content; }
+}
