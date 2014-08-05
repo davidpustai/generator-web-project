@@ -2,8 +2,6 @@
  * TODO:
  *  - TODO.md
  *  - update to new h5bp structure
- *  - 404 in one with ifs
- *  - better generator file system
  *  - drop compass ?
  *  - drop Foundation ?
  *  - https://github.com/filamentgroup/grunt-criticalcss?utm_source=Responsive+Design+Weekly&utm_campaign=6ead7a5573-Responsive_Design_Weekly_120&utm_medium=email&utm_term=0_df65b6d7c8-6ead7a5573-58722333&goal=0_df65b6d7c8-6ead7a5573-58722333
@@ -86,23 +84,23 @@ WebProjectGenerator.prototype.packageJSON = function packageJSON() {
 };
 
 WebProjectGenerator.prototype.SassConfig = function SassConfig() {
-	this.copy('config.rb', 'config.rb');
+	this.copy('configs/config.rb', 'config.rb');
 };
 
 WebProjectGenerator.prototype.git = function git() {
-	this.copy('gitignore', '.gitignore');
-	this.copy('gitattributes', '.gitattributes');
+	this.copy('configs/gitignore', '.gitignore');
+	this.copy('configs/gitattributes', '.gitattributes');
 };
 
 WebProjectGenerator.prototype.bower = function bower() {
-	this.copy('bowerrc', '.bowerrc');
+	this.copy('configs/bowerrc', '.bowerrc');
 	this.template('_bower.json', 'bower.json');
 };
 
 WebProjectGenerator.prototype.editor = function editor() {
-	this.copy('editorconfig', '.editorconfig');
+	this.copy('configs/editorconfig', '.editorconfig');
 	if (this.createSublimeTextProjectFile) {
-		this.template('project.sublime-project', this._.slugify(this.appname) + '.sublime-project');
+		this.template('configs/project.sublime-project', this._.slugify(this.appname) + '.sublime-project');
 	}
 };
 
@@ -123,36 +121,36 @@ WebProjectGenerator.prototype.assets = function assets() {
 WebProjectGenerator.prototype.files = function files() {
 	this.template('_README.md', 'README.md');
 
-	if (file.exists(this.src._base + '/404_' + this.language + '.html')) {
-		this.copy('404_' + this.language + '.html', '404.html');
+	if (file.exists(this.src._base + '/404/404_' + this.language + '.html')) {
+		this.copy('404/404_' + this.language + '.html', '404.html');
 	}
 	else {
 		console.log('There is not 404.html error page in your choosen language, I\'m including english version.');
-		this.copy('404_en.html', '404.html');
+		this.copy('404/404_en.html', '404.html');
 	}
 
-	this.copy('favicon.ico', 'favicon.ico');
-	this.copy('apple-touch-icon-precomposed.png', 'apple-touch-icon-precomposed.png');
+	this.copy('icons/favicon.ico', 'favicon.ico');
+	this.copy('icons/apple-touch-icon-precomposed.png', 'apple-touch-icon-precomposed.png');
 
-	this.copy('htaccess', '.htaccess');
-	this.copy('robots.txt', 'robots.txt');
-	this.copy('crossdomain.xml', 'crossdomain.xml');
+	this.copy('configs/htaccess', '.htaccess');
+	this.copy('configs/robots.txt', 'robots.txt');
+	this.copy('configs/crossdomain.xml', 'crossdomain.xml');
 
-	this.copy('main.scss', 'assets/scss/main.scss');
-	this.copy('ie8.scss', 'assets/scss/ie8.scss');
-	this.copy('settings.scss', 'assets/scss/settings/_foundation.scss');
-	this.copy('h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
-	this.copy('foundation.scss', 'assets/scss/vendor/_foundation.scss');
-	this.copy('mixins.scss', 'assets/scss/helpers/_mixins.scss');
+	this.copy('scss/main.scss', 'assets/scss/main.scss');
+	this.copy('scss/ie8.scss', 'assets/scss/ie8.scss');
+	this.copy('scss/settings.scss', 'assets/scss/settings/_foundation.scss');
+	this.copy('scss/h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
+	this.copy('scss/foundation.scss', 'assets/scss/vendor/_foundation.scss');
+	this.copy('scss/mixins.scss', 'assets/scss/helpers/_mixins.scss');
 
-	this.copy('z-index-settings.scss', 'assets/scss/settings/_z-index.scss');
-	this.copy('z-index-helper.scss', 'assets/scss/helpers/_z-index.scss');
+	this.copy('scss/z-index-settings.scss', 'assets/scss/settings/_z-index.scss');
+	this.copy('scss/z-index-helper.scss', 'assets/scss/helpers/_z-index.scss');
 
-	this.copy('main.js', 'assets/js/main.js');
-	this.copy('plugins.js', 'assets/js/plugins.js');
-	this.copy('jquery-2.1.0.js', 'assets/js/jquery.js'); // for dev CDN fallback, for production compiled by grunt from bower_components
-	this.copy('jquery-1.8.0.js', 'assets/js/jquery-1.8.0.js');
-	this.copy('selectivizr-1.0.3b.js', 'assets/js/selectivizr-1.0.3b.js');
+	this.copy('js/main.js', 'assets/js/main.js');
+	this.copy('js/plugins.js', 'assets/js/plugins.js');
+	this.copy('js/jquery-2.1.0.js', 'assets/js/jquery.js'); // for dev CDN fallback, for production compiled by grunt from bower_components
+	this.copy('js/jquery-1.8.0.js', 'assets/js/jquery-1.8.0.js');
+	this.copy('js/selectivizr-1.0.3b.js', 'assets/js/selectivizr-1.0.3b.js');
 };
 
 WebProjectGenerator.prototype.index = function index() {
