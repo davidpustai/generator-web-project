@@ -1,7 +1,13 @@
 /*
  * TODO:
+ *  - TODO.md
+ *  - update to new h5bp structure
+ *  - 404 in one with ifs
  *  - breakpint mixin (http://codepen.io/chriscoyier/blog/codepens-css)
  *  - better generator file system
+ *  - drop compass ?
+ *  - drop Foundation ?
+ *  - https://github.com/filamentgroup/grunt-criticalcss?utm_source=Responsive+Design+Weekly&utm_campaign=6ead7a5573-Responsive_Design_Weekly_120&utm_medium=email&utm_term=0_df65b6d7c8-6ead7a5573-58722333&goal=0_df65b6d7c8-6ead7a5573-58722333
  *  - GULP
  *  - https://github.com/yeoman/grunt-usemin#blockreplacements for
  *  - picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
