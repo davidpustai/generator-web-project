@@ -81,7 +81,7 @@ module.exports = function (grunt) {
 		// Add vendor prefixed styles
 		autoprefixer: {
 			options: {
-				browsers: ['last 2 version', 'ie >= 8']
+				browsers: ['last 2 version', 'ie >= 8', 'Android 3'] // add Android 3 for Android 4.3- gradients
 			},
 			dev: {
 				files: [{
