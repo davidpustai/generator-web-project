@@ -1,5 +1,6 @@
 /*
  * TODO:
+ *  - $button-bg -> $button-bg-color
  *  - https://github.com/filamentgroup/grunt-criticalcss
  *  - GULP + comment
  *  - grunt modernizr (webapp)
@@ -20,7 +21,7 @@
  *  - modernizr custom build/CDN
  *  - do I need to include normalize, h5bp, foundation & compass resets?
  *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
- *  - separate print styles and add media element for IE8-
+ *  - separate print styles and add media element for IE8- (https://github.com/bpscott/breakup)
  *  - print.scss, ie.scss (if supported)
  *  - git initialization
  *  - README - file system (to both READMEs)
