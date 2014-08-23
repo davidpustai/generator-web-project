@@ -147,6 +147,7 @@ WebProjectGenerator.prototype.files = function files() {
 
 	this.copy('scss/mixins.scss', 'assets/scss/helpers/_mixins.scss');
 	this.copy('scss/placeholders.scss', 'assets/scss/helpers/_placeholders.scss');
+	this.copy('scss/shame.scss', 'assets/scss/helpers/_shame.scss');
 
 	this.copy('scss/z-index-settings.scss', 'assets/scss/settings/_z-index.scss');
 	this.copy('scss/z-index-helper.scss', 'assets/scss/helpers/_z-index.scss');
