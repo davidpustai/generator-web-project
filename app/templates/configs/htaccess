@@ -1,4 +1,4 @@
-# Apache Server Configs v2.7.0 | MIT License
+# Apache Server Configs v2.8.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
 
 # (!) Using `.htaccess` files slows down Apache, therefore, if you have access
@@ -10,14 +10,14 @@
 # ##############################################################################
 
 # ------------------------------------------------------------------------------
-# | Cross-domain requests                                                      |
+# | Cross-origin requests                                                      |
 # ------------------------------------------------------------------------------
 
 # Allow cross-origin requests.
 
 # http://enable-cors.org/
 # http://www.w3.org/TR/cors/
-# http://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
+# https://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
 
 # <IfModule mod_headers.c>
 #     Header set Access-Control-Allow-Origin "*"
@@ -32,6 +32,22 @@
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
 </IfModule>
+
+# ------------------------------------------------------------------------------
+# | Cross-origin resource timing                                               |
+# ------------------------------------------------------------------------------
+
+# Allow cross-origin access to the timing information for all resources.
+
+# If a resource isn't served with a `Timing-Allow-Origin` header that would
+# allow its timing information to be shared with the current document, some of
+# the attributes of the `PerformanceResourceTiming` object will be set to zero.
+
+# http://www.w3.org/TR/resource-timing/
+
+# <IfModule mod_headers.c>
+#     Header set Timing-Allow-Origin: "*"
+# </IfModule>
 
 # ------------------------------------------------------------------------------
 # | CORS-enabled images                                                        |
@@ -78,7 +94,7 @@ Options -MultiViews
 # Customize what Apache returns to the client in case of an error.
 # http://httpd.apache.org/docs/current/mod/core.html#errordocument
 
-ErrorDocument 404 /404.html
+# ErrorDocument 404 /404.html
 
 
 # ##############################################################################
@@ -229,6 +245,7 @@ AddDefaultCharset utf-8
                      .js \
                      .json \
                      .jsonld \
+                     .rdf \
                      .rss \
                      .topojson \
                      .vtt \
@@ -245,22 +262,42 @@ AddDefaultCharset utf-8
 # | Rewrite engine                                                             |
 # ------------------------------------------------------------------------------
 
-# Turn on the rewrite engine and enable the `FollowSymLinks` option
-# (this is necessary in order for the following directives to work).
-
-# If your web host doesn't allow the `FollowSymlinks` option, you may need to
-# comment it out and use `Options +SymLinksIfOwnerMatch`, but be aware of the
-# performance impact.
-# http://httpd.apache.org/docs/current/misc/perf-tuning.html#symlinks
-
-# Also, some cloud hosting services require `RewriteBase` to be set.
-# http://www.rackspace.com/knowledge_center/frequently-asked-question/why-is-modrewrite-not-working-on-my-site
+# (1) Turn on the rewrite engine
+#     (this is necessary in order for the `RewriteRule` directives to work).
+#     http://httpd.apache.org/docs/current/mod/mod_rewrite.html#RewriteEngine
+#
+# (2) Enable the `FollowSymLinks` option if it isn't already.
+#     http://httpd.apache.org/docs/current/mod/core.html#options
+#
+# (3) If your web host doesn't allow the `FollowSymlinks` option, you may
+#     need to comment it out and use `Options +SymLinksIfOwnerMatch`, but
+#     be aware of the performance impact.
+#     http://httpd.apache.org/docs/current/misc/perf-tuning.html#symlinks
+#
+# (4) Some cloud hosting services will also require `RewriteBase` to be set.
+#     http://www.rackspace.com/knowledge_center/frequently-asked-question/why-is-modrewrite-not-working-on-my-site
+#
+# (5) Depending on how your server is set up, you may need to use the
+#     `RewriteOptions` directive to enable some options for the rewrite engine.
+#     http://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewriteoptions
 
 <IfModule mod_rewrite.c>
-    Options +FollowSymlinks
-  # Options +SymLinksIfOwnerMatch
+
+    # (1)
     RewriteEngine On
-  # RewriteBase /
+
+    # (2)
+    Options +FollowSymlinks
+
+    # (3)
+    # Options +SymLinksIfOwnerMatch
+
+    # (4)
+    # RewriteBase /
+
+    # (5)
+    # RewriteOptions <options>
+
 </IfModule>
 
 # ------------------------------------------------------------------------------
@@ -529,11 +566,12 @@ AddDefaultCharset utf-8
 # The following header ensures that browser will ONLY connect to your server
 # via HTTPS, regardless of what the users type in the address bar.
 
-# http://tools.ietf.org/html/draft-ietf-websec-strict-transport-sec-14#section-6.1
-# http://www.html5rocks.com/en/tutorials/security/transport-layer-security/
-
 # IMPORTANT: Remove the `includeSubDomains` optional directive if the subdomains
 # are not using HTTPS.
+
+# http://tools.ietf.org/html/draft-ietf-websec-strict-transport-sec-14#section-6.1
+# http://www.html5rocks.com/en/tutorials/security/transport-layer-security/
+# http://blogs.msdn.com/b/ieinternals/archive/2014/08/18/hsts-strict-transport-security-attacks-mitigations-deployment-https.aspx
 
 # <IfModule mod_headers.c>
 #     Header set Strict-Transport-Security "max-age=16070400; includeSubDomains"
@@ -572,13 +610,18 @@ AddDefaultCharset utf-8
         </IfModule>
     </IfModule>
 
-	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-	# Mark certain resources as been compressed in order to:
-	#
-	#  1) prevent Apache from recompressing them
-	#  2) ensure that they are served with the correct
-    #     `Content-Encoding` HTTP response header
+    # Map certain file types to the specified encoding type in order to
+    # make Apache serve them with the appropriate `Content-Encoding` HTTP
+    # response header (this will NOT make Apache compress them!).
+
+    # If the following file types wouldn't be served without the appropriate
+    # `Content-Enable` HTTP response header, client applications (e.g.:
+    # browsers) wouldn't know that they first need to uncompress the response,
+    # and thus, wouldn't be able to understand the content.
+
+    # http://httpd.apache.org/docs/current/mod/mod_mime.html#addencoding
 
     <IfModule mod_mime.c>
         AddEncoding gzip              svgz
@@ -598,7 +641,9 @@ AddDefaultCharset utf-8
                                       "application/json" \
                                       "application/ld+json" \
                                       "application/manifest+json" \
+                                      "application/rdf+xml" \
                                       "application/rss+xml" \
+                                      "application/schema+json" \
                                       "application/vnd.geo+json" \
                                       "application/vnd.ms-fontobject" \
                                       "application/x-font-ttf" \
@@ -611,6 +656,7 @@ AddDefaultCharset utf-8
                                       "text/cache-manifest" \
                                       "text/css" \
                                       "text/html" \
+                                      "text/javascript" \
                                       "text/plain" \
                                       "text/vtt" \
                                       "text/x-component" \
@@ -664,6 +710,7 @@ FileETag None
   # Data interchange
     ExpiresByType application/json                      "access plus 0 seconds"
     ExpiresByType application/ld+json                   "access plus 0 seconds"
+    ExpiresByType application/schema+json               "access plus 0 seconds"
     ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
     ExpiresByType application/xml                       "access plus 0 seconds"
     ExpiresByType text/xml                              "access plus 0 seconds"
@@ -679,6 +726,7 @@ FileETag None
 
   # JavaScript
     ExpiresByType application/javascript                "access plus 1 year"
+    ExpiresByType text/javascript                       "access plus 1 year"
 
   # Manifest files
     ExpiresByType application/manifest+json             "access plus 1 year"
@@ -696,6 +744,7 @@ FileETag None
 
   # Web feeds
     ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rdf+xml                   "access plus 1 hour"
     ExpiresByType application/rss+xml                   "access plus 1 hour"
 
   # Web fonts
@@ -744,7 +793,7 @@ FileETag None
 #
 #     <FilesMatch "\.combined\.js$">
 #         Options +Includes
-#         AddOutputFilterByType INCLUDES application/javascript
+#         AddOutputFilterByType INCLUDES application/javascript text/javascript
 #         SetOutputFilter INCLUDES
 #     </FilesMatch>
 #
