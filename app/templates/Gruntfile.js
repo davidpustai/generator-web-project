@@ -5,7 +5,9 @@ module.exports = function (grunt) {
 
 	// Project configuration
 	grunt.initConfig({
-
+		// ===============================================================
+		// WATCH
+		// ===============================================================
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
 			compass: {
@@ -30,6 +32,9 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// ===============================================================
+		// SERVER
+		// ===============================================================
 		// The actual grunt server settings
 		connect: {
 			options: {
@@ -52,6 +57,9 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// ===============================================================
+		// CLEAN
+		// ===============================================================
 		// Empties folders to start fresh
 		clean: {
 			dist: {
@@ -67,6 +75,9 @@ module.exports = function (grunt) {
 			server: '.tmp'
 		},
 
+		// ===============================================================
+		// CSS
+		// ===============================================================
 		// Compiles Sass to CSS and generates necessary files if requested
 		compass: {
 			dist: {
@@ -101,7 +112,7 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// combine media queris
+		// Combine media queris
 		cmq: {
 			dist: {
 				files: {
@@ -109,17 +120,6 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-
-		/*uncss: {
-			dist: {
-				options: {
-					//stylesheets: ['assets/css/main.css']
-				},
-				files: {
-					'css/tidy.css': ['*.html']
-				}
-			}
-		},*/
 
 		uglify: {
 			options: {
@@ -132,6 +132,9 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// ===============================================================
+		// USEMIN - CSS + JS + HTML rewrites
+		// ===============================================================
 		// Reads HTML for usemin blocks to enable smart builds that automatically
 		// concat, minify and revision files. Creates configurations in memory so
 		// additional tasks can operate on them
@@ -150,6 +153,10 @@ module.exports = function (grunt) {
 			html: ['dist/*.html']
 		},
 
+
+		// ===============================================================
+		// IMAGES
+		// ===============================================================
 		// The following *-min tasks produce minified files in the dist folder
 		imagemin: {
 			dist: {
@@ -171,6 +178,10 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
+
+		// ===============================================================
+		// HTML
+		// ===============================================================
 		htmlmin: {
 			dist: {
 				options: {
@@ -196,6 +207,9 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// ===============================================================
+		// FONTS, HTML, ETC
+		// ===============================================================
 		// Copies remaining files to places other tasks can use
 		copy: {
 			dist: {
@@ -214,6 +228,10 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
+
+	// ===============================================================
+	// TASKS
+	// ===============================================================
 
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
@@ -248,7 +266,6 @@ module.exports = function (grunt) {
 		'concurrent:dist',
 		'autoprefixer:dist',
 		'cmq',
-		//uncss,
 		'concat',
 		'cssmin',
 		'uglify',
