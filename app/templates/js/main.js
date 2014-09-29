@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 	// initialize foundation
 	$(this).foundation();
 });
