@@ -1,7 +1,6 @@
 /*
  * TODO:
  *  - line-height to 1.5!!!!
- *  - font-weight vars duplicity in foundation settings
  *  - https://github.com/filamentgroup/grunt-criticalcss
  *  - GULP + comment
  *  - grunt modernizr (webapp)
