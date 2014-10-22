@@ -1,19 +1,14 @@
 // =============================================================================
-// VERTICAL RHYTHM
-// =============================================================================
-
-@import "compass/typography/vertical_rhythm";
-@include establish-baseline;
-
-// uncomment for vertical rhythm debuging
-// body { background: #fff; @include debug-vertical-alignment; background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%); opacity: .5; }
-
-// =============================================================================
 // FILE IMPORTS
 // =============================================================================
 
 @import
-	"settings/foundation",
+	"helpers/functions",
+
+	"settings/sizes",
+	"settings/media",
+	"settings/colors",
+	"settings/type",
 	"settings/z-index",
 
 	"compass/utilities/sprites",
@@ -23,6 +18,8 @@
 	"helpers/z-index",
 
 	"vendor/h5bp",
-	"vendor/foundation",
+	"helpers/base",
+
+	// your components goes here
 
 	"helpers/shame";

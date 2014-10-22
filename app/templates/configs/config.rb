@@ -1,7 +1,6 @@
 # Require any additional compass plugins here.
 require 'sass-globbing'
 
-add_import_path "bower_components/foundation/scss"
 add_import_path "bower_components"
 
 # Sass Directories

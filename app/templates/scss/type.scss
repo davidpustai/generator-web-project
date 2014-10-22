@@ -1,0 +1,15 @@
+// FONT-WEIGHT VARIABLES
+$fw-normal: normal;
+
+// BASE
+// The default font-size is set to 16px of the browser style sheet (usually 16px)
+// for compatibility with browser-based text zoom or user-set defaults.
+
+// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
+// If you want your base font-size to be different and not have it affect the grid breakpoints,
+// set $rem-base to $base-font-size and make sure $base-font-size is a px value.
+$base-font-size: 16px;
+$base-line-height: 150%;
+
+$body-font-color: #222;
+$body-font-family: Helvetica, sans-serif;

@@ -1,15 +1,15 @@
 /*
  * TODO:
- *  - line-height to 1.5!!!!
+ *  - better file system (folders inside scss etc.)
+ *  - browser support into README
+ *  - https://github.com/dciccale/grunt-processhtml
  *  - https://github.com/filamentgroup/grunt-criticalcss
  *  - GULP + comment
  *  - grunt modernizr (webapp)
  *  - sass source maps
- *  - make imagemin work
  *  - TODO.md
  *  - update to new h5bp structure
  *  - drop compass ?
- *  - drop Foundation ?
  *  - https://github.com/yeoman/grunt-usemin#blockreplacements for
  *  - picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
  *  - Modernizr CDN
@@ -19,7 +19,7 @@
  *  - GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
  *    - new task ("dploy"/"production"), because of build is sometimes being used for testing final product (don't wanna analyze this :))
  *  - modernizr custom build/CDN
- *  - do I need to include normalize, h5bp, foundation & compass resets?
+ *  - do I need to include normalize, h5bp, _base.scss & compass resets?
  *  - support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
  *  - separate print styles and add media element for IE8- (https://github.com/bpscott/breakup)
  *  - print.scss, ie.scss (if supported)
@@ -50,7 +50,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
 	// welcome message
 	console.log(this.yeoman);
-	console.log('Foundation5 with Compass and HTML5 Boilerplate are prepared!');
+	console.log('Project with Compass and HTML5 Boilerplate are prepared!');
 
 	var prompts = [{
 		name: 'language',
@@ -141,20 +141,24 @@ WebProjectGenerator.prototype.files = function files() {
 
 	this.copy('scss/main.scss', 'assets/scss/main.scss');
 	this.copy('scss/ie8.scss', 'assets/scss/ie8.scss');
-	this.copy('scss/settings.scss', 'assets/scss/settings/_foundation.scss');
 	this.copy('scss/h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
-	this.copy('scss/foundation.scss', 'assets/scss/vendor/_foundation.scss');
 
+	this.copy('scss/sizes.scss', 'assets/scss/settings/_sizes.scss');
+	this.copy('scss/media.scss', 'assets/scss/settings/_media.scss');
+	this.copy('scss/colors.scss', 'assets/scss/settings/_colors.scss');
+	this.copy('scss/type.scss', 'assets/scss/settings/_type.scss');
+	this.copy('scss/z-index-settings.scss', 'assets/scss/settings/_z-index.scss');
+
+	this.copy('scss/functions.scss', 'assets/scss/helpers/_functions.scss');
 	this.copy('scss/mixins.scss', 'assets/scss/helpers/_mixins.scss');
 	this.copy('scss/placeholders.scss', 'assets/scss/helpers/_placeholders.scss');
-	this.copy('scss/shame.scss', 'assets/scss/helpers/_shame.scss');
-
-	this.copy('scss/z-index-settings.scss', 'assets/scss/settings/_z-index.scss');
 	this.copy('scss/z-index-helper.scss', 'assets/scss/helpers/_z-index.scss');
+	this.copy('scss/base.scss', 'assets/scss/helpers/_base.scss');
+	this.copy('scss/shame.scss', 'assets/scss/helpers/_shame.scss');
 
 	this.copy('js/main.js', 'assets/js/main.js');
 	this.copy('js/plugins.js', 'assets/js/plugins.js');
-	this.copy('js/jquery-2.1.0.js', 'assets/js/jquery.js'); // for dev CDN fallback, for production compiled by grunt from bower_components
+	this.copy('js/jquery-2.1.0.js', 'assets/js/jquery-2.1.0.js');
 	this.copy('js/jquery-1.8.0.js', 'assets/js/jquery-1.8.0.js');
 	this.copy('js/selectivizr-1.0.3b.js', 'assets/js/selectivizr-1.0.3b.js');
 };

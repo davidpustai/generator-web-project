@@ -127,8 +127,8 @@ module.exports = function (grunt) {
 				codegen: {quote_keys: true}
 			},
 			jquery: {
-				src: 'bower_components/jquery/dist/jquery.min.js',
-				dest: 'dist/assets/js/jquery.js'
+				src: 'assets/js/jquery-2.1.0.js',
+				dest: 'dist/assets/js/jquery-2.1.0.js'
 			}
 		},
 

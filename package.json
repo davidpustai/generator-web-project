@@ -1,7 +1,7 @@
 {
   "name": "generator-web-project",
   "version": "0.5.2",
-  "description": "My simple generator for [Yeoman](http://yeoman.io) including Foundation 5 and more stuff.",
+  "description": "My simple generator for [Yeoman](http://yeoman.io)",
   "keywords": [
     "yeoman-generator"
   ],

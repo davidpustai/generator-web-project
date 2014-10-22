@@ -1,11 +1,10 @@
 # Web project generator [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-My simple [Yeoman](http://yeoman.io) generator including [Foundation 5](http://foundation.zurb.com/) and more stuff.
+My simple [Yeoman](http://yeoman.io) generator.
 
 
 ## I'm using
 
- * [Zurb Foundation 5](http://foundation.zurb.com/)
  * [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate)
  * [normalize.css](https://github.com/necolas/normalize.css)
  * [Modernizr](https://github.com/Modernizr/Modernizr)

@@ -21,4 +21,24 @@
     }
 }());
 
-// Place any jQuery/helper plugins in here.
+// private Fast Selector wrapper,
+// returns jQuery object. Only use where
+// getElementById is not available.
+var S = function (selector, context) {
+	if (typeof selector === 'string') {
+		if (context) {
+			var cont;
+			if (context.jquery) {
+				cont = context[0];
+				if (!cont) return context;
+			} else {
+				cont = context;
+			}
+			return $(cont.querySelectorAll(selector));
+		}
+
+		return $(document.querySelectorAll(selector));
+	}
+
+	return $(selector, context);
+};
