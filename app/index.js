@@ -1,5 +1,10 @@
 /*
  * TODO:
+ *  - js helpers into some foundation
+ *  - templating, e. g. scripts include etc.
+ *  - performance test task - psi, colorguard
+ *  - LICENSE
+ *  - better bp()
  *  - better file system (folders inside scss etc.)
  *  - browser support into README
  *  - https://github.com/dciccale/grunt-processhtml
