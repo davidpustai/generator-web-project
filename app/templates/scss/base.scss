@@ -52,6 +52,11 @@ img {
 // Global resets for forms
 //
 
+// Make cursor pointer when hovering over label
+label {
+	cursor: pointer;
+}
+
 // Make sure textarea takes on height automatically
 textarea {
 	height: auto;
