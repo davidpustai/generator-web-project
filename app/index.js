@@ -138,7 +138,7 @@ WebProjectGenerator.prototype.files = function files() {
 	}
 
 	this.copy('icons/favicon.ico', 'favicon.ico');
-	this.copy('icons/apple-touch-icon-precomposed.png', 'apple-touch-icon-precomposed.png');
+	this.copy('icons/apple-touch-icon.png', 'apple-touch-icon.png');
 
 	this.copy('configs/htaccess', '.htaccess');
 	this.copy('configs/robots.txt', 'robots.txt');
