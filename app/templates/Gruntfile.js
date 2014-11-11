@@ -72,7 +72,7 @@ module.exports = function (grunt) {
 					]
 				}]
 			},
-			server: '.tmp'
+			dev: '.tmp'
 		},
 
 		// ===============================================================
@@ -256,7 +256,7 @@ module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask('default', [
-		'clean:server',
+		'clean:dev',
 		'compass',
 		'autoprefixer:dev',
 		'connect:dev',

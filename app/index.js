@@ -2,7 +2,6 @@
  * TODO:
  *  - group header js & css for ie8
  *  - README add using -> grunt plugins + colorguard into grunt commands, mention sprites
- *  - clean server -> dev
  *  - sitemap.xml
  *  - static versions for bower, packages?
  *  - use Travis CI
