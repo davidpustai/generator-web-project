@@ -84,7 +84,8 @@ module.exports = function (grunt) {
 				options: {
 					sassDir: 'assets/scss',
 					cssDir: '.tmp',
-					noLineComments: true
+					noLineComments: true,
+					sourcemap: true
 				}
 			}
 		},

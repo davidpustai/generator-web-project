@@ -18,7 +18,6 @@
  *  - https://github.com/filamentgroup/grunt-criticalcss
  *  - GULP + comment
  *  - grunt modernizr (webapp)
- *  - sass source maps
  *  - TODO.md
  *  - update to new h5bp structure
  *  - drop compass ?
