@@ -166,7 +166,12 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'assets/img',
-					src: '**/*.{gif,jpeg,jpg,png}',
+					src: [
+						'**/*.{gif,jpeg,jpg,png}',
+						// don't copy the original sprite files, only the sprites themself
+						'!sprites/**/*.png',
+						'sprites/*.png'
+					],
 					dest: 'dist/assets/img'
 				}]
 			}

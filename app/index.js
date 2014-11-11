@@ -115,10 +115,13 @@ WebProjectGenerator.prototype.editor = function editor() {
 WebProjectGenerator.prototype.assets = function assets() {
 	this.mkdir('assets');
 	this.mkdir('assets/font');
-	this.mkdir('assets/img');
-	this.mkdir('assets/js');
-	this.mkdir('assets/scss');
 
+	this.mkdir('assets/img');
+	this.mkdir('assets/img/sprites');
+
+	this.mkdir('assets/js');
+
+	this.mkdir('assets/scss');
 	this.mkdir('assets/scss/components');
 	this.mkdir('assets/scss/helpers');
 	this.mkdir('assets/scss/layout');
@@ -158,6 +161,7 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('scss/mixins.scss', 'assets/scss/helpers/_mixins.scss');
 	this.copy('scss/placeholders.scss', 'assets/scss/helpers/_placeholders.scss');
 	this.copy('scss/z-index-helper.scss', 'assets/scss/helpers/_z-index.scss');
+	this.copy('scss/sprites.scss', 'assets/scss/helpers/_sprites.scss');
 	this.copy('scss/base.scss', 'assets/scss/helpers/_base.scss');
 	this.copy('scss/shame.scss', 'assets/scss/helpers/_shame.scss');
 
