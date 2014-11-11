@@ -1,11 +1,20 @@
 /*
  * TODO:
+ *  - group header js & css for ie8
+ *  - http://codepen.io/chriscoyier/blog/some-mini-sass-mixins-i-like
+ *  - README add using -> grunt plugins + colorguard into grunt commands, mention sprites
+ *  - clean server -> dev
+ *  - sitemap.xml
+ *  - static versions for bower, packages?
+ *  - use Travis CI
  *  - js helpers into some foundation
  *  - templating, e. g. scripts include etc.
  *  - performance test task - psi, colorguard
+ *  - latest jQuery? (3.0 Compact asap it comes out?)
  *  - LICENSE
  *  - better bp()
  *  - better file system (folders inside scss etc.)
+ *  - requirements into README (sass + compass version)
  *  - browser support into README
  *  - https://github.com/dciccale/grunt-processhtml
  *  - https://github.com/filamentgroup/grunt-criticalcss
