@@ -1,7 +1,6 @@
 /*
  * TODO:
  *  - group header js & css for ie8
- *  - http://codepen.io/chriscoyier/blog/some-mini-sass-mixins-i-like
  *  - README add using -> grunt plugins + colorguard into grunt commands, mention sprites
  *  - clean server -> dev
  *  - sitemap.xml
