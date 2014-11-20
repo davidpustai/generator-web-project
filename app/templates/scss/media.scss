@@ -1,0 +1,11 @@
+/*
+ * Map of breakpoints, use with @include bp(<name>).
+ * Key in map is the <name> used in the mixin,
+ * value in map is a list containing: first the breakpoint, second if you want to generate js meta tag helper
+ */
+
+$breakpoints: (
+
+);
+
+@include js-media-helpers($breakpoints);

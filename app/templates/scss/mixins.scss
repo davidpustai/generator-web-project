@@ -96,10 +96,25 @@
 }
 
 /*
- *	Breakpoint mixin for handeling @media (inspired by http://codepen.io/chriscoyier/blog/codepens-css)
+ * Breakpoint mixin for handeling min-width @media (inspired by http://codepen.io/chriscoyier/blog/codepens-css)
+ * Prints: @media only screen and (min-width: Xem) { ... }
  */
 @mixin bp($breakpoint) {
-	@media #{$breakpoint} { @content; }
+	@media #{"only screen and (min-width: #{nth(map-get($breakpoints, $breakpoint), 1)})"} { @content; }
+}
+
+/*
+ * Generates js media helpers for breakpoint consistency between scss & js
+ */
+@mixin js-media-helpers($breakpoints) {
+	@each $key, $value in $breakpoints {
+		// check if the heleper is wanted
+		@if nth($value, 2) {
+			meta.mq-#{$key} {
+				font-family: "/only screen and (min-width: #{nth($value, 1)})/";
+			}
+		}
+	}
 }
 
 /*
