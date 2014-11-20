@@ -19,6 +19,9 @@
  	* copies favicons, browserconfigs etc.
  	* runs local server at `localhost:8000`
  	* makes everything avaliable for production in `dist` folder
+ * `grunt serve` - *use for production build review*
+ 	* builds the project with `build` task
+ 	* runs local server at `localhost:8000`
 
 ***
 Generated via [Yeoman](http://yeoman.io) with [this generator](https://github.com/davidpustai/generator-web-project).

@@ -74,6 +74,10 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
  	* runs local server at `localhost:8000`
  	* makes everything avaliable for production in `dist` folder
 
+ * `grunt serve` - *use for production build review*
+ 	* builds the project with `build` task
+ 	* runs local server at `localhost:8000`
+
 
 ## License
 
