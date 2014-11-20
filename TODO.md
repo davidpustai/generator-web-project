@@ -1,7 +1,7 @@
 # TODO
 
+* no-bulleter
 * static versions for bower, packages?
-* better bp()
 * sitemap.xml
 * use Travis CI
 * js helpers into some foundation
@@ -42,4 +42,3 @@
 * support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
 * separate print styles and add media element for IE8- (https://github.com/bpscott/breakup)
 * print.scss, ie.scss (if supported)
-
