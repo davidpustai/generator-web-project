@@ -1,6 +1,6 @@
 {
   "name": "generator-web-project",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "My simple generator for [Yeoman](http://yeoman.io)",
   "keywords": [
     "yeoman-generator"
