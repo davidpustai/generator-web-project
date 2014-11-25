@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": "true",
   "dependencies": {
-  	"fastclick": "latest",
-	"modernizr": "latest",
-	"normalize.css": "latest",
+  "fastclick": "latest",
+	  "modernizr": "latest",
+	  "normalize.css": "latest",
 
-	"respond": "latest",
-	"REM-unit-polyfill": "latest"
+	  "respond": "latest",
+	  "REM-unit-polyfill": "latest"
   }
 }
 
