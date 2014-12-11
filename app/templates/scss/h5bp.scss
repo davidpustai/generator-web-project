@@ -62,17 +62,6 @@ textarea {
 }
 
 /* ==========================================================================
-   Helper classes
-   ========================================================================== */
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
-.visuallyhidden {
-    @extend %visuallyhidden;
-}
-
-/* ==========================================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
