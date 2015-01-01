@@ -6,7 +6,10 @@ html, body { height: 100%; }
 *:before,
 *:after {
 	box-sizing: border-box;
+	margin: 0; // margin reset
 }
+// Owly margins
+* + * { margin: $owly-margin 0 0; }
 
 html,
 body { font-size: $base-font-size; }
