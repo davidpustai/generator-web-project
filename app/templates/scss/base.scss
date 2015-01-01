@@ -1,4 +1,3 @@
-// Must be 100% for off canvas to work
 html, body { height: 100%; }
 
 // Set box-sizing globally to handle padding and border widths
@@ -30,23 +29,21 @@ body {
 
 a:hover { cursor: pointer; }
 
-// Grid Defaults to get images and embeds to work properly
-img { max-width: 100%; height: auto; }
-
-img { -ms-interpolation-mode: bicubic; }
-
-#map_canvas,
-	.map_canvas {
-		img,
-		embed,
-		object { max-width: none !important;
-	}
-}
-
-// Get rid of gap under images by making them display: inline-block; by default
 img {
+	// Grid Defaults to get images and embeds to work properly
+	max-width: 100%;
+	height: auto;
+	-ms-interpolation-mode: bicubic;
+	// Get rid of gap under images by making them display: inline-block; by default
 	display: inline-block;
 	vertical-align: middle;
+}
+
+#map_canvas,
+.map_canvas {
+	img,
+	embed,
+	object { max-width: none !important; }
 }
 
 //
