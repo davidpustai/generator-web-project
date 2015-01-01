@@ -10,11 +10,10 @@
 * better file system (folders inside scss etc.)
 * https://github.com/filamentgroup/grunt-criticalcss
 * picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
-* visuallyhidden -> vh? (+ remove unneccessary/unused classes)
+* h5bp classes & rules?
 * humans.txt + rel attr
 * uncss, class names minification
 * GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
-*   new task ("dploy"/"production"), because of build is sometimes being used for testing final product (don't wanna analyze this :))
 * modernizr custom build/CDN/grunt-modernizr
 * do I need to include normalize, h5bp, _base.scss & compass resets?
 * git initialization
