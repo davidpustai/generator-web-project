@@ -7,7 +7,7 @@ html, body { height: 100%; }
 	box-sizing: border-box;
 	margin: 0; // margin reset
 }
-// Owly margins
+// Owly margins (http://alistapart.com/article/axiomatic-css-and-lobotomized-owls)
 * + * { margin: $owly-margin 0 0; }
 
 html,
