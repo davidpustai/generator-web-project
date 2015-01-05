@@ -2,7 +2,7 @@
 
 * h5bp classes & rules?
 * modernizr custom build/CDN/grunt-modernizr
-* lsit in npm
+* list in npm
 * static versions for bower, packages?
 * no-bulleter
 * sitemap.xml
@@ -19,12 +19,7 @@
 * open sublime when ready
 * check svgmin options
 
-## links
-* compass + sass (README)
-
 ## README (both!)
-
-* requirements (sass + compass version)
 * remove http/s (is it possible in MD?)
 * file system
 * add using -> grunt plugins + colorguard into grunt commands, mention sprites
