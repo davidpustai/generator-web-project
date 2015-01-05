@@ -3,12 +3,12 @@
 My [Yeoman](http://yeoman.io) generator for generating web projects.
 
 
-## I'm using
+## Using
  * [HTML5 Boilerplate](http://html5boilerplate.com/)
  * [normalize.css](http://necolas.github.io/normalize.css/)
  * [Modernizr](http://modernizr.com/)
  * [jQuery](http://jquery.com/)
- * [SASS](http://sass-lang.com/) with [Compass](http://compass-style.org/) **requires Sass 3.3 and Compass 1.0**
+ * [SASS](http://sass-lang.com/) with [Compass](http://compass-style.org/) — **requires Sass 3.3 and Compass 1.0**
 
 
 ## Supports
