@@ -1,14 +1,19 @@
 # Web project generator [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-My simple [Yeoman](http://yeoman.io) generator.
+My [Yeoman](http://yeoman.io) generator for generating web projects.
 
 
 ## I'm using
+ * [HTML5 Boilerplate](http://html5boilerplate.com/)
+ * [normalize.css](http://necolas.github.io/normalize.css/)
+ * [Modernizr](http://modernizr.com/)
+ * [jQuery](http://jquery.com/)
+ * [SASS](http://sass-lang.com/) with [Compass](http://compass-style.org/) **requires Sass 3.3 and Compass 1.0**
 
- * [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate)
- * [normalize.css](https://github.com/necolas/normalize.css)
- * [Modernizr](https://github.com/Modernizr/Modernizr)
- * [jQuery](https://github.com/jquery/jquery)
+
+## Supports
+
+All modern browsers including IE 8+.
 
 
 ## Getting Started

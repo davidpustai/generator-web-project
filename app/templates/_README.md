@@ -1,10 +1,14 @@
 # <%= htmlTitle %> [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 ## Including
- * [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate)
- * [normalize.css](https://github.com/necolas/normalize.css)
- * [Modernizr](https://github.com/Modernizr/Modernizr)
- * [jQuery](https://github.com/jquery/jquery)
+ * [HTML5 Boilerplate](http://html5boilerplate.com/)
+ * [normalize.css](http://necolas.github.io/normalize.css/)
+ * [Modernizr](http://modernizr.com/)
+ * [jQuery](http://jquery.com/)
+ * [SASS](http://sass-lang.com/) with [Compass](http://compass-style.org/) **requires Sass 3.3 and Compass 1.0**
+
+## Supports
+All modern browsers including IE 8+.
 
 ## Grunt commands
  * `grunt [default]` - *use for development*
@@ -24,4 +28,4 @@
  	* runs local server at `localhost:8000`
 
 ***
-Generated via [Yeoman](http://yeoman.io) with [this generator](https://github.com/davidpustai/generator-web-project).
+Generated via [Yeoman](http://yeoman.io) with [generator-web-project](https://github.com/davidpustai/generator-web-project).
