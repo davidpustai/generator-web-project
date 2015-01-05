@@ -1,7 +1,10 @@
 # TODO
 
-* no-bulleter
+* h5bp classes & rules?
+* modernizr custom build/CDN/grunt-modernizr
+* lsit in npm
 * static versions for bower, packages?
+* no-bulleter
 * sitemap.xml
 * use Travis CI
 * js helpers into some foundation
@@ -10,21 +13,20 @@
 * better file system (folders inside scss etc.)
 * https://github.com/filamentgroup/grunt-criticalcss
 * picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
-* h5bp classes & rules?
 * humans.txt + rel attr
 * uncss, class names minification
 * GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
-* modernizr custom build/CDN/grunt-modernizr
-* do I need to include normalize, h5bp, _base.scss & compass resets?
-* git initialization
 * open sublime when ready
 * check svgmin options
 
+## links
+* compass + sass (README)
+
 ## README (both!)
 
-* file system
 * requirements (sass + compass version)
-* browser support
+* remove http/s (is it possible in MD?)
+* file system
 * add using -> grunt plugins + colorguard into grunt commands, mention sprites
 
 
