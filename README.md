@@ -4,10 +4,10 @@ My [Yeoman](http://yeoman.io) generator for generating web projects.
 
 
 ## Using
- * [HTML5 Boilerplate](http://html5boilerplate.com/)
- * [normalize.css](http://necolas.github.io/normalize.css/)
+ * [HTML5 Boilerplate](https://html5boilerplate.com/)
+ * [normalize.css](https://necolas.github.io/normalize.css/)
  * [Modernizr](http://modernizr.com/)
- * [jQuery](http://jquery.com/)
+ * [jQuery](https://jquery.com/)
  * [SASS](http://sass-lang.com/) with [Compass](http://compass-style.org/) — **requires Sass 3.3 and Compass 1.0**
 
 
@@ -22,7 +22,7 @@ All modern browsers including IE 8+.
 
 Trick question. It's not a thing. It's this guy:
 
-![](http://i.imgur.com/JHaAlBJ.png)
+![](https://i.imgur.com/JHaAlBJ.png)
 
 Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
 
@@ -86,4 +86,4 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 ## License
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
+[MIT License](https://en.wikipedia.org/wiki/MIT_License)

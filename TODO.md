@@ -27,7 +27,6 @@
 ## README (both!)
 * update grunt commands info
 * file system
-* remove http/s (is it possible in MD?)
 * add using -> grunt plugins + colorguard into grunt commands, mention sprites
 
 
