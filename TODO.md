@@ -2,7 +2,7 @@
 
 * base -> layout
 * get_media_query
-* cleaner file system (e. g. icons copy from assets into dev/dist, don't keep them in root)
+* cleaner project file system (e. g. icons copy from assets into dev/dist, don't keep them in root)
 * faster compiling (https://www.devbridge.com/articles/increasing-sass-compiling-performance-or-when-every-second-counts/)
 * http://sass-mq.github.io/sass-mq/
 * source maps
@@ -10,7 +10,6 @@
 * modernizr custom build/CDN/grunt-modernizr
 * list in npm
 * static versions for bower, packages?
-* no-bulleter
 * sitemap.xml
 * use Travis CI
 * js helpers into some foundation
@@ -21,7 +20,7 @@
 * picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
 * humans.txt + rel attr
 * uncss, class names minification
-* GA (https://github.com/dciccale/grunt-processhtml, https://github.com/changer/grunt-targethtml) + ask for key
+* GA (https://github.com/dciccale/grunt-processhtml) + ask for key
 * open sublime when ready
 * check svgmin options
 
