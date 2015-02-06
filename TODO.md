@@ -1,5 +1,11 @@
 # TODO
 
+* dependencies
+* base -> layout
+* get_media_query
+* cleaner file system (e. g. icons copy from assets into dev/dist, don't keep them in root)
+* faster compiling (https://www.devbridge.com/articles/increasing-sass-compiling-performance-or-when-every-second-counts/)
+* http://sass-mq.github.io/sass-mq/
 * h5bp classes & rules?
 * modernizr custom build/CDN/grunt-modernizr
 * list in npm
