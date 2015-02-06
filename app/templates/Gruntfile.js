@@ -165,13 +165,18 @@ module.exports = function (grunt) {
 			},
 			html: 'dist/index.html'
 		},
-
 		// Performs rewrites based on rev and the useminPrepare configuration
 		usemin: {
 			/*options: {
 				assetsDirs: ['assets']
 			},*/
 			html: ['dist/*.html']
+		},
+		// Create source maps when concatenating
+		concat: {
+			options: {
+				sourceMap: true
+			}
 		},
 
 		// ===============================================================
