@@ -12,18 +12,30 @@ module.exports = function (grunt) {
 		watch: {
 			compass: {
 				files: ['assets/scss/**/*.scss'],
-				tasks: ['compass', 'autoprefixer:dev'],
+				tasks: ['compass:dev', 'autoprefixer:dev'],
 				options: {
 					spawn: false,
 					interrupt: true
 				}
+			},
+			copy: {
+				files: [
+					'bower_components/**/*',
+					'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
+					'assets/js/**/*.js'
+				],
+				tasks: 'newer:copy:dev'
+			},
+			processhtml: {
+				files: ['templates/*html'],
+				tasks: 'newer:processhtml:dev'
 			},
 			livereload: {
 				options: {
 					livereload: true
 				},
 				files: [
-					'*.html',
+					'templates/*.html',
 					'assets/scss/**/*.scss',
 					//'assets/css/*.css',
 					'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
@@ -45,7 +57,7 @@ module.exports = function (grunt) {
 			},
 			dev: {
 				options: {
-					base: '.'
+					base: 'dev'
 				}
 			},
 			dist: {
@@ -62,17 +74,16 @@ module.exports = function (grunt) {
 		// ===============================================================
 		// Empties folders to start fresh
 		clean: {
-			dist: {
+			all: {
 				files: [{
 					dot: true,
 					src: [
 						'.tmp',
-						'dist/*',
-						'!dist/.git*'
+						'dev',
+						'dist'
 					]
 				}]
-			},
-			dev: '.tmp'
+			}
 		},
 
 		// ===============================================================
@@ -80,13 +91,18 @@ module.exports = function (grunt) {
 		// ===============================================================
 		// Compiles Sass to CSS and generates necessary files if requested
 		compass: {
+			options: {
+				sassDir: 'assets/scss',
+				cssDir: '.tmp',
+				imagesDir: 'assets/img',
+				noLineComments: true,
+				sourcemap: true
+			},
 			dist: {
-				options: {
-					sassDir: 'assets/scss',
-					cssDir: '.tmp',
-					noLineComments: true,
-					sourcemap: true
-				}
+				options: { generatedImagesDir: '.tmp' }
+			},
+			dev: {
+				options: { generatedImagesDir: 'dev/assets/img' }
 			}
 		},
 
@@ -100,7 +116,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: '.tmp',
 					src: '**/*.css',
-					dest: 'assets/css'
+					dest: 'dev/assets/css'
 				}]
 			},
 			dist: {
@@ -117,7 +133,8 @@ module.exports = function (grunt) {
 		cmq: {
 			dist: {
 				files: {
-					'assets/css': ['.tmp/prefixed/**/*.css']
+					// this weird path is for usemin, which grabs the path from html link src atribute
+					'.tmp/cmq/assets/css': ['.tmp/prefixed/**/*.css']
 				}
 			}
 		},
@@ -129,10 +146,6 @@ module.exports = function (grunt) {
 			options: {
 				squeeze: {dead_code: false},
 				codegen: {quote_keys: true}
-			},
-			jquery: {
-				src: 'assets/js/jquery-2.1.0.js',
-				dest: 'dist/assets/js/jquery-2.1.0.js'
 			}
 		},
 
@@ -144,9 +157,13 @@ module.exports = function (grunt) {
 		// additional tasks can operate on them
 		useminPrepare: {
 			options: {
-				dest: 'dist'
+				dest: 'dist',
+				root: [
+						'.tmp/cmq',	// for css
+						'.'			// for other assets
+					]
 			},
-			html: 'index.html'
+			html: 'dist/index.html'
 		},
 
 		// Performs rewrites based on rev and the useminPrepare configuration
@@ -168,11 +185,16 @@ module.exports = function (grunt) {
 					cwd: 'assets/img',
 					src: [
 						'**/*.{gif,jpeg,jpg,png}',
-						// don't copy the original sprite files, only the sprites themself
-						'!sprites/**/*.png',
-						'sprites/*.png'
+						// don't copy the original sprite files
+						'!sprites/**/*.png'
 					],
 					dest: 'dist/assets/img'
+				}, {
+					// copy final sprites
+					expand: true,
+					cwd: '.tmp/sprites',
+					src: [ '**/*.png' ],
+					dest: 'dist/assets/img/sprites'
 				}]
 			}
 		},
@@ -190,6 +212,31 @@ module.exports = function (grunt) {
 		// ===============================================================
 		// HTML
 		// ===============================================================
+		// Processes HTML templates in /templates (not in subdirectories!)
+		processhtml: {
+			options: {
+				commentMarker: 'process' // to prevent colision with grunt-usemin
+			},
+			dist: {
+				files: [{
+					expand: true,
+					dot: true,
+					cwd: 'templates',
+					dest: 'dist',
+					src: ['*.html']
+				}]
+			},
+			dev: {
+				files: [{
+					expand: true,
+					dot: true,
+					cwd: 'templates',
+					dest: 'dev',
+					src: ['*.html']
+				}]
+			}
+		},
+		// Minifies HTML
 		htmlmin: {
 			dist: {
 				options: {
@@ -216,7 +263,7 @@ module.exports = function (grunt) {
 		},
 
 		// ===============================================================
-		// FONTS, HTML, ETC
+		// FONTS, CONFIGS, ICONS, ETC.
 		// ===============================================================
 		// Copies remaining files to places other tasks can use
 		copy: {
@@ -229,9 +276,31 @@ module.exports = function (grunt) {
 					src: [
 						'*.{ico,png,txt,xml}',
 						'.htaccess',
-						'*.html',
 						'assets/font/**/*.{svg,ttf,eot,woff}',
-						'assets/js/jquery-1.8.0.js'
+						'assets/js/jquery-1.8.0.js',
+						'assets/js/jquery-2.1.0.js'
+					]
+				}]
+			},
+			dev: {
+				files: [{
+					expand: true,
+					dot: true,
+					cwd: '.',
+					dest: 'dev',
+					src: [
+						'*.{ico,png,txt,xml}',
+						'assets/font/**/*.{svg,ttf,eot,woff}',
+						// no need to minify assets every time (in development), just copy them at the begining
+						// bower
+							'bower_components/**/*',
+						// images
+							'assets/img/**/*.{gif,jpeg,jpg,png}',
+							// don't copy the original sprite files
+							'assets/img/!sprites/**/*.png',
+							'assets/img/**/*.svg',
+						// scripts
+							'assets/js/**/*.js'
 					]
 				}]
 			}
@@ -244,10 +313,16 @@ module.exports = function (grunt) {
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
 			dist: [
-				'compass',
-				'imagemin',
-				'svgmin',
-				'copy:dist'
+				'autoprefixer:dist',
+				'imagemin:dist',
+				'svgmin:dist',
+				'copy:dist',
+				'processhtml:dist'
+			],
+			dev: [
+				'compass:dev',
+				'copy:dev',
+				'processhtml:dev'
 			]
 		}
 	});
@@ -256,28 +331,28 @@ module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask('default', [
-		'clean:dev',
-		'compass',
+		'clean:all',
+		'concurrent:dev',
 		'autoprefixer:dev',
 		'connect:dev',
 		'watch'
 	]);
 
-	grunt.registerTask('serve', [
-		'build',
-		'connect:dist'
-	]);
-
 	grunt.registerTask('build', [
-		'clean:dist',
-		'useminPrepare',
+		'clean:all',
+		'compass:dist', // create css & sprites for further processing
 		'concurrent:dist',
-		'autoprefixer:dist',
 		'cmq',
+		'useminPrepare', // must be after css is processed, so it can look up the path of final files
 		'concat',
 		'cssmin',
 		'uglify',
 		'usemin',
 		'htmlmin'
+	]);
+
+	grunt.registerTask('serve', [
+		'build',
+		'connect:dist'
 	]);
 };

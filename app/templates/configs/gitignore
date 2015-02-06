@@ -21,6 +21,5 @@ results
 
 *.sublime-*
 
+dev
 dist
-assets/css
-assets/img/sprites/*.png

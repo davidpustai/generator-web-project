@@ -76,7 +76,9 @@ WebProjectGenerator.prototype.editor = function editor() {
 };
 
 WebProjectGenerator.prototype.assets = function assets() {
+	this.mkdir('templates');
 	this.mkdir('assets');
+
 	this.mkdir('assets/font');
 
 	this.mkdir('assets/img');
@@ -96,12 +98,15 @@ WebProjectGenerator.prototype.files = function files() {
 	this.template('_README.md', 'README.md');
 
 	if (file.exists(this.src._base + '/404/404_' + this.language + '.html')) {
-		this.copy('404/404_' + this.language + '.html', '404.html');
+		this.copy('404/404_' + this.language + '.html', 'templates/404.html');
 	}
 	else {
 		console.log('There is not 404.html error page in your choosen language, I\'m including english version.');
-		this.copy('404/404_en.html', '404.html');
+		this.copy('404/404_en.html', 'templates/404.html');
 	}
+
+	this.copy('templates/header-links.html', 'templates/includes/header-links.html');
+	this.copy('templates/scripts.html', 'templates/includes/scripts.html');
 
 	this.copy('icons/favicon.ico', 'favicon.ico');
 	this.copy('icons/apple-touch-icon.png', 'apple-touch-icon.png');
@@ -137,7 +142,7 @@ WebProjectGenerator.prototype.files = function files() {
 
 WebProjectGenerator.prototype.index = function index() {
 
-	this.copy('index.html', 'index.html');
+	this.copy('index.html', 'templates/index.html');
 };
 
 WebProjectGenerator.prototype.install = function () {

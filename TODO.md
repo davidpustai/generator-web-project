@@ -20,16 +20,14 @@
 * check svgmin options
 
 ## README (both!)
-* remove http/s (is it possible in MD?)
+* update grunt commands info
 * file system
+* remove http/s (is it possible in MD?)
 * add using -> grunt plugins + colorguard into grunt commands, mention sprites
 
 
 ##  HTML rewrites, processing, templating
 
-* https://github.com/yeoman/grunt-usemin#blockreplacements for
-* https://github.com/dciccale/grunt-processhtml
-* templating, e. g. scripts include etc.
 * group header js & css for ie8
 
 
