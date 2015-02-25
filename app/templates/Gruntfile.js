@@ -302,7 +302,7 @@ module.exports = function (grunt) {
 						// images
 							'assets/img/**/*.{gif,jpeg,jpg,png}',
 							// don't copy the original sprite files
-							'assets/img/!sprites/**/*.png',
+							'!assets/img/sprites/**/*.png',
 							'assets/img/**/*.svg',
 						// scripts
 							'assets/js/**/*.js'
