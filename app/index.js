@@ -105,7 +105,7 @@ WebProjectGenerator.prototype.files = function files() {
 		this.copy('404/404_en.html', 'templates/404.html');
 	}
 
-	this.copy('templates/header-links.html', 'templates/includes/header-links.html');
+	this.copy('templates/head-global.html', 'templates/includes/head-global.html');
 	this.copy('templates/scripts.html', 'templates/includes/scripts.html');
 
 	this.copy('icons/favicon.ico', 'favicon.ico');
