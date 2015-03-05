@@ -1,9 +1,16 @@
+http://keepachangelog.com/
+
 # TODO
 
+* source maps copying & generation
+* dev watch -> copy img, fonts, templates
 * base -> layout
 * get_media_query
 * cleaner project file system (e. g. icons copy from assets into dev/dist, don't keep them in root)
-* faster compiling (https://www.devbridge.com/articles/increasing-sass-compiling-performance-or-when-every-second-counts/)
+* https://github.com/filamentgroup/grunt-criticalcss + loadJS & loadCSS
+* faster compiling
+	* [libsass](https://www.devbridge.com/articles/increasing-sass-compiling-performance-or-when-every-second-counts/)
+	* [postCSS](https://github.com/postcss/postcss)
 * http://sass-mq.github.io/sass-mq/
 * source maps
 * h5bp classes & rules?
@@ -16,7 +23,6 @@
 * performance test task - psi, colorguard
 * latest jQuery? (3.0 Compact asap it comes out?)
 * better file system (folders inside scss etc.)
-* https://github.com/filamentgroup/grunt-criticalcss
 * picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
 * humans.txt + rel attr
 * uncss, class names minification
@@ -31,12 +37,10 @@
 
 
 ##  HTML rewrites, processing, templating
-
 * group header js & css for ie8
 
 
 ## older IE support
-
 * support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
 * separate print styles and add media element for IE8- (https://github.com/bpscott/breakup)
 * print.scss, ie.scss (if supported)
