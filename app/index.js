@@ -85,11 +85,11 @@ WebProjectGenerator.prototype.assets = function assets() {
 	this.mkdir('assets/img/sprites');
 
 	this.mkdir('assets/js');
+	this.mkdir('assets/js/components');
 
 	this.mkdir('assets/scss');
 	this.mkdir('assets/scss/components');
 	this.mkdir('assets/scss/helpers');
-	this.mkdir('assets/scss/layout');
 	this.mkdir('assets/scss/settings');
 	this.mkdir('assets/scss/vendor');
 };
