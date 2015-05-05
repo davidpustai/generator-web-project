@@ -16,7 +16,6 @@ http://keepachangelog.com/
 	* [postCSS](https://github.com/postcss/postcss)
 * http://sass-mq.github.io/sass-mq/
 * h5bp classes & rules?
-* modernizr custom build/CDN/grunt-modernizr
 * list in npm
 * static versions for bower, packages?
 * sitemap.xml
