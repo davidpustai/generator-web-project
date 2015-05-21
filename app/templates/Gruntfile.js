@@ -27,15 +27,15 @@ module.exports = function (grunt) {
 				tasks: 'newer:copy:dev'
 			},
 			processhtml: {
-				files: ['templates/*html'],
-				tasks: 'newer:processhtml:dev'
+				files: ['templates/**/*.html'],
+				tasks: 'processhtml:dev'
 			},
 			livereload: {
 				options: {
 					livereload: true
 				},
 				files: [
-					'templates/*.html',
+					'templates/**/*.html',
 					'assets/scss/**/*.scss',
 					//'assets/css/*.css',
 					'assets/img/**/*.{gif,jpeg,jpg,png,svg}',

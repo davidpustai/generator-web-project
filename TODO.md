@@ -3,7 +3,6 @@ http://keepachangelog.com/
 # TODO
 
 * grunt-spritesmith & libsass
-* gruntfile - processhtml depth
 * source maps copying & generation
 * dev watch -> copy img, fonts, templates
 * base -> layout
