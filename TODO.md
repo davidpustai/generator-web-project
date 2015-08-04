@@ -2,6 +2,8 @@ http://keepachangelog.com/
 
 # TODO
 
+* grunt combine-media-queries
+* components -> atoms, molecules, organisms
 * grunt-spritesmith & libsass
 * source maps copying & generation
 * dev watch -> copy img, fonts, templates

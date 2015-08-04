@@ -129,6 +129,12 @@ module.exports = function (grunt) {
 			}
 		},
 
+		cssmin: {
+			options: {
+				sourceMap: true
+			}
+		},
+
 		// Combine media queris
 		cmq: {
 			dist: {
