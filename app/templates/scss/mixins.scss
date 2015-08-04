@@ -4,7 +4,7 @@
 @mixin rectangle($width, $height, $color) {
 	width: $width;
 	height: $height;
-	background: $color;
+	background-color: $color;
 }
 
 // slightly changed
@@ -26,7 +26,7 @@
 	width: $width;
 	height: $height;
 	border-radius: #{$width}/#{$height};
-	background: $color;
+	background-color: $color;
 }
 
 @mixin eq-triangle($direction, $size, $color) {
