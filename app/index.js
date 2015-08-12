@@ -116,7 +116,6 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('configs/crossdomain.xml', 'crossdomain.xml');
 
 	this.copy('scss/main.scss', 'assets/scss/main.scss');
-	this.copy('scss/ie8.scss', 'assets/scss/ie8.scss');
 	this.copy('scss/h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
 
 	this.copy('scss/sizes.scss', 'assets/scss/settings/_sizes.scss');
