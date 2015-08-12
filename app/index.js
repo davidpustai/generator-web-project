@@ -126,7 +126,7 @@ WebProjectGenerator.prototype.files = function files() {
 
 	this.copy('scss/functions.scss', 'assets/scss/helpers/_functions.scss');
 	this.copy('scss/mixins.scss', 'assets/scss/helpers/_mixins.scss');
-	this.copy('scss/placeholders.scss', 'assets/scss/helpers/_placeholders.scss');
+	this.copy('scss/visuallyhidden.scss', 'assets/scss/helpers/_visuallyhidden.scss');
 	this.copy('scss/z-index-helper.scss', 'assets/scss/helpers/_z-index.scss');
 	this.copy('scss/sprites.scss', 'assets/scss/helpers/_sprites.scss');
 	this.copy('scss/base.scss', 'assets/scss/helpers/_base.scss');
