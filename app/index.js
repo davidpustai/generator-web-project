@@ -18,7 +18,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
 	// welcome message
 	console.log(this.yeoman);
-	console.log('Project with Compass and HTML5 Boilerplate are prepared!');
+	console.log('Project with Gruntfile and HTML5 Boilerplate are prepared!');
 
 	var prompts = [{
 		name: 'language',
@@ -54,10 +54,6 @@ WebProjectGenerator.prototype.packageJSON = function packageJSON() {
 	this.template('_package.json', 'package.json');
 };
 
-WebProjectGenerator.prototype.SassConfig = function SassConfig() {
-	this.copy('configs/config.rb', 'config.rb');
-};
-
 WebProjectGenerator.prototype.git = function git() {
 	this.copy('configs/gitignore', '.gitignore');
 	this.copy('configs/gitattributes', '.gitattributes');
@@ -82,7 +78,6 @@ WebProjectGenerator.prototype.assets = function assets() {
 	this.mkdir('assets/font');
 
 	this.mkdir('assets/img');
-	this.mkdir('assets/img/sprites');
 
 	this.mkdir('assets/js');
 	this.mkdir('assets/js/components');
@@ -128,7 +123,6 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('scss/mixins.scss', 'assets/scss/helpers/_mixins.scss');
 	this.copy('scss/visuallyhidden.scss', 'assets/scss/helpers/_visuallyhidden.scss');
 	this.copy('scss/z-index-helper.scss', 'assets/scss/helpers/_z-index.scss');
-	this.copy('scss/sprites.scss', 'assets/scss/helpers/_sprites.scss');
 	this.copy('scss/base.scss', 'assets/scss/helpers/_base.scss');
 	this.copy('scss/shame.scss', 'assets/scss/helpers/_shame.scss');
 

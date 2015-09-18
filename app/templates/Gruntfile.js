@@ -10,9 +10,9 @@ module.exports = function (grunt) {
 		// ===============================================================
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
-			compass: {
+			sass: {
 				files: ['assets/scss/**/*.scss'],
-				tasks: ['compass:dev', 'autoprefixer:dev'],
+				tasks: ['sass', 'autoprefixer:dev'],
 				options: {
 					spawn: false,
 					interrupt: true
@@ -89,20 +89,23 @@ module.exports = function (grunt) {
 		// ===============================================================
 		// CSS
 		// ===============================================================
-		// Compiles Sass to CSS and generates necessary files if requested
-		compass: {
+		// Compiles Sass to CSS
+		sass: {
 			options: {
-				sassDir: 'assets/scss',
-				cssDir: '.tmp',
-				imagesDir: 'assets/img',
-				noLineComments: true,
-				sourcemap: true
+				includePaths: [
+					'assets/scss',
+					'bower_components'
+				],
+				sourceMap: true
 			},
 			dist: {
-				options: { generatedImagesDir: '.tmp' }
-			},
-			dev: {
-				options: { generatedImagesDir: 'dev/assets/img' }
+				files: [{
+					expand: true,
+					cwd: 'assets/scss',
+					src: '*.scss',
+					dest: '.tmp',
+					ext: '.css'
+				}]
 			}
 		},
 
@@ -324,14 +327,14 @@ module.exports = function (grunt) {
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
 			dist: [
-				'autoprefixer:dist',
+				'sass',
 				'imagemin:dist',
 				'svgmin:dist',
 				'copy:dist',
 				'processhtml:dist'
 			],
 			dev: [
-				'compass:dev',
+				'sass',
 				'copy:dev',
 				'processhtml:dev'
 			]
@@ -351,8 +354,8 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', [
 		'clean:all',
-		'compass:dist', // create css & sprites for further processing
 		'concurrent:dist',
+		'autoprefixer:dist',
 		'cmq',
 		'useminPrepare', // must be after css is processed, so it can look up the path of final files
 		'concat',

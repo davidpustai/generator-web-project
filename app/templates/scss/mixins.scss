@@ -27,7 +27,8 @@
  * Prints: @media only screen and (min-width: Xem) { ... }
  */
 @mixin bp($breakpoint) {
-	@media #{"only screen and (min-width: #{nth(map-get($breakpoints, $breakpoint), 1)})"} { @content; }
+	$qry: nth(map-get($breakpoints, $breakpoint), 1);
+	@media only screen and (min-width: #{$qry}) { @content; }
 }
 
 /*

@@ -5,7 +5,7 @@
  * [normalize.css](https://necolas.github.io/normalize.css/)
  * [Modernizr](http://modernizr.com/)
  * [jQuery](https://jquery.com/)
- * [SASS](http://sass-lang.com/) with [Compass](http://compass-style.org/) — **requires Sass 3.3 and Compass 1.0**
+ * [SASS](http://sass-lang.com/)
 
 ## Supports
 All modern browsers including IE 8+.

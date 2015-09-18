@@ -1,7 +1,0 @@
-/*
- * Create compass sprites:
- * 		$<some>-icons: sprite-map("sprites/<sprite-directory-name>/*.png"); // additional info and parameters at http://compass-style.org/reference/compass/helpers/sprites/#sprite-map
- * Use the sprite in code:
- * 		background: str-replace(sprite-url($<some>-icons), "/assets", ".."); // or just "$<some>-icons" if you want absolute path
- * 		background-position: sprite-position($<some>-icons, <icon-name>);
- */
