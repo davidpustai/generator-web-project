@@ -1,9 +1,9 @@
-http://keepachangelog.com/
-
 # TODO
 
-* better `bp()` mixin (with min and max parameters - `http://sass-mq.github.io/sass-mq/` ?)
+* http://keepachangelog.com/
 * h5bp and base rules pruning
+* JSCS & CSScomb (code style checkers)
+* better `bp()` mixin (with min and max parameters - `http://sass-mq.github.io/sass-mq/` ?)
 * components -> atoms, molecules, organisms
 * grunt combine-media-queries
 * grunt-spritesmith
@@ -14,6 +14,7 @@ http://keepachangelog.com/
 * config.rb add_import_path not working
 * cleaner project file system (e. g. icons copy from assets into dev/dist, don't keep them in root)
 * https://github.com/filamentgroup/grunt-criticalcss + loadJS & loadCSS
+* lazy load images and fonts
 * list in npm
 * static versions for bower, packages?
 * sitemap.xml
