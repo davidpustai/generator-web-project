@@ -229,7 +229,9 @@ module.exports = function (grunt) {
 		// Processes HTML templates in /templates (not in subdirectories!)
 		processhtml: {
 			options: {
-				commentMarker: 'process' // to prevent colision with grunt-usemin
+				commentMarker: 'process', // to prevent colision with grunt-usemin
+				includeBase: 'templates',
+				recursive: true
 			},
 			dist: {
 				files: [{
