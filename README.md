@@ -1,4 +1,4 @@
-# Web project generator [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Web project generator
 
 My [Yeoman](http://yeoman.io) generator for generating web projects.
 
@@ -9,6 +9,7 @@ My [Yeoman](http://yeoman.io) generator for generating web projects.
  * [Modernizr](http://modernizr.com/)
  * [jQuery](https://jquery.com/)
  * [SASS](http://sass-lang.com/)
+ * [Grunt](http://gruntjs.com/)
 
 
 ## Supports
