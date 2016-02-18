@@ -1,6 +1,5 @@
 # TODO
 
-* http://keepachangelog.com/
 * h5bp and base rules pruning
 * JSCS & CSScomb (code style checkers)
 * better `bp()` mixin (with min and max parameters - `http://sass-mq.github.io/sass-mq/` ?)
