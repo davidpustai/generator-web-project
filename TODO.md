@@ -1,7 +1,12 @@
 # TODO
 
+* move favicons into img directory
 * h5bp and base rules pruning
+* rename plugins.js to helpers or something
+* comment files, instead of having them in style guide
 * JSCS & CSScomb (code style checkers)
+* connect to style guide and add guide english translation
+* group by components rather than technology (ecss)
 * better `bp()` mixin (with min and max parameters - `http://sass-mq.github.io/sass-mq/` ?)
 * components -> atoms, molecules, organisms
 * grunt combine-media-queries
@@ -28,6 +33,7 @@
 * GA (https://github.com/dciccale/grunt-processhtml) + ask for key
 * open sublime when ready
 * check svgmin options
+* Grunt -> Gulp
 
 ## README (both!)
 * update grunt commands info
