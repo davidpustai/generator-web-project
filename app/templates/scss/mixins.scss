@@ -13,21 +13,12 @@
 }
 
 /*
- *	Easy input placeholders styling
- */
-@mixin placeholder {
-	::-webkit-input-placeholder { @content; }
-	:-moz-placeholder { @content; }
-	::-moz-placeholder { @content; }
-	:-ms-input-placeholder { @content; }
-}
-
-/*
  * Breakpoint mixin for handeling min-width @media (inspired by http://codepen.io/chriscoyier/blog/codepens-css)
  * Prints: @media only screen and (min-width: Xem) { ... }
  */
 @mixin bp($breakpoint) {
 	$qry: nth(map-get($breakpoints, $breakpoint), 1);
+
 	@media only screen and (min-width: #{$qry}) { @content; }
 }
 

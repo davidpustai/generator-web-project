@@ -4,7 +4,7 @@
 * h5bp and base rules pruning
 * rename plugins.js to helpers or something
 * comment files, instead of having them in style guide
-* JSCS & CSScomb (code style checkers)
+* javascript linting: JSCS (code style checkers)
 * connect to style guide and add guide english translation
 * group by components rather than technology (ecss)
 * better `bp()` mixin (with min and max parameters - `http://sass-mq.github.io/sass-mq/` ?)

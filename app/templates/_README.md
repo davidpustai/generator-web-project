@@ -27,5 +27,12 @@ All modern browsers including IE 8+.
  	* builds the project with `build` task
  	* runs local server at `localhost:8000`
 
+## Linting
+We are linting with [Stylelint](http://stylelint.io/).
+```
+npm install -g stylelint
+stylelint assets/scss/**/*.scss --syntax scss
+```
+
 ***
 Generated via [Yeoman](http://yeoman.io) with [generator-web-project](https://github.com/davidpustai/generator-web-project).

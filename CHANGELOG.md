@@ -6,3 +6,8 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ## [Unreleased]
 ### Added
 - change log
+- SCSS linting with Stylelint
+
+### Removed
+- input `placeholder` mixin
+- google maps canvas image size hack

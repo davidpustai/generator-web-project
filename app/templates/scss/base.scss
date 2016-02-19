@@ -1,5 +1,3 @@
-html, body { height: 100%; }
-
 // Set box-sizing globally to handle padding and border widths
 *,
 *:before,
@@ -9,7 +7,10 @@ html, body { height: 100%; }
 }
 
 html,
-body { font-size: $base-font-size; }
+body {
+	height: 100%;
+	font-size: $base-font-size;
+}
 
 // Default body styles
 body {
@@ -18,7 +19,7 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: $body-font-family;
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 	line-height: $base-line-height;
 	position: relative;
@@ -31,17 +32,12 @@ img {
 	// Grid Defaults to get images and embeds to work properly
 	max-width: 100%;
 	height: auto;
+	/* stylelint-disable */
 	-ms-interpolation-mode: bicubic;
+	/* stylelint-enable */
 	// Get rid of gap under images by making them display: inline-block; by default
 	display: inline-block;
 	vertical-align: middle;
-}
-
-#map_canvas,
-.map_canvas {
-	img,
-	embed,
-	object { max-width: none !important; }
 }
 
 //
