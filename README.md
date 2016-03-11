@@ -64,27 +64,6 @@ Yeoman has a heart of gold. He's a person with feelings and opinions, but he's v
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
 
-## Grunt commands
-
- * `grunt [default]` - *use for development*
-	* compiles and prefixes scss
-	* runs local server (with live reload) at `localhost:8000`
-	* watches for changes
-
- * `grunt build` - *use when publishnig, compiles everything to `dist` folder*
- 	* compiles, prefixes, concats and minifies scss
- 	* minifies media queries
- 	* concats and minifies javascript
- 	* minifies html
- 	* copies favicons, browserconfigs etc.
- 	* runs local server at `localhost:8000`
- 	* makes everything avaliable for production in `dist` folder
-
- * `grunt serve` - *use for production build review*
- 	* builds the project with `build` task
- 	* runs local server at `localhost:8000`
-
-
 ## License
 
 [MIT License](https://en.wikipedia.org/wiki/MIT_License)
