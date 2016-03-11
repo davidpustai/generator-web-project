@@ -30,7 +30,6 @@ All modern browsers including IE 8+.
 ## Linting
 We are linting with [Stylelint](http://stylelint.io/).
 ```
-npm install -g stylelint
 stylelint assets/scss/**/*.scss --syntax scss
 ```
 
