@@ -20,6 +20,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - `browsehappy` class to `browser-upgrade`
 - default `line-height` to `1.4`
 - merge `_h5bp.scss` into `_base.scss`
+- clean up and structurize [TODO.md](TODO.md)
 
 ### Removed
 - input `placeholder` mixin
