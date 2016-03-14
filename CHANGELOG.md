@@ -9,6 +9,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - SCSS linting with Stylelint
 - several new `grunt-htmlmin` options including `lint`
 - normalize line endings via .gitattributes
+- center `img` verticaly by default
 
 ## Changed
 - dead `grunt-combine-media-queries` plugin for up to date `grunt-combine-mq`
