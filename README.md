@@ -6,7 +6,7 @@ My [Yeoman](http://yeoman.io) generator for generating web projects.
 ## Using
  * [HTML5 Boilerplate](https://html5boilerplate.com/)
  * [normalize.css](https://necolas.github.io/normalize.css/)
- * [Modernizr](http://modernizr.com/)
+ * [Modernizr](https://modernizr.com/)
  * [jQuery](https://jquery.com/)
  * [SASS](http://sass-lang.com/)
  * [Grunt](http://gruntjs.com/)
