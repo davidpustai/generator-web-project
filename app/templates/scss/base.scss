@@ -1,65 +1,196 @@
-// Set box-sizing globally to handle padding and border widths
+/*
+ * What follows is series of CSS rules reseting some browser behaviour.
+ * This file includes several h5bp reset rules extended by few of ours.
+ */
+
+/* ==========================================================================
+   H5BP portion
+   ========================================================================== */
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+::selection {
+	background-color: #b3d4fc;
+	text-shadow: none;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+/* ==========================================================================
+   Browser CSS resets and default styles
+   ========================================================================== */
+
+/*
+ * Set box-sizing globally to handle padding and border widths.
+ * Reset all margins.
+ */
 *,
 *:before,
 *:after {
 	box-sizing: border-box;
-	margin: 0; // margin reset
+	margin: 0;
 }
 
-html,
-body {
+/*
+ * Basic typography and color style.
+ */
+html {
 	height: 100%;
+	line-height: $base-line-height;
 	font-size: $base-font-size;
-}
-
-// Default body styles
-body {
+	font-family: $body-font-family;
 	background-color: $body-bg;
 	color: $body-font-color;
-	padding: 0;
-	margin: 0;
-	font-family: $body-font-family;
-	font-weight: 400;
-	font-style: normal;
-	line-height: $base-line-height;
-	position: relative;
-	cursor: auto;
 }
 
-a:hover { cursor: pointer; }
+/*
+ * Make body 100% height and reset spacing.
+ */
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
 
+/*
+ * Make cursor pointer on link hover.
+ */
+a:hover {
+	cursor: pointer;
+}
+
+/*
+ * Full-width images.
+ */
 img {
-	// Grid Defaults to get images and embeds to work properly
 	max-width: 100%;
 	height: auto;
-	/* stylelint-disable */
-	-ms-interpolation-mode: bicubic;
-	/* stylelint-enable */
-	// Get rid of gap under images by making them display: inline-block; by default
-	display: inline-block;
-	vertical-align: middle;
 }
 
-//
-// Global resets for forms
-//
+/* ==========================================================================
+   Form resets
+   ========================================================================== */
 
-// Make cursor pointer when hovering over label
+/*
+ * Make cursor pointer when hovering over label.
+ */
 label {
 	cursor: pointer;
 }
 
-// Make sure textarea takes on height automatically
+/*
+ * Make sure textarea takes on height automatically.
+ * Allow only vertical resizing of textareas. (h5bp)
+ */
 textarea {
 	height: auto;
-	min-height: 50px;
+	resize: vertical;
 }
 
-// Make select elements 100% width by default
-select { width: 100%; }
+/* ==========================================================================
+   Browser Upgrade Prompt (taken from h5bp and customized)
+   ========================================================================== */
 
-// IE8 upgrade note
 .browser-upgrade {
 	margin: 0;
-	text-align: center;
+	padding: .2em 0;
+	text-align: center
+	background-color: #ccc;
+	color: #000;
+}
+
+/* ==========================================================================
+   Print styles. (h5bp)
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+	*,
+	*:before,
+	*:after,
+	*:first-letter,
+	*:first-line {
+		/* stylelint-disable */
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster:
+									http://www.sanbeiji.com/archives/953 */
+		box-shadow: none !important;
+		text-shadow: none !important;
+		/* stylelint-enable */
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	/*
+	* Don't show links that are fragment identifiers,
+	* or use the `javascript:` pseudo protocol
+	*/
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	/*
+	* Printing Tables:
+	* http://css-discuss.incutio.com/wiki/Printing_Tables
+	*/
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
 }

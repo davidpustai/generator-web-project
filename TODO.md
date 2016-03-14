@@ -1,7 +1,6 @@
 # TODO
 
 * move favicons into img directory
-* h5bp and base rules pruning
 * rename plugins.js to helpers or something
 * comment files, instead of having them in style guide
 * javascript linting: JSCS (code style checkers)
@@ -47,5 +46,3 @@
 
 ## older IE support
 * support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
-* separate print styles and add media element for IE8- (https://github.com/bpscott/breakup)
-* print.scss, ie.scss (if supported)

@@ -90,7 +90,6 @@ WebProjectGenerator.prototype.assets = function assets() {
 	this.mkdir('assets/scss/components');
 	this.mkdir('assets/scss/helpers');
 	this.mkdir('assets/scss/settings');
-	this.mkdir('assets/scss/vendor');
 };
 
 WebProjectGenerator.prototype.files = function files() {
@@ -115,7 +114,6 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('configs/crossdomain.xml', 'crossdomain.xml');
 
 	this.copy('scss/main.scss', 'assets/scss/main.scss');
-	this.copy('scss/h5bp.scss', 'assets/scss/vendor/_h5bp.scss');
 
 	this.copy('scss/sizes.scss', 'assets/scss/settings/_sizes.scss');
 	this.copy('scss/media.scss', 'assets/scss/settings/_media.scss');

@@ -1,7 +1,7 @@
 # <%= htmlTitle %> [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 ## Using
- * [HTML5 Boilerplate](https://html5boilerplate.com/)
+ * parts of [HTML5 Boilerplate](https://html5boilerplate.com/)
  * [normalize.css](https://necolas.github.io/normalize.css/)
  * [Modernizr](https://modernizr.com/)
  * [jQuery](https://jquery.com/)

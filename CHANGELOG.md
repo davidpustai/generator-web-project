@@ -18,8 +18,14 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - simplify the Google Analytics snippet using `async` & `defer`
 - `browsehappy` class to `browser-upgrade`
 - default `line-height` to `1.4`
+- merge `_h5bp.scss` into `_base.scss`
 
 ### Removed
 - input `placeholder` mixin
 - google maps canvas image size hack
 - selection color setting
+- `body`'s `position: relative;`
+- several `body` css specifications (`font-weight`, `font-style`, `cursor`)
+- `-ms-interpolation-mode: bicubic;` for IE7 support
+- default full-width `select` style
+- `scss/vendor` directory
