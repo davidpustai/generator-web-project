@@ -1,7 +1,3 @@
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
-
-$selection-color: #b3d4fc !default;
-
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -13,13 +9,15 @@ $selection-color: #b3d4fc !default;
    ========================================================================== */
 
 /*
- * Remove text-shadow in selection highlight: h5bp.com/i
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
 
 ::selection {
-    background: $selection-color;
+    background: #b3d4fc;
     text-shadow: none;
 }
 

@@ -19,3 +19,4 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ### Removed
 - input `placeholder` mixin
 - google maps canvas image size hack
+- selection color setting
