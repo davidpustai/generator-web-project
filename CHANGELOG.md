@@ -8,6 +8,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - change log
 - SCSS linting with Stylelint
 - several new `grunt-htmlmin` options including `lint`
+- normalize line endings via .gitattributes
 
 ## Changed
 - dead `grunt-combine-media-queries` plugin for up to date `grunt-combine-mq`
