@@ -17,6 +17,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - bump devDependencies
 - simplify the Google Analytics snippet using `async` & `defer`
 - `browsehappy` class to `browser-upgrade`
+- default `line-height` to `1.4`
 
 ### Removed
 - input `placeholder` mixin
