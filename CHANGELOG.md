@@ -11,6 +11,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ## Changed
 - dead `grunt-combine-media-queries` plugin for up to date `grunt-combine-mq`
 - editorconfig whitespace style for `.travis.yml` and `package.json`
+- bump devDependencies
 
 ### Removed
 - input `placeholder` mixin
