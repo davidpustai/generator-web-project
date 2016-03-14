@@ -19,6 +19,10 @@
 @mixin bp($breakpoint) {
 	$qry: nth(map-get($breakpoints, $breakpoint), 1);
 
+	@if ($qry == null) {
+		@error 'There is no breakpoint "#{$breakpoint}"!';
+	}
+
 	@media only screen and (min-width: #{$qry}) { @content; }
 }
 
