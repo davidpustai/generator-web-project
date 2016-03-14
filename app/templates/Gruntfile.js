@@ -139,12 +139,15 @@ module.exports = function (grunt) {
 		},
 
 		// Combine media queris
-		cmq: {
+		combine_mq: {
 			dist: {
-				files: {
+				files: [{
+					expand: true,
+					cwd: '.tmp/prefixed',
+					src: '**/*.css',
 					// this weird path is for usemin, which grabs the path from html link src atribute
-					'.tmp/cmq/assets/css': ['.tmp/prefixed/**/*.css']
-				}
+					dest: '.tmp/cmq/assets/css'
+				}]
 			}
 		},
 
@@ -358,7 +361,7 @@ module.exports = function (grunt) {
 		'clean:all',
 		'concurrent:dist',
 		'autoprefixer:dist',
-		'cmq',
+		'combine_mq',
 		'useminPrepare', // must be after css is processed, so it can look up the path of final files
 		'concat',
 		'cssmin',
