@@ -15,6 +15,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - editorconfig whitespace style for `.travis.yml` and `package.json`
 - bump devDependencies
 - simplify the Google Analytics snippet using `async` & `defer`
+- `browsehappy` class to `browser-upgrade`
 
 ### Removed
 - input `placeholder` mixin
