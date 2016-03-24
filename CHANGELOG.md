@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+
+## [0.9.0] - 2016-03-24
 ### Added
 - change log
 - SCSS linting with Stylelint
