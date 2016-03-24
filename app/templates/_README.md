@@ -34,4 +34,4 @@ stylelint assets/scss/**/*.scss --syntax scss
 ```
 
 ***
-Generated via [Yeoman](http://yeoman.io) with [generator-web-project](https://github.com/davidpustai/generator-web-project).
+Generated via [Yeoman](http://yeoman.io) with [generator-web-project](https://github.com/brand-new/generator-web-project) v0.8.0.
