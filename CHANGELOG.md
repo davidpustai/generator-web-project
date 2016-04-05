@@ -16,7 +16,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - center `img` verticaly by default
 - separate SCSS `organisms` from `components` (and create related directory)
 
-## Changed
+### Changed
 - dead `grunt-combine-media-queries` plugin for up to date `grunt-combine-mq`
 - editorconfig whitespace style for `.travis.yml` and `package.json`
 - bump devDependencies
