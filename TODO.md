@@ -2,6 +2,8 @@
 
 
 ## General stuff
+* remove image sprites support
+* add assets processing graphic into readme
 * javascript linting: JSCS (code style checkers)
 * add changelog for generated project
 * static versions for bower?
@@ -55,7 +57,8 @@
 ## Optimalization
 * lazy load [images](http://developer.telerik.com/featured/lazy-loading-images-on-the-web/)
 * lazy load fonts (check [webfontloader](https://github.com/typekit/webfontloader) and [css-tricks article](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/))
-* https://github.com/filamentgroup/grunt-criticalcss + loadJS & loadCSS
+* https://github.com/filamentgroup/grunt-criticalcss + loadCSS
+* critical CSS solution (single file we inline on build?)
 * uncss, class names minification
 * performance test task - psi, colorguard
 * check svgmin options

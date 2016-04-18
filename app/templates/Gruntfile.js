@@ -9,19 +9,27 @@ module.exports = function (grunt) {
 		// ===============================================================
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
+			// concat, copy:dev (no need to further process)
 			sass: {
 				files: ['assets/scss/**/*.scss'],
-				tasks: ['sass', 'autoprefixer:dev'],
+				tasks: ['sass', 'concat:css', 'autoprefixer:dev'],
 				options: {
 					spawn: false,
 					interrupt: true
 				}
 			},
+			js: {
+				files: ['assets/js/**/*.js'],
+				tasks: ['concat:js', 'newer:copy:dev']
+			},
 			copy: {
 				files: [
-					'bower_components/**/*',
-					'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
-					'assets/js/**/*.js'
+					// copy
+						'bower_components/**/*',
+						'assets/font/**/*.{svg,ttf,eot,woff}',
+					// images
+						'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
+						'assets/js/**/*.js'
 				],
 				tasks: 'newer:copy:dev'
 			},
@@ -86,7 +94,7 @@ module.exports = function (grunt) {
 		},
 
 		// ===============================================================
-		// CSS
+		// SCSS -> CSS
 		// ===============================================================
 		// Compiles Sass to CSS
 		sass: {
@@ -102,12 +110,69 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'assets/scss',
 					src: '*.scss',
-					dest: '.tmp',
+					dest: '.tmp/css',
 					ext: '.css'
 				}]
 			}
 		},
 
+		// ===============================================================
+		// CONCAT - JS & CSS
+		// ===============================================================
+		// TODO
+		concat: {
+			options: {
+				sourceMap: true
+			},
+			// Here goes all new files
+			// JS: { assets/js (resp. bower_components) -> .tmp/concat/js }
+			js: {
+				files: [
+					{
+						dest: '.tmp/concat/js/vendor/modernizr.js',
+						src: [
+							'assets/js/vendor/modernizr.js'
+						]
+					}, {
+						dest: '.tmp/concat/js/ie8-head.js',
+						src: [
+							'assets/js/vendor/selectivizr-1.0.3b.js',
+							'bower_components/respond/dest/respond.min.js'
+						]
+					},	{
+						dest: '.tmp/concat/js/main.js',
+						src: [
+							'assets/js/plugins.js',
+							'bower_components/fastclick/lib/fastclick.js',
+
+							'assets/js/main.js'
+						]
+					}, {
+						dest: '.tmp/concat/js/ie8-body.js',
+						src: [
+							'bower_components/REM-unit-polyfill/js/rem.min.js'
+						]
+					}
+				]
+			},
+			// CSS: { .tmp/css (see the note below) -> .tmp/concat/css }
+			// source should be only from SCSS compiled file (.tmp/css), resp. vendor CSS (bower_components resp. assets/vendor/css)
+			css: {
+				files: [
+					{
+						dest: '.tmp/concat/css/main.css',
+						src: [
+							'bower_components/normalize.css/normalize.css',
+							'.tmp/css/main.css'
+						]
+					}
+				]
+			}
+		},
+
+		// ===============================================================
+		// Further CSS processing
+		// ===============================================================
 		// Add vendor prefixed styles
 		autoprefixer: {
 			options: {
@@ -116,24 +181,18 @@ module.exports = function (grunt) {
 			dev: {
 				files: [{
 					expand: true,
-					cwd: '.tmp',
+					cwd: '.tmp/concat/css',
 					src: '**/*.css',
-					dest: 'dev/assets/css'
+					dest: 'dev/assets/css' // skiping further processing (cmq, cssmin)
 				}]
 			},
 			dist: {
 				files: [{
 					expand: true,
-					cwd: '.tmp',
+					cwd: '.tmp/concat/css',
 					src: '**/*.css',
 					dest: '.tmp/prefixed'
 				}]
-			}
-		},
-
-		cssmin: {
-			options: {
-				sourceMap: true
 			}
 		},
 
@@ -144,8 +203,22 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: '.tmp/prefixed',
 					src: '**/*.css',
-					// this weird path is for usemin, which grabs the path from html link src atribute
-					dest: '.tmp/cmq/assets/css'
+					dest: '.tmp/cmq'
+				}]
+			}
+		},
+
+		// Minify final CSS
+		cssmin: {
+			options: {
+				sourceMap: true
+			},
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '.tmp/cmq',
+					src: '**/*.css',
+					dest: 'dist/assets/css'
 				}]
 			}
 		},
@@ -156,37 +229,19 @@ module.exports = function (grunt) {
 		uglify: {
 			options: {
 				squeeze: {dead_code: false},
-				codegen: {quote_keys: true}
-			}
-		},
-
-		// ===============================================================
-		// USEMIN - CSS + JS + HTML rewrites
-		// ===============================================================
-		// Reads HTML for usemin blocks to enable smart builds that automatically
-		// concat, minify and revision files. Creates configurations in memory so
-		// additional tasks can operate on them
-		useminPrepare: {
-			options: {
-				dest: 'dist',
-				root: [
-						'.tmp/cmq',	// for css
-						'.'			// for other assets
-					]
+				codegen: {quote_keys: true},
+				sourceMap: true,
+				sourceMapIn: function(src) {
+					return src + '.map';
+				}
 			},
-			html: 'dist/index.html'
-		},
-		// Performs rewrites based on rev and the useminPrepare configuration
-		usemin: {
-			/*options: {
-				assetsDirs: ['assets']
-			},*/
-			html: ['dist/*.html']
-		},
-		// Create source maps when concatenating
-		concat: {
-			options: {
-				sourceMap: true
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '.tmp/concat/js',
+					src: '**/*.js',
+					dest: 'dist/assets/js'
+				}]
 			}
 		},
 
@@ -231,7 +286,7 @@ module.exports = function (grunt) {
 		// Processes HTML templates in /templates (not in subdirectories!)
 		processhtml: {
 			options: {
-				commentMarker: 'process', // to prevent colision with grunt-usemin
+				commentMarker: 'process',
 				includeBase: 'templates',
 				recursive: true
 			},
@@ -322,9 +377,15 @@ module.exports = function (grunt) {
 							'assets/img/**/*.{gif,jpeg,jpg,png}',
 							// don't copy the original sprite files
 							'!assets/img/sprites/**/*.png',
-							'assets/img/**/*.svg',
-						// scripts
-							'assets/js/**/*.js'
+							'assets/img/**/*.svg'
+					]
+				}, {
+					expand: true,
+					dot: true,
+					cwd: '.tmp/concat/js',
+					dest: 'dev/assets/js',
+					src: [
+						'**/*.{js,map}' // skiping uglify
 					]
 				}]
 			}
@@ -337,16 +398,25 @@ module.exports = function (grunt) {
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
 			dist: [
-				'sass',
+				'autoprefixer:dist',
 				'imagemin:dist',
 				'svgmin:dist',
-				'copy:dist',
-				'processhtml:dist'
+				'uglify:dist',
+				'processhtml:dist',
+				'copy:dist'
 			],
 			dev: [
-				'sass',
-				'copy:dev',
-				'processhtml:dev'
+				'autoprefixer:dev',
+				'processhtml:dev',
+				'copy:dev'
+					// replaces
+					// 		* imagemin
+					// 		* svgmin
+					// 		* uglify
+				// skips
+				//		* combine_mq
+				//		* cssmin
+				//		* htmlmin
 			]
 		}
 	});
@@ -356,22 +426,20 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', [
 		'clean:all',
+		'sass',
+		'concat',
 		'concurrent:dev',
-		'autoprefixer:dev',
 		'connect:dev',
 		'watch'
 	]);
 
 	grunt.registerTask('build', [
 		'clean:all',
-		'concurrent:dist',
-		'autoprefixer:dist',
-		'combine_mq',
-		'useminPrepare', // must be after css is processed, so it can look up the path of final files
+		'sass',
 		'concat',
+		'concurrent:dist',
+		'combine_mq',
 		'cssmin',
-		'uglify',
-		'usemin',
 		'htmlmin'
 	]);
 
