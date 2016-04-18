@@ -66,7 +66,7 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 ## Changelog
 
-In separate file (CHANGELOG.md)[CHANGELOG.md].
+In separate file [CHANGELOG.md](CHANGELOG.md).
 
 
 ## License
