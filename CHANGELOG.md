@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+
+
+## [0.10.0] - 2016-04-18
 ### Fixed
 - broken build process (`htmlmin`)
 
@@ -18,6 +21,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 
 ### Removed
 - `grunt-usemin`
+
 
 ## [0.9.0] - 2016-03-24
 ### Added
