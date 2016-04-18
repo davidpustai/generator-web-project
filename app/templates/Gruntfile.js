@@ -258,6 +258,7 @@ module.exports = function (grunt) {
 		htmlmin: {
 			dist: {
 				options: {
+					processConditionalComments: true,
 					removeComments: true,
 					removeCommentsFromCDATA: true,
 					removeCDATASectionsFromCDATA: true,
@@ -271,6 +272,7 @@ module.exports = function (grunt) {
 					removeEmptyAttributes: true,
 					removeScriptTypeAttributes: true,
 					removeOptionalTags: true,
+					decodeEntities: true,
 					lint: true,
 					minifyJS: true,
 					minifyCSS: true,
