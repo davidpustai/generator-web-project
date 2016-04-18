@@ -7,6 +7,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ### Changed
 - **require Node.js v5.x**
 - bump htmlmin version
+- move comment about generator version from Gruntfile to README
 
 ## [0.9.0] - 2016-03-24
 ### Added
