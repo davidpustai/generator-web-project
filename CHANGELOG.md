@@ -5,6 +5,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 
 ## [Unreleased]
 ### Changed
+- **require Node.js v5.x**
 - bump htmlmin version
 
 ## [0.9.0] - 2016-03-24
