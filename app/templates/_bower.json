@@ -5,6 +5,7 @@
   "dependencies": {
   "fastclick": "latest",
 	  "normalize.css": "latest",
+	  "loadcss": "~1.2.0",
 
 	  "respond": "latest",
 	  "REM-unit-polyfill": "latest"

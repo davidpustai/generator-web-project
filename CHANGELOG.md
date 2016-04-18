@@ -14,7 +14,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - moved assets including into Gruntfile instead of processing the HTML with `grunt-usemin`, all new files should be now included in the `concat` task according to the comments
 
 ### Added
-- asynchronous loading of `main.js`
+- asynchronous loading of `main.js` and `main.css`
 
 ### Removed
 - `grunt-usemin`

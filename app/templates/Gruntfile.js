@@ -143,6 +143,8 @@ module.exports = function (grunt) {
 						dest: '.tmp/concat/js/main.js',
 						src: [
 							'assets/js/plugins.js',
+							'bower_components/loadcss/src/loadCSS.js',
+							'bower_components/loadcss/src/cssrelpreload.js',
 							'bower_components/fastclick/lib/fastclick.js',
 
 							'assets/js/main.js'

@@ -7,7 +7,8 @@
 <!-- Hack rendering block in IE8 -->
 <!--[if lt IE 9]><![endif]-->
 
-<link rel="stylesheet" href="assets/css/main.css">
+<link rel="preload" href="assets/css/main.css" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
 
 <script src="assets/js/vendor/modernizr.js"></script>
 

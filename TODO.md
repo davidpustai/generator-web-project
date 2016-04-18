@@ -64,6 +64,7 @@
 * performance test task - psi, colorguard
 * check svgmin options
 * picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
+* drop loadCSS once most of generator's supported browsers implement `[rel="preload"]`
 
 
 ##  HTML rewrites, processing, templating
