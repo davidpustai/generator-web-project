@@ -56,10 +56,9 @@
 
 
 ## Optimalization
+* critical CSS solution (single file we inline on build? https://github.com/filamentgroup/grunt-criticalcss?)
 * lazy load [images](http://developer.telerik.com/featured/lazy-loading-images-on-the-web/)
 * lazy load fonts (check [webfontloader](https://github.com/typekit/webfontloader) and [css-tricks article](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/))
-* https://github.com/filamentgroup/grunt-criticalcss + loadCSS
-* critical CSS solution (single file we inline on build?)
 * uncss, class names minification
 * performance test task - psi, colorguard
 * check svgmin options
