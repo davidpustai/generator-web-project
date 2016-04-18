@@ -273,7 +273,6 @@ module.exports = function (grunt) {
 					removeScriptTypeAttributes: true,
 					removeOptionalTags: true,
 					decodeEntities: true,
-					lint: true,
 					minifyJS: true,
 					minifyCSS: true,
 					quoteCharacter: '"'
