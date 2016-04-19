@@ -3,8 +3,8 @@
 
 ## General stuff
 * remove image sprites support
+* javascript linting (ESLint)
 * add assets processing graphic into readme
-* javascript linting: JSCS (code style checkers)
 * add changelog for generated project
 * static versions for bower?
 * automated build (and test) via Travis CI
