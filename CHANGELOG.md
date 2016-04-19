@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+
+
+## [0.10.1] - 2016-04-19
 ### Fixed
 - synchronize generator and generated project editorconfig
 
