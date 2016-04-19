@@ -11,6 +11,9 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - insert final new line at the end of files
 - generalize YAML files formating in editorconfig
 
+### Removed
+- image sprites support
+
 
 ## [0.10.0] - 2016-04-18
 ### Fixed

@@ -2,7 +2,6 @@
 
 
 ## General stuff
-* remove image sprites support
 * javascript linting (ESLint)
 * add assets processing graphic into readme
 * add changelog for generated project

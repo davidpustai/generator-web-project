@@ -257,17 +257,9 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'assets/img',
 					src: [
-						'**/*.{gif,jpeg,jpg,png}',
-						// don't copy the original sprite files
-						'!sprites/**/*.png'
+						'**/*.{gif,jpeg,jpg,png}'
 					],
 					dest: 'dist/assets/img'
-				}, {
-					// copy final sprites
-					expand: true,
-					cwd: '.tmp/sprites',
-					src: [ '**/*.png' ],
-					dest: 'dist/assets/img/sprites'
 				}]
 			}
 		},
@@ -377,8 +369,6 @@ module.exports = function (grunt) {
 							'bower_components/**/*',
 						// images
 							'assets/img/**/*.{gif,jpeg,jpg,png}',
-							// don't copy the original sprite files
-							'!assets/img/sprites/**/*.png',
 							'assets/img/**/*.svg'
 					]
 				}, {
