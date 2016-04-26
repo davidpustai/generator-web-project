@@ -7,6 +7,7 @@
 * add changelog for generated project
 * static versions for bower?
 * automated build (and test) via Travis CI
+* linting automation via Grunt
 * humans.txt + rel attr
 * Grunt -> Gulp
 * image sprite implementation
@@ -44,6 +45,7 @@
 
 ## SCSS
 * no variables in helpers (base.scss), make it default
+* lint SCSS settings files
 * make sizes, colors & font-weights settings sass maps, add get mixins (color(), size())
 * better `bp()` mixin (with min and max parameters - http://sass-mq.github.io/sass-mq/ ?)
 

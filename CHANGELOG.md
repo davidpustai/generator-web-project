@@ -4,6 +4,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Changed
+- updated Stylelint to v6.1.1
+
+### Added
+- several SCSS linting changes
+	- limit maxmimal selector specificity to 2 classes and 1 type selector
+	- disallow (unescaped) newlines in strings
+	- lowercase type selectors, at-rule names, function names, properties, pseudo classes, pseudo elements, units, value keywords
+	- require reason comment if disabling linting
+	- check for suspicious contrast issues
+	- require a newline after the semicolon of at-rules
+	- disallow property values that are ignored due to another property value in the same rule
+	- disallow adjacent empty lines within functions
+	- disallow unknown units
+	- disallow whitespace on the inside of the brackets within attribute selectors and on the inside of the parentheses within pseudo-class selectors
+	- disallow redundant values in shorthand properties
+
+### Removed
+- local Stylelint installation
 
 
 ## [0.10.2] - 2016-04-26
