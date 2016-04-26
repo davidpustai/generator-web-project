@@ -28,8 +28,7 @@ module.exports = function (grunt) {
 						'bower_components/**/*',
 						'assets/font/**/*.{svg,ttf,eot,woff}',
 					// images
-						'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
-						'assets/js/**/*.js'
+						'assets/img/**/*.{gif,jpeg,jpg,png,svg}'
 				],
 				tasks: 'newer:copy:dev'
 			},
@@ -119,7 +118,6 @@ module.exports = function (grunt) {
 		// ===============================================================
 		// CONCAT - JS & CSS
 		// ===============================================================
-		// TODO
 		concat: {
 			options: {
 				sourceMap: true
@@ -368,8 +366,7 @@ module.exports = function (grunt) {
 						// bower
 							'bower_components/**/*',
 						// images
-							'assets/img/**/*.{gif,jpeg,jpg,png}',
-							'assets/img/**/*.svg'
+							'assets/img/**/*.{gif,jpeg,jpg,png,svg}'
 					]
 				}, {
 					expand: true,

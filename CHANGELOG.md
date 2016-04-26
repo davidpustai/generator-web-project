@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Fixed
+- forgoten TODO and duplicity cleanup in Gruntfile
 
 
 ## [0.10.1] - 2016-04-19
