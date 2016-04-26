@@ -6,6 +6,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ## [Unreleased]
 ### Changed
 - updated Stylelint to v6.1.1
+- bump htmlmin version
 
 ### Added
 - several SCSS linting changes

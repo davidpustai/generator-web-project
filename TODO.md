@@ -69,7 +69,7 @@
 
 ##  HTML rewrites, processing, templating
 * group header js & css for ie8
-* check what's wrong with htmlmin's lint option
+* lint HTML
 
 
 ## older IE support
