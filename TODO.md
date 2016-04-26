@@ -71,4 +71,4 @@
 
 
 ## older IE support
-* support IE desktops https://github.com/jtangelder/grunt-stripmq, http://robin.medvedi.eu/mobile-first-and-ie8-solution-introducing-grunt-legacssy/
+* support IE desktops https://github.com/jtangelder/grunt-stripmq, https://github.com/robinpokorny/grunt-legacssy
