@@ -8,6 +8,8 @@
 * static versions for bower?
 * automated build (and test) via Travis CI
 * linting automation via Grunt
+* lint code in generator
+* lint HTML
 * humans.txt + rel attr
 * Grunt -> Gulp
 * image sprite implementation
@@ -51,6 +53,7 @@
 
 
 ## JS
+* load modernizr asynchronously out of IE8
 * js helpers into some foundation
 * rename plugins.js to helpers or something
 * link to get_media_query snippet in `_media.scss` and `@mixin js-media-helpers` declaration
@@ -65,11 +68,6 @@
 * check svgmin options
 * picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
 * drop loadCSS once most of generator's supported browsers implement `[rel="preload"]`
-
-
-##  HTML rewrites, processing, templating
-* group header js & css for ie8
-* lint HTML
 
 
 ## older IE support
