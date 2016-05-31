@@ -4,7 +4,7 @@
   "private": "true",
   "dependencies": {
   "fastclick": "latest",
-	  "normalize.css": "latest",
+	  "normalize.css": "4.1.1",
 	  "loadcss": "~1.2.0",
 
 	  "respond": "latest",
