@@ -70,6 +70,5 @@
 	}
 
 	@warn "There is no item "#{$element}" in this list; choose one of: #{$list}";
-
 	@return null;
 }

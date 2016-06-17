@@ -24,6 +24,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 	- disallow unknown units
 	- disallow whitespace on the inside of the brackets within attribute selectors and on the inside of the parentheses within pseudo-class selectors
 	- disallow redundant values in shorthand properties
+	- disallow newline between blockless at-rules
 
 ### Removed
 - local Stylelint installation
