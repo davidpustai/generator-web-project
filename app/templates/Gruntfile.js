@@ -349,7 +349,7 @@ module.exports = function (grunt) {
 						'.htaccess',
 						'assets/font/**/*.{svg,ttf,eot,woff}',
 						'assets/js/vendor/jquery-1.8.0.js',
-						'assets/js/vendor/jquery-2.2.0.js'
+						'assets/js/vendor/jquery-3.0.0.js'
 					]
 				}]
 			},
