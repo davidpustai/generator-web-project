@@ -26,6 +26,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 	- disallow whitespace on the inside of the brackets within attribute selectors and on the inside of the parentheses within pseudo-class selectors
 	- disallow redundant values in shorthand properties
 	- disallow newline between blockless at-rules
+- headings are always just a bit bigger than body copy
 
 ### Removed
 - local Stylelint installation

@@ -69,6 +69,19 @@ body {
 }
 
 /*
+ * Headings are always just a bit bigger than body copy:
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 1.25rem;
+}
+
+/*
  * Change the cursor in all browsers (opinionated).
  */
 button,
