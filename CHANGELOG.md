@@ -7,7 +7,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ### Changed
 - updated Stylelint to v6.1.1
 - bump htmlmin version
-- use normalize.css v4.1.1 instead of latest
+- use fixed version for bower components instead of "latest"
 
 ### Added
 - pointer cursor on buttons (removed from normalize.css in v4.1.0)

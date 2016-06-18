@@ -5,7 +5,6 @@
 * javascript linting (ESLint)
 * add assets processing graphic into readme
 * add changelog for generated project
-* static versions for bower?
 * automated build (and test) via Travis CI
 * linting automation via Grunt
 * lint code in generator
