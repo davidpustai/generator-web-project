@@ -29,6 +29,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 
 ### Removed
 - local Stylelint installation
+- the `S` selector wrapper, use jQuery's `$` instead
 
 
 ## [0.10.2] - 2016-04-26
