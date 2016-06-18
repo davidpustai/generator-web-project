@@ -2,11 +2,12 @@
 
 
 ## General stuff
+* add IE8 question to generator and generate IE8 stuff only when wanted
 * javascript linting (ESLint)
 * add assets processing graphic into readme
 * add changelog for generated project
 * automated build (and test) via Travis CI
-* linting automation via Grunt
+* linting automation via Grunt/npm
 * lint code in generator
 * lint HTML
 * humans.txt + rel attr
@@ -52,6 +53,7 @@
 
 
 ## JS
+* Modernizr grunt task
 * load modernizr asynchronously out of IE8
 * js helpers into some foundation
 * rename plugins.js to helpers or something
