@@ -6,7 +6,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ## [Unreleased]
 ### Changed
 - updated Stylelint to v6.1.1
-- bump htmlmin version
+- updated grunt-htmlmin to v1.5.0
 - use fixed version for bower components instead of "latest"
 - upgraded to jQuery v3.0.0 for non-IE8 browsers
 
