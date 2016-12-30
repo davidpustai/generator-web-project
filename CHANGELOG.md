@@ -11,6 +11,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - updated grunt-htmlmin to v1.5.0
 - use fixed version for bower components instead of "latest"
 - upgraded to jQuery v3.0.0 for non-IE8 browsers
+- default `line-height` to `1.15` (following normalize.css)
 
 ### Added
 - pointer cursor on buttons (removed from normalize.css in v4.1.0)
