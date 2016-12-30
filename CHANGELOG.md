@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Fixed
+- copy jQuery in development enviroment, until now we copy only compiled javascript
+
 ### Changed
 - updated Stylelint to v6.1.1
 - updated grunt-htmlmin to v1.5.0

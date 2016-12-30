@@ -362,6 +362,8 @@ module.exports = function (grunt) {
 					src: [
 						'*.{ico,png,txt,xml}',
 						'assets/font/**/*.{svg,ttf,eot,woff}',
+						'assets/js/vendor/jquery-1.8.0.js',
+						'assets/js/vendor/jquery-3.0.0.js',
 						// no need to minify assets every time (in development), just copy them at the begining
 						// bower
 							'bower_components/**/*',
