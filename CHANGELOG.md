@@ -35,6 +35,8 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ### Removed
 - local Stylelint installation
 - the `S` selector wrapper, use jQuery's `$` instead
+- the `rem-calc` SCSS function, use full (or halfs/quarters) `rem`s (or `em`s) to keep some sort of vertical rhythm or `px` for exact values (borders etc.)
+- the `convert-to-rem` SCSS function
 
 
 ## [0.10.2] - 2016-04-26

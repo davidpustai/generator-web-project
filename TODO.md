@@ -27,7 +27,6 @@
 ## Typography
 * vertical rhythm solution and tools for testing ([why](http://zellwk.com/blog/why-vertical-rhythms/) and [how](https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm	) or [like this?](https://matejlatin.github.io/Gutenberg/))
 * make body font size 1em instead of a px value
-* deprecate rem-calc
 * add guide for unit using
 
 
