@@ -12,6 +12,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - use fixed version for bower components instead of "latest"
 - upgraded to jQuery v3.0.0 for non-IE8 browsers
 - default `line-height` to `1.15` (following normalize.css)
+- update normalize.css to v4.2.0
 
 ### Added
 - pointer cursor on buttons (removed from normalize.css in v4.1.0)

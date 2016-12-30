@@ -2,6 +2,7 @@
 
 
 ## General stuff
+* update normalize.css to v5.0.0
 * add IE8 question to generator and generate IE8 stuff only when wanted
 * add assets processing graphic into readme
 * add changelog for generated project
