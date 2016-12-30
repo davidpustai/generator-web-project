@@ -1,12 +1,12 @@
 {
   "name": "generator-web-project",
   "version": "0.10.2",
-  "description": "Brand New's simple generator for [Yeoman](http://yeoman.io)",
+  "description": "Simple front-end project generator for [Yeoman](http://yeoman.io)",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/brand-new/generator-web-project",
-  "bugs": "https://github.com/brand-new/generator-web-project/issues",
+  "homepage": "https://github.com/davidpustai/generator-web-project",
+  "bugs": "https://github.com/davidpustai/generator-web-project/issues",
   "author": {
     "name": "David Pustai",
     "email": "david@pustai.cz",
@@ -15,7 +15,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/brand-new/generator-web-project.git"
+    "url": "git://github.com/davidpustai/generator-web-project.git"
   },
   "dependencies": {
     "yeoman-generator": "~0.14.0"

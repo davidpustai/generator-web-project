@@ -35,4 +35,4 @@ stylelint assets/scss/**/*.scss --syntax scss
 ```
 
 ***
-Generated on <%= (new Date).toISOString().split('T')[0] %> via [Yeoman](http://yeoman.io) with [generator-web-project](https://github.com/brand-new/generator-web-project) <%= pkg.version %>.
+Generated on <%= (new Date).toISOString().split('T')[0] %> via [Yeoman](http://yeoman.io) with [generator-web-project](https://github.com/davidpustai/generator-web-project) <%= pkg.version %>.
