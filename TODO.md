@@ -11,11 +11,13 @@
 * image sprite implementation
 * list in npm
 * ask for GA key, warn when compiling into dist without it
+* automated testing
 * generate sitemap.xml
 * code linting, when there is time (it is not yet)
 
 
 ## NEEDS FIXING
+* JS breakpoint sharing conflicts if JS is loaded before CSS
 * change dev & dist directories permissions, so you don't accidentaly overwrite your code
 * source maps copying & generation
 * dev watch -> copy img, fonts, templates
@@ -28,6 +30,7 @@
 
 
 ## File system
+* src directory for all sources, only configs in root
 * move favicons into img directory
 * move configs like `.htaccess`, `crossdomain.xml` and `robots.txt` into src folder and copy them with Grunt (only keep project configs in root)
 * group by components rather than technology (ecss)
