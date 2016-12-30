@@ -6,6 +6,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ## [Unreleased]
 ### Fixed
 - copy jQuery in development enviroment, until now we copy only compiled javascript
+- copy windows tiles and browserconfig.xml to generated project
 
 ### Changed
 - updated grunt-htmlmin to v1.5.0
