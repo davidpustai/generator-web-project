@@ -64,10 +64,6 @@ WebProjectGenerator.prototype.bower = function bower() {
 	this.template('_bower.json', 'bower.json');
 };
 
-WebProjectGenerator.prototype.lint = function lint() {
-	this.copy('configs/stylelintrc', '.stylelintrc');
-};
-
 WebProjectGenerator.prototype.editor = function editor() {
 	this.copy('configs/editorconfig', '.editorconfig');
 	if (this.createSublimeTextProjectFile) {

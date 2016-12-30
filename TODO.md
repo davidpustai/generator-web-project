@@ -3,19 +3,16 @@
 
 ## General stuff
 * add IE8 question to generator and generate IE8 stuff only when wanted
-* javascript linting (ESLint)
 * add assets processing graphic into readme
 * add changelog for generated project
 * automated build (and test) via Travis CI
-* linting automation via Grunt/npm
-* lint code in generator
-* lint HTML
 * humans.txt + rel attr
 * Grunt -> Gulp
 * image sprite implementation
 * list in npm
 * ask for GA key, warn when compiling into dist without it
 * generate sitemap.xml
+* code linting, when there is time (it is not yet)
 
 
 ## NEEDS FIXING
@@ -45,7 +42,6 @@
 
 ## SCSS
 * no variables in helpers (base.scss), make it default
-* lint SCSS settings files
 * make sizes, colors & font-weights settings sass maps, add get mixins (color(), size())
 * better `bp()` mixin (with min and max parameters - http://sass-mq.github.io/sass-mq/ ?)
 

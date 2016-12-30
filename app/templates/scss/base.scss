@@ -151,13 +151,11 @@ textarea {
 	*:after,
 	*:first-letter,
 	*:first-line {
-		/* stylelint-disable comment-empty-line-before, declaration-no-important */
 		/* Always enforce this to ensure better readability, printing and paint savings when printing on paper. */
 		background: transparent !important;
 		color: #000 !important; // Black prints faster: http://www.sanbeiji.com/archives/953
 		box-shadow: none !important;
 		text-shadow: none !important;
-		/* stylelint-enable */
 	}
 
 	a,
@@ -203,10 +201,8 @@ textarea {
 	}
 
 	img {
-		/* stylelint-disable comment-empty-line-before, declaration-no-important */
 		/* Save color, don't print images bigger then their original. */
 		max-width: 100% !important;
-		/* stylelint-enable */
 	}
 
 	p,

@@ -8,7 +8,6 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - copy jQuery in development enviroment, until now we copy only compiled javascript
 
 ### Changed
-- updated Stylelint to v6.1.1
 - updated grunt-htmlmin to v1.5.0
 - use fixed version for bower components instead of "latest"
 - upgraded to jQuery v3.0.0 for non-IE8 browsers
@@ -16,20 +15,6 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ### Added
 - pointer cursor on buttons (removed from normalize.css in v4.1.0)
 - default cursor on disabled elements (removed from normalize.css in v4.1.0)
-- several SCSS linting changes
-	- limit maxmimal selector specificity to 2 classes and 1 type selector
-	- disallow (unescaped) newlines in strings
-	- lowercase type selectors, at-rule names, function names, properties, pseudo classes, pseudo elements, units, value keywords
-	- require reason comment if disabling linting
-	- check for suspicious contrast issues
-	- require a newline after the semicolon of at-rules
-	- disallow property values that are ignored due to another property value in the same rule
-	- disallow adjacent empty lines within functions
-	- disallow unknown units
-	- disallow whitespace on the inside of the brackets within attribute selectors and on the inside of the parentheses within pseudo-class selectors
-	- disallow redundant values in shorthand properties
-	- disallow newline between blockless at-rules
-	- exceptions for empty line before comment
 - headings are always just a bit bigger than body copy
 
 ### Removed
@@ -37,6 +22,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - the `S` selector wrapper, use jQuery's `$` instead
 - the `rem-calc` SCSS function, use full (or halfs/quarters) `rem`s (or `em`s) to keep some sort of vertical rhythm or `px` for exact values (borders etc.)
 - the `convert-to-rem` SCSS function
+- SCSS linting with Stylelint
 
 
 ## [0.10.2] - 2016-04-26
