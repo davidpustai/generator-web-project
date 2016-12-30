@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+
+
+## [0.11.0] - 2016-12-30
 ### Fixed
 - copy jQuery in development enviroment, until now we copy only compiled javascript
 - copy windows tiles and browserconfig.xml to generated project
