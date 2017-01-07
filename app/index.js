@@ -25,11 +25,6 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 		message: 'Which language would you like to use? (ISO abbreviation)',
 		default: 'en'
 	}, {
-		type: 'confirm',
-		name: 'createSublimeTextProjectFile',
-		message: 'Create Sublime Text project file?',
-		default: true
-	}, {
 		name: 'htmlTitle',
 		message: 'Your HTML <title>?',
 		default: this.appname
@@ -39,7 +34,6 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 		// // manually deal with the response, get back and store the results.
 		// // we change a bit this way of doing to automatically do this in the self.prompt() method.
 		this.language = answers.language;
-		this.createSublimeTextProjectFile = answers.createSublimeTextProjectFile;
 		this.htmlTitle = answers.htmlTitle;
 
 		cb();
@@ -66,9 +60,6 @@ WebProjectGenerator.prototype.bower = function bower() {
 
 WebProjectGenerator.prototype.editor = function editor() {
 	this.copy('configs/editorconfig', '.editorconfig');
-	if (this.createSublimeTextProjectFile) {
-		this.template('configs/project.sublime-project', this._.slugify(this.appname) + '.sublime-project');
-	}
 };
 
 WebProjectGenerator.prototype.assets = function assets() {

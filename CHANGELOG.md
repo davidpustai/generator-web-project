@@ -9,6 +9,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
+- Sublime Text project generation option, use `subl .` after generating and save it manualy
 
 
 ## [0.11.0] - 2016-12-30
