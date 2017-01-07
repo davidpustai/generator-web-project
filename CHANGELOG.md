@@ -7,6 +7,9 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ### Changed
 - updated loadCSS to v1.2.1
 
+### Removed
+- Sublime Text config files ignoring, use global gitignore instead
+
 
 ## [0.11.0] - 2016-12-30
 ### Fixed

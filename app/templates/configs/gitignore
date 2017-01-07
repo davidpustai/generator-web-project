@@ -19,7 +19,5 @@ results
 .sass-cache
 .tmp
 
-*.sublime-*
-
 dev
 dist
