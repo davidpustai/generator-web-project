@@ -10,6 +10,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ### Changed
 - updated loadCSS to v1.2.1
 - don't copy `bower_components` in development enviroment, use grunt concat instead
+- move favicons (favicon, apple-touch-icon, windows tiles) into `assets/img/favicons` and copy it to root when compiling to keep project root clean
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead

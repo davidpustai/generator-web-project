@@ -69,6 +69,7 @@ WebProjectGenerator.prototype.assets = function assets() {
 	this.mkdir('assets/font');
 
 	this.mkdir('assets/img');
+	this.mkdir('assets/img/favicons');
 
 	this.mkdir('assets/js');
 	this.mkdir('assets/js/components');
@@ -94,10 +95,10 @@ WebProjectGenerator.prototype.files = function files() {
 	this.copy('templates/head-global.html', 'templates/includes/head-global.html');
 	this.copy('templates/scripts.html', 'templates/includes/scripts.html');
 
-	this.copy('icons/favicon.ico', 'favicon.ico');
-	this.copy('icons/apple-touch-icon.png', 'apple-touch-icon.png');
-	this.copy('icons/tile.png', 'tile.png');
-	this.copy('icons/tile-wide.png', 'tile-wide.png');
+	this.copy('assets/img/favicons/favicon.ico', 'assets/img/favicons/favicon.ico');
+	this.copy('assets/img/favicons/apple-touch-icon.png', 'assets/img/favicons/apple-touch-icon.png');
+	this.copy('assets/img/favicons/tile.png', 'assets/img/favicons/tile.png');
+	this.copy('assets/img/favicons/tile-wide.png', 'assets/img/favicons/tile-wide.png');
 
 	this.copy('configs/htaccess', '.htaccess');
 	this.copy('configs/robots.txt', 'robots.txt');

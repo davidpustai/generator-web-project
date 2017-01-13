@@ -344,11 +344,22 @@ module.exports = function (grunt) {
 					cwd: '.',
 					dest: 'dist',
 					src: [
-						'*.{ico,png,txt,xml}',
 						'.htaccess',
+						'robots.txt',
+						'crossdomain.xml',
+						'browserconfig.xml',
 						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
 						'assets/js/vendor/jquery-3.0.0.js'
+					]
+				}, {
+					// Copy favicons to root.
+					expand: true,
+					dot: true,
+					cwd: 'assets/img/favicons',
+					dest: 'dist',
+					src: [
+						'*.{ico,png}'
 					]
 				}]
 			},
@@ -359,19 +370,31 @@ module.exports = function (grunt) {
 					cwd: '.',
 					dest: 'dev',
 					src: [
-						'*.{ico,png,txt,xml}',
+						'robots.txt',
+						'crossdomain.xml',
+						'browserconfig.xml',
 						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
 						'assets/js/vendor/jquery-3.0.0.js',
 						'assets/img/**/*.{gif,jpeg,jpg,png,svg}' // no need to minify images every time (in development), just copy them
 					]
 				}, {
+					// No need to uglify compiled javascript in development enviroment, just copy it.
 					expand: true,
 					dot: true,
 					cwd: '.tmp/concat/js',
 					dest: 'dev/assets/js',
 					src: [
-						'**/*.{js,map}' // skiping uglify
+						'**/*.{js,map}'
+					]
+				}, {
+					// Copy favicons to root.
+					expand: true,
+					dot: true,
+					cwd: 'assets/img/favicons',
+					dest: 'dist',
+					src: [
+						'*.{ico,png}'
 					]
 				}]
 			}
