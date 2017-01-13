@@ -6,6 +6,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ## [Unreleased]
 ### Changed
 - updated loadCSS to v1.2.1
+- don't copy `bower_components` in development enviroment, use grunt concat instead
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead

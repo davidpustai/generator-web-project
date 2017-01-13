@@ -25,7 +25,6 @@ module.exports = function (grunt) {
 			copy: {
 				files: [
 					// copy
-						'bower_components/**/*',
 						'assets/font/**/*.{svg,ttf,eot,woff}',
 					// images
 						'assets/img/**/*.{gif,jpeg,jpg,png,svg}'
@@ -364,11 +363,7 @@ module.exports = function (grunt) {
 						'assets/font/**/*.{svg,ttf,eot,woff}',
 						'assets/js/vendor/jquery-1.8.0.js',
 						'assets/js/vendor/jquery-3.0.0.js',
-						// no need to minify assets every time (in development), just copy them at the begining
-						// bower
-							'bower_components/**/*',
-						// images
-							'assets/img/**/*.{gif,jpeg,jpg,png,svg}'
+						'assets/img/**/*.{gif,jpeg,jpg,png,svg}' // no need to minify images every time (in development), just copy them
 					]
 				}, {
 					expand: true,
