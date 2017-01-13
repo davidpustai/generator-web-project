@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Added
+- WOFF2 font format support (copying)
+
 ### Changed
 - updated loadCSS to v1.2.1
 - don't copy `bower_components` in development enviroment, use grunt concat instead
@@ -11,6 +14,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
 - Sublime Text project generation option, use `subl .` after generating and save it manualy
+- SVG, TTF & EOT font formats support (copying)
 
 
 ## [0.11.0] - 2016-12-30

@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 			copy: {
 				files: [
 					// copy
-						'assets/font/**/*.{svg,ttf,eot,woff}',
+						'assets/font/**/*.{woff,woff2}',
 					// images
 						'assets/img/**/*.{gif,jpeg,jpg,png,svg}'
 				],
@@ -346,7 +346,7 @@ module.exports = function (grunt) {
 					src: [
 						'*.{ico,png,txt,xml}',
 						'.htaccess',
-						'assets/font/**/*.{svg,ttf,eot,woff}',
+						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
 						'assets/js/vendor/jquery-3.0.0.js'
 					]
@@ -360,7 +360,7 @@ module.exports = function (grunt) {
 					dest: 'dev',
 					src: [
 						'*.{ico,png,txt,xml}',
-						'assets/font/**/*.{svg,ttf,eot,woff}',
+						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
 						'assets/js/vendor/jquery-3.0.0.js',
 						'assets/img/**/*.{gif,jpeg,jpg,png,svg}' // no need to minify images every time (in development), just copy them
