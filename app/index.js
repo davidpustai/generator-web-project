@@ -40,30 +40,23 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 	}.bind(this));
 };
 
-WebProjectGenerator.prototype.gruntfile = function gruntfile() {
+WebProjectGenerator.prototype.projectfiles = function projectfiles() {
+	this.template('_README.md', 'README.md');
+
+	this.copy('configs/project/gitignore',		'.gitignore');
+	this.copy('configs/project/gitattributes',	'.gitattributes');
+	this.copy('configs/project/editorconfig',	'.editorconfig');
+	this.copy('configs/project/bowerrc',		'.bowerrc');
+
+	this.template('_package.json',	'package.json');
+	this.template('_bower.json',	'bower.json');
+
 	this.template('Gruntfile.js');
 };
 
-WebProjectGenerator.prototype.packageJSON = function packageJSON() {
-	this.template('_package.json', 'package.json');
-};
-
-WebProjectGenerator.prototype.git = function git() {
-	this.copy('configs/gitignore', '.gitignore');
-	this.copy('configs/gitattributes', '.gitattributes');
-};
-
-WebProjectGenerator.prototype.bower = function bower() {
-	this.copy('configs/bowerrc', '.bowerrc');
-	this.template('_bower.json', 'bower.json');
-};
-
-WebProjectGenerator.prototype.editor = function editor() {
-	this.copy('configs/editorconfig', '.editorconfig');
-};
-
-WebProjectGenerator.prototype.assets = function assets() {
+WebProjectGenerator.prototype.dirs = function dirs() {
 	this.mkdir('templates');
+
 	this.mkdir('assets');
 
 	this.mkdir('assets/font');
@@ -81,8 +74,16 @@ WebProjectGenerator.prototype.assets = function assets() {
 	this.mkdir('assets/scss/settings');
 };
 
-WebProjectGenerator.prototype.files = function files() {
-	this.template('_README.md', 'README.md');
+WebProjectGenerator.prototype.webfiles = function webfiles() {
+	this.copy('configs/web/htaccess',			'.htaccess');
+	this.copy('configs/web/robots.txt',			'robots.txt');
+	this.copy('configs/web/crossdomain.xml',	'crossdomain.xml');
+	this.copy('configs/web/browserconfig.xml',	'browserconfig.xml');
+
+	this.copy('templates/index.html', 'templates/index.html');
+
+	this.copy('templates/includes/head-global.html',	'templates/includes/head-global.html');
+	this.copy('templates/includes/scripts.html',		'templates/includes/scripts.html');
 
 	if (file.exists(this.src._base + '/404/404_' + this.language + '.html')) {
 		this.copy('404/404_' + this.language + '.html', 'templates/404.html');
@@ -92,47 +93,36 @@ WebProjectGenerator.prototype.files = function files() {
 		this.copy('404/404_en.html', 'templates/404.html');
 	}
 
-	this.copy('templates/head-global.html', 'templates/includes/head-global.html');
-	this.copy('templates/scripts.html', 'templates/includes/scripts.html');
+	this.copy('assets/img/favicons/favicon.ico',			'assets/img/favicons/favicon.ico');
+	this.copy('assets/img/favicons/apple-touch-icon.png',	'assets/img/favicons/apple-touch-icon.png');
+	this.copy('assets/img/favicons/tile.png',				'assets/img/favicons/tile.png');
+	this.copy('assets/img/favicons/tile-wide.png',			'assets/img/favicons/tile-wide.png');
 
-	this.copy('assets/img/favicons/favicon.ico', 'assets/img/favicons/favicon.ico');
-	this.copy('assets/img/favicons/apple-touch-icon.png', 'assets/img/favicons/apple-touch-icon.png');
-	this.copy('assets/img/favicons/tile.png', 'assets/img/favicons/tile.png');
-	this.copy('assets/img/favicons/tile-wide.png', 'assets/img/favicons/tile-wide.png');
+	this.copy('assets/scss/main.scss', 'assets/scss/main.scss');
 
-	this.copy('configs/htaccess', '.htaccess');
-	this.copy('configs/robots.txt', 'robots.txt');
-	this.copy('configs/crossdomain.xml', 'crossdomain.xml');
-	this.copy('configs/browserconfig.xml', 'browserconfig.xml');
+	this.copy('assets/scss/settings/sizes.scss',	'assets/scss/settings/_sizes.scss');
+	this.copy('assets/scss/settings/media.scss',	'assets/scss/settings/_media.scss');
+	this.copy('assets/scss/settings/colors.scss',	'assets/scss/settings/_colors.scss');
+	this.copy('assets/scss/settings/type.scss',		'assets/scss/settings/_type.scss');
+	this.copy('assets/scss/settings/z-index.scss',	'assets/scss/settings/_z-index.scss');
 
-	this.copy('scss/main.scss', 'assets/scss/main.scss');
+	this.copy('assets/scss/helpers/functions.scss',			'assets/scss/helpers/_functions.scss');
+	this.copy('assets/scss/helpers/mixins.scss',			'assets/scss/helpers/_mixins.scss');
+	this.copy('assets/scss/helpers/visuallyhidden.scss',	'assets/scss/helpers/_visuallyhidden.scss');
+	this.copy('assets/scss/helpers/base.scss',				'assets/scss/helpers/_base.scss');
+	this.copy('assets/scss/helpers/shame.scss',				'assets/scss/helpers/_shame.scss');
 
-	this.copy('scss/sizes.scss', 'assets/scss/settings/_sizes.scss');
-	this.copy('scss/media.scss', 'assets/scss/settings/_media.scss');
-	this.copy('scss/colors.scss', 'assets/scss/settings/_colors.scss');
-	this.copy('scss/type.scss', 'assets/scss/settings/_type.scss');
-	this.copy('scss/z-index-settings.scss', 'assets/scss/settings/_z-index.scss');
-
-	this.copy('scss/functions.scss', 'assets/scss/helpers/_functions.scss');
-	this.copy('scss/mixins.scss', 'assets/scss/helpers/_mixins.scss');
-	this.copy('scss/visuallyhidden.scss', 'assets/scss/helpers/_visuallyhidden.scss');
-	this.copy('scss/base.scss', 'assets/scss/helpers/_base.scss');
-	this.copy('scss/shame.scss', 'assets/scss/helpers/_shame.scss');
-
-	this.copy('js/main.js', 'assets/js/main.js');
-	this.copy('js/plugins.js', 'assets/js/plugins.js');
-	this.copy('js/vendor/jquery-3.0.0.js', 'assets/js/vendor/jquery-3.0.0.js');
-	this.copy('js/vendor/jquery-1.8.0.js', 'assets/js/vendor/jquery-1.8.0.js');
-	this.copy('js/vendor/modernizr.js', 'assets/js/vendor/modernizr.js');
-	this.copy('js/vendor/selectivizr-1.0.3b.js', 'assets/js/vendor/selectivizr-1.0.3b.js');
-};
-
-WebProjectGenerator.prototype.index = function index() {
-	this.copy('index.html', 'templates/index.html');
+	this.copy('assets/js/main.js',						'assets/js/main.js');
+	this.copy('assets/js/plugins.js',					'assets/js/plugins.js');
+	this.copy('assets/js/vendor/jquery-3.0.0.js',		'assets/js/vendor/jquery-3.0.0.js');
+	this.copy('assets/js/vendor/jquery-1.8.0.js',		'assets/js/vendor/jquery-1.8.0.js');
+	this.copy('assets/js/vendor/modernizr.js',			'assets/js/vendor/modernizr.js');
+	this.copy('assets/js/vendor/selectivizr-1.0.3b.js',	'assets/js/vendor/selectivizr-1.0.3b.js');
 };
 
 WebProjectGenerator.prototype.install = function () {
 	var done = this.async();
+
 	this.installDependencies({
 		callback: done
 	});
