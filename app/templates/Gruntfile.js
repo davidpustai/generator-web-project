@@ -27,7 +27,8 @@ module.exports = function (grunt) {
 					// copy
 						'assets/font/**/*.{woff,woff2}',
 					// images
-						'assets/img/**/*.{gif,jpeg,jpg,png,svg}'
+						'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
+						'!assets/img/favicons/**/*'
 				],
 				tasks: 'newer:copy:dev'
 			},
@@ -254,7 +255,8 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'assets/img',
 					src: [
-						'**/*.{gif,jpeg,jpg,png}'
+						'**/*.{gif,jpeg,jpg,png}',
+						'!favicons/**/*'
 					],
 					dest: 'dist/assets/img'
 				}]
@@ -265,7 +267,10 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'assets/img',
-					src: '**/*.svg',
+					src: [
+						'**/*.svg',
+						'!favicons/**/*'
+					],
 					dest: 'dist/assets/img'
 				}]
 			}
@@ -376,7 +381,9 @@ module.exports = function (grunt) {
 						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
 						'assets/js/vendor/jquery-3.0.0.js',
-						'assets/img/**/*.{gif,jpeg,jpg,png,svg}' // no need to minify images every time (in development), just copy them
+						 // no need to minify images every time (in development), just copy them
+							'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
+							'!assets/img/favicons/**/*'
 					]
 				}, {
 					// No need to uglify compiled javascript in development enviroment, just copy it.
@@ -392,7 +399,7 @@ module.exports = function (grunt) {
 					expand: true,
 					dot: true,
 					cwd: 'assets/img/favicons',
-					dest: 'dist',
+					dest: 'dev',
 					src: [
 						'*.{ico,png}'
 					]
