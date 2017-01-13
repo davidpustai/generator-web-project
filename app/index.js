@@ -18,7 +18,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
 	// welcome message
 	console.log(this.yeoman);
-	console.log('Project with Gruntfile and HTML5 Boilerplate are prepared!');
+	console.log('Project with Gruntfile and HTML5 Boilerplate is prepared!');
 
 	var prompts = [{
 		name: 'language',
