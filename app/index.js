@@ -113,7 +113,7 @@ WebProjectGenerator.prototype.webfiles = function webfiles() {
 
 	this.copy('assets/js/main.js',						'assets/js/main.js');
 	this.copy('assets/js/plugins.js',					'assets/js/plugins.js');
-	this.copy('assets/js/vendor/jquery-3.0.0.js',		'assets/js/vendor/jquery-3.0.0.js');
+	this.copy('assets/js/vendor/jquery-3.1.1.js',		'assets/js/vendor/jquery-3.1.1.js');
 	this.copy('assets/js/vendor/jquery-1.8.0.js',		'assets/js/vendor/jquery-1.8.0.js');
 	this.copy('assets/js/vendor/modernizr.js',			'assets/js/vendor/modernizr.js');
 	this.copy('assets/js/vendor/selectivizr-1.0.3b.js',	'assets/js/vendor/selectivizr-1.0.3b.js');

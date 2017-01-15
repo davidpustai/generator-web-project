@@ -354,7 +354,7 @@ module.exports = function (grunt) {
 						'browserconfig.xml',
 						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
-						'assets/js/vendor/jquery-3.0.0.js'
+						'assets/js/vendor/jquery-3.1.1.js'
 					]
 				}, {
 					// Copy favicons to root.
@@ -378,7 +378,7 @@ module.exports = function (grunt) {
 						'browserconfig.xml',
 						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
-						'assets/js/vendor/jquery-3.0.0.js',
+						'assets/js/vendor/jquery-3.1.1.js',
 						 // no need to minify images every time (in development), just copy them
 							'assets/img/**/*.{gif,jpeg,jpg,png,svg}',
 							'!assets/img/favicons/**/*'
