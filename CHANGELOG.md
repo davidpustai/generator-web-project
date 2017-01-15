@@ -6,6 +6,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 ## [Unreleased]
 ### Fixed
 - typo "project are" -> "project is"
+- wrong order of meta tags in head
 
 ### Added
 - WOFF2 font format support (copying)
