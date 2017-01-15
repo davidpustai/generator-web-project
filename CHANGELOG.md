@@ -20,10 +20,10 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - don't copy `bower_components` in development enviroment, use grunt concat instead
 - move favicons (favicon, apple-touch-icon, windows tiles) into `assets/img/favicons` and copy it to root when compiling to keep project root clean
 - better structurize generator filesystem
-- update grunt-htmlmin
 - page templates are now stored in `templates/pages`
 - update jQuery to v3.1.1
 - display `.browserupgrade` message to IE9 users
+- update `devDependencies`, require grunt ~1.0.0
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead

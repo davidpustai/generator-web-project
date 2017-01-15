@@ -230,6 +230,7 @@ module.exports = function (grunt) {
 			options: {
 				squeeze: {dead_code: false},
 				codegen: {quote_keys: true},
+				screwIE8: false,
 				sourceMap: true,
 				sourceMapIn: function(src) {
 					return src + '.map';
