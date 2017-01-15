@@ -2,10 +2,11 @@
 
 
 ## General stuff
-* add IE8 question to generator and generate IE8 stuff only when wanted
+* mustache_renderer, cache busting
 * add assets processing graphic into readme
 * add changelog for generated project
 * automated build (and test) via Travis CI
+* drop IE8 support?
 * humans.txt + rel attr
 * Grunt -> Gulp
 * image sprite implementation

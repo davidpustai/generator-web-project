@@ -16,6 +16,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - move favicons (favicon, apple-touch-icon, windows tiles) into `assets/img/favicons` and copy it to root when compiling to keep project root clean
 - better structurize generator filesystem
 - update grunt-htmlmin
+- page templates are now stored in `templates/pages`
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead

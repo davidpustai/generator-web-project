@@ -80,17 +80,17 @@ WebProjectGenerator.prototype.webfiles = function webfiles() {
 	this.copy('configs/web/crossdomain.xml',	'crossdomain.xml');
 	this.copy('configs/web/browserconfig.xml',	'browserconfig.xml');
 
-	this.copy('templates/index.html', 'templates/index.html');
-
 	this.copy('templates/includes/head-global.html',	'templates/includes/head-global.html');
 	this.copy('templates/includes/scripts.html',		'templates/includes/scripts.html');
 
-	if (file.exists(this.src._base + '/404/404_' + this.language + '.html')) {
-		this.copy('404/404_' + this.language + '.html', 'templates/404.html');
+	this.copy('templates/pages/index.html', 'templates/pages/index.html');
+
+	if (file.exists(this.src._base + '/templates/pages/404/404_' + this.language + '.html')) {
+		this.copy('templates/pages/404/404_' + this.language + '.html', 'templates/pages/404.html');
 	}
 	else {
 		console.log('There is not 404.html error page in your choosen language, I\'m including english version.');
-		this.copy('404/404_en.html', 'templates/404.html');
+		this.copy('templates/pages/404/404_en.html', 'templates/templates/pages/404.html');
 	}
 
 	this.copy('assets/img/favicons/favicon.ico',			'assets/img/favicons/favicon.ico');

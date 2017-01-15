@@ -32,7 +32,7 @@ module.exports = function (grunt) {
 				],
 				tasks: 'newer:copy:dev'
 			},
-			processhtml: {
+			html: {
 				files: ['templates/**/*.html'],
 				tasks: 'processhtml:dev'
 			},
@@ -279,7 +279,7 @@ module.exports = function (grunt) {
 		// ===============================================================
 		// HTML
 		// ===============================================================
-		// Processes HTML templates in /templates (not in subdirectories!)
+		// Processes HTML template for each page (templates/pages).
 		processhtml: {
 			options: {
 				commentMarker: 'process',
@@ -290,7 +290,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					dot: true,
-					cwd: 'templates',
+					cwd: 'templates/pages',
 					dest: 'dist',
 					src: ['*.html']
 				}]
@@ -299,7 +299,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					dot: true,
-					cwd: 'templates',
+					cwd: 'templates/pages',
 					dest: 'dev',
 					src: ['*.html']
 				}]
