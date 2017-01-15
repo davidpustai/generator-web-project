@@ -8,6 +8,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - typo "project are" -> "project is"
 - wrong order of meta tags in head
 - print style for `pre` element
+- print style for IE11 ([h5bp](https://github.com/h5bp/html5-boilerplate/commit/9c98cfaffb305bbcc9dd31f3be04ffa8506d0095))
 
 ### Added
 - WOFF2 font format support (copying)
