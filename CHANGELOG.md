@@ -22,6 +22,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - update grunt-htmlmin
 - page templates are now stored in `templates/pages`
 - update jQuery to v3.1.1
+- display `.browserupgrade` message to IE9 users
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
