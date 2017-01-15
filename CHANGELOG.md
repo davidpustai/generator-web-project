@@ -24,6 +24,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - update jQuery to v3.1.1
 - display `.browserupgrade` message to IE9 users
 - update `devDependencies`, require grunt ~1.0.0
+- link to localized browser upgrade website (`cs`)
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
