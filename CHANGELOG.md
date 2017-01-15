@@ -24,6 +24,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - Sublime Text config files ignoring, use global gitignore instead
 - Sublime Text project generation option, use `subl .` after generating and save it manualy
 - SVG, TTF & EOT font formats support (copying)
+- `max-width: 100%` for printed images ([reason](https://github.com/h5bp/html5-boilerplate/commit/a90685e01d261d2b9bd160c8f014dc20ad8e6749))
 
 
 ## [0.11.0] - 2016-12-30

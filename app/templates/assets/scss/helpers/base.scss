@@ -204,11 +204,6 @@ textarea {
 		page-break-inside: avoid;
 	}
 
-	img {
-		/* Save color, don't print images bigger then their original. */
-		max-width: 100% !important;
-	}
-
 	p,
 	h2,
 	h3 {
