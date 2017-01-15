@@ -18,6 +18,7 @@
 
 
 ## NEEDS FIXING
+* don't remove comment at the end of 404 pages, don't minify them either
 * JS breakpoint sharing conflicts if JS is loaded before CSS
 * change dev & dist directories permissions, so you don't accidentaly overwrite your code
 * source maps copying & generation
