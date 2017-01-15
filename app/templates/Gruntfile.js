@@ -351,7 +351,6 @@ module.exports = function (grunt) {
 					src: [
 						'.htaccess',
 						'robots.txt',
-						'crossdomain.xml',
 						'browserconfig.xml',
 						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
@@ -376,7 +375,6 @@ module.exports = function (grunt) {
 					dest: 'dev',
 					src: [
 						'robots.txt',
-						'crossdomain.xml',
 						'browserconfig.xml',
 						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',

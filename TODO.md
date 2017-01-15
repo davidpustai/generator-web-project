@@ -32,7 +32,7 @@
 
 ## File system
 * src directory for all sources, only configs in root
-* move configs like `.htaccess`, `crossdomain.xml` and `robots.txt` into src folder and copy them with Grunt (only keep project configs in root)
+* move configs like `.htaccess`, `browserconfig.xml` and `robots.txt` into src folder and copy them with Grunt (only keep project configs in root)
 * group by components rather than technology (ecss)
 
 
