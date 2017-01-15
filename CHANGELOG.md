@@ -12,6 +12,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 
 ### Added
 - WOFF2 font format support (copying)
+- note security improvement for old IE users
 
 ### Changed
 - updated loadCSS to v1.2.1
