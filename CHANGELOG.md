@@ -25,6 +25,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - display `.browserupgrade` message to IE9 users
 - update `devDependencies`, require grunt ~1.0.0
 - link to localized browser upgrade website (`cs`)
+- don't copy robots.txt in development enviroment
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead

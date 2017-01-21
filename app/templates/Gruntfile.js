@@ -375,7 +375,6 @@ module.exports = function (grunt) {
 					cwd: '.',
 					dest: 'dev',
 					src: [
-						'robots.txt',
 						'browserconfig.xml',
 						'assets/font/**/*.{woff,woff2}',
 						'assets/js/vendor/jquery-1.8.0.js',
