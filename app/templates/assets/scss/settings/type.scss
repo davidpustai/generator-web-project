@@ -7,6 +7,8 @@ $fw-normal: normal;
 
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 $base-font-size: 16px;
+
+// Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
 $base-line-height: 1.15;
 
 /* "Helvetica" is proper noun, therefore we write it with capital "H" */
