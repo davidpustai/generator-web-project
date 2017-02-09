@@ -28,6 +28,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - update `devDependencies`, require grunt ~1.0.0
 - link to localized browser upgrade website (`cs`)
 - don't copy robots.txt in development enviroment
+- default `line-height` to `1.5` for better perceivability (following WCAG 2.0 Checklist 1.4.8)
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
