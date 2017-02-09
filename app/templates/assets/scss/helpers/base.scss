@@ -55,8 +55,8 @@ html {
 	line-height: $base-line-height;
 	font-size: $base-font-size;
 	font-family: $body-font-family;
-	background-color: $body-bg;
-	color: $body-font-color;
+	background-color: $body-bg; // WCAG 2.0 Checklist 1.4.8
+	color: $body-font-color; // WCAG 2.0 Checklist 1.4.8
 }
 
 /*

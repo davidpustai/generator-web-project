@@ -26,7 +26,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 		default: 'en'
 	}, {
 		name: 'htmlTitle',
-		message: 'Your HTML <title>?',
+		message: 'Descriptive and informative page title (HTML `<title>`)?', // WCAG 2.0 Checklist 1.4.8
 		default: this.appname
 	}];
 
