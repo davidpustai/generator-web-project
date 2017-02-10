@@ -39,13 +39,6 @@
 * group by components rather than technology (ecss)
 
 
-## Documentation
-* comment files, instead of having them in style guide
-* connect to style guide (or move style guide to docs?)
-* add style guide english translation
-* remove redundant info from README
-
-
 ## SCSS
 * no variables in helpers (base.scss), make it default
 * make sizes, colors & font-weights settings sass maps, add get mixins (color(), size())
@@ -55,8 +48,6 @@
 ## JS
 * Modernizr grunt task
 * load modernizr asynchronously out of IE8
-* js helpers into some foundation
-* rename plugins.js to helpers or something
 * link to get_media_query snippet in `_media.scss` and `@mixin js-media-helpers` declaration
 
 
