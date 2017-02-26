@@ -39,5 +39,23 @@ grunt
  	* builds the project with `build` task
  	* runs local server at `localhost:8000`
 
+## Contributions
+
+When releasing
+* update version in `package.json` and `bower.json`
+* rename `[Unreleased]` section in `CHANGELOG.md` to `[<version>] <date-of-release>`
+* create new `[Unreleased]` section at the top
+* `git add . && git commit -m v<version-number>`
+* `git tag -a v<version-number>`
+* `git push && git push --tags`
+
+
+## Changelog
+
+In separate file [CHANGELOG.md](CHANGELOG.md). Please [keep a CHANGELOG](http://keepachangelog.com/).
+
+This project adheres to [Semantic Versioning](http://semver.org/).
+
+
 ***
 Generated on <%= (new Date).toISOString().split('T')[0] %> via [Yeoman](http://yeoman.io) with [generator-web-project](https://github.com/davidpustai/generator-web-project) <%= pkg.version %>.

@@ -5,7 +5,6 @@
 * mustache_renderer, cache busting
 * ask for project name along with HTML title (use it for slug etc.)
 * use [accesslint.js](https://github.com/accesslint/accesslint.js)
-* changelog to generated project
 * add assets processing graphic into readme
 * add changelog for generated project
 * automated build (and test) via Travis CI

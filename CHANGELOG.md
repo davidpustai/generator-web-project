@@ -16,6 +16,7 @@ This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.co
 - note security improvement for old IE users
 - improved accessibility and documentation for `.visuallyhidden` class
 - jQuery Subresource Integrity
+- changelog for generated project
 
 ### Changed
 - updated loadCSS to v1.2.1

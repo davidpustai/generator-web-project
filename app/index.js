@@ -43,6 +43,8 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 WebProjectGenerator.prototype.projectfiles = function projectfiles() {
 	this.template('_README.md', 'README.md');
 
+	this.copy('CHANGELOG.md', 'CHANGELOG.md');
+
 	this.copy('configs/project/gitignore',		'.gitignore');
 	this.copy('configs/project/gitattributes',	'.gitattributes');
 	this.copy('configs/project/editorconfig',	'.editorconfig');
