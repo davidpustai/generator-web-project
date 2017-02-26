@@ -29,6 +29,7 @@
 - default `line-height` to `1.5` for better perceivability (following WCAG 2.0 Checklist 1.4.8)
 - update loadCSS to v1.3.1
 - improved README
+- font-weight variable `$fw-normal` to `$fw-default`, "normal" could be confused with the CSS font-weight value "noramal"
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
