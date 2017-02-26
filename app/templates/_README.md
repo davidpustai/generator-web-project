@@ -10,6 +10,18 @@
 ## Supports
 All modern browsers including IE 8+.
 
+## Getting started
+First install dependencies:
+```
+npm install
+bower install
+```
+
+And let's start working (more about grunt commands below):
+```
+grunt
+```
+
 ## Grunt commands
  * `grunt [default]` - *use for development*
 	* compiles and prefixes scss
