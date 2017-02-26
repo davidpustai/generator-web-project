@@ -54,7 +54,9 @@ When releasing
 
 ## Changelog
 
-In separate file [CHANGELOG.md](CHANGELOG.md).
+In separate file [CHANGELOG.md](CHANGELOG.md). Please [keep a CHANGELOG](http://keepachangelog.com/).
+
+This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## License
