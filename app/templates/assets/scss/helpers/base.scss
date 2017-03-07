@@ -37,17 +37,6 @@ video {
    ========================================================================== */
 
 /*
- * Set box-sizing globally to handle padding and border widths.
- * Reset all margins.
- */
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-	margin: 0;
-}
-
-/*
  * Basic typography and color style.
  */
 html {
@@ -57,6 +46,17 @@ html {
 	font-family: $body-font-family;
 	background-color: $body-bg; // WCAG 2.0 Checklist 1.4.8
 	color: $body-font-color; // WCAG 2.0 Checklist 1.4.8
+}
+
+/*
+ * Set box-sizing globally to handle padding and border widths.
+ * Reset all margins.
+ */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
 }
 
 /*
