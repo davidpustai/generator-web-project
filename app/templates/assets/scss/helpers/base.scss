@@ -40,6 +40,7 @@ video {
  * Basic typography and color style.
  */
 html {
+	box-sizing: border-box;
 	height: 100%;
 	line-height: $base-line-height;
 	font-size: $base-font-size;
@@ -55,7 +56,7 @@ html {
 *,
 *:before,
 *:after {
-	box-sizing: border-box;
+	box-sizing: inherit;
 	margin: 0;
 }
 
