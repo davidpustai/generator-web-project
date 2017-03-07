@@ -42,11 +42,6 @@ video {
 html {
 	box-sizing: border-box;
 	height: 100%;
-	line-height: $base-line-height;
-	font-size: $base-font-size;
-	font-family: $body-font-family;
-	background-color: $body-bg; // WCAG 2.0 Checklist 1.4.8
-	color: $body-font-color; // WCAG 2.0 Checklist 1.4.8
 }
 
 /*
@@ -67,6 +62,11 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	line-height: $base-line-height;
+	font-size: $base-font-size;
+	font-family: $body-font-family;
+	background-color: $body-bg; // WCAG 2.0 Checklist 1.4.8
+	color: $body-font-color; // WCAG 2.0 Checklist 1.4.8
 }
 
 /*

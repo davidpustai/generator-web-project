@@ -31,6 +31,7 @@
 - improved README
 - font-weight variable `$fw-normal` to `$fw-default`, "normal" could be confused with the CSS font-weight value "noramal"
 - inherit `box-sizing` from `html` for easier usage of plugins that change it
+- move base type and colors sepcification from `html` to `body`
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
