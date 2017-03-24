@@ -83,6 +83,14 @@ h6 {
 }
 
 /*
+ * Reset normalize.css behavior.
+ */
+h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*
  * Change the cursor in all browsers (opinionated).
  */
 button,

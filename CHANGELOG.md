@@ -34,6 +34,7 @@
 - move base type and colors sepcification from `html` to `body`
 - unified bower.json & package.json formating and dependency sorting
 - headings are always just a bit bigger than general text
+- no margins on headings
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
