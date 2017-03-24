@@ -70,7 +70,7 @@ body {
 }
 
 /*
- * Headings are always just a bit bigger than body copy:
+ * Headings are always just a bit bigger than general text:
  * http://csswizardry.com/2016/02/managing-typography-on-large-apps/
  */
 h1,
@@ -79,7 +79,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: 1.25rem;
+	font-size: 1.25em;
 }
 
 /*

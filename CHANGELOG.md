@@ -33,6 +33,7 @@
 - inherit `box-sizing` from `html` for easier usage of plugins that change it
 - move base type and colors sepcification from `html` to `body`
 - unified bower.json & package.json formating and dependency sorting
+- headings are always just a bit bigger than general text
 
 ### Removed
 - Sublime Text config files ignoring, use global gitignore instead
