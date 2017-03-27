@@ -17,6 +17,7 @@
 
 ### Changed
 - updated loadCSS to v1.2.1
+- update normalize.css to 6.0.0
 - don't copy `bower_components` in development enviroment, use grunt concat instead
 - move favicons (favicon, apple-touch-icon, windows tiles) into `assets/img/favicons` and copy it to root when compiling to keep project root clean
 - better structurize generator filesystem
