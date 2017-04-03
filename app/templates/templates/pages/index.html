@@ -2,7 +2,7 @@
 <html class="no-js" lang="<%= language %>">
 	<head>
 		<!-- keep this include on top, more in comments inside -->
-		<!-- process:include includes/head-global.html--><!-- /process -->
+		{{> ../partials/head-global.html}}
 
 		<title><%= htmlTitle %></title>
 		<meta name="description" content="">
@@ -15,6 +15,6 @@
 
 		<p>Hello world! This is HTML5 Boilerplate.</p>
 
-		<!-- process:include includes/scripts.html--><!-- /process -->
+		{{> ../partials/scripts.html}}
 	</body>
 </html>

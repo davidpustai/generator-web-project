@@ -18,7 +18,7 @@ WebProjectGenerator.prototype.askFor = function askFor() {
 
 	// welcome message
 	console.log(this.yeoman);
-	console.log('Project with Gruntfile and HTML5 Boilerplate is prepared!');
+	console.log('Project generated. Let\'s get to work!');
 
 	var prompts = [{
 		name: 'language',
@@ -53,7 +53,7 @@ WebProjectGenerator.prototype.projectfiles = function projectfiles() {
 	this.template('_package.json',	'package.json');
 	this.template('_bower.json',	'bower.json');
 
-	this.template('Gruntfile.js');
+	this.template('gulpfile.js');
 };
 
 WebProjectGenerator.prototype.dirs = function dirs() {
@@ -81,8 +81,8 @@ WebProjectGenerator.prototype.webfiles = function webfiles() {
 	this.copy('configs/web/robots.txt',			'robots.txt');
 	this.copy('configs/web/browserconfig.xml',	'browserconfig.xml');
 
-	this.copy('templates/includes/head-global.html',	'templates/includes/head-global.html');
-	this.copy('templates/includes/scripts.html',		'templates/includes/scripts.html');
+	this.copy('templates/partials/head-global.html',	'templates/partials/head-global.html');
+	this.copy('templates/partials/scripts.html',		'templates/partials/scripts.html');
 
 	this.copy('templates/pages/index.html', 'templates/pages/index.html');
 

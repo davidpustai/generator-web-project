@@ -1,6 +1,20 @@
 # Change Log
 
 ## [Unreleased]
+### Added
+- assets revisioning (static cache busting)
+- build automation via Gulp
+- `svg` favicon copying
+- Mustache templating
+
+### Changed
+- when minifying HTML whitespace, always keep at least one space
+
+### Removed
+- build automation via Grunt
+- source maps generation
+- `.jpeg` image copying, use `.jpg`
+- `processhtml` task
 
 
 ## [0.12.0] - 2017-04-03

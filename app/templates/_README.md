@@ -1,4 +1,4 @@
-# <%= htmlTitle %> [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# <%= htmlTitle %>
 
 ## Using
  * parts of [HTML5 Boilerplate](https://html5boilerplate.com/)
@@ -17,17 +17,17 @@ npm install
 bower install
 ```
 
-And let's start working (more about grunt commands below):
+And let's start working (more about gulp commands below):
 ```
-grunt
+gulp
 ```
 
-## Grunt commands
- * `grunt [default]` - *use for development*
+## Gulp commands
+ * `gulp [default]` - *use for development*
 	* compiles and prefixes scss
 	* runs local server (with live reload) at `localhost:8000`
 	* watches for changes
- * `grunt build` - *use when publishnig, compiles everything to `dist` folder*
+ * `gulp build` - *use when publishnig, compiles everything to `dist` folder*
  	* compiles, prefixes, concats and minifies scss
  	* minifies media queries
  	* concats and minifies javascript
@@ -35,7 +35,7 @@ grunt
  	* copies favicons, browserconfigs etc.
  	* runs local server at `localhost:8000`
  	* makes everything avaliable for production in `dist` folder
- * `grunt serve` - *use for production build review*
+ * `gulp serve` - *use for production build review*
  	* builds the project with `build` task
  	* runs local server at `localhost:8000`
 
