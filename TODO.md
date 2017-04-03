@@ -12,7 +12,6 @@
 * editorconfig do readme
 * [Yarn](https://yarnpkg.com/lang/en/)
 * `bump.sh`
-* 404 meta order
 * 404 link to homepage
 * 404 templating
 * ask for project name along with HTML title (use it for slug etc.)
