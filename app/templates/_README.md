@@ -23,16 +23,17 @@ gulp
 ```
 
 ## Gulp commands
- * `gulp [default]` - *use for development*
+ * `gulp [default]` - *use for development, compiles into `dev` directory*
 	* compiles and prefixes scss
 	* runs local server (with live reload) at `localhost:8000`
 	* watches for changes
- * `gulp build` - *use when publishnig, compiles everything to `dist` folder*
+ * `gulp build` - *use when publishnig, compiles into `dist` directory*
  	* compiles, prefixes, concats and minifies scss
- 	* minifies media queries
+ 	* minifies (combines) media queries
  	* concats and minifies javascript
- 	* minifies html
- 	* copies favicons, browserconfigs etc.
+ 	* templates html with Mustache and minifies it
+ 	* copies favicons and configs to root
+ 	* revisions assets to bust caches
  	* runs local server at `localhost:8000`
  	* makes everything avaliable for production in `dist` folder
  * `gulp serve` - *use for production build review*
