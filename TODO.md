@@ -1,29 +1,37 @@
 # TODO
 
 
+## NEEDS FIXING
+* critical CSS solution (single file we inline on build? https://github.com/filamentgroup/grunt-criticalcss?)
+* JS breakpoint sharing conflicts if JS is loaded before CSS -> critical CSS
+* source maps copying & generation, strip on dist
+
+
 ## General stuff
-* mustache_renderer, cache busting
+* Grunt -> Gulp
+* drop IE8 support + solve the rest + custom GA implementation, browserslist
+* GTM support
+* mustache_renderer, cache busting (only if htaccess avaliable)
+* remove defer from main.js
+* editorconfig do readme
+* [Yarn](https://yarnpkg.com/lang/en/)
+* `bump.sh`
+* list in npm/yarn
+* 404 meta order
+* 404 link to homepage
+* 404 templating
 * ask for project name along with HTML title (use it for slug etc.)
 * use [accesslint.js](https://github.com/accesslint/accesslint.js)
-* add assets processing graphic into readme
-* add changelog for generated project
+* add assets processing graphic into readme or moduling for better understanding
 * automated build (and test) via Travis CI
-* drop IE8 support?
+* handlebars? or other layouting
 * humans.txt + rel attr
-* Grunt -> Gulp
+* Webpack
 * image sprite implementation
-* list in npm
 * ask for GA key, warn when compiling into dist without it
-* automated testing
+* automated testing for generator and projects
 * generate sitemap.xml
 * code linting, when there is time (it is not yet)
-
-
-## NEEDS FIXING
-* JS breakpoint sharing conflicts if JS is loaded before CSS
-* change dev & dist directories permissions, so you don't accidentaly overwrite your code
-* source maps copying & generation
-* dev watch -> copy img, fonts, templates
 
 
 ## Typography
@@ -51,8 +59,8 @@
 
 
 ## Optimalization
+* use grunt concurrent for all tasks since you can specify synchronous tasks as well
 * font subseting and optimalization via grunt
-* critical CSS solution (single file we inline on build? https://github.com/filamentgroup/grunt-criticalcss?)
 * lazy load [images](http://developer.telerik.com/featured/lazy-loading-images-on-the-web/)
 * lazy load fonts (check [webfontloader](https://github.com/typekit/webfontloader) and [css-tricks article](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/))
 * uncss, class names minification
