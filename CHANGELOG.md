@@ -9,6 +9,7 @@
 
 ### Changed
 - when minifying HTML whitespace, always keep at least one space
+- updated Modernizr to v3.5.0
 
 ### Removed
 - build automation via Grunt
