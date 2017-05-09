@@ -11,6 +11,7 @@
 - when minifying HTML whitespace, always keep at least one space
 - updated Modernizr to v3.5.0
 - update normalize.css to 7.0.0
+- update `devDependencies`
 
 ### Removed
 - build automation via Grunt
