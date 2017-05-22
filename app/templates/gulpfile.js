@@ -135,7 +135,7 @@ gulp.task('js', ['concat:js'], function() {
 	if ( ENV == 'dist' ) {
 		return stream
 			.pipe($.uglify({
-				screw_ie8: false
+				ie8: true
 			}))
 			.pipe($.rev())
 			.pipe(gulp.dest(DEST + '/assets/js'))
