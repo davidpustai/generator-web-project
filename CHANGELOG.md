@@ -13,6 +13,7 @@
 - updated Modernizr to v3.5.0
 - update normalize.css to 7.0.0
 - update `devDependencies`
+- update `.gitattributes` for Web Projects
 
 ### Removed
 - build automation via Grunt
