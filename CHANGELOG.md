@@ -14,6 +14,7 @@
 - update normalize.css to 7.0.0
 - update `devDependencies`
 - update `.gitattributes` for Web Projects
+- update browsehappy to https instead of http
 
 ### Removed
 - build automation via Grunt
