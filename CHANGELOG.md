@@ -6,6 +6,7 @@
 - build automation via Gulp
 - `svg` favicon copying
 - Mustache templating
+- `clip-path` as PE to `.visuallyhidden` class
 
 ### Changed
 - when minifying HTML whitespace, always keep at least one space

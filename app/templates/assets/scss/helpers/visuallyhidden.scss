@@ -9,6 +9,7 @@
 @mixin visuallyhidden {
 	border: 0;
 	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
@@ -20,6 +21,7 @@
 	&:focus,
 	&:active {
 		clip: auto;
+		clip-path: none;
 		height: auto;
 		margin: 0;
 		overflow: visible;
