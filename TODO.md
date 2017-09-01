@@ -6,26 +6,27 @@
 
 
 ## General stuff
+* install both jQuery versions via bower
 * use browserslist (drop IE8 support, update the rest, custom GA implementation)
-* GTM support
-* remove defer from main.js
-* editorconfig do readme
+* fix gulp watch and cache and reloading
+* PostCSS custom properties
+* fluid type mixin
 * [Yarn](https://yarnpkg.com/lang/en/)
-* `bump.sh`
 * 404 link to homepage
 * 404 templating
 * ask for project name along with HTML title (use it for slug etc.)
-* critical CSS solution
+* critical CSS solution (https://github.com/filamentgroup/criticalCSS, https://nystudio107.com/blog/implementing-critical-css)
 * use [accesslint.js](https://github.com/accesslint/accesslint.js)
 * automated build (and test) via Travis CI
 * handlebars? or other layouting
 * humans.txt + rel attr
 * Webpack
 * ask for GA key, warn when compiling into dist without it
-* automated testing for generator and projects
+* automated testing for generator and projects (include lighthouse)
 * generate sitemap.xml
 * source maps copying & generation, strip on dist
 * code linting, when there is time (it is not yet)
+* documentation (see h5bp docs)
 
 
 ## Typography
@@ -48,6 +49,8 @@
 
 ## JS
 * Modernizr gulp task
+* Babel
+* [Encoding data in CSS](http://ofcodeandcolor.com/2017/04/02/encoding-data-in-css/)
 * load modernizr asynchronously out of IE8
 * link to get_media_query snippet in `_media.scss` and `@mixin js-media-helpers` declaration
 
