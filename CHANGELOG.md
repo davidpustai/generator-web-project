@@ -23,6 +23,7 @@
 - source maps generation
 - `.jpeg` image copying, use `.jpg`
 - `processhtml` task
+- GA deferring
 
 
 ## [0.12.0] - 2017-04-03
