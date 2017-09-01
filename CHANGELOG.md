@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+
+
+## [0.13.0] - 2017-09-01
 ### Added
 - assets revisioning (static cache busting)
 - build automation via Gulp
