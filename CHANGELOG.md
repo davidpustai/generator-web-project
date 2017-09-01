@@ -15,6 +15,7 @@
 - update `devDependencies`
 - update `.gitattributes` for Web Projects
 - update browsehappy to https instead of http
+- disallow 404.html in robots.txt
 
 ### Removed
 - build automation via Grunt
