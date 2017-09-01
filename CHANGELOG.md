@@ -16,6 +16,7 @@
 - update `.gitattributes` for Web Projects
 - update browsehappy to https instead of http
 - disallow 404.html in robots.txt
+- use absolute paths for assets loading to work in subdirectories
 
 ### Removed
 - build automation via Grunt
