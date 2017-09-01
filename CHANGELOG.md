@@ -25,6 +25,9 @@
 - `processhtml` task
 - GA deferring
 
+### Fixed
+- paralel revisioning might overwrite each others manifests instead of merging them
+
 
 ## [0.12.0] - 2017-04-03
 ### Fixed

@@ -7,10 +7,7 @@ var gulp = require('gulp'),
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
 // ===============================================================
-var revManifest = {
-		file: 'rev-manifest.json',
-		base: '.tmp'
-	};
+var revManifestsBase = '.tmp/rev-manifests';
 
 // ===============================================================
 // ENVIROMENT VARIABLES
@@ -66,11 +63,10 @@ gulp.task('css', ['concat:css'], function() {
 			.pipe($.cleanCss())
 			.pipe($.rev())
 			.pipe(gulp.dest(DEST + '/assets/css'))
-			.pipe($.rev.manifest(revManifest.base + '/' + revManifest.file, {
-				base: revManifest.base,
-				merge: true
+			.pipe($.rev.manifest(revManifestsBase + '/css.json', {
+				base: revManifestsBase
 			}))
-			.pipe(gulp.dest('.tmp'));
+			.pipe(gulp.dest(revManifestsBase));
 	}
 	else {
 		return stream
@@ -139,11 +135,10 @@ gulp.task('js', ['concat:js'], function() {
 			}))
 			.pipe($.rev())
 			.pipe(gulp.dest(DEST + '/assets/js'))
-			.pipe($.rev.manifest(revManifest.base + '/' + revManifest.file, {
-				base: revManifest.base,
-				merge: true
+			.pipe($.rev.manifest(revManifestsBase + '/js.json', {
+				base: revManifestsBase
 			}))
-			.pipe(gulp.dest('.tmp'));
+			.pipe(gulp.dest(revManifestsBase));
 	}
 	else {
 		return stream
@@ -202,7 +197,7 @@ gulp.task('copy:icons', function() {
 // ===============================================================
 // Run after CSS & JS are revisioned.
 gulp.task('html', ['css', 'js'], function() {
-	var manifest = gulp.src(revManifest.base + '/' + revManifest.file);
+	var manifests = gulp.src(revManifestsBase + '/*.json');
 
 	return gulp.src('templates/pages/**/*.html')
 		.pipe($.mustache({}, {
@@ -211,7 +206,7 @@ gulp.task('html', ['css', 'js'], function() {
 		.pipe($.if(ENV == 'dist', $.revReplace({
 			canonicalUris: false,
 			replaceInExtensions: ['.html'],
-			manifest: manifest
+			manifest: manifests
 		})))
 		.pipe($.if(ENV == 'dist', $.htmlmin({
 			processConditionalComments: true,
