@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Changed
+- update `devDependencies`
 
 
 ## [0.13.0] - 2017-09-01
