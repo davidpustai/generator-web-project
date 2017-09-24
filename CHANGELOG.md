@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+### Added
+- disallow certain robots from crawling content
+
 ### Changed
 - update `devDependencies`
 
