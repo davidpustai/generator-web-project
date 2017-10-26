@@ -7,6 +7,9 @@
 ### Changed
 - update `devDependencies`
 
+### Fixed
+- `cursor: pointer` should be used only for links (https://www.w3.org/TR/CSS21/ui.html#propdef-cursor)
+
 
 ## [0.13.0] - 2017-09-01
 ### Added
