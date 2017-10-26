@@ -140,12 +140,7 @@ textarea {
 @media print {
 	*,
 	*:before,
-	*:after,
-	*:first-letter,
-	p:first-line,
-	div:first-line,
-	blockquote:first-line,
-	li:first-line {
+	*:after {
 		/* Always enforce this to ensure better readability, printing and paint savings when printing on paper. */
 		background: transparent !important;
 		color: #000 !important; // Black prints faster: http://www.sanbeiji.com/archives/953

@@ -12,6 +12,7 @@
 
 ### Fixed
 - `cursor: pointer` should be used only for links (https://www.w3.org/TR/CSS21/ui.html#propdef-cursor)
+- `::first-letter` in print style can cause incorrect rendering in Chrome (https://github.com/h5bp/html5-boilerplate/commit/efa3db1cd02fad442693b986f5e7d47bf7ea6f5e)
 
 
 ## [0.13.0] - 2017-09-01
