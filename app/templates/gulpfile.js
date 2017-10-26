@@ -2,7 +2,8 @@ var gulp = require('gulp'),
 	gulpLoadPlugins = require('gulp-load-plugins'),
 	runSequence = require('run-sequence'),
 	del = require('del'),
-	$ = gulpLoadPlugins();
+	$ = gulpLoadPlugins(),
+	bower = require('./bower.json');
 
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
@@ -165,6 +166,7 @@ gulp.task('img', function() {
 // ===============================================================
 gulp.task('copy', [
 	'copy:misc',
+	'copy:jquery',
 	'copy:icons'
 ]);
 
@@ -175,13 +177,20 @@ gulp.task('copy:misc', function() {
 			'browserconfig.xml',
 			'assets/font/**/*.{woff,woff2}',
 			'!assets/font/original/**/*',
-			'assets/js/vendor/jquery-1.8.0.js',
-			'assets/js/vendor/jquery-3.1.1.js'
+			'assets/js/vendor/jquery-1.8.0.min.js'
 		], {
 			base: '.'
 		})
 		.pipe(gulp.dest(DEST))
 		.pipe($.connect.reload());
+});
+
+gulp.task('copy:jquery', function() {
+	return gulp.src([
+			'bower_components/jquery/dist/jquery.min.js'
+		])
+		.pipe($.rename('jquery-'+bower.dependencies.jquery+'.min.js'))
+		.pipe(gulp.dest(DEST + '/assets/js/vendor'))
 });
 
 gulp.task('copy:icons', function() {
@@ -200,7 +209,9 @@ gulp.task('html', ['css', 'js'], function() {
 	var manifests = gulp.src(revManifestsBase + '/*.json');
 
 	return gulp.src('templates/pages/**/*.html')
-		.pipe($.mustache({}, {
+		.pipe($.mustache({
+			jquery_version: bower.dependencies.jquery
+		}, {
 			extension: '.html'
 		}))
 		.pipe($.if(ENV == 'dist', $.revReplace({

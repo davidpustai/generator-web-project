@@ -7,6 +7,8 @@
 
 ### Changed
 - update `devDependencies`
+- upgrade jQuery to v3.2.1
+- fetch local jQuery version via bower
 
 ### Fixed
 - `cursor: pointer` should be used only for links (https://www.w3.org/TR/CSS21/ui.html#propdef-cursor)
