@@ -9,6 +9,7 @@
 - update `devDependencies`
 - upgrade jQuery to v3.2.1
 - fetch local jQuery version via bower
+- don't shrink viewport to fit (Safari - https://stackoverflow.com/questions/33767533/what-does-the-shrink-to-fit-viewport-meta-attribute-do)
 
 ### Fixed
 - `cursor: pointer` should be used only for links (https://www.w3.org/TR/CSS21/ui.html#propdef-cursor)
