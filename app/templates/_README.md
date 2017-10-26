@@ -4,8 +4,9 @@
  * parts of [HTML5 Boilerplate](https://html5boilerplate.com/)
  * [normalize.css](https://necolas.github.io/normalize.css/)
  * [Modernizr](https://modernizr.com/)
- * [jQuery](https://jquery.com/)
+ * [jQuery](https://jquery.com/) via CDN with [SRI Hash](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) and a local fallback
  * [SASS](http://sass-lang.com/)
+ * [Gulp](http://gulpjs.com/)
 
 ## Supports
 All modern browsers including IE 8+.
