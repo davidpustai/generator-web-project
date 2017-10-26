@@ -39,7 +39,7 @@
 
 // Use to declare `z-index` values. Select `$element` from `$list` and return it's depth (lower in list ~ higher z-index).
 // For each context of `z-index` use new list. Lists live in `settings/_z-index.scss`. Default global context is `$z-all`.
-// from http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+// from https://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
 @function z($element, $list: $z-all) {
 	$z-index: index($list, $element);
 

@@ -13,7 +13,7 @@
 }
 
 /*
- * Breakpoint mixin for handeling min-width @media (inspired by http://codepen.io/chriscoyier/blog/codepens-css)
+ * Breakpoint mixin for handeling min-width @media (inspired by https://codepen.io/chriscoyier/blog/codepens-css)
  * Prints: @media only screen and (min-width: Xem) { ... }
  */
 @mixin bp($breakpoint) {

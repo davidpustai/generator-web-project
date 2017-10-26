@@ -3,12 +3,12 @@
 User-agent: *
 Disallow: /404.html
 
-# Inspired by http://www.videolan.org/robots.txt
+# Inspired by https://www.videolan.org/robots.txt
 
 # "This robot collects content from the Internet for the sole purpose of
 # helping educational institutions prevent plagiarism. [...] we compare
 # student papers against the content we find on the Internet to see if we
-# can find similarities." (http://www.turnitin.com/robot/crawlerinfo.html)
+# can find similarities." (https://www.turnitin.com/robot/crawlerinfo.html)
 #  --> fuck off.
 User-Agent: TurnitinBot
 Disallow: /
