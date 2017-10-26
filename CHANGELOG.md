@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - disallow certain robots from crawling content
+- link to homepage from 404 error page
 
 ### Changed
 - update `devDependencies`
