@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+
+
+## [0.14.0] - 2018-02-09
 ### Added
 - disallow certain robots from crawling content
 - link to homepage from 404 error page
