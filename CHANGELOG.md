@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Changed
+- upgrade normalize.css to 8.0.0
 
 
 ## [0.14.0] - 2018-02-09
