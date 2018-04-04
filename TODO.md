@@ -22,7 +22,7 @@
   * handlebars? or other layouting
 * [reset.css](https://scotch.io/tutorials/a-look-at-bootstrap-4s-new-reset-rebootcss)
 * critical CSS solution (https://github.com/addyosmani/critical, https://github.com/filamentgroup/criticalCSS, https://nystudio107.com/blog/implementing-critical-css)
-* [jQuery SRI automation](https://github.com/h5bp/html5-boilerplate/commit/76baba6a166f533a69a4905503d6c85c1c57396d)
+* [jQuery SRI automation](https://github.com/h5bp/html5-boilerplate/commit/76baba6a166f533a69a4905503d6c85c1c57396d) ([update](https://github.com/h5bp/html5-boilerplate/commit/7523c41733841bf87f5c3ec1c479e4cc82ef2ad5))
 * fix gulp watch and cache and reloading
 * ask for project name along with HTML title (use it for slug etc.)
 * automated build (and test) via Travis CI
