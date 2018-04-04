@@ -9,6 +9,7 @@
 ### Removed
 - IE8 support
 - Modernizr
+- `clip-path` from `.visuallyhidden` class ([source](https://github.com/h5bp/html5-boilerplate/commit/24d1a3287d8603c06709d74e7f5b2194cbee3b08))
 
 
 ## [0.14.0] - 2018-02-09
