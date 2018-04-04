@@ -2,25 +2,31 @@
 
 
 ## NEEDS FIXING
+* `.visuallyhidden` class (https://github.com/h5bp/html5-boilerplate/commit/a9a271c999fac6a3fa9afe8a522b9c9716895b47)
 * JS breakpoint sharing conflicts if JS is loaded before CSS -> critical CSS
 
 
 ## General stuff
-* install both jQuery versions via bower
-* use browserslist (drop IE8 support, update the rest, custom GA implementation)
+* upgrade `.htaccess` + bower/npm
+* use browserslist (custom GA implementation)
+  * 'last 2 versions', 'ie >= 9', '> 1%' (h5bp)
+* test & release 1.0.0
+* [migrate away from bower](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
+* manifest.json
+  * https://github.com/h5bp/html5-boilerplate/commit/bc2710e047f801645b758189287f7b58991ca497
+  * https://github.com/h5bp/html5-boilerplate/commit/0dd2a6670268090de6eabdddfa81b6df8477f21b
+* upgrade to Gulp 4
+  * rewrite Gulpfile with ES6 (https://css-tricks.com/using-es2017-async-functions/)
+  * remove `runSequence` and more
+* twig
+  * handlebars? or other layouting
+* [reset.css](https://scotch.io/tutorials/a-look-at-bootstrap-4s-new-reset-rebootcss)
+* critical CSS solution (https://github.com/addyosmani/critical, https://github.com/filamentgroup/criticalCSS, https://nystudio107.com/blog/implementing-critical-css)
+* [jQuery SRI automation](https://github.com/h5bp/html5-boilerplate/commit/76baba6a166f533a69a4905503d6c85c1c57396d)
 * fix gulp watch and cache and reloading
-* PostCSS custom properties
-* fluid type mixin
-* [Yarn](https://yarnpkg.com/lang/en/)
-* 404 link to homepage
-* 404 templating
 * ask for project name along with HTML title (use it for slug etc.)
-* critical CSS solution (https://github.com/filamentgroup/criticalCSS, https://nystudio107.com/blog/implementing-critical-css)
-* use [accesslint.js](https://github.com/accesslint/accesslint.js)
 * automated build (and test) via Travis CI
-* handlebars? or other layouting
 * humans.txt + rel attr
-* Webpack
 * ask for GA key, warn when compiling into dist without it
 * automated testing for generator and projects (include lighthouse)
 * generate sitemap.xml
@@ -48,10 +54,8 @@
 
 
 ## JS
-* Modernizr gulp task
 * Babel
 * [Encoding data in CSS](http://ofcodeandcolor.com/2017/04/02/encoding-data-in-css/)
-* load modernizr asynchronously out of IE8
 * link to get_media_query snippet in `_media.scss` and `@mixin js-media-helpers` declaration
 
 
@@ -62,3 +66,9 @@
 * uncss, class names minification
 * performance test task - psi, colorguard
 * picturefill + http://vimeo.com/92794354 (img/original -> img/scaled)
+
+
+## Automation
+* [accessibility](https://github.com/github/accessibilityjs)
+* use [accesslint.js](https://github.com/accesslint/accesslint.js)
+* https://www.cypress.io/features/

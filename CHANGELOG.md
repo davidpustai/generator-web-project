@@ -6,6 +6,10 @@
 - upgrade jQuery to v3.3.1
 - update `devDependencies`
 
+### Removed
+- IE8 support
+- Modernizr
+
 
 ## [0.14.0] - 2018-02-09
 ### Added

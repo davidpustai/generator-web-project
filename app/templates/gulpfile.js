@@ -55,7 +55,7 @@ gulp.task('concat:css', ['sass'], function() {
 gulp.task('css', ['concat:css'], function() {
 	var stream = gulp.src('.tmp/css/concated/**/*.css')
 		.pipe($.autoprefixer({
-			browsers: ['last 2 version', 'ie >= 8', 'Android 3'] // add Android 3 for Android 4.3- gradients
+			browsers: ['last 2 version', 'ie >= 9', 'Android 3'] // add Android 3 for Android 4.3- gradients
 		}));
 
 	if ( ENV == 'dist' ) {
@@ -80,28 +80,8 @@ gulp.task('css', ['concat:css'], function() {
 // CONCAT JS
 // ===============================================================
 gulp.task('concat:js', [
-	'concat:js:modernizr',
-	'concat:js:ie8Head',
-	'concat:js:main',
-	'concat:js:ie8Body'
+	'concat:js:main'
 ]);
-
-gulp.task('concat:js:modernizr', function() {
-	return gulp.src([
-			'assets/js/vendor/modernizr.js'
-		])
-		.pipe($.concat('modernizr.js'))
-		.pipe(gulp.dest('.tmp/js/concated/vendor'));
-});
-
-gulp.task('concat:js:ie8Head', function() {
-	return gulp.src([
-			'assets/js/vendor/selectivizr-1.0.3b.js',
-			'bower_components/respond/dest/respond.min.js'
-		])
-		.pipe($.concat('ie8-head.js'))
-		.pipe(gulp.dest('.tmp/js/concated'));
-});
 
 gulp.task('concat:js:main', function() {
 	return gulp.src([
@@ -115,14 +95,6 @@ gulp.task('concat:js:main', function() {
 		.pipe(gulp.dest('.tmp/js/concated'));
 });
 
-gulp.task('concat:js:ie8Body', function() {
-	return gulp.src([
-			'bower_components/REM-unit-polyfill/js/rem.min.js'
-		])
-		.pipe($.concat('ie8-body.js'))
-		.pipe(gulp.dest('.tmp/js/concated'));
-});
-
 // ===============================================================
 // JS PROCESSING
 // ===============================================================
@@ -131,9 +103,7 @@ gulp.task('js', ['concat:js'], function() {
 
 	if ( ENV == 'dist' ) {
 		return stream
-			.pipe($.uglify({
-				ie8: true
-			}))
+			.pipe($.uglify())
 			.pipe($.rev())
 			.pipe(gulp.dest(DEST + '/assets/js'))
 			.pipe($.rev.manifest(revManifestsBase + '/js.json', {
@@ -176,8 +146,7 @@ gulp.task('copy:misc', function() {
 			'robots.txt',
 			'browserconfig.xml',
 			'assets/font/**/*.{woff,woff2}',
-			'!assets/font/original/**/*',
-			'assets/js/vendor/jquery-1.8.0.min.js'
+			'!assets/font/original/**/*'
 		], {
 			base: '.'
 		})
