@@ -2,7 +2,8 @@
 
 ## [Unreleased]
 ### Changed
-- upgrade normalize.css to 8.0.0
+- upgrade normalize.css to v8.0.0
+- upgrade jQuery to v3.3.1
 - update `devDependencies`
 
 
