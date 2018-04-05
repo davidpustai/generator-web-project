@@ -136,13 +136,13 @@ gulp.task('img', function() {
 // ===============================================================
 gulp.task('copy', [
 	'copy:misc',
+	'copy:modules',
 	'copy:jquery',
 	'copy:icons'
 ]);
 
 gulp.task('copy:misc', function() {
 	return gulp.src([
-			'.htaccess',
 			'robots.txt',
 			'browserconfig.xml',
 			'assets/font/**/*.{woff,woff2}',
@@ -152,6 +152,13 @@ gulp.task('copy:misc', function() {
 		})
 		.pipe(gulp.dest(DEST))
 		.pipe($.connect.reload());
+});
+
+gulp.task('copy:modules', function() {
+	return gulp.src([
+			'node_modules/apache-server-configs/dist/.htaccess'
+		])
+		.pipe(gulp.dest(DEST));
 });
 
 gulp.task('copy:jquery', function() {

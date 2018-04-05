@@ -77,7 +77,6 @@ WebProjectGenerator.prototype.dirs = function dirs() {
 };
 
 WebProjectGenerator.prototype.webfiles = function webfiles() {
-	this.copy('configs/web/htaccess',			'.htaccess');
 	this.copy('configs/web/robots.txt',			'robots.txt');
 	this.copy('configs/web/browserconfig.xml',	'browserconfig.xml');
 

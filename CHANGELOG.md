@@ -5,6 +5,7 @@
 - upgrade normalize.css to v8.0.0
 - upgrade jQuery to v3.3.1
 - update `devDependencies`
+- update `apache-server-configs` and fetch it via npm
 
 ### Removed
 - IE8 support

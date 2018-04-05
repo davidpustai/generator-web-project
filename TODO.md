@@ -7,7 +7,6 @@
 
 
 ## General stuff
-* upgrade `.htaccess` + bower/npm
 * use browserslist (custom GA implementation)
   * 'last 2 versions', 'ie >= 9', '> 1%' (h5bp)
 * test & release 1.0.0
@@ -43,7 +42,7 @@
 
 ## File system
 * src directory for all sources, only configs in root
-* move configs like `.htaccess`, `browserconfig.xml` and `robots.txt` into src folder and copy them with Gulp (only keep project configs in root)
+* move configs like `browserconfig.xml` and `robots.txt` into src folder and copy them with Gulp (only keep project configs in root)
 * group by components rather than technology (ecss)
 
 
