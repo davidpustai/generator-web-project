@@ -54,9 +54,7 @@ gulp.task('concat:css', ['sass'], function() {
 // ===============================================================
 gulp.task('css', ['concat:css'], function() {
 	var stream = gulp.src('.tmp/css/concated/**/*.css')
-		.pipe($.autoprefixer({
-			browsers: ['last 2 version', 'ie >= 9', 'Android 3'] // add Android 3 for Android 4.3- gradients
-		}));
+		.pipe($.autoprefixer());
 
 	if ( ENV == 'dist' ) {
 		return stream

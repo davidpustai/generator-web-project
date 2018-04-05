@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+### Added
+- browserslist
+
 ### Changed
 - upgrade normalize.css to v8.0.0
 - upgrade jQuery to v3.3.1
@@ -8,7 +11,7 @@
 - update `apache-server-configs` and fetch it via npm
 
 ### Removed
-- IE8 support
+- IE8 and Android 3 support
 - Modernizr
 - `clip-path` from `.visuallyhidden` class ([source](https://github.com/h5bp/html5-boilerplate/commit/24d1a3287d8603c06709d74e7f5b2194cbee3b08))
 

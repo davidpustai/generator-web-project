@@ -1,6 +1,11 @@
 {
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
+  "browserslist": [
+  	"last 2 versions",
+  	"ie >= 9",
+  	"> 1%"
+  ],
   "dependencies": {
   	"apache-server-configs": "2.15.0"
   },

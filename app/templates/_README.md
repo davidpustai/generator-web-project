@@ -7,8 +7,14 @@
  * [SASS](http://sass-lang.com/)
  * [Gulp](https://gulpjs.com/)
 
-## Supports
-All modern browsers including IE 9+.
+## Browser support
+
+Last 2 versions of most browsers, IE 9+ and browsers with more than 1% global usage (according to caniuse.com). See the `browserslist` key in `package.json` and feel free to customize.
+
+*This doesn't mean that the generated project cannot be used in older browsers, just that compatibility is ensured with the ones mentioned above.*
+
+If you need IE 8 support you can use [generator-web-project v0.14.0](https://github.com/davidpustai/generator-web-project/tree/v0.14.0). Although it is no longer actively developed.
+
 
 ## Getting started
 First install dependencies:
