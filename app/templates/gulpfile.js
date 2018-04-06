@@ -3,7 +3,9 @@ var gulp = require('gulp'),
 	runSequence = require('run-sequence'),
 	del = require('del'),
 	$ = gulpLoadPlugins(),
-	bower = require('./bower.json');
+	bower = require('./bower.json'),
+	fs = require('fs'),
+	ssri = require('ssri');
 
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
@@ -180,11 +182,16 @@ gulp.task('copy:icons', function() {
 // ===============================================================
 // Run after CSS & JS are revisioned.
 gulp.task('html', ['css', 'js'], function() {
-	var manifests = gulp.src(revManifestsBase + '/*.json');
+	var manifests = gulp.src(revManifestsBase + '/*.json'),
+		jquerySRIHash = ssri.fromData(
+			fs.readFileSync('bower_components/jquery/dist/jquery.min.js'),
+			{ algorithms: ['sha256'] }
+		);
 
 	return gulp.src('templates/pages/**/*.html')
 		.pipe($.mustache({
-			jquery_version: bower.dependencies.jquery
+			jquery_version: bower.dependencies.jquery,
+			jquery_sri_hash: jquerySRIHash
 		}, {
 			extension: '.html'
 		}))

@@ -9,6 +9,7 @@
 - upgrade jQuery to v3.3.1
 - update `devDependencies`
 - update `apache-server-configs` and fetch it via npm
+- generate jQuery SRI hash on the go
 
 ### Removed
 - IE8 and Android 3 support
