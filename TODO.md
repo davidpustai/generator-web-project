@@ -48,7 +48,6 @@
 
 
 ## SCSS
-* no variables in helpers (base.scss), make it default
 * make sizes, colors & font-weights settings sass maps, add get mixins (color(), size())
 * better `bp()` mixin (with min and max parameters - http://sass-mq.github.io/sass-mq/ ?)
 

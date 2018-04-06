@@ -62,9 +62,9 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	line-height: $base-line-height;
-	font-size: $base-font-size;
-	font-family: $body-font-family;
+	line-height: 1.5; // Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
 	background-color: $body-bg; // WCAG 2.0 Checklist 1.4.8
 	color: $body-font-color; // WCAG 2.0 Checklist 1.4.8
 }

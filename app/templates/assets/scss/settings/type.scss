@@ -1,15 +1,2 @@
 // FONT-WEIGHT VARIABLES
 $fw-default: normal;
-
-// BASE
-// The default font-size is set to 16px of the browser style sheet (usually 16px)
-// for compatibility with browser-based text zoom or user-set defaults.
-
-// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
-$base-font-size: 16px;
-
-// Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
-$base-line-height: 1.5;
-
-/* "Helvetica" is proper noun, therefore we write it with capital "H" */
-$body-font-family: Helvetica, sans-serif;
