@@ -17,6 +17,7 @@
 - `clip-path` from `.visuallyhidden` class ([source](https://github.com/h5bp/html5-boilerplate/commit/24d1a3287d8603c06709d74e7f5b2194cbee3b08))
 - **support for non-Active LTS releases of Node.js (require Node.js 8.x or higher)**
 - some redundant SCSS variables
+- FastClick library
 
 
 ## [0.14.0] - 2018-02-09
