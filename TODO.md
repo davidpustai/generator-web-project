@@ -6,6 +6,7 @@
 
 
 ## General stuff
+* upgrade loadCSS
 * test & release 1.0.0
 * [migrate away from bower](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
 * manifest.json
