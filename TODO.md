@@ -2,7 +2,6 @@
 
 
 ## NEEDS FIXING
-* `.visuallyhidden` class (https://github.com/h5bp/html5-boilerplate/commit/a9a271c999fac6a3fa9afe8a522b9c9716895b47)
 * JS breakpoint sharing conflicts if JS is loaded before CSS -> critical CSS
 
 
