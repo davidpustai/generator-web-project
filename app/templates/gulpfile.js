@@ -31,6 +31,7 @@ gulp.task('clean', function() {
 // ===============================================================
 gulp.task('sass', function() {
 	return gulp.src('assets/scss/*.scss')
+		.pipe($.plumber())
 		.pipe($.sass({
 			includePaths: ['assets/scss', 'bower_components'],
 			precision: 6
@@ -71,6 +72,7 @@ gulp.task('css', ['concat:css'], function() {
 	}
 	else {
 		return stream
+			.pipe($.combineMq())
 			.pipe(gulp.dest(DEST + '/assets/css'))
 			.pipe($.connect.reload());
 	}

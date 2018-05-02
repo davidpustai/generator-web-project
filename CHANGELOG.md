@@ -19,6 +19,10 @@
 - some redundant SCSS variables
 - FastClick library
 
+### Fixed
+- sass errors killing watch
+- different dev and dist styles due to media queries reordering
+
 
 ## [0.14.0] - 2018-02-09
 ### Added
