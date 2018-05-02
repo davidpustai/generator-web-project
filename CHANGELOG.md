@@ -8,7 +8,7 @@
 - upgrade normalize.css to v8.0.0
 - upgrade jQuery to v3.3.1
 - update `devDependencies`
-- update `apache-server-configs` and fetch it via npm
+- ugrade to `apache-server-configs` v3.0.0 and fetch it via npm (requires Apache version > 2.3)
 - generate jQuery SRI hash on the go
 
 ### Removed
