@@ -13,8 +13,6 @@ Last 2 versions of most browsers, IE 9+ and browsers with more than 1% global us
 
 *This doesn't mean that the generated project cannot be used in older browsers, just that compatibility is ensured with the ones mentioned above.*
 
-If you need IE 8 support you can use [generator-web-project v0.14.0](https://github.com/davidpustai/generator-web-project/tree/v0.14.0). Although it is no longer actively developed.
-
 
 ## Getting started
 First install dependencies:
