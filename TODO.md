@@ -6,6 +6,10 @@
 
 
 ## General stuff
+* sitemap.xml and robots.txt integration
+* upgrade to Gulp 4
+  * rewrite Gulpfile with ES6 (https://css-tricks.com/using-es2017-async-functions/)
+  * remove `runSequence` and more
 * https://twitter.com/justmarkup/status/974581638637142016
 * remove jQuery?
 * upgrade loadCSS
@@ -14,9 +18,7 @@
 * manifest.json
   * https://github.com/h5bp/html5-boilerplate/commit/bc2710e047f801645b758189287f7b58991ca497
   * https://github.com/h5bp/html5-boilerplate/commit/0dd2a6670268090de6eabdddfa81b6df8477f21b
-* upgrade to Gulp 4
-  * rewrite Gulpfile with ES6 (https://css-tricks.com/using-es2017-async-functions/)
-  * remove `runSequence` and more
+* https://alistapart.com/article/the-slow-death-of-internet-explorer-and-future-of-progressive-enhancement?utm_source=CSS-Weekly&utm_campaign=Issue-316&utm_medium=email
 * twig
   * handlebars? or other layouting
 * browserslist
@@ -60,6 +62,7 @@
 
 
 ## Optimalization
+* [image optimization](https://dougsillars.com/2018/05/21/state-of-the-web-top-image-optimization-strategies/)
 * font subseting and optimalization via gulp
 * lazy load [images](http://developer.telerik.com/featured/lazy-loading-images-on-the-web/)
 * lazy load fonts (check [webfontloader](https://github.com/typekit/webfontloader) and [css-tricks article](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/))
