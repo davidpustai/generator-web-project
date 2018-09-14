@@ -1,61 +1,64 @@
-var gulp = require('gulp'),
-	gulpLoadPlugins = require('gulp-load-plugins'),
-	runSequence = require('run-sequence'),
-	del = require('del'),
-	$ = gulpLoadPlugins(),
-	bower = require('./bower.json'),
-	fs = require('fs'),
-	ssri = require('ssri');
+const gulp = require('gulp');
+const gulpLoadPlugins = require('gulp-load-plugins');
+const del = require('del');
+const $ = gulpLoadPlugins();
+const bower = require('./bower.json');
+const fs = require('fs');
+const ssri = require('ssri');
 
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
 // ===============================================================
-var revManifestsBase = '.tmp/rev-manifests';
+const revManifestsBase = '.tmp/rev-manifests';
 
 // ===============================================================
 // ENVIROMENT VARIABLES
 // ===============================================================
-var ENV = 'dist',
-	DEST = 'dist';
+let ENV = 'dist';
+let DEST = 'dist';
+
+const setEnvDev = () => new Promise((resolve, reject) => {
+							ENV = 'dev';
+							resolve();
+						});
+
+const setDestDev = () => new Promise((resolve, reject) => {
+							DEST = 'dev';
+							resolve();
+						});
 
 // ===============================================================
 // CLEAN
 // ===============================================================
 // Empty directories to start fresh.
-gulp.task('clean', function() {
-	return del(['.tmp', 'dev', 'dist']);
-});
+const clean = () => del(['.tmp', 'dev', 'dist']);
 
 // ===============================================================
 // SCSS -> CSS
 // ===============================================================
-gulp.task('sass', function() {
-	return gulp.src('assets/scss/*.scss')
-		.pipe($.plumber())
-		.pipe($.sass({
-			includePaths: ['assets/scss', 'bower_components'],
-			precision: 6
-		}).on('error', $.sass.logError))
-		.pipe(gulp.dest('.tmp/css/compiled'));
-});
+const sass = () => gulp.src('assets/scss/*.scss')
+					.pipe($.plumber())
+					.pipe($.sass({
+						includePaths: ['assets/scss', 'bower_components'],
+						precision: 6
+					}).on('error', $.sass.logError))
+					.pipe(gulp.dest('.tmp/css/compiled'));
 
 // ===============================================================
 // CONCAT CSS
 // ===============================================================
 // Source should be compiled CSS (.tmp/css/copmiled), resp. vendor CSS (bower_components resp. assets/vendor/css).
-gulp.task('concat:css', ['sass'], function() {
-	return gulp.src([
-			'bower_components/normalize.css/normalize.css',
-			'.tmp/css/compiled/main.css'
-		])
-		.pipe($.concat('main.css'))
-		.pipe(gulp.dest('.tmp/css/concated'));
-});
+const concatCSS = () => gulp.src([
+							'bower_components/normalize.css/normalize.css',
+							'.tmp/css/compiled/main.css'
+						])
+						.pipe($.concat('main.css'))
+						.pipe(gulp.dest('.tmp/css/concated'));
 
 // ===============================================================
 // CSS PROCESSING
 // ===============================================================
-gulp.task('css', ['concat:css'], function() {
+const processCSS = () => {
 	var stream = gulp.src('.tmp/css/concated/**/*.css')
 		.pipe($.autoprefixer());
 
@@ -76,30 +79,33 @@ gulp.task('css', ['concat:css'], function() {
 			.pipe(gulp.dest(DEST + '/assets/css'))
 			.pipe($.connect.reload());
 	}
-});
+};
+
+// ===============================================================
+// MAIN CSS TASK
+// ===============================================================
+const css = gulp.series(sass, concatCSS, processCSS);
 
 // ===============================================================
 // CONCAT JS
 // ===============================================================
-gulp.task('concat:js', [
-	'concat:js:main'
-]);
+const concatJSMain = () => gulp.src([
+								'assets/js/plugins.js',
+								'bower_components/loadcss/src/loadCSS.js',
+								'bower_components/loadcss/src/cssrelpreload.js',
+								'assets/js/main.js'
+							])
+							.pipe($.concat('main.js'))
+							.pipe(gulp.dest('.tmp/js/concated'));
 
-gulp.task('concat:js:main', function() {
-	return gulp.src([
-			'assets/js/plugins.js',
-			'bower_components/loadcss/src/loadCSS.js',
-			'bower_components/loadcss/src/cssrelpreload.js',
-			'assets/js/main.js'
-		])
-		.pipe($.concat('main.js'))
-		.pipe(gulp.dest('.tmp/js/concated'));
-});
+const concatJS = gulp.series(
+	concatJSMain
+);
 
 // ===============================================================
 // JS PROCESSING
 // ===============================================================
-gulp.task('js', ['concat:js'], function() {
+const processJS = () => {
 	var stream = gulp.src('.tmp/js/concated/**/*.js');
 
 	if ( ENV == 'dist' ) {
@@ -117,72 +123,66 @@ gulp.task('js', ['concat:js'], function() {
 			.pipe(gulp.dest(DEST + '/assets/js'))
 			.pipe($.connect.reload());
 	}
-});
+};
+
+// ===============================================================
+// MAIN JS TASK
+// ===============================================================
+const js = gulp.series(concatJS, processJS);
 
 // ===============================================================
 // IMAGE PROCESSING
 // ===============================================================
-gulp.task('img', function() {
-	return gulp.src([
-			'assets/img/**/*.{gif,jpg,png,svg}',
-			'!assets/img/favicons/**/*'
-		])
-		.pipe($.if(ENV == 'dist', $.imagemin()))
-		.pipe(gulp.dest(DEST + '/assets/img'))
-		.pipe($.connect.reload());
-});
+const img = () => gulp.src([
+						'assets/img/**/*.{gif,jpg,png,svg}',
+						'!assets/img/favicons/**/*'
+					])
+					.pipe($.if(ENV == 'dist', $.imagemin()))
+					.pipe(gulp.dest(DEST + '/assets/img'))
+					.pipe($.connect.reload());
 
 // ===============================================================
 // COPY FILES
 // ===============================================================
-gulp.task('copy', [
-	'copy:misc',
-	'copy:modules',
-	'copy:jquery',
-	'copy:icons'
-]);
+const copyMisc = () => gulp.src([
+							'robots.txt',
+							'browserconfig.xml',
+							'assets/font/**/*.{woff,woff2}',
+							'!assets/font/original/**/*'
+						], {
+							base: '.'
+						})
+						.pipe(gulp.dest(DEST))
+						.pipe($.connect.reload());
 
-gulp.task('copy:misc', function() {
-	return gulp.src([
-			'robots.txt',
-			'browserconfig.xml',
-			'assets/font/**/*.{woff,woff2}',
-			'!assets/font/original/**/*'
-		], {
-			base: '.'
-		})
-		.pipe(gulp.dest(DEST))
-		.pipe($.connect.reload());
-});
+const copyModules = () => gulp.src([
+								'node_modules/apache-server-configs/dist/.htaccess'
+							])
+							.pipe(gulp.dest(DEST));
 
-gulp.task('copy:modules', function() {
-	return gulp.src([
-			'node_modules/apache-server-configs/dist/.htaccess'
-		])
-		.pipe(gulp.dest(DEST));
-});
+const copyJQuery = () => gulp.src([
+								'bower_components/jquery/dist/jquery.min.js'
+							])
+							.pipe($.rename('jquery-'+bower.dependencies.jquery+'.min.js'))
+							.pipe(gulp.dest(DEST + '/assets/js/vendor'));
 
-gulp.task('copy:jquery', function() {
-	return gulp.src([
-			'bower_components/jquery/dist/jquery.min.js'
-		])
-		.pipe($.rename('jquery-'+bower.dependencies.jquery+'.min.js'))
-		.pipe(gulp.dest(DEST + '/assets/js/vendor'))
-});
+const copyIcons = () => gulp.src([
+							'assets/img/favicons/**/*.{ico,png,svg}'
+						])
+						.pipe(gulp.dest(DEST))
+						.pipe($.connect.reload());
 
-gulp.task('copy:icons', function() {
-	return gulp.src([
-			'assets/img/favicons/**/*.{ico,png,svg}'
-		])
-		.pipe(gulp.dest(DEST))
-		.pipe($.connect.reload());
-});
+const copy = gulp.parallel(
+	copyMisc,
+	copyModules,
+	copyJQuery,
+	copyIcons
+);
 
 // ===============================================================
 // HTML PROCESSING
 // ===============================================================
-// Run after CSS & JS are revisioned.
-gulp.task('html', ['css', 'js'], function() {
+const html = () => {
 	var manifests = gulp.src(revManifestsBase + '/*.json'),
 		jquerySRIHash = ssri.fromData(
 			fs.readFileSync('bower_components/jquery/dist/jquery.min.js'),
@@ -224,46 +224,69 @@ gulp.task('html', ['css', 'js'], function() {
 		})))
 		.pipe(gulp.dest(DEST))
 		.pipe($.connect.reload());
-});
+};
 
 // ===============================================================
 // SERVER
 // ===============================================================
 // Run a local server at http://localhost:8000.
-gulp.task('connect', function() {
+const connect = () => new Promise((resolve, reject) => {
 	$.connect.server({
 		root: DEST,
 		port: 8000,
 		livereload: true
 	});
+	resolve();
 });
 
 // ===============================================================
 // BUILD
 // ===============================================================
-gulp.task('build', function() {
-	// Wait for clean to finish before running anything else.
-	runSequence('clean', ['css', 'js', 'img', 'copy', 'html']);
-});
+const build = gulp.series(
+	clean,
+	gulp.parallel(
+		// process HTML after CSS & JS are revisioned
+		gulp.series(
+			gulp.parallel(css, js),
+			html
+		),
+		img,
+		copy
+	)
+);
 
 // ===============================================================
 // SERVE
 // ===============================================================
-gulp.task('serve', ['build', 'connect']);
+const serve = gulp.series(build, connect);
 
 // ===============================================================
-// DEVELOP
+// DEVELOPMENT TASKS
 // ===============================================================
-gulp.task('default', function() {
-	ENV = 'dev';
-	DEST = 'dev';
-
-	// Wait for clean to finish before running anything else.
-	runSequence('clean', ['css', 'js', 'img', 'copy', 'html'], 'connect');
-
-	gulp.watch('assets/scss/**/*.scss', ['css']);
-	gulp.watch('assets/js/**/*.js', ['js']);
-	gulp.watch(['assets/img/**/*.{gif,jpg,png,svg}', '!assets/img/favicons/**/*'], ['img']);
-	gulp.watch(['assets/font/**/*.{woff,woff2}', '!assets/font/original/**/*'], ['copy']);
-	gulp.watch(['templates/**/*.html'], ['html']);
+const watchFiles = () => new Promise((resolve, reject) => {
+	gulp.watch('assets/scss/**/*.scss', css);
+	gulp.watch('assets/js/**/*.js', js);
+	gulp.watch(['assets/img/**/*.{gif,jpg,png,svg}', '!assets/img/favicons/**/*'], img);
+	gulp.watch(['assets/font/**/*.{woff,woff2}', '!assets/font/original/**/*'], copy);
+	gulp.watch('templates/**/*.html', html);
+	resolve();
 });
+
+const defaultTasks = gulp.series(
+	setEnvDev,
+	setDestDev,
+	clean,
+	gulp.parallel(css, js, img, copy, html),
+	connect,
+	watchFiles
+);
+
+// ===============================================================
+// EXPORT TASKS FOR CLI
+// ===============================================================
+module.exports = {
+	build: build,
+	connect: connect,
+	serve: serve,
+	default: defaultTasks
+};

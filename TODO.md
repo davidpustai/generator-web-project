@@ -7,9 +7,6 @@
 
 ## General stuff
 * sitemap.xml and robots.txt integration
-* upgrade to Gulp 4
-  * rewrite Gulpfile with ES6 (https://css-tricks.com/using-es2017-async-functions/)
-  * remove `runSequence` and more
 * https://twitter.com/justmarkup/status/974581638637142016
 * remove jQuery?
 * upgrade loadCSS
