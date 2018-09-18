@@ -2,12 +2,12 @@
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
   "browserslist": [
-  	"last 2 versions",
-  	"ie >= 9",
-  	"> 1%"
+  "last 2 versions",
+    "ie >= 9",
+    "> 1%"
   ],
   "dependencies": {
-  	"apache-server-configs": "3.0.0"
+    "apache-server-configs": "3.0.0"
   },
   "devDependencies": {
     "del": "^3.0.0",
@@ -21,7 +21,7 @@
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-mustache": "^3.0.1",
+    "gulp-mustache": "^4.0.0",
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-rev": "^8.1.1",
