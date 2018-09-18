@@ -6,9 +6,9 @@
 
 
 ## General stuff
+* npm vulnerabilities
 * sitemap.xml and robots.txt integration
 * https://twitter.com/justmarkup/status/974581638637142016
-* remove jQuery?
 * upgrade loadCSS
 * test & release 1.0.0
 * [migrate away from bower](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
@@ -23,15 +23,11 @@
   * region question in generator
 * [reset.css](https://scotch.io/tutorials/a-look-at-bootstrap-4s-new-reset-rebootcss)
 * critical CSS solution (https://github.com/addyosmani/critical, https://github.com/filamentgroup/criticalCSS, https://nystudio107.com/blog/implementing-critical-css)
-* fix gulp watch and cache and reloading
-* ask for project name along with HTML title (use it for slug etc.)
 * automated build (and test) via Travis CI
 * humans.txt + rel attr
 * ask for GA key, warn when compiling into dist without it
 * automated testing for generator and projects (include lighthouse)
-* generate sitemap.xml
 * source maps copying & generation, strip on dist
-* code linting, when there is time (it is not yet)
 * documentation (see h5bp docs)
 
 
@@ -54,6 +50,7 @@
 
 ## JS
 * Babel
+* remove jQuery
 * [Encoding data in CSS](http://ofcodeandcolor.com/2017/04/02/encoding-data-in-css/)
 * link to get_media_query snippet in `_media.scss` and `@mixin js-media-helpers` declaration
 
