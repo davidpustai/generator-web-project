@@ -91,8 +91,6 @@ const css = gulp.series(sass, concatCSS, processCSS);
 // ===============================================================
 const concatJSMain = () => gulp.src([
 								'assets/js/plugins.js',
-								'bower_components/loadcss/src/loadCSS.js',
-								'bower_components/loadcss/src/cssrelpreload.js',
 								'assets/js/main.js'
 							])
 							.pipe($.concat('main.js'))

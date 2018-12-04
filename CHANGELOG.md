@@ -5,6 +5,7 @@
 - browserslist
 
 ### Changed
+- load CSS synchronously
 - upgrade normalize.css to v8.0.0
 - upgrade jQuery to v3.3.1
 - upgrade Gulp to v4.0.0
