@@ -2,7 +2,6 @@
 
 ## General stuff
 * npm vulnerabilities
-* sitemap.xml and robots.txt integration
 * https://twitter.com/justmarkup/status/974581638637142016
 * test & release 1.0.0
 * [migrate away from bower](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
@@ -12,10 +11,12 @@
 * https://alistapart.com/article/the-slow-death-of-internet-explorer-and-future-of-progressive-enhancement?utm_source=CSS-Weekly&utm_campaign=Issue-316&utm_medium=email
 * twig
   * handlebars? or other layouting
+* [dark mode support](https://paulmillr.com/posts/using-dark-mode-in-css/?utm_source=CSS-Weekly&utm_campaign=Issue-337&utm_medium=email)
 * browserslist
   * custom GA implementation
   * region question in generator
 * [reset.css](https://scotch.io/tutorials/a-look-at-bootstrap-4s-new-reset-rebootcss)
+* sitemap.xml and robots.txt integration
 * critical CSS solution (https://github.com/addyosmani/critical, https://github.com/filamentgroup/criticalCSS, https://nystudio107.com/blog/implementing-critical-css)
   * use loadCSS
 * automated build (and test) via Travis CI
