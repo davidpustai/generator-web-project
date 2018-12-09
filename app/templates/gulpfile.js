@@ -36,10 +36,10 @@ const clean = () => del(['.tmp', 'dev', 'dist']);
 // ===============================================================
 // SCSS -> CSS
 // ===============================================================
-const sass = () => gulp.src('assets/scss/*.scss')
+const sass = () => gulp.src('src/assets/scss/*.scss')
 					.pipe($.plumber())
 					.pipe($.sass({
-						includePaths: ['assets/scss', 'bower_components'],
+						includePaths: ['src/assets/scss', 'bower_components'],
 						precision: 6
 					}).on('error', $.sass.logError))
 					.pipe(gulp.dest('.tmp/css/compiled'));
@@ -47,7 +47,7 @@ const sass = () => gulp.src('assets/scss/*.scss')
 // ===============================================================
 // CONCAT CSS
 // ===============================================================
-// Source should be compiled CSS (.tmp/css/copmiled), resp. vendor CSS (bower_components resp. assets/vendor/css).
+// Source should be compiled CSS (.tmp/css/copmiled), resp. vendor CSS (bower_components resp. src/assets/vendor/css).
 const concatCSS = () => gulp.src([
 							'bower_components/normalize.css/normalize.css',
 							'.tmp/css/compiled/main.css'
@@ -90,8 +90,8 @@ const css = gulp.series(sass, concatCSS, processCSS);
 // CONCAT JS
 // ===============================================================
 const concatJSMain = () => gulp.src([
-								'assets/js/plugins.js',
-								'assets/js/main.js'
+								'src/assets/js/plugins.js',
+								'src/assets/js/main.js'
 							])
 							.pipe($.concat('main.js'))
 							.pipe(gulp.dest('.tmp/js/concated'));
@@ -132,8 +132,7 @@ const js = gulp.series(concatJS, processJS);
 // IMAGE PROCESSING
 // ===============================================================
 const img = () => gulp.src([
-						'assets/img/**/*.{gif,jpg,png,svg}',
-						'!assets/img/favicons/**/*'
+						'src/assets/img/**/*.{gif,jpg,png,svg}'
 					])
 					.pipe($.if(ENV == 'dist', $.imagemin()))
 					.pipe(gulp.dest(DEST + '/assets/img'))
@@ -143,12 +142,13 @@ const img = () => gulp.src([
 // COPY FILES
 // ===============================================================
 const copyMisc = () => gulp.src([
-							'robots.txt',
-							'browserconfig.xml',
-							'assets/font/**/*.{woff,woff2}',
-							'!assets/font/original/**/*'
+							'src/robots.txt',
+							'src/browserconfig.xml',
+							'src/*.{ico,png,svg}', // icons
+							'src/assets/font/**/*.{woff,woff2}',
+							'!src/assets/font/original/**/*'
 						], {
-							base: '.'
+							base: 'src'
 						})
 						.pipe(gulp.dest(DEST))
 						.pipe($.connect.reload());
@@ -164,17 +164,10 @@ const copyJQuery = () => gulp.src([
 							.pipe($.rename('jquery-'+bower.dependencies.jquery+'.min.js'))
 							.pipe(gulp.dest(DEST + '/assets/js/vendor'));
 
-const copyIcons = () => gulp.src([
-							'assets/img/favicons/**/*.{ico,png,svg}'
-						])
-						.pipe(gulp.dest(DEST))
-						.pipe($.connect.reload());
-
 const copy = gulp.parallel(
 	copyMisc,
 	copyModules,
-	copyJQuery,
-	copyIcons
+	copyJQuery
 );
 
 // ===============================================================
@@ -187,7 +180,7 @@ const html = () => {
 			{ algorithms: ['sha256'] }
 		);
 
-	return gulp.src('templates/pages/**/*.html')
+	return gulp.src('src/templates/pages/**/*.html')
 		.pipe($.mustache({
 			jquery_version: bower.dependencies.jquery,
 			jquery_sri_hash: jquerySRIHash
@@ -262,11 +255,11 @@ const serve = gulp.series(build, connect);
 // DEVELOPMENT TASKS
 // ===============================================================
 const watchFiles = () => new Promise((resolve, reject) => {
-	gulp.watch('assets/scss/**/*.scss', css);
-	gulp.watch('assets/js/**/*.js', js);
-	gulp.watch(['assets/img/**/*.{gif,jpg,png,svg}', '!assets/img/favicons/**/*'], img);
-	gulp.watch(['assets/font/**/*.{woff,woff2}', '!assets/font/original/**/*'], copy);
-	gulp.watch('templates/**/*.html', html);
+	gulp.watch('src/assets/scss/**/*.scss', css);
+	gulp.watch('src/assets/js/**/*.js', js);
+	gulp.watch(['src/assets/img/**/*.{gif,jpg,png,svg}'], img);
+	gulp.watch(['src/assets/font/**/*.{woff,woff2}', '!src/assets/font/original/**/*'], copy);
+	gulp.watch('src/templates/**/*.html', html);
 	resolve();
 });
 

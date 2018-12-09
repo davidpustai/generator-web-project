@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Changed
+- moved source files into the `src` directory
 
 
 ## [0.15.0] - 2018-12-04

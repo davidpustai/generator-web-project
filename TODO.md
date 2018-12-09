@@ -34,8 +34,6 @@
 
 
 ## File system
-* src directory for all sources, only configs in root
-* move configs like `browserconfig.xml` and `robots.txt` into src folder and copy them with Gulp (only keep project configs in root)
 * group by components rather than technology (ecss)
 
 

@@ -57,63 +57,63 @@ WebProjectGenerator.prototype.projectfiles = function projectfiles() {
 };
 
 WebProjectGenerator.prototype.dirs = function dirs() {
-	this.mkdir('templates');
+	this.mkdir('src/templates');
 
-	this.mkdir('assets');
+	this.mkdir('src/assets');
 
-	this.mkdir('assets/font');
+	this.mkdir('src/assets/font');
 
-	this.mkdir('assets/img');
-	this.mkdir('assets/img/favicons');
+	this.mkdir('src/assets/img');
+	this.mkdir('src/assets/img/favicons');
 
-	this.mkdir('assets/js');
-	this.mkdir('assets/js/components');
+	this.mkdir('src/assets/js');
+	this.mkdir('src/assets/js/components');
 
-	this.mkdir('assets/scss');
-	this.mkdir('assets/scss/components');
-	this.mkdir('assets/scss/organisms');
-	this.mkdir('assets/scss/helpers');
-	this.mkdir('assets/scss/settings');
+	this.mkdir('src/assets/scss');
+	this.mkdir('src/assets/scss/components');
+	this.mkdir('src/assets/scss/organisms');
+	this.mkdir('src/assets/scss/helpers');
+	this.mkdir('src/assets/scss/settings');
 };
 
 WebProjectGenerator.prototype.webfiles = function webfiles() {
-	this.copy('configs/web/robots.txt',			'robots.txt');
-	this.copy('configs/web/browserconfig.xml',	'browserconfig.xml');
+	this.copy('configs/web/robots.txt',			'src/robots.txt');
+	this.copy('configs/web/browserconfig.xml',	'src/browserconfig.xml');
 
-	this.copy('templates/partials/head-global.html',	'templates/partials/head-global.html');
-	this.copy('templates/partials/scripts.html',		'templates/partials/scripts.html');
+	this.copy('templates/partials/head-global.html',	'src/templates/partials/head-global.html');
+	this.copy('templates/partials/scripts.html',		'src/templates/partials/scripts.html');
 
-	this.copy('templates/pages/index.html', 'templates/pages/index.html');
+	this.copy('templates/pages/index.html', 'src/templates/pages/index.html');
 
 	if (file.exists(this.src._base + '/templates/pages/404/404_' + this.language + '.html')) {
-		this.copy('templates/pages/404/404_' + this.language + '.html', 'templates/pages/404.html');
+		this.copy('templates/pages/404/404_' + this.language + '.html', 'src/templates/pages/404.html');
 	}
 	else {
-		console.log('There is not 404.html error page in your choosen language, I\'m including english version.');
-		this.copy('templates/pages/404/404_en.html', 'templates/templates/pages/404.html');
+		console.log('There is not a 404.html error page in your choosen language, I\'m including english version.');
+		this.copy('templates/pages/404/404_en.html', 'src/templates/templates/pages/404.html');
 	}
 
-	this.copy('assets/img/favicons/favicon.ico',			'assets/img/favicons/favicon.ico');
-	this.copy('assets/img/favicons/apple-touch-icon.png',	'assets/img/favicons/apple-touch-icon.png');
-	this.copy('assets/img/favicons/tile.png',				'assets/img/favicons/tile.png');
-	this.copy('assets/img/favicons/tile-wide.png',			'assets/img/favicons/tile-wide.png');
+	this.copy('assets/img/favicons/favicon.ico',			'src/favicon.ico');
+	this.copy('assets/img/favicons/apple-touch-icon.png',	'src/apple-touch-icon.png');
+	this.copy('assets/img/favicons/tile.png',				'src/tile.png');
+	this.copy('assets/img/favicons/tile-wide.png',			'src/tile-wide.png');
 
-	this.copy('assets/scss/main.scss', 'assets/scss/main.scss');
+	this.copy('assets/scss/main.scss', 'src/assets/scss/main.scss');
 
-	this.copy('assets/scss/settings/sizes.scss',	'assets/scss/settings/_sizes.scss');
-	this.copy('assets/scss/settings/media.scss',	'assets/scss/settings/_media.scss');
-	this.copy('assets/scss/settings/colors.scss',	'assets/scss/settings/_colors.scss');
-	this.copy('assets/scss/settings/type.scss',		'assets/scss/settings/_type.scss');
-	this.copy('assets/scss/settings/z-index.scss',	'assets/scss/settings/_z-index.scss');
+	this.copy('assets/scss/settings/sizes.scss',	'src/assets/scss/settings/_sizes.scss');
+	this.copy('assets/scss/settings/media.scss',	'src/assets/scss/settings/_media.scss');
+	this.copy('assets/scss/settings/colors.scss',	'src/assets/scss/settings/_colors.scss');
+	this.copy('assets/scss/settings/type.scss',		'src/assets/scss/settings/_type.scss');
+	this.copy('assets/scss/settings/z-index.scss',	'src/assets/scss/settings/_z-index.scss');
 
-	this.copy('assets/scss/helpers/functions.scss',			'assets/scss/helpers/_functions.scss');
-	this.copy('assets/scss/helpers/mixins.scss',			'assets/scss/helpers/_mixins.scss');
-	this.copy('assets/scss/helpers/visuallyhidden.scss',	'assets/scss/helpers/_visuallyhidden.scss');
-	this.copy('assets/scss/helpers/base.scss',				'assets/scss/helpers/_base.scss');
-	this.copy('assets/scss/helpers/shame.scss',				'assets/scss/helpers/_shame.scss');
+	this.copy('assets/scss/helpers/functions.scss',			'src/assets/scss/helpers/_functions.scss');
+	this.copy('assets/scss/helpers/mixins.scss',			'src/assets/scss/helpers/_mixins.scss');
+	this.copy('assets/scss/helpers/visuallyhidden.scss',	'src/assets/scss/helpers/_visuallyhidden.scss');
+	this.copy('assets/scss/helpers/base.scss',				'src/assets/scss/helpers/_base.scss');
+	this.copy('assets/scss/helpers/shame.scss',				'src/assets/scss/helpers/_shame.scss');
 
-	this.copy('assets/js/main.js',						'assets/js/main.js');
-	this.copy('assets/js/plugins.js',					'assets/js/plugins.js');
+	this.copy('assets/js/main.js',						'src/assets/js/main.js');
+	this.copy('assets/js/plugins.js',					'src/assets/js/plugins.js');
 };
 
 WebProjectGenerator.prototype.install = function () {
