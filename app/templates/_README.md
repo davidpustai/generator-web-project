@@ -32,7 +32,7 @@ gulp
 	* compiles and prefixes scss
 	* runs local server (with live reload) at `localhost:8000`
 	* watches for changes
- * `gulp build` - *use when publishnig, compiles into `dist` directory*
+ * `gulp build` - *use when deploying, compiles into `dist` directory*
  	* compiles, prefixes, concats and minifies scss
  	* minifies (combines) media queries
  	* concats and minifies javascript
