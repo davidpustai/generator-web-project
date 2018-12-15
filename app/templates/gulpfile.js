@@ -59,7 +59,7 @@ const concatCSS = () => gulp.src([
 // CSS PROCESSING
 // ===============================================================
 const processCSS = () => {
-	var stream = gulp.src('.tmp/css/concated/**/*.css')
+	const stream = gulp.src('.tmp/css/concated/**/*.css')
 		.pipe($.autoprefixer());
 
 	if ( ENV == 'dist' ) {
@@ -104,7 +104,7 @@ const concatJS = gulp.series(
 // JS PROCESSING
 // ===============================================================
 const processJS = () => {
-	var stream = gulp.src('.tmp/js/concated/**/*.js');
+	const stream = gulp.src('.tmp/js/concated/**/*.js');
 
 	if ( ENV == 'dist' ) {
 		return stream
@@ -174,8 +174,8 @@ const copy = gulp.parallel(
 // HTML PROCESSING
 // ===============================================================
 const html = () => {
-	var manifests = gulp.src(revManifestsBase + '/*.json'),
-		jquerySRIHash = ssri.fromData(
+	const manifests = gulp.src(revManifestsBase + '/*.json');
+	const jquerySRIHash = ssri.fromData(
 			fs.readFileSync('bower_components/jquery/dist/jquery.min.js'),
 			{ algorithms: ['sha256'] }
 		);
