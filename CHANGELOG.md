@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+### Added
+- HTML title to 404 page
+
 ### Changed
 - moved source files into the `src` directory
 - Mustache for Twig templating
