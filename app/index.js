@@ -80,17 +80,16 @@ WebProjectGenerator.prototype.webfiles = function webfiles() {
 	this.copy('configs/web/robots.txt',			'src/robots.txt');
 	this.copy('configs/web/browserconfig.xml',	'src/browserconfig.xml');
 
-	this.copy('templates/partials/head-global.html',	'src/templates/partials/head-global.html');
-	this.copy('templates/partials/scripts.html',		'src/templates/partials/scripts.html');
+	this.copy('templates/layouts/base.twig', 'src/templates/layouts/base.twig');
 
-	this.copy('templates/pages/index.html', 'src/templates/pages/index.html');
+	this.copy('templates/pages/index.twig', 'src/templates/pages/index.twig');
 
-	if (file.exists(this.src._base + '/templates/pages/404/404_' + this.language + '.html')) {
-		this.copy('templates/pages/404/404_' + this.language + '.html', 'src/templates/pages/404.html');
+	if (file.exists(this.src._base + '/templates/pages/404/404_' + this.language + '.twig')) {
+		this.copy('templates/pages/404/404_' + this.language + '.twig', 'src/templates/pages/404.twig');
 	}
 	else {
-		console.log('There is not a 404.html error page in your choosen language, I\'m including english version.');
-		this.copy('templates/pages/404/404_en.html', 'src/templates/templates/pages/404.html');
+		console.log('There is not a 404 error page in your choosen language, I\'m including english version.');
+		this.copy('templates/pages/404/404_en.twig', 'src/templates/templates/pages/404.twig');
 	}
 
 	this.copy('assets/img/favicons/favicon.ico',			'src/favicon.ico');

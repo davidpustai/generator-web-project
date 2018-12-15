@@ -180,12 +180,16 @@ const html = () => {
 			{ algorithms: ['sha256'] }
 		);
 
-	return gulp.src('src/templates/pages/**/*.html')
-		.pipe($.mustache({
-			jquery_version: bower.dependencies.jquery,
-			jquery_sri_hash: jquerySRIHash
-		}, {
-			extension: '.html'
+	return gulp.src('src/templates/pages/**/*.twig')
+		.pipe($.twig({
+			data: {
+				jquery: {
+					version: bower.dependencies.jquery,
+					sri_hash: jquerySRIHash
+				}
+			},
+			errorLogToConsole: true,
+			extname: '.html'
 		}))
 		.pipe($.if(ENV == 'dist', $.revReplace({
 			canonicalUris: false,
@@ -259,7 +263,7 @@ const watchFiles = () => new Promise((resolve, reject) => {
 	gulp.watch('src/assets/js/**/*.js', js);
 	gulp.watch(['src/assets/img/**/*.{gif,jpg,png,svg}'], img);
 	gulp.watch(['src/assets/font/**/*.{woff,woff2}', '!src/assets/font/original/**/*'], copy);
-	gulp.watch('src/templates/**/*.html', html);
+	gulp.watch('src/templates/**/*.twig', html);
 	resolve();
 });
 

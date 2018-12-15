@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - moved source files into the `src` directory
+- Mustache for Twig templating
 
 
 ## [0.15.0] - 2018-12-04

@@ -9,8 +9,6 @@
   * https://github.com/h5bp/html5-boilerplate/commit/bc2710e047f801645b758189287f7b58991ca497
   * https://github.com/h5bp/html5-boilerplate/commit/0dd2a6670268090de6eabdddfa81b6df8477f21b
 * https://alistapart.com/article/the-slow-death-of-internet-explorer-and-future-of-progressive-enhancement?utm_source=CSS-Weekly&utm_campaign=Issue-316&utm_medium=email
-* twig
-  * handlebars? or other layouting
 * [dark mode support](https://paulmillr.com/posts/using-dark-mode-in-css/?utm_source=CSS-Weekly&utm_campaign=Issue-337&utm_medium=email)
 * browserslist
   * custom GA implementation

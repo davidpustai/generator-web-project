@@ -35,7 +35,7 @@ gulp
  	* compiles, prefixes, concats and minifies scss
  	* minifies (combines) media queries
  	* concats and minifies javascript
- 	* templates html with Mustache and minifies it
+ 	* templates html with Twig and minifies it
  	* copies favicons and configs to root
  	* revisions assets to bust caches
  	* runs local server at `localhost:8000`
