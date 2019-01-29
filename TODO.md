@@ -11,7 +11,6 @@
 * https://alistapart.com/article/the-slow-death-of-internet-explorer-and-future-of-progressive-enhancement?utm_source=CSS-Weekly&utm_campaign=Issue-316&utm_medium=email
 * [dark mode support](https://paulmillr.com/posts/using-dark-mode-in-css/?utm_source=CSS-Weekly&utm_campaign=Issue-337&utm_medium=email)
 * browserslist
-  * custom GA implementation
   * region question in generator
 * [reset.css](https://scotch.io/tutorials/a-look-at-bootstrap-4s-new-reset-rebootcss)
 * sitemap.xml and robots.txt integration
@@ -19,7 +18,6 @@
   * use loadCSS
 * automated build (and test) via Travis CI
 * humans.txt + rel attr
-* ask for GA key, warn when compiling into dist without it
 * automated testing for generator and projects (include lighthouse)
 * source maps copying & generation, strip on dist
 * documentation (see h5bp docs)

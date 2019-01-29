@@ -8,6 +8,9 @@
 - moved source files into the `src` directory
 - Mustache for Twig templating
 
+### Removed
+- Google Analytics, [you probably don't need them for every site](https://www.smashingmagazine.com/2019/01/save-planet-improving-website-performance/#what-are-you-analyzing)
+
 
 ## [0.15.0] - 2018-12-04
 ### Added
