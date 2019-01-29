@@ -60,7 +60,7 @@ const concatCSS = () => gulp.src([
 // ===============================================================
 const processCSS = () => {
 	const stream = gulp.src('.tmp/css/concated/**/*.css')
-		.pipe($.autoprefixer());
+					.pipe($.autoprefixer());
 
 	if ( ENV == 'dist' ) {
 		return stream
@@ -176,9 +176,9 @@ const copy = gulp.parallel(
 const html = () => {
 	const manifests = gulp.src(revManifestsBase + '/*.json');
 	const jquerySRIHash = ssri.fromData(
-			fs.readFileSync('bower_components/jquery/dist/jquery.min.js'),
-			{ algorithms: ['sha256'] }
-		);
+		fs.readFileSync('bower_components/jquery/dist/jquery.min.js'),
+		{ algorithms: ['sha256'] }
+	);
 
 	return gulp.src('src/templates/pages/**/*.twig')
 		.pipe($.twig({
