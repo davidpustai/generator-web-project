@@ -7,7 +7,7 @@
 		"> 1%"
 	],
 	"dependencies": {
-		"apache-server-configs": "3.0.0"
+		"apache-server-configs": "3.1.0"
 	},
 	"devDependencies": {
 		"del": "^3.0.0",
