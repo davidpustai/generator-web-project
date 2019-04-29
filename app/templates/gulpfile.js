@@ -131,9 +131,7 @@ const js = gulp.series(concatJS, processJS);
 // ===============================================================
 // IMAGE PROCESSING
 // ===============================================================
-const img = () => gulp.src([
-						'src/assets/img/**/*.{gif,jpg,png,svg}'
-					])
+const img = () => gulp.src('src/assets/img/**/*.{gif,jpg,png,svg}')
 					.pipe($.if(ENV == 'dist', $.imagemin()))
 					.pipe(gulp.dest(DEST + '/assets/img'))
 					.pipe($.connect.reload());
@@ -158,9 +156,7 @@ const copyModules = () => gulp.src([
 							])
 							.pipe(gulp.dest(DEST));
 
-const copyJQuery = () => gulp.src([
-								'bower_components/jquery/dist/jquery.min.js'
-							])
+const copyJQuery = () => gulp.src('bower_components/jquery/dist/jquery.min.js')
 							.pipe($.rename('jquery-'+bower.dependencies.jquery+'.min.js'))
 							.pipe(gulp.dest(DEST + '/assets/js/vendor'));
 
