@@ -10,6 +10,7 @@
 - upgrade to `apache-server-configs` v3.1.0
 - upgrade normalize.css to v8.0.1
 - update `devDependencies`
+- small Gulpfile optimizations
 
 ### Removed
 - Google Analytics, [you probably don't need them for every site](https://www.smashingmagazine.com/2019/01/save-planet-improving-website-performance/#what-are-you-analyzing)

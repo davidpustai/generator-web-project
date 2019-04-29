@@ -96,7 +96,7 @@ const concatJSMain = () => gulp.src([
 							.pipe($.concat('main.js'))
 							.pipe(gulp.dest('.tmp/js/concated'));
 
-const concatJS = gulp.series(
+const concatJS = gulp.parallel(
 	concatJSMain
 );
 
