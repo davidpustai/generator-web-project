@@ -9,6 +9,7 @@
 - Mustache for Twig templating
 - upgrade to `apache-server-configs` v3.2.1
 - upgrade normalize.css to v8.0.1
+- upgrade jQuery to v3.3.1
 - update `devDependencies`
 - small Gulpfile optimizations
 - rename `.visuallyhidden` to `.sr-only`
