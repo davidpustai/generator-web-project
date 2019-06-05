@@ -105,11 +105,11 @@ WebProjectGenerator.prototype.webfiles = function webfiles() {
 	this.copy('assets/scss/settings/type.scss',		'src/assets/scss/settings/_type.scss');
 	this.copy('assets/scss/settings/z-index.scss',	'src/assets/scss/settings/_z-index.scss');
 
-	this.copy('assets/scss/helpers/functions.scss',			'src/assets/scss/helpers/_functions.scss');
-	this.copy('assets/scss/helpers/mixins.scss',			'src/assets/scss/helpers/_mixins.scss');
-	this.copy('assets/scss/helpers/visuallyhidden.scss',	'src/assets/scss/helpers/_visuallyhidden.scss');
-	this.copy('assets/scss/helpers/base.scss',				'src/assets/scss/helpers/_base.scss');
-	this.copy('assets/scss/helpers/shame.scss',				'src/assets/scss/helpers/_shame.scss');
+	this.copy('assets/scss/helpers/functions.scss',	'src/assets/scss/helpers/_functions.scss');
+	this.copy('assets/scss/helpers/mixins.scss',	'src/assets/scss/helpers/_mixins.scss');
+	this.copy('assets/scss/helpers/sr-only.scss',	'src/assets/scss/helpers/_sr-only.scss');
+	this.copy('assets/scss/helpers/base.scss',		'src/assets/scss/helpers/_base.scss');
+	this.copy('assets/scss/helpers/shame.scss',		'src/assets/scss/helpers/_shame.scss');
 
 	this.copy('assets/js/main.js',						'src/assets/js/main.js');
 	this.copy('assets/js/plugins.js',					'src/assets/js/plugins.js');

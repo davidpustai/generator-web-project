@@ -11,6 +11,7 @@
 - upgrade normalize.css to v8.0.1
 - update `devDependencies`
 - small Gulpfile optimizations
+- rename `.visuallyhidden` to `.sr-only`
 
 ### Removed
 - Google Analytics, [you probably don't need them for every site](https://www.smashingmagazine.com/2019/01/save-planet-improving-website-performance/#what-are-you-analyzing)
