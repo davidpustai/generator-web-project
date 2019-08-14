@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 ### Added
+- Babel
 - HTML title to 404 page
 
 ### Changed

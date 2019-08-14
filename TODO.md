@@ -5,7 +5,6 @@
 * HTML title as variable for layout & 404
 * separate copy fonts and only call that one on watch
 * https://webhint.io/
-* Babel
 * deprecate IE10- support
 * npm vulnerabilities
 * https://twitter.com/justmarkup/status/974581638637142016

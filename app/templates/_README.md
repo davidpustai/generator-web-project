@@ -6,6 +6,7 @@
  * [SASS](http://sass-lang.com/)
  * [Gulp](https://gulpjs.com/)
  * [Twig](https://twig.symfony.com/)
+ * [Babel](https://babeljs.io/)
 
 ## Browser support
 

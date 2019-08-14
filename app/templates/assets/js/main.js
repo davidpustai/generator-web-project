@@ -1,4 +1,4 @@
-const onDOMContentLoaded = function() {
+const onDOMContentLoaded = () => {
 };
 
 document.readyState !== 'loading' ?

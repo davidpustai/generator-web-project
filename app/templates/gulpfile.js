@@ -108,6 +108,9 @@ const processJS = () => {
 
 	if ( ENV == 'dist' ) {
 		return stream
+			.pipe($.babel({
+				presets: ['@babel/preset-env']
+			}))
 			.pipe($.uglify())
 			.pipe($.rev())
 			.pipe(gulp.dest(DEST + '/assets/js'))
