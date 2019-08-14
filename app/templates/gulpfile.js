@@ -156,14 +156,9 @@ const copyModules = () => gulp.src([
 							])
 							.pipe(gulp.dest(DEST));
 
-const copyJQuery = () => gulp.src('bower_components/jquery/dist/jquery.min.js')
-							.pipe($.rename('jquery-'+bower.dependencies.jquery+'.min.js'))
-							.pipe(gulp.dest(DEST + '/assets/js/vendor'));
-
 const copy = gulp.parallel(
 	copyMisc,
-	copyModules,
-	copyJQuery
+	copyModules
 );
 
 // ===============================================================
@@ -171,19 +166,10 @@ const copy = gulp.parallel(
 // ===============================================================
 const html = () => {
 	const manifests = gulp.src(revManifestsBase + '/*.json');
-	const jquerySRIHash = ssri.fromData(
-		fs.readFileSync('bower_components/jquery/dist/jquery.min.js'),
-		{ algorithms: ['sha256'] }
-	);
 
 	return gulp.src('src/templates/pages/**/*.twig')
 		.pipe($.twig({
-			data: {
-				jquery: {
-					version: bower.dependencies.jquery,
-					sri_hash: jquerySRIHash
-				}
-			},
+			data: {},
 			errorLogToConsole: true,
 			extname: '.html'
 		}))
