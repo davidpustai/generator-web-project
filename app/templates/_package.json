@@ -22,7 +22,7 @@
 		"gulp-connect": "^5.5.0",
 		"gulp-htmlmin": "^5.0.1",
 		"gulp-if": "^2.0.2",
-		"gulp-imagemin": "^7.0.0",
+		"gulp-imagemin": "^7.1.0",
 		"gulp-load-plugins": "^2.0.2",
 		"gulp-plumber": "^1.2.0",
 		"gulp-rename": "^1.2.2",
