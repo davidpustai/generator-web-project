@@ -64,7 +64,6 @@ WebProjectGenerator.prototype.dirs = function dirs() {
 	this.mkdir('src/assets/font');
 
 	this.mkdir('src/assets/img');
-	this.mkdir('src/assets/img/favicons');
 
 	this.mkdir('src/assets/js');
 	this.mkdir('src/assets/js/components');
