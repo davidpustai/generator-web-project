@@ -11,7 +11,9 @@
 		<link rel="stylesheet" href="/assets/css/main.css">
 
 		<title>{{ title ? title ~ ' | ' }}<%= htmlTitle %></title>
-		<meta name="description" content="{{ description }}">
+		{% if description is defined %}
+			<meta name="description" content="{{ description }}">
+		{% endif %}
 	</head>
 	<body>
 		<!--[if IE]><% if (language == 'cs') { %>
