@@ -14,6 +14,7 @@
 - update `devDependencies`
 - small Gulpfile optimizations
 - rename `.visuallyhidden` to `.sr-only`
+- updated browser support (see `browserslist` in `package.json`)
 
 ### Removed
 - jQuery

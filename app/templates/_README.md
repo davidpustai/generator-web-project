@@ -8,13 +8,6 @@
  * [Twig](https://twig.symfony.com/)
  * [Babel](https://babeljs.io/)
 
-## Browser support
-
-Last 2 versions of most browsers, IE 9+ and browsers with more than 1% global usage (according to caniuse.com). See the `browserslist` key in `package.json` and feel free to customize.
-
-*This doesn't mean that the generated project cannot be used in older browsers, just that compatibility is ensured with the ones mentioned above.*
-
-
 ## Getting started
 First install dependencies:
 ```
