@@ -135,7 +135,7 @@ textarea {
 	*:before,
 	*:after {
 		/* Always enforce this to ensure better readability, printing and paint savings when printing on paper. */
-		background: transparent !important;
+		background: #fff !important;
 		color: #000 !important; /* Black prints faster */
 		box-shadow: none !important;
 		text-shadow: none !important;
