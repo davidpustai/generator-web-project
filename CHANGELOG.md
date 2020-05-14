@@ -19,6 +19,7 @@
 - jQuery
 - Google Analytics, [you probably don't need them for every site](https://www.smashingmagazine.com/2019/01/save-planet-improving-website-performance/#what-are-you-analyzing)
 - `shrink-to-fit=no`
+- `.browser-upgrade` message in outdated browsers
 
 
 ## [0.15.0] - 2018-12-04
