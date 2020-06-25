@@ -168,8 +168,6 @@ const copy = gulp.parallel(
 // HTML PROCESSING
 // ===============================================================
 const html = () => {
-	const manifests = gulp.src(revManifestsBase + '/*.json');
-
 	return gulp.src('src/templates/pages/**/*.twig')
 		.pipe($.twig({
 			data: {},
@@ -179,7 +177,7 @@ const html = () => {
 		.pipe($.if(ENV == 'dist', $.revReplace({
 			canonicalUris: false,
 			replaceInExtensions: ['.html'],
-			manifest: manifests
+			manifest: gulp.src(revManifestsBase + '/*.json')
 		})))
 		.pipe($.if(ENV == 'dist', $.htmlmin({
 			processConditionalComments: true,
