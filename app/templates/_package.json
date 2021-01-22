@@ -9,7 +9,7 @@
 		"IE 11"
 	],
 	"dependencies": {
-		"apache-server-configs": "3.2.1"
+		"apache-server-configs": "4.1.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.5.5",
