@@ -67,7 +67,6 @@
 ## JS
 * module bundler (or replace Gulp with Webpack, if it can do all we do via Gulp)
 * [Encoding data in CSS](http://ofcodeandcolor.com/2017/04/02/encoding-data-in-css/)
-* link to get_media_query snippet in `_media.scss` and `@mixin js-media-helpers` declaration
 
 
 ## Optimalization

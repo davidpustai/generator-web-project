@@ -17,25 +17,11 @@
  * Prints: @media only screen and (min-width: Xem) { ... }
  */
 @mixin bp($breakpoint) {
-	$qry: nth(map-get($breakpoints, $breakpoint), 1);
+	$qry: map-get($breakpoints, $breakpoint);
 
 	@if ($qry == null) {
 		@error "There is no breakpoint '#{$breakpoint}'!";
 	}
 
 	@media only screen and (min-width: #{$qry}) { @content; }
-}
-
-/*
- * Generates js media helpers for breakpoint consistency between scss & js
- */
-@mixin js-media-helpers($breakpoints) {
-	@each $key, $value in $breakpoints {
-		// check if the heleper is wanted
-		@if nth($value, 2) {
-			meta.mq-#{$key} {
-				font-family: "/only screen and (min-width: #{nth($value, 1)})/";
-			}
-		}
-	}
 }
