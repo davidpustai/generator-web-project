@@ -2,9 +2,6 @@ const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const del = require('del');
 const $ = gulpLoadPlugins();
-const bower = require('./bower.json');
-const fs = require('fs');
-const ssri = require('ssri');
 
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
