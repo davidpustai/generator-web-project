@@ -27,7 +27,6 @@ gulp
 	* watches for changes
  * `gulp build` - *use when deploying, compiles into `dist` directory*
  	* compiles, prefixes, concats and minifies scss
- 	* minifies (combines) media queries
  	* concats and minifies javascript
  	* templates html with Twig and minifies it
  	* copies favicons and configs to root

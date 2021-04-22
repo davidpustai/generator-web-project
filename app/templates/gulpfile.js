@@ -61,7 +61,6 @@ const processCSS = () => {
 
 	if ( ENV == 'dist' ) {
 		return stream
-			.pipe($.combineMq())
 			.pipe($.cleanCss())
 			.pipe($.rev())
 			.pipe(gulp.dest(DEST + '/assets/css'))
@@ -72,7 +71,6 @@ const processCSS = () => {
 	}
 	else {
 		return stream
-			.pipe($.combineMq())
 			.pipe(gulp.dest(DEST + '/assets/css'))
 			.pipe($.connect.reload());
 	}
