@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+
+
+## [0.16.0] - 2021-06-06
 ### Added
 - Babel
 - HTML title to 404 page

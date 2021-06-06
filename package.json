@@ -1,6 +1,6 @@
 {
   "name": "generator-web-project",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Simple front-end project generator for [Yeoman](http://yeoman.io)",
   "homepage": "https://github.com/davidpustai/generator-web-project",
   "author": {
