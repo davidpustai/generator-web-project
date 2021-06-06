@@ -1,5 +1,7 @@
 'use strict';
+const _ = require('lodash');
 const Generator = require('yeoman-generator');
+_.extend(Generator.prototype, require('yeoman-generator/lib/actions/install'));
 const chalk = require('chalk');
 const yosay = require('yosay');
 const path = require('path');
