@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<%= language %>">
+<html lang="<%= lang %>">
 	<head>
 		{# these 3 meta tags must come first in the <head> #}
 		<meta charset="utf-8">
@@ -10,7 +10,7 @@
 
 		<link rel="stylesheet" href="/assets/css/main.css">
 
-		<title>{{ title ? title ~ ' | ' }}<%= htmlTitle %></title>
+		<title>{{ title ? title ~ ' | ' }}<%= title %></title>
 		{% if description is defined %}
 			<meta name="description" content="{{ description }}">
 		{% endif %}

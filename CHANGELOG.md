@@ -6,6 +6,9 @@
 - HTML title to 404 page
 
 ### Changed
+- **update Yeoman to v5.3.0**
+- **require Node.js 12**
+- **switch from Libsass to Dart Sass**
 - moved source files into the `src` directory
 - Mustache for Twig templating
 - upgrade to `apache-server-configs` v3.2.1
@@ -21,6 +24,7 @@
 - Google Analytics, [you probably don't need them for every site](https://www.smashingmagazine.com/2019/01/save-planet-improving-website-performance/#what-are-you-analyzing)
 - `shrink-to-fit=no`
 - `.browser-upgrade` message in outdated browsers
+- unused mixins and functions
 
 
 ## [0.15.0] - 2018-12-04

@@ -2,30 +2,32 @@
   "name": "generator-web-project",
   "version": "0.15.0",
   "description": "Simple front-end project generator for [Yeoman](http://yeoman.io)",
-  "keywords": [
-    "yeoman-generator"
-  ],
   "homepage": "https://github.com/davidpustai/generator-web-project",
-  "bugs": "https://github.com/davidpustai/generator-web-project/issues",
   "author": {
     "name": "David Pustai",
     "email": "david@pustai.cz",
     "url": "https://github.com/davidpustai"
   },
-  "main": "app/index.js",
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "slugify": "^1.5.3",
+    "yeoman-generator": "^3.1.1",
+    "yosay": "^2.0.2"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/davidpustai/generator-web-project.git"
   },
-  "dependencies": {
-    "yeoman-generator": "~0.14.0"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
-  },
-  "engines": {
-    "node": ">=5.0.0",
-    "npm": ">=1.2.10"
-  },
+  "bugs": "https://github.com/davidpustai/generator-web-project/issues",
   "licenses": "MIT"
 }

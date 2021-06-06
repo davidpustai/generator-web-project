@@ -1,4 +1,4 @@
-# <%= htmlTitle %>
+# <%= title %>
 
 ## Using
  * parts of [HTML5 Boilerplate](https://html5boilerplate.com/)

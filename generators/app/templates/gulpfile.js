@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const del = require('del');
 const $ = gulpLoadPlugins();
+$.sass.compiler = require('sass');
+const Fiber = require('fibers');
 
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
@@ -36,6 +38,7 @@ const clean = () => del(['.tmp', 'dev', 'dist']);
 const sass = () => gulp.src('src/assets/scss/*.scss')
 					.pipe($.plumber())
 					.pipe($.sass({
+						fiber: Fiber,
 						includePaths: ['src/assets/scss', 'bower_components'],
 						precision: 6
 					}).on('error', $.sass.logError))

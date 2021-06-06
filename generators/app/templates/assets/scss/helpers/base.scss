@@ -70,8 +70,8 @@ body {
 	line-height: 1.5; // Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
 	font-size: 16px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; // WordPress system font stack
-	background-color: $body-bg; // WCAG 2.0 Checklist 1.4.8
-	color: $body-font-color; // WCAG 2.0 Checklist 1.4.8
+	background-color: colors.$body-bg; // WCAG 2.0 Checklist 1.4.8
+	color: colors.$body-font-color; // WCAG 2.0 Checklist 1.4.8
 }
 
 /*
