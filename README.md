@@ -2,7 +2,7 @@
 
 > [Yeoman](http://yeoman.io) generator for creating static websites. Includes some front-end goodies and automated processing.
 
-### Using
+## Using
  * parts of [HTML5 Boilerplate](https://html5boilerplate.com/)
  * [normalize.css](https://necolas.github.io/normalize.css/)
  * [SASS](http://sass-lang.com/) with Dart Sass
