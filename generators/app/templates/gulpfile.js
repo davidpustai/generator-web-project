@@ -2,8 +2,7 @@ const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const del = require('del');
 const $ = gulpLoadPlugins();
-$.sass.compiler = require('sass');
-const Fiber = require('fibers');
+const sass = require('gulp-sass')(require('sass'));
 
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
@@ -35,13 +34,12 @@ const clean = () => del(['.tmp', 'dev', 'dist']);
 // ===============================================================
 // SCSS -> CSS
 // ===============================================================
-const sass = () => gulp.src('src/assets/scss/*.scss')
+const scss = () => gulp.src('src/assets/scss/*.scss')
 					.pipe($.plumber())
-					.pipe($.sass({
-						fiber: Fiber,
+					.pipe(sass({
 						includePaths: ['src/assets/scss', 'bower_components'],
 						precision: 6
-					}).on('error', $.sass.logError))
+					}).on('error', sass.logError))
 					.pipe(gulp.dest('.tmp/css/compiled'));
 
 // ===============================================================
@@ -82,7 +80,7 @@ const processCSS = () => {
 // ===============================================================
 // MAIN CSS TASK
 // ===============================================================
-const css = gulp.series(sass, concatCSS, processCSS);
+const css = gulp.series(scss, concatCSS, processCSS);
 
 // ===============================================================
 // CONCAT JS
