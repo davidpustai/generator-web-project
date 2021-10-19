@@ -1,6 +1,6 @@
 @use "settings/sizes";
 @use "settings/colors";
-@use "settings/breakpoints";
+@use "settings/breakpoints" as bps;
 @use "helpers/z-index" as z;
 
 @import "helpers/sr-only";
