@@ -9,7 +9,6 @@
 * https://gist.github.com/tilap/31167027ddee8acbf0e7
 * https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/
 * progressive jpg, png...
-* check if `defer` on main.js doesn't slow the page performance
 * update browser support, ask for country of deployment with "global" option
 * svg sprites & macro
 * https://every-layout.dev/blog/multi-column-manipulation/?utm_source=CSS-Weekly&utm_campaign=Issue-373&utm_medium=email

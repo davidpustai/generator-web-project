@@ -10,6 +10,8 @@
 
 		<link rel="stylesheet" href="/assets/css/main.css">
 
+		<script src="/assets/js/main.js" defer></script>
+
 		<title>{{ title ? title ~ ' | ' }}<%= title %></title>
 		{% if description is defined %}
 			<meta name="description" content="{{ description }}">
@@ -17,7 +19,5 @@
 	</head>
 	<body>
 		{% block main %}{% endblock %}
-
-		<script src="/assets/js/main.js" async defer></script>
 	</body>
 </html>
