@@ -1,6 +1,6 @@
 # TODO
 
-## General stuff
+## General
 - https://www.npmjs.com/package/autoreload-gulp
 - [colorguard](https://github.com/SlexAxton/css-colorguard#programmatic)
 - [custom focus style](https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/)
