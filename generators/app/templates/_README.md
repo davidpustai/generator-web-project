@@ -12,7 +12,6 @@
 First install dependencies:
 ```
 npm install
-bower install
 ```
 
 And let's start working (more about gulp commands below):
@@ -40,7 +39,7 @@ gulp
 ## Contributions
 
 When releasing
-* update version in `package.json` and `bower.json`
+* update version in `package.json`
 * rename `[Unreleased]` section in `CHANGELOG.md` to `[<version>] <date-of-release>`
 * create new `[Unreleased]` section at the top
 * `git add . && git commit -m v<version-number>`

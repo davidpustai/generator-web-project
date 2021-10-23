@@ -33,11 +33,9 @@ module.exports = class extends Generator {
 	}
 
 	projectFiles() {
-		this._copy('configs/project/bowerrc', '.bowerrc');
 		this._copy('configs/project/editorconfig', '.editorconfig');
 		this._copy('configs/project/gitattributes', '.gitattributes');
 		this._copy('configs/project/gitignore', '.gitignore');
-		this._template('_bower.json', 'bower.json');
 		this._copy('CHANGELOG.md', 'CHANGELOG.md');
 		this._copy('gulpfile.js', 'gulpfile.js');
 		this._template('_package.json', 'package.json');
@@ -87,7 +85,6 @@ module.exports = class extends Generator {
 
 	install() {
 		this.npmInstall();
-		this.bowerInstall();
 	}
 
 	_template(src, dest) {

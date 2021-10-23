@@ -1,8 +1,0 @@
-{
-  "name": "<%= appName %>",
-  "version": "0.0.0",
-  "private": "true",
-  "dependencies": {
-    "normalize.css": "8.0.1"
-  }
-}

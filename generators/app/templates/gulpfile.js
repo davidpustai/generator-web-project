@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
-const del = require('del');
 const $ = gulpLoadPlugins();
+const del = require('del');
 const sass = require('gulp-sass')(require('sass'));
 
 // ===============================================================
@@ -37,7 +37,7 @@ const clean = () => del(['.tmp', 'dev', 'dist']);
 const scss = () => gulp.src('src/assets/scss/*.scss')
 					.pipe($.plumber())
 					.pipe(sass({
-						includePaths: ['src/assets/scss', 'bower_components'],
+						includePaths: ['src/assets/scss'],
 						precision: 6
 					}).on('error', sass.logError))
 					.pipe(gulp.dest('.tmp/css/compiled'));
@@ -45,9 +45,9 @@ const scss = () => gulp.src('src/assets/scss/*.scss')
 // ===============================================================
 // CONCAT CSS
 // ===============================================================
-// Source should be compiled CSS (.tmp/css/copmiled), resp. vendor CSS (bower_components resp. src/assets/vendor/css).
+// Source should be compiled CSS (.tmp/css/copmiled), resp. vendor CSS.
 const concatCSS = () => gulp.src([
-							'bower_components/normalize.css/normalize.css',
+							'node_modules/normalize.css/normalize.css',
 							'.tmp/css/compiled/main.css'
 						])
 						.pipe($.concat('main.css'))

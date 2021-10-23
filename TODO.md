@@ -20,8 +20,6 @@
 * HTML title as variable for layout & 404
 * separate copy fonts and only call that one on watch
 * https://webhint.io/
-* https://css-tricks.com/introducing-sass-modules/?utm_source=CSS-Weekly&utm_campaign=Issue-382&utm_medium=email
-* [migrate away from bower](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
 * site.webmanifest (h5bp)
 * inline CSS if < ~ 15/20kB
 * ensure use of H/2
