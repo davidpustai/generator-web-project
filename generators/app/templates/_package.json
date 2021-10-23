@@ -2,11 +2,11 @@
 	"name": "<%= appName %>",
 	"version": "0.0.0",
 	"browserslist": [
-		"> 0.5%",
 		"last 2 versions",
-		"Firefox ESR",
 		"not dead",
-		"IE 11"
+		"> 0.5%",
+		"Firefox ESR",
+		"ie >= 11"
 	],
 	"dependencies": {
 		"apache-server-configs": "4.1.0",
