@@ -34,7 +34,7 @@ yo web-project
 Feel free to fork and open pull requests. For now development happens on `master` branch only.
 
 When releasing
-* update version in `package.json`
+* update version in `package.json` & `package-lock.json`
 * rename `[Unreleased]` section in `CHANGELOG.md` to `[<version>] <date-of-release>`
 * create new `[Unreleased]` section at the top
 * `git add . && git commit -m v<version-number>`

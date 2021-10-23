@@ -3,6 +3,16 @@
 ## [Unreleased]
 
 
+[0.16.1] - 2021-10-23
+### Changed
+- update `devDependencies`
+- more modern JS loading
+- tweaks & fixes
+
+### Removed
+- Bower
+
+
 ## [0.16.0] - 2021-06-06
 ### Added
 - Babel
