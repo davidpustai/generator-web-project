@@ -176,25 +176,21 @@ const html = () => {
 			manifest: gulp.src(revManifestsBase + '/*.json')
 		})))
 		.pipe($.if(ENV == 'dist', $.htmlmin({
-			processConditionalComments: true,
-			removeComments: true,
-			removeCommentsFromCDATA: true,
-			removeCDATASectionsFromCDATA: true,
+			collapseBooleanAttributes: true,
+			collapseInlineTagWhitespace: true,
 			collapseWhitespace: true,
 			conservativeCollapse: true,
-			collapseInlineTagWhitespace: true,
-			collapseBooleanAttributes: true,
-			removeTagWhitespace: true,
-			removeAttributeQuotes: true,
-			removeRedundantAttributes: true,
-			useShortDoctype: true,
-			removeEmptyAttributes: true,
-			removeScriptTypeAttributes: true,
-			removeOptionalTags: true,
 			decodeEntities: true,
-			minifyJS: true,
 			minifyCSS: true,
-			quoteCharacter: '"'
+			minifyJS: true,
+			processConditionalComments: true,
+			quoteCharacter: '"',
+			removeAttributeQuotes: true,
+			removeComments: true,
+			removeOptionalTags: true,
+			removeRedundantAttributes: false,
+			removeScriptTypeAttributes: true,
+			useShortDoctype: true
 		})))
 		.pipe(gulp.dest(DEST))
 		.pipe($.connect.reload());
