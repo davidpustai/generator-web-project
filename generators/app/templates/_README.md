@@ -55,4 +55,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ***
-Generated on <%= (new Date).toISOString().split('T')[0] %> via [Yeoman](http://yeoman.io) with [generator-web-project](https://github.com/davidpustai/generator-web-project) <%= pkg.version %>.
+Based on [generator-web-project](https://github.com/davidpustai/generator-web-project) <%= pkg.version %>.
