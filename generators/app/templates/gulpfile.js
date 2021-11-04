@@ -135,13 +135,19 @@ const img = () => gulp.src('src/assets/img/**/*.{gif,jpg,png,svg}')
 					.pipe(gulp.dest(DEST + '/assets/img'))
 					.pipe($.connect.reload());
 
+const favicon = () => {
+	return gulp.src('src/*.{png,svg}')
+		.pipe($.if(ENV == 'dist', $.imagemin()))
+		.pipe(gulp.dest(DEST));
+}
+
 // ===============================================================
 // COPY FILES
 // ===============================================================
 const copyMisc = () => gulp.src([
+							'src/site.webmanifest',
 							'src/robots.txt',
-							'src/browserconfig.xml',
-							'src/*.{ico,png,svg}', // icons
+							'src/*.ico',
 							'src/assets/font/**/*.{woff,woff2}',
 							'!src/assets/font/original/**/*'
 						], {
@@ -221,6 +227,7 @@ const build = gulp.series(
 			html
 		),
 		img,
+		favicon,
 		copy
 	)
 );
@@ -246,7 +253,7 @@ const defaultTasks = gulp.series(
 	setEnvDev,
 	setDestDev,
 	clean,
-	gulp.parallel(css, js, img, copy, html),
+	gulp.parallel(css, js, img, favicon, copy, html),
 	connect,
 	watchFiles
 );

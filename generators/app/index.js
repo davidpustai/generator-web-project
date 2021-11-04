@@ -56,12 +56,13 @@ module.exports = class extends Generator {
 	}
 
 	webFiles() {
-		this._copy('configs/web/browserconfig.xml', 'src/browserconfig.xml');
+		this._template('configs/web/site.webmanifest', 'src/site.webmanifest');
 		this._copy('configs/web/robots.txt', 'src/robots.txt');
+		this._copy('assets/img/favicons/android-chrome-192x192.png', 'src/android-chrome-192x192.png');
+		this._copy('assets/img/favicons/android-chrome-512x512.png', 'src/android-chrome-512x512.png');
 		this._copy('assets/img/favicons/apple-touch-icon.png', 'src/apple-touch-icon.png');
 		this._copy('assets/img/favicons/favicon.ico', 'src/favicon.ico');
-		this._copy('assets/img/favicons/tile.png', 'src/tile.png');
-		this._copy('assets/img/favicons/tile-wide.png', 'src/tile-wide.png');
+		this._copy('assets/img/favicons/favicon.svg', 'src/favicon.svg');
 		this._copy('assets/js/main.js', 'src/assets/js/main.js');
 		this._copy('assets/js/plugins.js', 'src/assets/js/plugins.js');
 		this._copy('assets/scss/main.scss', 'src/assets/scss/main.scss');
