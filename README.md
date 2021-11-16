@@ -5,7 +5,7 @@
 ## Using
  * parts of [HTML5 Boilerplate](https://html5boilerplate.com/)
  * [normalize.css](https://necolas.github.io/normalize.css/)
- * [SASS](http://sass-lang.com/) with Dart Sass
+ * [SASS](https://sass-lang.com/) with Dart Sass
  * [Gulp](https://gulpjs.com/)
  * [Twig](https://twig.symfony.com/)
  * [Babel](https://babeljs.io/)
