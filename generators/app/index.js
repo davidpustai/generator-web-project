@@ -56,7 +56,7 @@ module.exports = class extends Generator {
 	}
 
 	webFiles() {
-		this._template('configs/web/site.webmanifest', 'src/site.webmanifest');
+		this._template('configs/web/_site.webmanifest', 'src/site.webmanifest');
 		this._copy('configs/web/robots.txt', 'src/robots.txt');
 		this._copy('assets/img/favicons/android-chrome-192x192.png', 'src/android-chrome-192x192.png');
 		this._copy('assets/img/favicons/android-chrome-512x512.png', 'src/android-chrome-512x512.png');
