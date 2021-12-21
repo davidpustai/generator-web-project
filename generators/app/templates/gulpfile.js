@@ -15,15 +15,19 @@ const revManifestsBase = '.tmp/rev-manifests';
 let ENV = 'dist';
 let DEST = 'dist';
 
-const setEnvDev = () => new Promise((resolve, reject) => {
-							ENV = 'dev';
-							resolve();
-						});
+const setEnvDev = () => {
+	return new Promise((resolve, reject) => {
+		ENV = 'dev';
+		resolve();
+	});
+};
 
-const setDestDev = () => new Promise((resolve, reject) => {
-							DEST = 'dev';
-							resolve();
-						});
+const setDestDev = () => {
+	return new Promise((resolve, reject) => {
+		DEST = 'dev';
+		resolve();
+	});
+};
 
 // ===============================================================
 // CLEAN
@@ -34,24 +38,28 @@ const clean = () => del(['.tmp', 'dev', 'dist']);
 // ===============================================================
 // SCSS -> CSS
 // ===============================================================
-const scss = () => gulp.src('src/assets/scss/*.scss')
-					.pipe($.plumber())
-					.pipe(sass({
-						includePaths: ['src/assets/scss'],
-						precision: 6
-					}).on('error', sass.logError))
-					.pipe(gulp.dest('.tmp/css/compiled'));
+const scss = () => {
+	return gulp.src('src/assets/scss/*.scss')
+		.pipe($.plumber())
+		.pipe(sass({
+			includePaths: ['src/assets/scss'],
+			precision: 6
+		}).on('error', sass.logError))
+		.pipe(gulp.dest('.tmp/css/compiled'));
+};
 
 // ===============================================================
 // CONCAT CSS
 // ===============================================================
 // Source should be compiled CSS (.tmp/css/copmiled), resp. vendor CSS.
-const concatCSS = () => gulp.src([
-							'node_modules/normalize.css/normalize.css',
-							'.tmp/css/compiled/main.css'
-						])
-						.pipe($.concat('main.css'))
-						.pipe(gulp.dest('.tmp/css/concated'));
+const concatCSS = () => {
+	return gulp.src([
+			'node_modules/normalize.css/normalize.css',
+			'.tmp/css/compiled/main.css'
+		])
+		.pipe($.concat('main.css'))
+		.pipe(gulp.dest('.tmp/css/concated'));
+};
 
 // ===============================================================
 // CSS PROCESSING
@@ -69,8 +77,7 @@ const processCSS = () => {
 				base: revManifestsBase
 			}))
 			.pipe(gulp.dest(revManifestsBase));
-	}
-	else {
+	} else {
 		return stream
 			.pipe(gulp.dest(DEST + '/assets/css'))
 			.pipe($.connect.reload());
@@ -85,12 +92,14 @@ const css = gulp.series(scss, concatCSS, processCSS);
 // ===============================================================
 // CONCAT JS
 // ===============================================================
-const concatJSMain = () => gulp.src([
-								'src/assets/js/plugins.js',
-								'src/assets/js/main.js'
-							])
-							.pipe($.concat('main.js'))
-							.pipe(gulp.dest('.tmp/js/concated'));
+const concatJSMain = () => {
+	return gulp.src([
+			'src/assets/js/plugins.js',
+			'src/assets/js/main.js'
+		])
+		.pipe($.concat('main.js'))
+		.pipe(gulp.dest('.tmp/js/concated'));
+};
 
 const concatJS = gulp.parallel(
 	concatJSMain
@@ -114,8 +123,7 @@ const processJS = () => {
 				base: revManifestsBase
 			}))
 			.pipe(gulp.dest(revManifestsBase));
-	}
-	else {
+	} else {
 		return stream
 			.pipe(gulp.dest(DEST + '/assets/js'))
 			.pipe($.connect.reload());
@@ -130,10 +138,12 @@ const js = gulp.series(concatJS, processJS);
 // ===============================================================
 // IMAGE PROCESSING
 // ===============================================================
-const img = () => gulp.src('src/assets/img/**/*.{gif,jpg,png,svg}')
-					.pipe($.if(ENV == 'dist', $.imagemin()))
-					.pipe(gulp.dest(DEST + '/assets/img'))
-					.pipe($.connect.reload());
+const img = () => {
+	return gulp.src('src/assets/img/**/*.{gif,jpg,png,svg}')
+		.pipe($.if(ENV == 'dist', $.imagemin()))
+		.pipe(gulp.dest(DEST + '/assets/img'))
+		.pipe($.connect.reload());
+};
 
 const favicon = () => {
 	return gulp.src('src/*.{png,svg}')
@@ -144,22 +154,26 @@ const favicon = () => {
 // ===============================================================
 // COPY FILES
 // ===============================================================
-const copyMisc = () => gulp.src([
-							'src/site.webmanifest',
-							'src/robots.txt',
-							'src/*.ico',
-							'src/assets/font/**/*.{woff,woff2}',
-							'!src/assets/font/original/**/*'
-						], {
-							base: 'src'
-						})
-						.pipe(gulp.dest(DEST))
-						.pipe($.connect.reload());
+const copyMisc = () => {
+	return gulp.src([
+			'src/site.webmanifest',
+			'src/robots.txt',
+			'src/*.ico',
+			'src/assets/font/**/*.{woff,woff2}',
+			'!src/assets/font/original/**/*'
+		], {
+			base: 'src'
+		})
+		.pipe(gulp.dest(DEST))
+		.pipe($.connect.reload());
+};
 
-const copyModules = () => gulp.src([
-								'node_modules/apache-server-configs/dist/.htaccess'
-							])
-							.pipe(gulp.dest(DEST));
+const copyModules = () => {
+	return gulp.src([
+			'node_modules/apache-server-configs/dist/.htaccess'
+		])
+		.pipe(gulp.dest(DEST));
+};
 
 const copy = gulp.parallel(
 	copyMisc,
