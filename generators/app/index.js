@@ -69,7 +69,7 @@ module.exports = class extends Generator {
 		this._copy('assets/scss/helpers/base.scss', 'src/assets/scss/helpers/_base.scss');
 		this._copy('assets/scss/helpers/z-index.scss', 'src/assets/scss/helpers/_z-index.scss');
 		this._copy('assets/scss/helpers/shame.scss', 'src/assets/scss/helpers/_shame.scss');
-		this._copy('assets/scss/helpers/sr-only.scss', 'src/assets/scss/helpers/_sr-only.scss');
+		this._copy('assets/scss/helpers/visually-hidden.scss', 'src/assets/scss/helpers/_visually-hidden.scss');
 		this._copy('assets/scss/settings/colors.scss', 'src/assets/scss/settings/_colors.scss');
 		this._copy('assets/scss/settings/breakpoints.scss', 'src/assets/scss/settings/_breakpoints.scss');
 		this._copy('assets/scss/settings/sizes.scss', 'src/assets/scss/settings/_sizes.scss');

@@ -1,7 +1,8 @@
 # Change Log
 
 ## [Unreleased]
-
+### Changed
+- rename `.sr-only` to `.visually-hidden` to better reflect its purpose
 
 [0.16.1] - 2021-10-23
 ### Changed

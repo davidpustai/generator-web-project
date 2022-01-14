@@ -3,7 +3,7 @@
 @use "settings/breakpoints" as bps;
 @use "helpers/z-index" as z;
 
-@import "helpers/sr-only";
+@import "helpers/visually-hidden";
 @import "helpers/base";
 
 // vendor files first (makes necessary overrides easier)
