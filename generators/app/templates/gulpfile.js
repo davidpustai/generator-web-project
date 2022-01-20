@@ -1,8 +1,21 @@
-const gulp = require('gulp');
-const gulpLoadPlugins = require('gulp-load-plugins');
-const $ = gulpLoadPlugins();
-const del = require('del');
-const sass = require('gulp-sass')(require('sass'));
+import gulp from 'gulp';
+import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
+import cleanCss from 'gulp-clean-css';
+import concat from 'gulp-concat';
+import connect from 'gulp-connect';
+import del from 'del';
+import htmlmin from 'gulp-htmlmin';
+import gulpIf from 'gulp-if';
+import imagemin from 'gulp-imagemin';
+import plumber from 'gulp-plumber';
+import rev from 'gulp-rev';
+import revReplace from 'gulp-rev-replace';
+import twig from 'gulp-twig';
+import uglify from 'gulp-uglify';
+import gulpSass from 'gulp-sass';
+import dartSass from 'sass';
+const sass = gulpSass(dartSass);
 
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
@@ -40,7 +53,7 @@ const clean = () => del(['.tmp', 'dev', 'dist']);
 // ===============================================================
 const scss = () => {
 	return gulp.src('src/assets/scss/*.scss')
-		.pipe($.plumber())
+		.pipe(plumber())
 		.pipe(sass({
 			includePaths: ['src/assets/scss'],
 			precision: 6
@@ -57,7 +70,7 @@ const concatCSS = () => {
 			'node_modules/normalize.css/normalize.css',
 			'.tmp/css/compiled/main.css'
 		])
-		.pipe($.concat('main.css'))
+		.pipe(concat('main.css'))
 		.pipe(gulp.dest('.tmp/css/concated'));
 };
 
@@ -66,21 +79,21 @@ const concatCSS = () => {
 // ===============================================================
 const processCSS = () => {
 	const stream = gulp.src('.tmp/css/concated/**/*.css')
-					.pipe($.autoprefixer());
+					.pipe(autoprefixer());
 
 	if ( ENV == 'dist' ) {
 		return stream
-			.pipe($.cleanCss())
-			.pipe($.rev())
+			.pipe(cleanCss())
+			.pipe(rev())
 			.pipe(gulp.dest(DEST + '/assets/css'))
-			.pipe($.rev.manifest(revManifestsBase + '/css.json', {
+			.pipe(rev.manifest(revManifestsBase + '/css.json', {
 				base: revManifestsBase
 			}))
 			.pipe(gulp.dest(revManifestsBase));
 	} else {
 		return stream
 			.pipe(gulp.dest(DEST + '/assets/css'))
-			.pipe($.connect.reload());
+			.pipe(connect.reload());
 	}
 };
 
@@ -97,7 +110,7 @@ const concatJSMain = () => {
 			'src/assets/js/plugins.js',
 			'src/assets/js/main.js'
 		])
-		.pipe($.concat('main.js'))
+		.pipe(concat('main.js'))
 		.pipe(gulp.dest('.tmp/js/concated'));
 };
 
@@ -113,20 +126,20 @@ const processJS = () => {
 
 	if ( ENV == 'dist' ) {
 		return stream
-			.pipe($.babel({
+			.pipe(babel({
 				presets: ['@babel/preset-env']
 			}))
-			.pipe($.uglify())
-			.pipe($.rev())
+			.pipe(uglify())
+			.pipe(rev())
 			.pipe(gulp.dest(DEST + '/assets/js'))
-			.pipe($.rev.manifest(revManifestsBase + '/js.json', {
+			.pipe(rev.manifest(revManifestsBase + '/js.json', {
 				base: revManifestsBase
 			}))
 			.pipe(gulp.dest(revManifestsBase));
 	} else {
 		return stream
 			.pipe(gulp.dest(DEST + '/assets/js'))
-			.pipe($.connect.reload());
+			.pipe(connect.reload());
 	}
 };
 
@@ -140,14 +153,14 @@ const js = gulp.series(concatJS, processJS);
 // ===============================================================
 const img = () => {
 	return gulp.src('src/assets/img/**/*.{gif,jpg,png,svg}')
-		.pipe($.if(ENV == 'dist', $.imagemin()))
+		.pipe(gulpIf(ENV == 'dist', imagemin()))
 		.pipe(gulp.dest(DEST + '/assets/img'))
-		.pipe($.connect.reload());
+		.pipe(connect.reload());
 };
 
 const favicon = () => {
 	return gulp.src('src/*.{png,svg}')
-		.pipe($.if(ENV == 'dist', $.imagemin()))
+		.pipe(gulpIf(ENV == 'dist', imagemin()))
 		.pipe(gulp.dest(DEST));
 }
 
@@ -165,7 +178,7 @@ const copyMisc = () => {
 			base: 'src'
 		})
 		.pipe(gulp.dest(DEST))
-		.pipe($.connect.reload());
+		.pipe(connect.reload());
 };
 
 const copyModules = () => {
@@ -185,17 +198,17 @@ const copy = gulp.parallel(
 // ===============================================================
 const html = () => {
 	return gulp.src('src/templates/pages/**/*.twig')
-		.pipe($.twig({
+		.pipe(twig({
 			data: {},
 			errorLogToConsole: true,
 			extname: '.html'
 		}))
-		.pipe($.if(ENV == 'dist', $.revReplace({
+		.pipe(gulpIf(ENV == 'dist', revReplace({
 			canonicalUris: false,
 			replaceInExtensions: ['.html'],
 			manifest: gulp.src(revManifestsBase + '/*.json')
 		})))
-		.pipe($.if(ENV == 'dist', $.htmlmin({
+		.pipe(gulpIf(ENV == 'dist', htmlmin({
 			collapseBooleanAttributes: true,
 			collapseInlineTagWhitespace: true,
 			collapseWhitespace: true,
@@ -213,15 +226,15 @@ const html = () => {
 			useShortDoctype: true
 		})))
 		.pipe(gulp.dest(DEST))
-		.pipe($.connect.reload());
+		.pipe(connect.reload());
 };
 
 // ===============================================================
 // SERVER
 // ===============================================================
 // Run a local server at http://localhost:8000.
-const connect = () => new Promise((resolve, reject) => {
-	$.connect.server({
+const runServer = () => new Promise((resolve, reject) => {
+	connect.server({
 		root: DEST,
 		port: 8000,
 		livereload: true
@@ -249,7 +262,7 @@ const build = gulp.series(
 // ===============================================================
 // SERVE
 // ===============================================================
-const serve = gulp.series(build, connect);
+const serve = gulp.series(build, runServer);
 
 // ===============================================================
 // DEVELOPMENT TASKS
@@ -268,16 +281,16 @@ const defaultTasks = gulp.series(
 	setDestDev,
 	clean,
 	gulp.parallel(css, js, img, favicon, copy, html),
-	connect,
+	runServer,
 	watchFiles
 );
 
 // ===============================================================
 // EXPORT TASKS FOR CLI
 // ===============================================================
-module.exports = {
-	build: build,
-	connect: connect,
-	serve: serve,
-	default: defaultTasks
+export {
+	build,
+	runServer as connect,
+	serve,
+	defaultTasks as default
 };

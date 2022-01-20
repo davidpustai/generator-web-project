@@ -33,7 +33,6 @@
 
 ## JS
 - module bundler (or use Webpack)
-- ESR => imagemin
 
 ## File system
 - group by components rather than technology

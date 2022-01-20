@@ -2,7 +2,10 @@
 
 ## [Unreleased]
 ### Changed
-- rename `.sr-only` to `.visually-hidden` to better reflect its purpose
+- **require latest minor version of Node.js** for ESM support
+- **rename `.sr-only` to `.visually-hidden` to better reflect its purpose**
+- use `gulpfile.js` as ESM
+- update `devDependencies`
 
 [0.16.1] - 2021-10-23
 ### Changed
