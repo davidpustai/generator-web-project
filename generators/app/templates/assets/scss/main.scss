@@ -1,12 +1,12 @@
-@use "settings/sizes";
 @use "settings/colors";
-@use "settings/breakpoints";
+@use "settings/sizes";
+@use "settings/breakpoints" as bps;
 @use "helpers/z-index" as z;
 
-@import "helpers/sr-only";
 @import "helpers/base";
+@import "helpers/visually-hidden";
 
-// vendor files and bower components first (makes necessary overrides easier)
+// vendor files first (makes necessary overrides easier)
 
 // your components and organisms go here
 

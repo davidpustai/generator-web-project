@@ -6,7 +6,7 @@
  *    causes content to wrap 1 word per line:
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
-@mixin sr-only {
+@mixin visually-hidden {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -29,6 +29,6 @@
 	}
 }
 
-.sr-only {
-	@include sr-only;
+.visually-hidden {
+	@include visually-hidden;
 }

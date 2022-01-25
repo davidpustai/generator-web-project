@@ -5,7 +5,7 @@
 ## Using
  * parts of [HTML5 Boilerplate](https://html5boilerplate.com/)
  * [normalize.css](https://necolas.github.io/normalize.css/)
- * [SASS](http://sass-lang.com/) with Dart Sass
+ * [SASS](https://sass-lang.com/) with Dart Sass
  * [Gulp](https://gulpjs.com/)
  * [Twig](https://twig.symfony.com/)
  * [Babel](https://babeljs.io/)
@@ -34,7 +34,7 @@ yo web-project
 Feel free to fork and open pull requests. For now development happens on `master` branch only.
 
 When releasing
-* update version in `package.json`
+* update version in `package.json` & `package-lock.json`
 * rename `[Unreleased]` section in `CHANGELOG.md` to `[<version>] <date-of-release>`
 * create new `[Unreleased]` section at the top
 * `git add . && git commit -m v<version-number>`

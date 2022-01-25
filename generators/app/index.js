@@ -33,11 +33,9 @@ module.exports = class extends Generator {
 	}
 
 	projectFiles() {
-		this._copy('configs/project/bowerrc', '.bowerrc');
 		this._copy('configs/project/editorconfig', '.editorconfig');
 		this._copy('configs/project/gitattributes', '.gitattributes');
 		this._copy('configs/project/gitignore', '.gitignore');
-		this._template('_bower.json', 'bower.json');
 		this._copy('CHANGELOG.md', 'CHANGELOG.md');
 		this._copy('gulpfile.js', 'gulpfile.js');
 		this._template('_package.json', 'package.json');
@@ -58,19 +56,20 @@ module.exports = class extends Generator {
 	}
 
 	webFiles() {
-		this._copy('configs/web/browserconfig.xml', 'src/browserconfig.xml');
+		this._template('configs/web/_site.webmanifest', 'src/site.webmanifest');
 		this._copy('configs/web/robots.txt', 'src/robots.txt');
+		this._copy('assets/img/favicons/android-chrome-192x192.png', 'src/android-chrome-192x192.png');
+		this._copy('assets/img/favicons/android-chrome-512x512.png', 'src/android-chrome-512x512.png');
 		this._copy('assets/img/favicons/apple-touch-icon.png', 'src/apple-touch-icon.png');
 		this._copy('assets/img/favicons/favicon.ico', 'src/favicon.ico');
-		this._copy('assets/img/favicons/tile.png', 'src/tile.png');
-		this._copy('assets/img/favicons/tile-wide.png', 'src/tile-wide.png');
+		this._copy('assets/img/favicons/favicon.svg', 'src/favicon.svg');
 		this._copy('assets/js/main.js', 'src/assets/js/main.js');
 		this._copy('assets/js/plugins.js', 'src/assets/js/plugins.js');
 		this._copy('assets/scss/main.scss', 'src/assets/scss/main.scss');
 		this._copy('assets/scss/helpers/base.scss', 'src/assets/scss/helpers/_base.scss');
 		this._copy('assets/scss/helpers/z-index.scss', 'src/assets/scss/helpers/_z-index.scss');
 		this._copy('assets/scss/helpers/shame.scss', 'src/assets/scss/helpers/_shame.scss');
-		this._copy('assets/scss/helpers/sr-only.scss', 'src/assets/scss/helpers/_sr-only.scss');
+		this._copy('assets/scss/helpers/visually-hidden.scss', 'src/assets/scss/helpers/_visually-hidden.scss');
 		this._copy('assets/scss/settings/colors.scss', 'src/assets/scss/settings/_colors.scss');
 		this._copy('assets/scss/settings/breakpoints.scss', 'src/assets/scss/settings/_breakpoints.scss');
 		this._copy('assets/scss/settings/sizes.scss', 'src/assets/scss/settings/_sizes.scss');
@@ -87,7 +86,6 @@ module.exports = class extends Generator {
 
 	install() {
 		this.npmInstall();
-		this.bowerInstall();
 	}
 
 	_template(src, dest) {

@@ -1,6 +1,20 @@
 # Change Log
 
 ## [Unreleased]
+### Changed
+- **require latest minor version of Node.js** for ESM support
+- **rename `.sr-only` to `.visually-hidden` to better reflect its purpose**
+- use `gulpfile.js` as ESM
+- update `devDependencies`
+
+[0.16.1] - 2021-10-23
+### Changed
+- update `devDependencies`
+- more modern JS loading
+- tweaks & fixes
+
+### Removed
+- Bower
 
 
 ## [0.16.0] - 2021-06-06
