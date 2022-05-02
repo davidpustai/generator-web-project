@@ -1,0 +1,36 @@
+.a11y-skip-to {
+	/* extends `.visually-hidden` */
+	position: fixed;
+	top: 0;
+	left: -100%;
+	z-index: z.index(a11y-skip-to);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	white-space: nowrap;
+	font-size: 1.5em;
+	text-decoration: none;
+	background-color: colors.$body-font-color;
+	color: colors.$body-bg;
+
+	@media print {
+		display: none !important;
+	}
+
+	&:focus,
+	&:active {
+		left: 0;
+		clip: auto;
+		overflow: visible;
+		display: inline-block;
+		width: auto;
+		height: auto;
+		margin: 0;
+		padding: 1em 2em;
+		white-space: inherit;
+	}
+}

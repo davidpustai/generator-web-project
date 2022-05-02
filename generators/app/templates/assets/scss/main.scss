@@ -6,8 +6,6 @@
 @import "helpers/base";
 @import "helpers/visually-hidden";
 
-// vendor files first (makes necessary overrides easier)
-
-// your components and organisms go here
+@import "components/a11y-skip-to";
 
 @import "helpers/shame";

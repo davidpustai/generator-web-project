@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+### Added
+- skip link to base layout
+
 ### Changed
 - **require latest minor version of Node.js** for ESM support
 - **rename `.sr-only` to `.visually-hidden` to better reflect its purpose**

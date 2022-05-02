@@ -20,6 +20,18 @@
 		{% endif %}
 	</head>
 	<body>
-		{% block main %}{% endblock %}
+		<%
+			if (lang == 'cs') {
+				var mainId = 'hlavni-obsah';
+				var skipToLabel = 'přeskočit na hlavní obsah';
+			} else {
+				var mainId = 'main-content';
+				var skipToLabel = 'skip to main content';
+			}
+		%>
+		<a class="a11y-skip-to" href="#<%= mainId %>"><%= skipToLabel %></a>
+		<main id="<%= mainId %>">
+			{% block main %}{% endblock %}
+		</main>
 	</body>
 </html>

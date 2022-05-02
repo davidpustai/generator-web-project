@@ -66,6 +66,7 @@ module.exports = class extends Generator {
 		this._copy('assets/js/main.js', 'src/assets/js/main.js');
 		this._copy('assets/js/plugins.js', 'src/assets/js/plugins.js');
 		this._copy('assets/scss/main.scss', 'src/assets/scss/main.scss');
+		this._copy('assets/scss/components/a11y-skip-to.scss', 'src/assets/scss/components/_a11y-skip-to.scss');
 		this._copy('assets/scss/helpers/base.scss', 'src/assets/scss/helpers/_base.scss');
 		this._copy('assets/scss/helpers/z-index.scss', 'src/assets/scss/helpers/_z-index.scss');
 		this._copy('assets/scss/helpers/shame.scss', 'src/assets/scss/helpers/_shame.scss');
@@ -75,7 +76,7 @@ module.exports = class extends Generator {
 		this._copy('assets/scss/settings/sizes.scss', 'src/assets/scss/settings/_sizes.scss');
 		this._copy('assets/scss/settings/z-index.scss', 'src/assets/scss/settings/_z-index.scss');
 		this._template('templates/layouts/base.twig', 'src/templates/layouts/base.twig');
-		this._copy('templates/pages/index.twig', 'src/templates/pages/index.twig');
+		this._template('templates/pages/index.twig', 'src/templates/pages/index.twig');
 		if (this.fs.exists(this.templatePath('templates/pages/404/404_'+this.answers.lang+'.twig'))) {
 			this._template('templates/pages/404/404_'+this.answers.lang+'.twig', 'src/templates/pages/404.twig');
 		} else {
