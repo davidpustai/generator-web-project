@@ -45,6 +45,7 @@ module.exports = class extends Generator {
 	dirs() {
 		this._mkdir('src/assets/font');
 		this._mkdir('src/assets/img');
+		this._mkdir('src/assets/img/icons');
 		this._mkdir('src/assets/js');
 		this._mkdir('src/assets/js/components');
 		this._mkdir('src/assets/scss');

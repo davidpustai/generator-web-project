@@ -5,9 +5,15 @@ import cleanCss from 'gulp-clean-css';
 import concat from 'gulp-concat';
 import connect from 'gulp-connect';
 import del from 'del';
+import fs from 'fs';
 import htmlmin from 'gulp-htmlmin';
 import gulpIf from 'gulp-if';
 import imagemin from 'gulp-imagemin';
+import imageminGifsicle from 'imagemin-gifsicle';
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminOptipng from 'imagemin-optipng';
+import imageminSvgo from 'imagemin-svgo';
+import path from 'path';
 import plumber from 'gulp-plumber';
 import rev from 'gulp-rev';
 import revReplace from 'gulp-rev-replace';
@@ -151,16 +157,65 @@ const js = gulp.series(concatJS, processJS);
 // ===============================================================
 // IMAGE PROCESSING
 // ===============================================================
+const imageminPlugins = [
+	imageminGifsicle(),
+	imageminMozjpeg(),
+	imageminOptipng(),
+	imageminSvgo({
+		plugins: [{
+			name: 'preset-default',
+			params: {
+				overrides: {
+					removeViewBox: false
+				}
+			}
+		}]
+	})
+];
+
 const img = () => {
-	return gulp.src('src/assets/img/**/*.{gif,jpg,png,svg}')
-		.pipe(gulpIf(ENV == 'dist', imagemin()))
+	return gulp.src([
+			'src/assets/img/**/*.{gif,jpg,png,svg}',
+			'!src/assets/img/icons/**/*.svg'
+		])
+		.pipe(gulpIf(ENV == 'dist', imagemin(imageminPlugins)))
 		.pipe(gulp.dest(DEST + '/assets/img'))
+		.pipe(connect.reload());
+};
+
+const icons = () => {
+	return gulp.src('src/assets/img/icons/**/*.svg')
+		.pipe(gulpIf(ENV == 'dist', imagemin([
+				imageminGifsicle(),
+				imageminMozjpeg(),
+				imageminOptipng(),
+				imageminSvgo({
+					plugins: [{
+						name: 'preset-default',
+						params: {
+							overrides: {
+								removeViewBox: false
+							}
+						}
+					}, {
+						name: 'addAttributesToSVGElement',
+						params: {
+							attributes: [{
+								role: 'img',
+							}, {
+								'aria-hidden': 'true'
+							}]
+						}
+					}]
+				})
+			])))
+		.pipe(gulp.dest(DEST + '/assets/img/icons'))
 		.pipe(connect.reload());
 };
 
 const favicon = () => {
 	return gulp.src('src/*.{png,svg}')
-		.pipe(gulpIf(ENV == 'dist', imagemin()))
+		.pipe(gulpIf(ENV == 'dist', imagemin(imageminPlugins)))
 		.pipe(gulp.dest(DEST));
 }
 
@@ -199,7 +254,16 @@ const copy = gulp.parallel(
 const html = () => {
 	return gulp.src('src/templates/pages/**/*.twig')
 		.pipe(twig({
-			data: {},
+			data: {
+				icons: () => {
+					let result = {};
+					const dir = path.resolve(DEST + '/assets/img/icons');
+					fs.readdirSync(dir).filter(file => file.endsWith('.svg')).forEach(file => {
+						result[path.parse(file).name.replace('-', '_')] = fs.readFileSync(dir+'/'+file);
+					});
+					return result;
+				}
+			},
 			errorLogToConsole: true,
 			extname: '.html'
 		}))
@@ -250,7 +314,7 @@ const build = gulp.series(
 	gulp.parallel(
 		// process HTML after CSS & JS are revisioned
 		gulp.series(
-			gulp.parallel(css, js),
+			gulp.parallel(css, js, icons),
 			html
 		),
 		img,
@@ -270,7 +334,8 @@ const serve = gulp.series(build, runServer);
 const watchFiles = () => new Promise((resolve, reject) => {
 	gulp.watch('src/assets/scss/**/*.scss', css);
 	gulp.watch('src/assets/js/**/*.js', js);
-	gulp.watch(['src/assets/img/**/*.{gif,jpg,png,svg}'], img);
+	gulp.watch(['src/assets/img/**/*.{gif,jpg,png,svg}', '!src/assets/img/icons/**/*.svg'], img);
+	gulp.watch('src/assets/img/icons/**/*.svg', gulp.parallel(icons, html));
 	gulp.watch(['src/assets/font/**/*.{woff,woff2}', '!src/assets/font/original/**/*'], copy);
 	gulp.watch('src/templates/**/*.twig', html);
 	resolve();
@@ -280,7 +345,9 @@ const defaultTasks = gulp.series(
 	setEnvDev,
 	setDestDev,
 	clean,
-	gulp.parallel(css, js, img, favicon, copy, html),
+	gulp.parallel(css, js, img, icons, favicon, copy),
+	// process HTML after icons are preprocessed
+	html,
 	runServer,
 	watchFiles
 );

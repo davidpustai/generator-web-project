@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - skip link to base layout
+- loading icons for inline use in templates
 
 ### Changed
 - **require latest minor version of Node.js** for ESM support

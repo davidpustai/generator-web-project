@@ -36,6 +36,12 @@ gulp
  	* builds the project with `build` task
  	* runs local server at `localhost:8000`
 
+## Icons
+SVG icons placed in `/src/assets/img/icons` are available for inline use in templates under the `icons` object. Dashes in filenames are replaced with underscords. E. g.:
+```
+{{ icons.chevron_down }}
+```
+
 ## Contributions
 
 When releasing
