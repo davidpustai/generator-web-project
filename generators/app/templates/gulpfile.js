@@ -300,6 +300,7 @@ const html = () => {
 const runServer = () => new Promise((resolve, reject) => {
 	connect.server({
 		root: DEST,
+		host: '0.0.0.0',
 		port: 8000,
 		livereload: true
 	});
