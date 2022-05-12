@@ -1,8 +1,9 @@
 # TODO
 
 ## General
-- https://www.npmjs.com/package/autoreload-gulp
+- drop IE support - package.json, 404
 - [colorguard](https://github.com/SlexAxton/css-colorguard#programmatic)
+- https://www.npmjs.com/package/autoreload-gulp
 - [custom focus style](https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/)
 - svg sprites & macro
 - https://github.com/h5bp/server-configs-apache/releases/tag/4.0.0 -> move to devops repo and link to it from README
@@ -10,6 +11,7 @@
 - ensure use of H/2
 - sitemap.xml generation
 - [dependabot](https://github.com/h5bp/main.css/commit/3978d8f50d75de868c904058650275e4f2c4f6ac)
+- perf budget check in gulp
 - https://css-tricks.com/emergency-website-kit/ (at least the sw.js)
 - browserslist by region (question in generator)
 - site.webmanifest
@@ -18,8 +20,9 @@
 - service workers
 	- https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/
 - dark mode support
-	-https://paulmillr.com/posts/using-dark-mode-in-css/?utm_source=CSS-Weekly&utm_campaign=Issue-337&utm_medium=email
+	- https://paulmillr.com/posts/using-dark-mode-in-css/?utm_source=CSS-Weekly&utm_campaign=Issue-337&utm_medium=email
 	- https://dev.wgao19.cc/2019-05-04__sun-moon-blending-mode/?utm_source=CSS-Weekly&utm_campaign=Issue-366&utm_medium=email
+	- CSS variables
 
 ## Images
 - [image optimization](https://dougsillars.com/2018/05/21/state-of-the-web-top-image-optimization-strategies/)
