@@ -12,6 +12,7 @@
 - update `devDependencies`
 
 ### Removed
+- **IE support**
 - GIF support
 
 
