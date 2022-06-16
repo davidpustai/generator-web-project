@@ -11,6 +11,10 @@
 - use `gulpfile.js` as ESM
 - update `devDependencies`
 
+### Removed
+- GIF support
+
+
 [0.16.1] - 2021-10-23
 ### Changed
 - update `devDependencies`

@@ -9,7 +9,6 @@ import fs from 'fs';
 import htmlmin from 'gulp-htmlmin';
 import gulpIf from 'gulp-if';
 import imagemin from 'gulp-imagemin';
-import imageminGifsicle from 'imagemin-gifsicle';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminOptipng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
@@ -158,7 +157,6 @@ const js = gulp.series(concatJS, processJS);
 // IMAGE PROCESSING
 // ===============================================================
 const imageminPlugins = [
-	imageminGifsicle(),
 	imageminMozjpeg(),
 	imageminOptipng(),
 	imageminSvgo({
@@ -175,7 +173,7 @@ const imageminPlugins = [
 
 const img = () => {
 	return gulp.src([
-			'src/assets/img/**/*.{gif,jpg,png,svg}',
+			'src/assets/img/**/*.{jpg,png,svg}',
 			'!src/assets/img/icons/**/*.svg'
 		])
 		.pipe(gulpIf(ENV == 'dist', imagemin(imageminPlugins)))
@@ -186,7 +184,6 @@ const img = () => {
 const icons = () => {
 	return gulp.src('src/assets/img/icons/**/*.svg')
 		.pipe(gulpIf(ENV == 'dist', imagemin([
-				imageminGifsicle(),
 				imageminMozjpeg(),
 				imageminOptipng(),
 				imageminSvgo({
@@ -335,7 +332,7 @@ const serve = gulp.series(build, runServer);
 const watchFiles = () => new Promise((resolve, reject) => {
 	gulp.watch('src/assets/scss/**/*.scss', css);
 	gulp.watch('src/assets/js/**/*.js', js);
-	gulp.watch(['src/assets/img/**/*.{gif,jpg,png,svg}', '!src/assets/img/icons/**/*.svg'], img);
+	gulp.watch(['src/assets/img/**/*.{jpg,png,svg}', '!src/assets/img/icons/**/*.svg'], img);
 	gulp.watch('src/assets/img/icons/**/*.svg', gulp.parallel(icons, html));
 	gulp.watch(['src/assets/font/**/*.{woff,woff2}', '!src/assets/font/original/**/*'], copy);
 	gulp.watch('src/templates/**/*.twig', html);
