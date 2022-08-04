@@ -4,7 +4,7 @@ import babel from 'gulp-babel';
 import cleanCss from 'gulp-clean-css';
 import concat from 'gulp-concat';
 import connect from 'gulp-connect';
-import del from 'del';
+import {deleteAsync} from 'del';
 import fs from 'fs';
 import htmlmin from 'gulp-htmlmin';
 import gulpIf from 'gulp-if';
@@ -51,7 +51,7 @@ const setDestDev = () => {
 // CLEAN
 // ===============================================================
 // Empty directories to start fresh.
-const clean = () => del(['.tmp', 'dev', 'dist']);
+const clean = () => deleteAsync(['.tmp', 'dev', 'dist']);
 
 // ===============================================================
 // SCSS -> CSS
