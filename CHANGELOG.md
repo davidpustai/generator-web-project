@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 ### Added
+- convert raster images to WebP
 - skip link to base layout
 - loading icons for inline use in templates
 
