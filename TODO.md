@@ -1,7 +1,8 @@
 # TODO
 
 ## General
-- drop IE support - package.json, 404
+- [CSS Layers](https://daverupert.com/2022/08/modern-alternatives-to-bem/#gpc)
+- [a11y font face](https://material.io/blog/atkinson-hyperlegible-design)
 - [colorguard](https://github.com/SlexAxton/css-colorguard#programmatic)
 - https://www.npmjs.com/package/autoreload-gulp
 - [custom focus style](https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/)
@@ -25,9 +26,9 @@
 	- CSS variables
 
 ## Images
+- gulp-squoosh + gulp-svgo
 - [image optimization](https://dougsillars.com/2018/05/21/state-of-the-web-top-image-optimization-strategies/)
 - [automatic RIM](https://www.npmjs.com/package/gulp-responsive)
-- progressive jpg, png...
 
 ## CSS
 - [Gutenberg](https://matejlatin.github.io/Gutenberg/)
