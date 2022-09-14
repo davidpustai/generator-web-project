@@ -1,20 +1,20 @@
 # Change Log
 
 ## [Unreleased]
-### Added
+
+
+[0.17.0] - 2022-09-14
+### Breaking
+- require latest minor version of Node.js for ESM support
+- removed IE support
+- removed GIF support
 - convert raster images to WebP
-- skip link to base layout
-- loading icons for inline use in templates
+- renamed `.sr-only` to `.visually-hidden` to better reflect its purpose
 
-### Changed
-- **require latest minor version of Node.js** for ESM support
-- **rename `.sr-only` to `.visually-hidden` to better reflect its purpose**
-- use `gulpfile.js` as ESM
-- update `devDependencies`
-
-### Removed
-- **IE support**
-- GIF support
+### New features
+- `gulpfile.js` as ESM
+- load icons for inline use in templates
+- add skip link to base layout
 
 
 [0.16.1] - 2021-10-23
