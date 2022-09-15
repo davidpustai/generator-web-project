@@ -9,7 +9,7 @@
 	],
 	"type": "module",
 	"dependencies": {
-		"apache-server-configs": "4.1.0",
+		"apache-server-configs": "5.1.0",
 		"normalize.css": "8.0.1"
 	},
 	"devDependencies": {
