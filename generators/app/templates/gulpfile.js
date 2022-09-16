@@ -323,7 +323,7 @@ const runServer = () => new Promise((resolve, reject) => {
 const build = gulp.series(
 	clean,
 	gulp.parallel(
-		// process HTML after CSS & JS are revisioned
+		// process HTML after CSS & JS are revisioned and icons are preprocessed
 		gulp.series(
 			gulp.parallel(css, js, icons),
 			html
