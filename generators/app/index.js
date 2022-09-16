@@ -78,12 +78,7 @@ module.exports = class extends Generator {
 		this._copy('assets/scss/settings/z-index.scss', 'src/assets/scss/settings/_z-index.scss');
 		this._template('templates/layouts/base.twig', 'src/templates/layouts/base.twig');
 		this._template('templates/pages/index.twig', 'src/templates/pages/index.twig');
-		if (this.fs.exists(this.templatePath('templates/pages/404/404_'+this.answers.lang+'.twig'))) {
-			this._template('templates/pages/404/404_'+this.answers.lang+'.twig', 'src/templates/pages/404.twig');
-		} else {
-			this.log('There is not a 404 error page in your choosen language, I\'m including english version.');
-			this._template('templates/pages/404/404_en.twig', 'src/templates/templates/pages/404.twig');
-		}
+		this._template('templates/pages/404.twig', 'src/templates/pages/404.twig');
 	}
 
 	install() {
