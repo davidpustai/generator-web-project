@@ -17,8 +17,8 @@ import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import rev from 'gulp-rev';
 import revReplace from 'gulp-rev-replace';
+import terser from 'gulp-terser';
 import twig from 'gulp-twig';
-import uglify from 'gulp-uglify';
 import gulpSass from 'gulp-sass';
 import dartSass from 'sass';
 const sass = gulpSass(dartSass);
@@ -135,7 +135,7 @@ const processJS = () => {
 			.pipe(babel({
 				presets: ['@babel/preset-env']
 			}))
-			.pipe(uglify())
+			.pipe(terser())
 			.pipe(rev())
 			.pipe(gulp.dest(DEST + '/assets/js'))
 			.pipe(rev.manifest(revManifestsBase + '/js.json', {
