@@ -47,6 +47,7 @@ module.exports = class extends Generator {
 		this._mkdir('src/assets/img');
 		this._mkdir('src/assets/img/icons');
 		this._mkdir('src/assets/js');
+		this._mkdir('src/assets/js/helpers');
 		this._mkdir('src/assets/js/components');
 		this._mkdir('src/assets/scss');
 		this._mkdir('src/assets/scss/components');
@@ -66,6 +67,7 @@ module.exports = class extends Generator {
 		this._copy('assets/img/favicons/favicon.svg', 'src/favicon.svg');
 		this._copy('assets/js/main.js', 'src/assets/js/main.js');
 		this._copy('assets/js/plugins.js', 'src/assets/js/plugins.js');
+		this._copy('assets/js/helpers/icons.js', 'src/assets/js/helpers/icons.js');
 		this._copy('assets/scss/main.scss', 'src/assets/scss/main.scss');
 		this._copy('assets/scss/components/a11y-skip-to.scss', 'src/assets/scss/components/_a11y-skip-to.scss');
 		this._copy('assets/scss/helpers/base.scss', 'src/assets/scss/helpers/_base.scss');

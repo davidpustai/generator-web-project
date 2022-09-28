@@ -42,6 +42,12 @@ SVG icons placed in `/src/assets/img/icons` are available for inline use in temp
 {{ icons.chevron_down }}
 ```
 
+To use an icon inline in JS, import the `icons.js` file and use the `icon` function:
+```
+icon('chevron-down');
+```
+
+
 ## Contributions
 
 When releasing

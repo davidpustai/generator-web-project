@@ -174,18 +174,14 @@ const img = async () => {
 				'src/assets/img/**/*.svg',
 				'!src/assets/img/icons/**/*.svg'
 			])
-			.pipe(gulpIf(ENV == 'dist', imagemin([
-				svgo(svgoOptions)
-			])))
+			.pipe(gulpIf(ENV == 'dist', imagemin([svgo(svgoOptions)])))
 			.pipe(gulp.dest(DEST + '/assets/img'))
 			.pipe(connect.reload())
 			.on('end', resolve);
 	});
 	await new Promise((resolve, reject) => {
 		gulp.src(['src/assets/img/**/*.{webp,jpg,png}'])
-			.pipe(imagemin([
-				webp()
-			]))
+			.pipe(imagemin([webp()]))
 			.pipe(rename(p => { p.extname = '.webp' }))
 			.pipe(gulp.dest(DEST + '/assets/img'))
 			.pipe(connect.reload())
@@ -211,6 +207,8 @@ const icons = () => {
 								role: 'img',
 							}, {
 								'aria-hidden': 'true'
+							}, {
+								'focusable': 'false'
 							}]
 						}
 					}]
