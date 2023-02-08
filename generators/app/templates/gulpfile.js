@@ -204,8 +204,6 @@ const icons = () => {
 						name: 'addAttributesToSVGElement',
 						params: {
 							attributes: [{
-								role: 'img',
-							}, {
 								'aria-hidden': 'true'
 							}, {
 								'focusable': 'false'
