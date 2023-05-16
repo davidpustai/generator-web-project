@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import autoprefixer from 'gulp-autoprefixer';
-import babel from 'gulp-babel';
 import cleanCss from 'gulp-clean-css';
 import concat from 'gulp-concat';
 import connect from 'gulp-connect';
@@ -132,9 +131,6 @@ const processJS = () => {
 
 	if ( ENV == 'dist' ) {
 		return stream
-			.pipe(babel({
-				presets: ['@babel/preset-env']
-			}))
 			.pipe(terser())
 			.pipe(rev())
 			.pipe(gulp.dest(DEST + '/assets/js'))

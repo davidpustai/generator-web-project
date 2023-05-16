@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Removed
+- Babel
 
 
 [0.17.0] - 2022-09-14

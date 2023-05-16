@@ -6,7 +6,6 @@
  * [SASS](http://sass-lang.com/) with Dart Sass
  * [Gulp](https://gulpjs.com/)
  * [Twig](https://twig.symfony.com/)
- * [Babel](https://babeljs.io/)
 
 ## Getting started
 First install dependencies:
