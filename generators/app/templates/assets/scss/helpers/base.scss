@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Browser CSS resets and default styles
+   ========================================================================== */
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -7,6 +11,81 @@
 ::selection {
 	background-color: #b3d4fc;
 	text-shadow: none;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Unify box-sizing globally, reset all margins. */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/* Basic typography and color style. */
+html {
+	box-sizing: border-box;
+	height: 100%;
+	/* Prevent font size inflation */
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Make body 100% height and reset spacing. */
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5; // Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
+	font-size: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; // WordPress system font stack
+	background-color: colors.$body-bg; // WCAG 2.0 Checklist 1.4.8
+	color: colors.$body-font-color; // WCAG 2.0 Checklist 1.4.8
+}
+
+/* Hide visually and from screen readers. */
+[hidden] {
+	display: none !important;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+	line-height: 1.1;
+}
+
+/*
+ * Headings are always just a bit bigger than general text:
+ * https://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 1.25em;
+	/* Balance text wrapping on headings */
+	text-wrap: balance;
+}
+
+/* Reset normalize.css behavior. */
+h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*
+ * Links have low affordance.
+ * https://www.w3.org/TR/CSS21/ui.html#propdef-cursor
+ */
+a:hover {
+	cursor: pointer;
 }
 
 /*
@@ -23,85 +102,17 @@ video {
 	vertical-align: middle;
 }
 
-/* ==========================================================================
-   Browser CSS resets and default styles
-   ========================================================================== */
-
-/*
- * Basic typography and color style.
- */
-html {
-	box-sizing: border-box;
-	height: 100%;
-}
-
-/*
- * Set box-sizing globally to handle padding and border widths.
- * Reset all margins.
- */
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-	margin: 0;
-}
-
-/*
- * Make body 100% height and reset spacing.
- */
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	line-height: 1.5; // Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
-	font-size: 100%;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; // WordPress system font stack
-	background-color: colors.$body-bg; // WCAG 2.0 Checklist 1.4.8
-	color: colors.$body-font-color; // WCAG 2.0 Checklist 1.4.8
-}
-
-/*
- * Headings are always just a bit bigger than general text:
- * https://csswizardry.com/2016/02/managing-typography-on-large-apps/
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: 1.25em;
-}
-
-/*
- * Reset normalize.css behavior.
- */
-h1 {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-/*
- * Links have low affordance.
- * https://www.w3.org/TR/CSS21/ui.html#propdef-cursor
- */
-a:hover {
-	cursor: pointer;
-}
-
-/*
- * Full-width images.
- */
-img {
+/* Full-width images. */
+img,
+picture {
 	max-width: 100%;
 	height: auto;
 }
 
-/*
- * Hide visually and from screen readers.
- */
-[hidden] {
-	display: none !important;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
 }
 
 /*
@@ -111,6 +122,11 @@ img {
 textarea {
 	height: auto;
 	resize: vertical;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 8em;
 }
 
 /* ==========================================================================
