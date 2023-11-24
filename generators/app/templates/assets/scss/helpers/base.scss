@@ -102,11 +102,12 @@ video {
 	vertical-align: middle;
 }
 
-/* Full-width images. */
+/* Full-width images & more distinguishable alt text from surrounding text. */
 img,
 picture {
 	max-width: 100%;
 	height: auto;
+	font-style: italic;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
