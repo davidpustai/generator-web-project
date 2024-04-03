@@ -9,6 +9,7 @@
 - use npm scripts to run gulp tasks
 - use PostCSS & cssnano for CSS processing
 - use CSS Layers
+- update generator dependencies
 
 ### Removed
 - Babel
