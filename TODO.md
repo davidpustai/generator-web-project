@@ -1,17 +1,31 @@
 # TODO
 
 ## General
-- [CSS Layers](https://daverupert.com/2022/08/modern-alternatives-to-bem/#gpc)
+- Github workflows
+	- Dependabot
+		- https://github.com/h5bp/main.css/commit/3978d8f50d75de868c904058650275e4f2c4f6ac
+		- https://github.com/h5bp/html5-boilerplate/blob/main/.github/dependabot.yml
+		- https://github.com/h5bp/html5-boilerplate/blob/a479681283a795ef29c4317d796cef8b24c88f3d/.github/workflows/dependency-review.yml
+	- https://github.com/h5bp/html5-boilerplate/blob/main/.github/workflows/codeql-analysis.yml
+	- taks for checking outdated packages
+- gulp -> Vite
+- replace imagemin-webp with https://www.npmjs.com/package/imagemin-avif
+- [custom focus style](https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/)
+	- https://daverupert.com/2024/01/focus-visible-love/
+- https://github.com/sindresorhus/modern-normalize
+- better inline svg (icon) macro => pass alt => display as title and remove aria-hidden
+- generator translation to i18n directory
+- merge gulp tasks (e. g. concat) simillarly to img task
 - [a11y font face](https://material.io/blog/atkinson-hyperlegible-design)
 - [colorguard](https://github.com/SlexAxton/css-colorguard#programmatic)
 - https://www.npmjs.com/package/autoreload-gulp
-- [custom focus style](https://css-tricks.com/having-a-little-fun-with-custom-focus-styles/)
-- svg sprites & macro
-- https://github.com/h5bp/server-configs-apache/releases/tag/4.0.0 -> move to devops repo and link to it from README
 - force https redirects by default in htaccess
+- update README
+	- Contributing
+	- Changelog
+	- License
 - ensure use of H/2
-- sitemap.xml generation
-- [dependabot](https://github.com/h5bp/main.css/commit/3978d8f50d75de868c904058650275e4f2c4f6ac)
+- sitemap.xml generation (https://www.sitemaps.org/protocol.html)
 - perf budget check in gulp
 - https://css-tricks.com/emergency-website-kit/ (at least the sw.js)
 - browserslist by region (question in generator)
@@ -29,19 +43,24 @@
 - gulp-squoosh + gulp-svgo
 - [image optimization](https://dougsillars.com/2018/05/21/state-of-the-web-top-image-optimization-strategies/)
 - [automatic RIM](https://www.npmjs.com/package/gulp-responsive)
+- SVG icons caching? sprite?
 
 ## CSS
 - [Gutenberg](https://matejlatin.github.io/Gutenberg/)
 - [PurgeCSS](https://medium.com/full-human/purgecss-2-0-c0e812e6c4f6)
 - [hanging quotation](https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/)
+- check: don’t use pure black or white, only near-black and near-white
+- https://www.npmjs.com/search?ranking=popularity&q=keywords%3Apostcss-plugin
 
 ## JS
-- module bundler (or use Webpack)
+- Vite
+- Astro option
 
 ## File system
 - group by components rather than technology
 
 ## Fonts
+- fluid typography - clamp(1rem, 0.45vw + 0.91rem, 1.31rem);
 - lazy load fonts (check [webfontloader](https://github.com/typekit/webfontloader) and [css-tricks article](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/))
 
 ## Automation
