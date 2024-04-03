@@ -1,6 +1,18 @@
 {% extends "../layouts/base.twig" %}
 
 {% set description = '' %}
+{% set og = {
+	title: '<%= title %>',
+	type: 'website',
+	url: 'http://localhost:8000/',
+	image: {
+		url: '',
+		type: 'image/webp',
+		width: '1200',
+		height: '630',
+		alt: ''
+	}
+} %}
 
 {% block main %}
 	<h1><%= title %></h1>

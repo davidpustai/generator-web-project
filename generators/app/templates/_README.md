@@ -15,15 +15,15 @@ npm install
 
 And let's start working (more about gulp commands below):
 ```
-gulp
+npm run dev
 ```
 
-## Gulp commands
- * `gulp [default]` - *use for development, compiles into `dev` directory*
+## CLI commands
+ * `npm run dev` - *use for development, compiles into `dev` directory*
 	* compiles and prefixes scss
 	* runs local server (with live reload) at `localhost:8000`
 	* watches for changes
- * `gulp build` - *use when deploying, compiles into `dist` directory*
+ * `npm run build` - *use when deploying, compiles into `dist` directory*
  	* compiles, prefixes, concats and minifies scss
  	* concats and minifies javascript
  	* templates html with Twig and minifies it
@@ -31,7 +31,7 @@ gulp
  	* revisions assets to bust caches
  	* runs local server at `localhost:8000`
  	* makes everything avaliable for production in `dist` folder
- * `gulp serve` - *use for production build review*
+ * `npm run serve` - *use for production build review*
  	* builds the project with `build` task
  	* runs local server at `localhost:8000`
 

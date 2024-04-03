@@ -1,6 +1,4 @@
 import gulp from 'gulp';
-import autoprefixer from 'gulp-autoprefixer';
-import cleanCss from 'gulp-clean-css';
 import concat from 'gulp-concat';
 import connect from 'gulp-connect';
 import {deleteAsync} from 'del';
@@ -18,6 +16,7 @@ import rev from 'gulp-rev';
 import revReplace from 'gulp-rev-replace';
 import terser from 'gulp-terser';
 import twig from 'gulp-twig';
+import postcss from 'gulp-postcss';
 import gulpSass from 'gulp-sass';
 import * as dartSass from 'sass';
 const sass = gulpSass(dartSass);
@@ -66,11 +65,10 @@ const css = () => {
 			],
 			precision: 6
 		}).on('error', sass.logError))
-		.pipe(autoprefixer());
+		.pipe(postcss());
 
 	if ( ENV == 'dist' ) {
 		return stream
-			.pipe(cleanCss())
 			.pipe(rev())
 			.pipe(gulp.dest(DEST + '/assets/css'))
 			.pipe(rev.manifest(revManifestsBase + '/css.json', {
@@ -87,17 +85,16 @@ const css = () => {
 // ===============================================================
 // CONCAT JS
 // ===============================================================
-const concatJSMain = () => {
+const concatJSApp = () => {
 	return gulp.src([
-			'src/assets/js/plugins.js',
-			'src/assets/js/main.js'
+			'src/assets/js/app.js'
 		])
-		.pipe(concat('main.js'))
+		.pipe(concat('app.js'))
 		.pipe(gulp.dest('.tmp/js/concated'));
 };
 
 const concatJS = gulp.parallel(
-	concatJSMain
+	concatJSApp
 );
 
 // ===============================================================
@@ -201,7 +198,7 @@ const favicon = () => {
 // ===============================================================
 // COPY FILES
 // ===============================================================
-const copyMisc = () => {
+const copy = () => {
 	return gulp.src([
 			'src/site.webmanifest',
 			'src/robots.txt',
@@ -214,18 +211,6 @@ const copyMisc = () => {
 		.pipe(gulp.dest(DEST))
 		.pipe(connect.reload());
 };
-
-const copyModules = () => {
-	return gulp.src([
-			'node_modules/apache-server-configs/dist/.htaccess'
-		])
-		.pipe(gulp.dest(DEST));
-};
-
-const copy = gulp.parallel(
-	copyMisc,
-	copyModules
-);
 
 // ===============================================================
 // HTML PROCESSING
@@ -337,7 +322,6 @@ const defaultTasks = gulp.series(
 // ===============================================================
 export {
 	build,
-	runServer as connect,
 	serve,
 	defaultTasks as default
 };

@@ -1,6 +1,15 @@
 # Change Log
 
 ## [Unreleased]
+### Changed
+- incorporate changes from H5BP v9.0.0
+	- rename `main.css` to `style.css` & `main.js` to `app.js`
+	- remove `plugins.js`
+	- Open Graph support
+- use npm scripts to run gulp tasks
+- use PostCSS & cssnano for CSS processing
+- use CSS Layers
+
 ### Removed
 - Babel
 

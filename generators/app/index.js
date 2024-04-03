@@ -36,6 +36,7 @@ module.exports = class extends Generator {
 		this._copy('configs/project/editorconfig', '.editorconfig');
 		this._copy('configs/project/gitattributes', '.gitattributes');
 		this._copy('configs/project/gitignore', '.gitignore');
+		this._copy('configs/project/postcss.config.js', 'postcss.config.cjs');
 		this._copy('CHANGELOG.md', 'CHANGELOG.md');
 		this._copy('gulpfile.js', 'gulpfile.js');
 		this._template('_package.json', 'package.json');
@@ -65,10 +66,9 @@ module.exports = class extends Generator {
 		this._copy('assets/img/favicons/apple-touch-icon.png', 'src/apple-touch-icon.png');
 		this._copy('assets/img/favicons/favicon.ico', 'src/favicon.ico');
 		this._copy('assets/img/favicons/favicon.svg', 'src/favicon.svg');
-		this._copy('assets/js/main.js', 'src/assets/js/main.js');
-		this._copy('assets/js/plugins.js', 'src/assets/js/plugins.js');
+		this._copy('assets/js/app.js', 'src/assets/js/app.js');
 		this._copy('assets/js/helpers/icons.js', 'src/assets/js/helpers/icons.js');
-		this._copy('assets/scss/main.scss', 'src/assets/scss/main.scss');
+		this._copy('assets/scss/style.scss', 'src/assets/scss/style.scss');
 		this._copy('assets/scss/components/a11y-skip-to.scss', 'src/assets/scss/components/_a11y-skip-to.scss');
 		this._copy('assets/scss/helpers/base.scss', 'src/assets/scss/helpers/_base.scss');
 		this._copy('assets/scss/helpers/z-index.scss', 'src/assets/scss/helpers/_z-index.scss');

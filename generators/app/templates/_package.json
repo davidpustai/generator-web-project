@@ -1,6 +1,7 @@
 {
 	"name": "<%= appName %>",
 	"version": "0.0.0",
+	"private": true,
 	"browserslist": [
 		"last 2 versions",
 		"not dead",
@@ -8,20 +9,25 @@
 		"Firefox ESR"
 	],
 	"type": "module",
+	"scripts": {
+		"dev": "NODE_ENV=development gulp",
+		"build": "NODE_ENV=production gulp build",
+		"serve": "NODE_ENV=production gulp serve"
+	},
 	"dependencies": {
-		"apache-server-configs": "5.1.0",
 		"normalize.css": "8.0.1"
 	},
 	"devDependencies": {
+		"autoprefixer": "^10.4.13",
+		"cssnano": "^6.0.0",
 		"del": "^7.1.0",
 		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^9.0.0",
-		"gulp-clean-css": "^4.3.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-connect": "^5.7.0",
 		"gulp-htmlmin": "^5.0.1",
 		"gulp-if": "^3.0.0",
 		"gulp-imagemin": "^9.0.0",
+		"gulp-postcss": "^10.0.0",
 		"gulp-plumber": "^1.2.1",
 		"gulp-rename": "^2.0.0",
 		"gulp-rev": "^11.0.0",
