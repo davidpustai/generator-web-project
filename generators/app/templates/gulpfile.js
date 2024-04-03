@@ -1,56 +1,56 @@
-import gulp from 'gulp';
-import concat from 'gulp-concat';
-import connect from 'gulp-connect';
-import {deleteAsync} from 'del';
-import fs from 'fs';
-import htmlmin from 'gulp-htmlmin';
-import gulpIf from 'gulp-if';
-import imagemin from 'gulp-imagemin';
-import svgo from 'imagemin-svgo';
-import webp from 'imagemin-webp';
-import optipng from 'imagemin-optipng';
-import path from 'path';
-import plumber from 'gulp-plumber';
-import rename from 'gulp-rename';
-import rev from 'gulp-rev';
-import revReplace from 'gulp-rev-replace';
-import terser from 'gulp-terser';
-import twig from 'gulp-twig';
-import postcss from 'gulp-postcss';
-import gulpSass from 'gulp-sass';
-import * as dartSass from 'sass';
-const sass = gulpSass(dartSass);
+import gulp from 'gulp'
+import concat from 'gulp-concat'
+import connect from 'gulp-connect'
+import { deleteAsync } from 'del'
+import fs from 'fs'
+import htmlmin from 'gulp-htmlmin'
+import gulpIf from 'gulp-if'
+import imagemin from 'gulp-imagemin'
+import svgo from 'imagemin-svgo'
+import webp from 'imagemin-webp'
+import optipng from 'imagemin-optipng'
+import path from 'path'
+import plumber from 'gulp-plumber'
+import rename from 'gulp-rename'
+import rev from 'gulp-rev'
+import revReplace from 'gulp-rev-replace'
+import terser from 'gulp-terser'
+import twig from 'gulp-twig'
+import postcss from 'gulp-postcss'
+import gulpSass from 'gulp-sass'
+import * as dartSass from 'sass'
+const sass = gulpSass(dartSass)
 
 // ===============================================================
 // PLUGIN SETTINGS SHARED ACCROSS MULTIPLE TASKS
 // ===============================================================
-const revManifestsBase = '.tmp/rev-manifests';
+const revManifestsBase = '.tmp/rev-manifests'
 
 // ===============================================================
 // ENVIROMENT VARIABLES
 // ===============================================================
-let ENV = 'dist';
-let DEST = 'dist';
+let ENV = 'dist'
+let DEST = 'dist'
 
 const setEnvDev = () => {
 	return new Promise((resolve, reject) => {
-		ENV = 'dev';
-		resolve();
-	});
-};
+		ENV = 'dev'
+		resolve()
+	})
+}
 
 const setDestDev = () => {
 	return new Promise((resolve, reject) => {
-		DEST = 'dev';
-		resolve();
-	});
-};
+		DEST = 'dev'
+		resolve()
+	})
+}
 
 // ===============================================================
 // CLEAN
 // ===============================================================
 // Empty directories to start fresh.
-const clean = () => deleteAsync(['.tmp', 'dev', 'dist']);
+const clean = () => deleteAsync(['.tmp', 'dev', 'dist'])
 
 // ===============================================================
 // CSS PROCESSING
@@ -65,20 +65,20 @@ const css = () => {
 			],
 			precision: 6
 		}).on('error', sass.logError))
-		.pipe(postcss());
+		.pipe(postcss())
 
 	if ( ENV == 'dist' ) {
 		return stream
 			.pipe(rev())
-			.pipe(gulp.dest(DEST + '/assets/css'))
-			.pipe(rev.manifest(revManifestsBase + '/css.json', {
+			.pipe(gulp.dest(`${DEST}/assets/css`))
+			.pipe(rev.manifest(`${revManifestsBase}/css.json`, {
 				base: revManifestsBase
 			}))
-			.pipe(gulp.dest(revManifestsBase));
+			.pipe(gulp.dest(revManifestsBase))
 	} else {
 		return stream
-			.pipe(gulp.dest(DEST + '/assets/css'))
-			.pipe(connect.reload());
+			.pipe(gulp.dest(`${DEST}/assets/css`))
+			.pipe(connect.reload())
 	}
 };
 
@@ -90,39 +90,39 @@ const concatJSApp = () => {
 			'src/assets/js/app.js'
 		])
 		.pipe(concat('app.js'))
-		.pipe(gulp.dest('.tmp/js/concated'));
-};
+		.pipe(gulp.dest('.tmp/js/concated'))
+}
 
 const concatJS = gulp.parallel(
 	concatJSApp
-);
+)
 
 // ===============================================================
 // JS PROCESSING
 // ===============================================================
 const processJS = () => {
-	const stream = gulp.src('.tmp/js/concated/**/*.js');
+	const stream = gulp.src('.tmp/js/concated/**/*.js')
 
 	if ( ENV == 'dist' ) {
 		return stream
 			.pipe(terser())
 			.pipe(rev())
-			.pipe(gulp.dest(DEST + '/assets/js'))
-			.pipe(rev.manifest(revManifestsBase + '/js.json', {
+			.pipe(gulp.dest(`${DEST}/assets/js`))
+			.pipe(rev.manifest(`${revManifestsBase}/js.json`, {
 				base: revManifestsBase
 			}))
-			.pipe(gulp.dest(revManifestsBase));
+			.pipe(gulp.dest(revManifestsBase))
 	} else {
 		return stream
-			.pipe(gulp.dest(DEST + '/assets/js'))
-			.pipe(connect.reload());
+			.pipe(gulp.dest(`${DEST}/assets/js`))
+			.pipe(connect.reload())
 	}
 };
 
 // ===============================================================
 // MAIN JS TASK
 // ===============================================================
-const js = gulp.series(concatJS, processJS);
+const js = gulp.series(concatJS, processJS)
 
 // ===============================================================
 // IMAGE PROCESSING
@@ -136,7 +136,7 @@ const svgoOptions = {
 			}
 		}
 	}]
-};
+}
 
 const img = async () => {
 	await new Promise((resolve, reject) => {
@@ -145,19 +145,19 @@ const img = async () => {
 				'!src/assets/img/icons/**/*.svg'
 			])
 			.pipe(gulpIf(ENV == 'dist', imagemin([svgo(svgoOptions)])))
-			.pipe(gulp.dest(DEST + '/assets/img'))
+			.pipe(gulp.dest(`${DEST}/assets/img`))
 			.pipe(connect.reload())
-			.on('end', resolve);
+			.on('end', resolve)
 	});
 	await new Promise((resolve, reject) => {
 		gulp.src(['src/assets/img/**/*.{webp,jpg,png}'])
 			.pipe(imagemin([webp()]))
 			.pipe(rename(p => { p.extname = '.webp' }))
-			.pipe(gulp.dest(DEST + '/assets/img'))
+			.pipe(gulp.dest(`${DEST}/assets/img`))
 			.pipe(connect.reload())
-			.on('end', resolve);
-	});
-};
+			.on('end', resolve)
+	})
+}
 
 const icons = () => {
 	return gulp.src('src/assets/img/icons/**/*.svg')
@@ -182,9 +182,9 @@ const icons = () => {
 					}]
 				})
 			])))
-		.pipe(gulp.dest(DEST + '/assets/img/icons'))
-		.pipe(connect.reload());
-};
+		.pipe(gulp.dest(`${DEST}/assets/img/icons`))
+		.pipe(connect.reload())
+}
 
 const favicon = () => {
 	return gulp.src('src/*.{png,svg}')
@@ -192,7 +192,7 @@ const favicon = () => {
 			svgo(svgoOptions),
 			optipng()
 		])))
-		.pipe(gulp.dest(DEST));
+		.pipe(gulp.dest(DEST))
 }
 
 // ===============================================================
@@ -209,7 +209,7 @@ const copy = () => {
 			base: 'src'
 		})
 		.pipe(gulp.dest(DEST))
-		.pipe(connect.reload());
+		.pipe(connect.reload())
 };
 
 // ===============================================================
@@ -221,11 +221,11 @@ const html = () => {
 			data: {
 				icons: () => {
 					let result = {};
-					const dir = path.resolve(DEST + '/assets/img/icons');
-					fs.readdirSync(dir).filter(file => file.endsWith('.svg')).forEach(file => {
-						result[path.parse(file).name.replace('-', '_')] = fs.readFileSync(dir+'/'+file);
-					});
-					return result;
+					const dir = path.resolve(`${DEST}/assets/img/icons`)
+					for (const file of fs.readdirSync(dir).filter(file => file.endsWith('.svg'))) {
+						result[path.parse(file).name.replace('-', '_')] = fs.readFileSync(dir+'/'+file)
+					}
+					return result
 				}
 			},
 			errorLogToConsole: true,
@@ -234,7 +234,7 @@ const html = () => {
 		.pipe(gulpIf(ENV == 'dist', revReplace({
 			canonicalUris: false,
 			replaceInExtensions: ['.html'],
-			manifest: gulp.src(revManifestsBase + '/*.json')
+			manifest: gulp.src(`${revManifestsBase}/*.json`)
 		})))
 		.pipe(gulpIf(ENV == 'dist', htmlmin({
 			collapseBooleanAttributes: true,
@@ -254,8 +254,8 @@ const html = () => {
 			useShortDoctype: true
 		})))
 		.pipe(gulp.dest(DEST))
-		.pipe(connect.reload());
-};
+		.pipe(connect.reload())
+}
 
 // ===============================================================
 // SERVER
@@ -267,9 +267,9 @@ const runServer = () => new Promise((resolve, reject) => {
 		host: '0.0.0.0',
 		port: 8000,
 		livereload: true
-	});
-	resolve();
-});
+	})
+	resolve()
+})
 
 // ===============================================================
 // BUILD
@@ -286,24 +286,24 @@ const build = gulp.series(
 		favicon,
 		copy
 	)
-);
+)
 
 // ===============================================================
 // SERVE
 // ===============================================================
-const serve = gulp.series(build, runServer);
+const serve = gulp.series(build, runServer)
 
 // ===============================================================
 // DEVELOPMENT TASKS
 // ===============================================================
 const watchFiles = () => new Promise((resolve, reject) => {
-	gulp.watch('src/assets/scss/**/*.scss', css);
-	gulp.watch('src/assets/js/**/*.js', js);
-	gulp.watch(['src/assets/img/**/*.{jpg,webp,png,svg}', '!src/assets/img/icons/**/*.svg'], img);
-	gulp.watch('src/assets/img/icons/**/*.svg', gulp.parallel(icons, html));
-	gulp.watch(['src/assets/font/**/*.{woff,woff2}', '!src/assets/font/original/**/*'], copy);
-	gulp.watch('src/templates/**/*.twig', html);
-	resolve();
+	gulp.watch('src/assets/scss/**/*.scss', css)
+	gulp.watch('src/assets/js/**/*.js', js)
+	gulp.watch(['src/assets/img/**/*.{jpg,webp,png,svg}', '!src/assets/img/icons/**/*.svg'], img)
+	gulp.watch('src/assets/img/icons/**/*.svg', gulp.parallel(icons, html))
+	gulp.watch(['src/assets/font/**/*.{woff,woff2}', '!src/assets/font/original/**/*'], copy)
+	gulp.watch('src/templates/**/*.twig', html)
+	resolve()
 });
 
 const defaultTasks = gulp.series(
@@ -315,7 +315,7 @@ const defaultTasks = gulp.series(
 	html,
 	runServer,
 	watchFiles
-);
+)
 
 // ===============================================================
 // EXPORT TASKS FOR CLI
@@ -324,4 +324,4 @@ export {
 	build,
 	serve,
 	defaultTasks as default
-};
+}
