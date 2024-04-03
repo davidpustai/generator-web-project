@@ -19,7 +19,7 @@ import revReplace from 'gulp-rev-replace';
 import terser from 'gulp-terser';
 import twig from 'gulp-twig';
 import gulpSass from 'gulp-sass';
-import dartSass from 'sass';
+import * as dartSass from 'sass';
 const sass = gulpSass(dartSass);
 
 // ===============================================================
