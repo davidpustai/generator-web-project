@@ -13,7 +13,7 @@
 
 First, install [Yeoman](http://yeoman.io) using [npm](https://www.npmjs.com/) (assuming you have pre-installed [node.js](https://nodejs.org/)).
 ```bash
-npm install -g yo
+npm install -g yo@"4.x"
 ```
 
 This package isn't listed in npm, so you need to clone it and link it to your local npm manualy:
