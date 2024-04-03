@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+
+
+## [0.18.0] - 2024-04-03
 ### Changed
 - incorporate changes from H5BP v9.0.0
 	- rename `main.css` to `style.css` & `main.js` to `app.js`
@@ -15,7 +18,7 @@
 - Babel
 
 
-[0.17.0] - 2022-09-14
+## [0.17.0] - 2022-09-14
 ### Breaking
 - require latest minor version of Node.js for ESM support
 - removed IE support
@@ -29,7 +32,7 @@
 - add skip link to base layout
 
 
-[0.16.1] - 2021-10-23
+## [0.16.1] - 2021-10-23
 ### Changed
 - update `devDependencies`
 - more modern JS loading
