@@ -54,37 +54,19 @@ const setDestDev = () => {
 const clean = () => deleteAsync(['.tmp', 'dev', 'dist']);
 
 // ===============================================================
-// SCSS -> CSS
-// ===============================================================
-const scss = () => {
-	return gulp.src('src/assets/scss/*.scss')
-		.pipe(plumber())
-		.pipe(sass({
-			includePaths: ['src/assets/scss'],
-			precision: 6
-		}).on('error', sass.logError))
-		.pipe(gulp.dest('.tmp/css/compiled'));
-};
-
-// ===============================================================
-// CONCAT CSS
-// ===============================================================
-// Source should be compiled CSS (.tmp/css/copmiled), resp. vendor CSS.
-const concatCSS = () => {
-	return gulp.src([
-			'node_modules/normalize.css/normalize.css',
-			'.tmp/css/compiled/main.css'
-		])
-		.pipe(concat('main.css'))
-		.pipe(gulp.dest('.tmp/css/concated'));
-};
-
-// ===============================================================
 // CSS PROCESSING
 // ===============================================================
-const processCSS = () => {
-	const stream = gulp.src('.tmp/css/concated/**/*.css')
-					.pipe(autoprefixer());
+const css = () => {
+	const stream = gulp.src('src/assets/scss/*.scss')
+		.pipe(plumber())
+		.pipe(sass({
+			includePaths: [
+				'node_modules',
+				'src/assets/scss'
+			],
+			precision: 6
+		}).on('error', sass.logError))
+		.pipe(autoprefixer());
 
 	if ( ENV == 'dist' ) {
 		return stream
@@ -101,11 +83,6 @@ const processCSS = () => {
 			.pipe(connect.reload());
 	}
 };
-
-// ===============================================================
-// MAIN CSS TASK
-// ===============================================================
-const css = gulp.series(scss, concatCSS, processCSS);
 
 // ===============================================================
 // CONCAT JS

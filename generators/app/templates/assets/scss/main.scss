@@ -3,9 +3,23 @@
 @use "settings/breakpoints" as bps;
 @use "helpers/z-index" as z;
 
-@import "helpers/base";
-@import "helpers/visually-hidden";
+@layer global, utilities, components, organisms;
 
-@import "components/a11y-skip-to";
+@layer global {
+	@import "normalize.css/normalize";
+	@import "helpers/base";
+}
+
+@layer utilities {
+	@import "helpers/visually-hidden";
+}
+
+@layer components {
+	@import "components/a11y-skip-to";
+}
+
+@layer organisms {
+
+}
 
 @import "helpers/shame";
