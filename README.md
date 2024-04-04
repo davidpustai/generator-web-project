@@ -30,7 +30,7 @@ yo web-project
 
 ## Contributions
 
-Feel free to fork and open pull requests. For now development happens on `master` branch only.
+Feel free to fork and open pull requests. For now development happens on `main` branch only.
 
 When releasing
 * update version in `package.json` & `package-lock.json`

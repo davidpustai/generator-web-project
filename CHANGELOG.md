@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Changed
+- rename `master` branch to `main`
 
 
 ## [0.18.0] - 2024-04-03
