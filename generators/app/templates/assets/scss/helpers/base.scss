@@ -31,6 +31,7 @@
 html {
 	box-sizing: border-box;
 	height: 100%;
+	font-size: 100%;
 	/* Prevent font size inflation */
 	text-size-adjust: none;
 }
@@ -41,7 +42,6 @@ body {
 	margin: 0;
 	padding: 0;
 	line-height: 1.5; // Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
-	font-size: 100%;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; // WordPress system font stack
 	background-color: colors.$body-bg; // WCAG 2.0 Checklist 1.4.8
 	color: colors.$body-font-color; // WCAG 2.0 Checklist 1.4.8
@@ -144,6 +144,11 @@ textarea:not([rows]) {
 		color: #000 !important; /* Black prints faster */
 		box-shadow: none !important;
 		text-shadow: none !important;
+	}
+
+	/* Display font-size might bee too big for print. */
+	body {
+		font-size: 8pt;
 	}
 
 	a,
