@@ -16,7 +16,6 @@
 - better inline svg (icon) macro => pass alt => display as title and remove aria-hidden
 - generator translation to i18n directory
 - merge gulp tasks (e. g. concat) simillarly to img task
-- [a11y font face](https://material.io/blog/atkinson-hyperlegible-design)
 - [colorguard](https://github.com/SlexAxton/css-colorguard#programmatic)
 - https://www.npmjs.com/package/autoreload-gulp
 - force https redirects by default in htaccess
@@ -62,6 +61,7 @@
 ## Fonts
 - fluid typography - clamp(1rem, 0.45vw + 0.91rem, 1.31rem);
 - lazy load fonts (check [webfontloader](https://github.com/typekit/webfontloader) and [css-tricks article](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/))
+- [a11y font face](https://material.io/blog/atkinson-hyperlegible-design)
 
 ## Automation
 - automated build test via CI
