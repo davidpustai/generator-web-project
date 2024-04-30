@@ -11,12 +11,12 @@
 ::selection {
 	background-color: #b3d4fc;
 	text-shadow: none;
-	color: #222;
+	color: colors.$body-font-color;
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block: 1em;
 }
 
 /* Unify box-sizing globally, reset all margins. */
@@ -42,8 +42,8 @@ body {
 	padding: 0;
 	line-height: 1.5; // Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
 	font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif; // Neo-Grotesque font stack taken from https://modernfontstacks.com/
-	background-color: colors.$body-bg; // WCAG 2.0 Checklist 1.4.8
-	color: colors.$body-font-color; // WCAG 2.0 Checklist 1.4.8
+	background-color: colors.$body-bg;
+	color: colors.$body-font-color;
 }
 
 /* Hide visually and from screen readers. */
@@ -53,8 +53,8 @@ body {
 
 /* Set shorter line heights on headings and interactive elements */
 h1, h2, h3, h4,
-button, input, label {
-	line-height: 1.1;
+button, input, label, legend {
+	line-height: 1.2;
 }
 
 /*
@@ -111,7 +111,21 @@ picture {
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
 ol[role='list'] {
+	padding: 0;
 	list-style: none;
+}
+
+
+/*
+ * Honor the user preferences.
+ */
+select,
+textarea,
+input,
+button {
+	font: inherit;
+	letter-spacing: inherit;
+	word-spacing: inherit;
 }
 
 /*
