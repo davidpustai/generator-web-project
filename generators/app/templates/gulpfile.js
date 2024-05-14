@@ -80,7 +80,7 @@ const css = () => {
 			.pipe(gulp.dest(`${DEST}/assets/css`))
 			.pipe(connect.reload())
 	}
-};
+}
 
 // ===============================================================
 // CONCAT JS
@@ -117,7 +117,7 @@ const processJS = () => {
 			.pipe(gulp.dest(`${DEST}/assets/js`))
 			.pipe(connect.reload())
 	}
-};
+}
 
 // ===============================================================
 // MAIN JS TASK
@@ -148,7 +148,7 @@ const img = async () => {
 			.pipe(gulp.dest(`${DEST}/assets/img`))
 			.pipe(connect.reload())
 			.on('end', resolve)
-	});
+	})
 	await new Promise((resolve, reject) => {
 		gulp.src(['src/assets/img/**/*.{webp,jpg,png}'])
 			.pipe(imagemin([webp()]))
@@ -210,7 +210,7 @@ const copy = () => {
 		})
 		.pipe(gulp.dest(DEST))
 		.pipe(connect.reload())
-};
+}
 
 // ===============================================================
 // HTML PROCESSING
@@ -220,7 +220,7 @@ const html = () => {
 		.pipe(twig({
 			data: {
 				icons: () => {
-					let result = {};
+					let result = {}
 					const dir = path.resolve(`${DEST}/assets/img/icons`)
 					for (const file of fs.readdirSync(dir).filter(file => file.endsWith('.svg'))) {
 						result[path.parse(file).name.replace('-', '_')] = fs.readFileSync(dir+'/'+file)
@@ -304,7 +304,7 @@ const watchFiles = () => new Promise((resolve, reject) => {
 	gulp.watch(['src/assets/font/**/*.{woff,woff2}', '!src/assets/font/original/**/*'], copy)
 	gulp.watch('src/templates/**/*.twig', html)
 	resolve()
-});
+})
 
 const defaultTasks = gulp.series(
 	setEnvDev,
