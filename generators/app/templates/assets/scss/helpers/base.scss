@@ -9,9 +9,9 @@
  * Customize the background color to match your design.
  */
 ::selection {
-	background-color: #b3d4fc;
+	background-color: colors.$selection-bg;
 	text-shadow: none;
-	color: colors.$body-font-color;
+	color: colors.$selection-text;
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
@@ -43,7 +43,7 @@ body {
 	line-height: 1.5; // Line height is unitless (http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless/).
 	font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif; // Neo-Grotesque font stack taken from https://modernfontstacks.com/
 	background-color: colors.$body-bg;
-	color: colors.$body-font-color;
+	color: colors.$body-text;
 }
 
 /* Hide visually and from screen readers. */
