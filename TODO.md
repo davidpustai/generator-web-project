@@ -65,9 +65,8 @@
 
 ## Automation
 - automated build test via CI
-- automated testing for generator and projects (include lighthouse)
+- lighthouse CI
 - [accessibility](https://github.com/github/accessibilityjs)
 - [accesslint.js](https://github.com/accesslint/accesslint.js)
-- [front-end testing](https://www.javascriptjanuary.com/blog/getting-started-with-front-end-testing)
 - [Cypress.io](https://www.cypress.io/features/)
 - Gherking ("Given that the system is in a certain state, When something happens, then this is expected")

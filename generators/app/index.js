@@ -40,6 +40,17 @@ const generator = class extends Generator {
 		this._template('_README.md', 'README.md')
 	}
 
+	cypress() {
+		this._copy('configs/project/cypress.config.js', 'cypress.config.js')
+		this._copy('configs/project/cypress.env.json.example', 'cypress.env.json.example')
+		this._mkdir('cypress/e2e')
+		this._copy('cypress/e2e/homepage.cy.js', 'cypress/e2e/homepage.cy.js')
+		this._mkdir('cypress/fixtures')
+		this._mkdir('cypress/support')
+		this._copy('cypress/support/commands.js', 'cypress/support/commands.js')
+		this._copy('cypress/support/e2e.js', 'cypress/support/e2e.js')
+	}
+
 	dirs() {
 		this._mkdir('src/assets/font')
 		this._mkdir('src/assets/img')

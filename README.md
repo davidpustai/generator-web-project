@@ -3,11 +3,12 @@
 > [Yeoman](http://yeoman.io) generator for creating static websites. Includes some front-end goodies and automated processing.
 
 ## Using
- * parts of [HTML5 Boilerplate](https://html5boilerplate.com/)
- * [normalize.css](https://necolas.github.io/normalize.css/)
- * [SASS](https://sass-lang.com/) with Dart Sass
- * [Gulp](https://gulpjs.com/)
- * [Twig](https://twig.symfony.com/)
+- parts of [HTML5 Boilerplate](https://html5boilerplate.com/)
+- [normalize.css](https://necolas.github.io/normalize.css/)
+- [SASS](https://sass-lang.com/) with Dart Sass
+- [Gulp](https://gulpjs.com/)
+- [Twig](https://twig.symfony.com/)
+- [Cypress](https://cypress.io/) for E2E testing
 
 ## Installation
 
@@ -33,12 +34,12 @@ yo web-project
 Feel free to fork and open pull requests. For now development happens on `main` branch only.
 
 When releasing
-* update version in `package.json` & `package-lock.json`
-* rename `[Unreleased]` section in `CHANGELOG.md` to `[<version>] <date-of-release>`
-* create new `[Unreleased]` section at the top
-* `git add . && git commit -m v<version-number>`
-* `git tag -a v<version-number>`
-* `git push && git push --tags`
+- update version in `package.json` & `package-lock.json`
+- rename `[Unreleased]` section in `CHANGELOG.md` to `[<version>] <date-of-release>`
+- create new `[Unreleased]` section at the top
+- `git add . && git commit -m v<version-number>`
+- `git tag -a v<version-number>`
+- `git push && git push --tags`
 
 
 ## Changelog
