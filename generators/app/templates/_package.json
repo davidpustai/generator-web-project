@@ -2,12 +2,7 @@
 	"name": "<%= appName %>",
 	"version": "0.0.0",
 	"private": true,
-	"browserslist": [
-		"last 2 versions",
-		"not dead",
-		"> 0.5%",
-		"Firefox ESR"
-	],
+	"browserslist": ["last 2 versions", "not dead", "> 0.5%", "Firefox ESR"],
 	"type": "module",
 	"scripts": {
 		"dev": "NODE_ENV=development gulp",
@@ -21,7 +16,7 @@
 		"autoprefixer": "^10.4.13",
 		"cssnano": "^6.0.0",
 		"cypress": "^13.11.0",
-		"del": "^7.1.0",
+		"del": "^8.0.0",
 		"gulp": "^4.0.2",
 		"gulp-concat": "^2.6.1",
 		"gulp-connect": "^5.7.0",
