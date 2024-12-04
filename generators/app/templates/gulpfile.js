@@ -59,11 +59,10 @@ const css = () => {
 	const stream = gulp.src('src/assets/scss/*.scss')
 		.pipe(plumber())
 		.pipe(sass({
-			includePaths: [
+			loadPaths: [
 				'node_modules',
 				'src/assets/scss'
-			],
-			precision: 6
+			]
 		}).on('error', sass.logError))
 		.pipe(postcss())
 
