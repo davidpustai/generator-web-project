@@ -12,16 +12,16 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) using [npm](https://www.npmjs.com/) (assuming you have pre-installed [node.js](https://nodejs.org/)).
+Install:
 ```bash
-npm install -g yo
+pnpm install -g yo
 ```
 
-This package isn't listed in npm, so you need to clone it and link it to your local npm manualy:
+This package isn't listed in the npm registry, so you need to clone it and link it manualy:
 ```bash
 git clone git@github.com:davidpustai/generator-web-project.git
 cd generator-web-project
-npm link
+pnpm link
 ```
 
 Finally, generate your new project:

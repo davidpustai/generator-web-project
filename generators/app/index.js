@@ -26,7 +26,7 @@ const generator = class extends Generator {
 			}
 		])
 
-		this.env.options.nodePackageManager = 'npm'
+		this.env.options.nodePackageManager = 'pnpm'
 	}
 
 	projectFiles() {

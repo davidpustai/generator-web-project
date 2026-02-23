@@ -11,20 +11,20 @@
 ## Getting started
 First install dependencies:
 ```
-npm install
+pnpm install
 ```
 
 And let's start working (more about gulp commands below):
 ```
-npm run dev
+pnpm run dev
 ```
 
 ## CLI commands
-- `npm run dev` - *use for development, compiles into `dev` directory*
+- `pnpm run dev` - *use for development, compiles into `dev` directory*
 	- compiles and prefixes scss
 	- runs local server (with live reload) at `localhost:8000`
 	- watches for changes
-- `npm run build` - *use when deploying, compiles into `dist` directory*
+- `pnpm run build` - *use when deploying, compiles into `dist` directory*
  	- compiles, prefixes, concats and minifies scss
  	- concats and minifies javascript
  	- templates html with Twig and minifies it
@@ -32,7 +32,7 @@ npm run dev
  	- revisions assets to bust caches
  	- runs local server at `localhost:8000`
  	- makes everything avaliable for production in `dist` folder
-- `npm run serve` - *use for production build review*
+- `pnpm run serve` - *use for production build review*
  	- builds the project with `build` task
  	- runs local server at `localhost:8000`
 
@@ -49,7 +49,7 @@ icon('chevron-down');
 
 ## Testing
 1. Set up your env in `cypress.env.json` according to the example in `cypress.env.json.example`.
-2. Build assets and start the test server: `npm run serve`
+2. Build assets and start the test server: `pnpm run serve`
 3. Run the tests with `npx cypress run` or `npx cypress open`.
 
 You can learn more about watch commands and the Cypress Studio in [Cypress Documentation](https://docs.cypress.io/).

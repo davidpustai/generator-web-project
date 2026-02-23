@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - rename `master` branch to `main`
+- use pnpm instead of npm
 
 
 ## [0.18.0] - 2024-04-03
