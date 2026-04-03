@@ -12,8 +12,8 @@ importers:
         specifier: ^5.6.2
         version: 5.6.2
       slugify:
-        specifier: ^1.6.8
-        version: 1.6.8
+        specifier: ^1.6.9
+        version: 1.6.9
       yeoman-generator:
         specifier: ^8.1.2
         version: 8.1.2(@types/node@25.5.0)(@yeoman/types@1.9.1(@types/node@25.5.0)(mem-fs-editor@12.0.3(@types/node@25.5.0)(mem-fs@4.1.3))(mem-fs@4.1.3))(mem-fs@4.1.3)
@@ -80,8 +80,8 @@ packages:
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
-  '@types/picomatch@4.0.2':
-    resolution: {integrity: sha512-qHHxQ+P9PysNEGbALT8f8YOSHW0KJu6l2xU8DYY0fu/EmGxXdVnuTLvFUvBgPJMSqXq29SYHveejeAha+4AYgA==}
+  '@types/picomatch@4.0.3':
+    resolution: {integrity: sha512-iG0T6+nYJ9FAPmx9SsUlnwcq1ZVRuCXcVEvWnntoPlrOpwtSTKNDC9uVAxTsC3PUvJ+99n4RpAcNgBbHX3JSnQ==}
 
   '@types/vinyl@2.0.12':
     resolution: {integrity: sha512-Sr2fYMBUVGYq8kj3UthXFAu5UN6ZW+rYr4NACjZQJvHvj+c8lYv0CahmZ2P/r7iUkN44gGUBwqxZkrKXYPb7cw==}
@@ -306,8 +306,8 @@ packages:
     resolution: {integrity: sha512-7W0vV3rqv5tokqkBAFV1LbR7HPOWzXQDpDgEuib/aJ1jsZZx6x3c2mBI+TJhJzOhkGeaLbCKEHXEXLfirtG2JA==}
     engines: {node: '>=18'}
 
-  lodash-es@4.17.23:
-    resolution: {integrity: sha512-kVI48u3PZr38HdYz98UmfPnXl2DXrpdctLrFLCd3kOx1xUkOmpFPx7gCWWM5MPkL/fD8zb+Ph0QzjGFs4+hHWg==}
+  lodash-es@4.18.1:
+    resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
 
   lru-cache@11.2.7:
     resolution: {integrity: sha512-aY/R+aEsRelme17KGQa/1ZSIpLpNYYrhcrepKTZgE+W3WM16YMCaPwOHLHsmopZHELU0Ojin1lPVxKR0MihncA==}
@@ -331,8 +331,8 @@ packages:
     resolution: {integrity: sha512-BhXM0Au22RwUneMPwSCnyhTOizdWoIEPU9sp0Aqa1PnDMR5Wv2FGXYDjuzJEIX+Eo2Rb8xuYe5jrnm5QowQFkw==}
     engines: {node: '>=16.10'}
 
-  minimatch@10.2.4:
-    resolution: {integrity: sha512-oRjTw/97aTBN0RHbYCdtF1MQfvusSIBQM0IZEgzl6426+8jSC0nF1a/GmnVLpfB9yyr6g6FTqWqiZVbxrtaCIg==}
+  minimatch@10.2.5:
+    resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
     engines: {node: 18 || 20 || >=22}
 
   minimatch@5.1.9:
@@ -445,8 +445,8 @@ packages:
   simple-git@3.33.0:
     resolution: {integrity: sha512-D4V/tGC2sjsoNhoMybKyGoE+v8A60hRawKQ1iFRA1zwuDgGZCBJ4ByOzZ5J8joBbi4Oam0qiPH+GhzmSBwbJng==}
 
-  slugify@1.6.8:
-    resolution: {integrity: sha512-HVk9X1E0gz3mSpoi60h/saazLKXKaZThMLU3u/aNwoYn8/xQyX2MGxL0ui2eaokkD7tF+Zo+cKTHUbe1mmmGzA==}
+  slugify@1.6.9:
+    resolution: {integrity: sha512-vZ7rfeehZui7wQs438JXBckYLkIIdfHOXsaVEUMyS5fHo1483l1bMdo0EDSWYclY0yZKFOipDy4KHuKs6ssvdg==}
     engines: {node: '>=8.0.0'}
 
   sort-keys@6.0.0:
@@ -636,7 +636,7 @@ snapshots:
 
   '@types/normalize-package-data@2.4.4': {}
 
-  '@types/picomatch@4.0.2': {}
+  '@types/picomatch@4.0.3': {}
 
   '@types/vinyl@2.0.12':
     dependencies:
@@ -803,14 +803,14 @@ snapshots:
     dependencies:
       package-json: 10.0.1
 
-  lodash-es@4.17.23: {}
+  lodash-es@4.18.1: {}
 
   lru-cache@11.2.7: {}
 
   mem-fs-editor@12.0.3(@types/node@25.5.0)(mem-fs@4.1.3):
     dependencies:
       '@types/ejs': 3.1.5
-      '@types/picomatch': 4.0.2
+      '@types/picomatch': 4.0.3
       binaryextensions: 6.11.0
       commondir: 1.0.1
       debug: 4.4.3
@@ -818,7 +818,7 @@ snapshots:
       ejs: 4.0.1
       isbinaryfile: 5.0.7
       mem-fs: 4.1.3
-      minimatch: 10.2.4
+      minimatch: 10.2.5
       multimatch: 8.0.0
       normalize-path: 3.0.0
       textextensions: 6.11.0
@@ -843,7 +843,7 @@ snapshots:
 
   meow@12.1.1: {}
 
-  minimatch@10.2.4:
+  minimatch@10.2.5:
     dependencies:
       brace-expansion: 5.0.5
 
@@ -859,7 +859,7 @@ snapshots:
     dependencies:
       array-differ: 4.0.0
       array-union: 3.0.1
-      minimatch: 10.2.4
+      minimatch: 10.2.5
 
   normalize-package-data@8.0.0:
     dependencies:
@@ -956,7 +956,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  slugify@1.6.8: {}
+  slugify@1.6.9: {}
 
   sort-keys@6.0.0:
     dependencies:
@@ -1099,7 +1099,7 @@ snapshots:
       debug: 4.4.3
       execa: 9.6.1
       latest-version: 9.0.0
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
       mem-fs: 4.1.3
       mem-fs-editor: 12.0.3(@types/node@25.5.0)(mem-fs@4.1.3)
       minimist: 1.2.8
